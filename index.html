@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description"
-        content="As the Tech Lead at Onest Tech LLC, I bring a diverse
+    <meta name="description" content="As the Tech Lead at Onest Tech LLC, I bring a diverse
         skill set and extensive experience to lead our technical teams. Proficient in PHP, NodeJs,
         Python, JavaScript, databases, system design, and DevOps, I excel in architecting robust solutions.">
     <meta name="keywords"
@@ -23,6 +22,53 @@
     <link rel="stylesheet" type="text/css" href="assets/css/plugin.css">
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/main-style.css">
+
+    <style>
+        /* Custom CSS for the project boxes */
+        .box {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-img {
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 25px;
+        }
+
+        /* Style for the project title and description */
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-bottom: 15px;
+        }
+
+        /* Style for technology and keywords */
+        .project-technology,
+        .project-keywords {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+
+
+        .show-btn-only-when-hover .live-btn {
+            display: none !important;
+        }
+
+        .box:hover .show-btn-only-when-hover .live-btn {
+            display: none !important;
+        }
+    </style>
 </head>
 <!-- Loader -->
 <div class="preloader">
@@ -200,7 +246,8 @@
                             <div class="about-info-single about-info-single2  wow fadeInRight" data-wow-delay="0.5s">
                                 <h6 class="about-title">About Me</h6>
                                 <p class="about-pera text-normal">As the Tech Lead at Onest Tech LLC, I bring a diverse
-                                    skill set and extensive experience to lead our technical teams. Proficient in PHP, NodeJs,
+                                    skill set and extensive experience to lead our technical teams. Proficient in PHP,
+                                    NodeJs,
                                     Python, JavaScript, databases, system design, and DevOps, I excel in architecting
                                     robust solutions. With a background in UI/UX design, project management tools, and
                                     mentoring, I drive innovation, collaboration, and quality within our projects. My
@@ -241,72 +288,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle mb-50">
-                            <h2><span>Approve</span> Market Place</h2>
+                            <h2><span>Recent</span> Projects</h2>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                        <div class="box snake mb-24">
-                            <div class="gallery-img" style="background-image: url(assets/img/gallery/card-theme1.jpg);">
-                            </div>
-                            <div class="contents">
-                                <span>200+.</span>
-                                <h5> <a href="colorlib.html">ColorLib</a></h5>
-                            </div>
-                            <div class="overlay">
-                                <div class="overlay-content">
-                                    <h5><a href="colorlib.html" target="_blank" class="live-btn">Live All</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                        <div class="box snake mb-24">
-                            <div class="gallery-img" style="background-image: url(assets/img/gallery/card-theme2.jpg);">
-                            </div>
-                            <div class="contents">
-                                <span>20+.</span>
-                                <h5> <a href="themeforest.html">Themeforest</a></h5>
-                            </div>
-                            <div class="overlay">
-                                <div class="overlay-content">
-                                    <h5><a href="themeforest.html" target="_blank" class="live-btn btn">Live All</a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                        <div class="box snake mb-24">
-                            <div class="gallery-img" style="background-image: url(assets/img/gallery/card-theme3.jpg);">
-                            </div>
-                            <div class="contents">
-                                <span>2.</span>
-                                <h5> <a href="gov_other.html">Admin</a></h5>
-                            </div>
-                            <div class="overlay">
-                                <div class="overlay-content">
-                                    <h5><a href="admin.html" target="_blank" class="live-btn">Live All</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                        <div class="box snake mb-24">
-                            <div class="gallery-img" style="background-image: url(assets/img/gallery/card-theme4.jpg);">
-                            </div>
-                            <div class="contents">
-                                <span>10+.</span>
-                                <h5> <a href="gov_other.html">Gov & others</a></h5>
-                            </div>
-                            <div class="overlay">
-                                <div class="overlay-content">
-                                    <h5><a href="gov_other.html" target="_blank" class="live-btn">Live All</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id="projects">
+
                 </div>
             </div>
         </section>
@@ -635,7 +622,7 @@
 
 
 
- 
+
             </div>
         </section>
         <!-- Experience End -->
@@ -1290,6 +1277,49 @@
     <script src="assets/js/plugin.js"></script>
     <!-- Main js-->
     <script src="assets/js/mian.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            // Function to append project HTML
+            function appendProjectHTML(project) {
+                var projectHtml = `
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                <div class="box snake mb-24">
+                    <div class="gallery-img" style="background-image: url('${project["background-image"]}');"></div>
+                    <div class="contents"> 
+                        <h5 class="project-title" ><a class="project-title-link" href="${project.url}">${project.title}</a></h5>
+                        <p class="project-description">${project.description}</p>
+                        <p class="project-technology"><strong>Technology:</strong> ${project.technology}</p>
+                        <p  class="project-keywords "><strong>Keywords:</strong> ${project.keywords.join(', ')}</p>
+                    </div>
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h5><a href="${project.url}" target="_blank" class="live-btn show-btn-only-when-hover">Demo</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+                return projectHtml;
+            }
+
+            // Function to fetch JSON data and append it
+            function appendProjects() {
+                $.getJSON('projects.json', function (data) {
+                    var projectsContainer = $('#projects');
+
+                    $.each(data, function (index, project) {
+                        var projectHtml = appendProjectHTML(project);
+                        projectsContainer.append(projectHtml);
+                    });
+                });
+            }
+
+            // Call the function to fetch and append projects
+            appendProjects();
+        });
+
+    </script>
 </body>
 
 </html>
