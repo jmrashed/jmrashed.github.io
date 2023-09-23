@@ -22,53 +22,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/plugin.css">
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/main-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <style>
-        /* Custom CSS for the project boxes */
-        .box {
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .box:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-img {
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 25px;
-        }
-
-        /* Style for the project title and description */
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .project-description {
-            font-size: 1rem;
-            color: #a0a0a0;
-            margin-bottom: 15px;
-        }
-
-        /* Style for technology and keywords */
-        .project-technology,
-        .project-keywords {
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 5px;
-        }
-
-
-
-        .show-btn-only-when-hover .live-btn {
-            display: none !important;
-        }
-
-        .box:hover .show-btn-only-when-hover .live-btn {
-            display: none !important;
-        }
-    </style>
 </head>
 <!-- Loader -->
 <div class="preloader">
@@ -90,20 +45,7 @@
                                     remarkable results ! <i class="icon-circles"><span></span></i></p>
                                 <!-- Social -->
                                 <ul class="header-social">
-                                    <li><a href="https://www.facebook.com/MdRasheduzzamanOfficial/" target="_blank"><i
-                                                class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="https://join.skype.com/invite/jJeUPkyUsLjR" target="_blank"><i
-                                                class="fa-brands fa-skype"></i></a></li>
-                                    <li><a href="https://wa.me/88001910077628" target="_blank"><i
-                                                class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/in/jmrashed/" target="_blank"><i
-                                                class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="https://twitter.com/_rasheduzzaman" target="_blank"><i
-                                                class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="https://github.com/jmrashed/" target="_blank"><i
-                                                class="fa-brands fa-github"></i></a></li>
-                                    <li> <a href="https://www.youtube.com/channel/UCqk9doKWb3a1qXGAMaRqqYA"
-                                            target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -225,6 +167,9 @@
                                         <i class="fa-regular fa-comments icon"></i>Get in Touch
                                     </a>
                                 </div>
+                                <ul class="header-social mb-3 mt-3">
+
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -256,6 +201,7 @@
 
 
                                 <h6 class="about-title mt-3">Follow Me</h6>
+
 
                                 <a href="https://github.com/jmrashed/" target="_blank" class="see-more-two">Github</a> |
                                 <a href="https://medium.com/@jmrashed" target="_blank" class="see-more-three">Medium</a>
@@ -891,18 +837,7 @@
                                 </div>
                                 <!-- Social -->
                                 <ul class="header-social">
-                                    <li><a href="https://www.facebook.com/users.saiful/" target="_blank"><i
-                                                class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="https://join.skype.com/invite/qMm0YHEpFhAB" target="_blank"><i
-                                                class="fa-brands fa-skype"></i></a></li>
-                                    <li><a href="https://wa.me/880018000000" target="_blank"><i
-                                                class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/in/sai4ul/" target="_blank"><i
-                                                class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="https://twitter.com/sai4ul/" target="_blank"><i
-                                                class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="https://github.com/sai4ul/" target="_blank"><i
-                                                class="fa-brands fa-github"></i></a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -1075,6 +1010,39 @@
             appendExperiences();
         });
 
+
+
+
+
+
+
+
+        function generateSocialMediaLinks(data) {
+            var socialMediaList = $('.header-social');
+
+            $.each(data, function (index, link) {
+                // Create list item and anchor tag
+                var listItem = $('<li></li>');
+                var anchorTag = $('<a></a>', {
+                    href: link.url,
+                    target: '_blank'
+                });
+
+                // Create Font Awesome icon with color
+                var iconTag = $('<i></i>', {
+                    class: link.icon,
+                    style: 'color: ' + link.iconColor // Set the icon color from JSON
+                });
+                anchorTag.append(iconTag);
+                listItem.append(anchorTag);
+                socialMediaList.append(listItem);
+            });
+        }
+
+        // Fetch JSON data
+        $.getJSON('social-media-links.json', function (data) {
+            generateSocialMediaLinks(data);
+        });
     </script>
 </body>
 

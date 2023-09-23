@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/MdRasheduzzamanOfficial/",
+        "icon": "fab fa-facebook-f",
+        "iconColor": "#1877F2"
+    },
+    {
+        "name": "Skype",
+        "url": "https://join.skype.com/invite/jJeUPkyUsLjR",
+        "icon": "fab fa-skype",
+        "iconColor": "#00AFF0"
+    },
+    {
+        "name": "WhatsApp",
+        "url": "https://wa.me/88001910077628",
+        "icon": "fab fa-whatsapp",
+        "iconColor": "#25D366"
+    },
+    {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/jmrashed/",
+        "icon": "fab fa-linkedin-in",
+        "iconColor": "#0A66C2"
+    },
+    {
+        "name": "Twitter",
+        "url": "https://twitter.com/_rasheduzzaman",
+        "icon": "fab fa-twitter",
+        "iconColor": "#1DA1F2"
+    },
+    {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/channel/UCqk9doKWb3a1qXGAMaRqqYA",
+        "icon": "fab fa-youtube",
+        "iconColor": "#FF0000"
+    }
+]
