@@ -33,6 +33,7 @@
 </div>
 
 <!-- <body oncontextmenu="return false"> -->
+
 <body>
     <header>
         <div class="header-area header-transparent">
@@ -77,28 +78,33 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#portfolio">
-                                                            <span class="number">02</span>
-                                                            <span class="single">Project</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
                                                         <a href="#experience">
                                                             <span class="number">01</span>
                                                             <span class="single">experience</span>
                                                         </a>
                                                     </li>
+                                                    <li>
+                                                        <a href="#portfolio">
+                                                            <span class="number">02</span>
+                                                            <span class="single">Project</span>
+                                                        </a>
+                                                    </li>
+
 
                                                     <li>
                                                         <a href="#about">
                                                             <span class="number">03</span>
                                                             <span class="single">About</span>
                                                         </a>
-                                                    </li>
-                                                    <li>
+                                                    </li><li>
                                                         <a href="#contact">
                                                             <span class="number">04</span>
                                                             <span class="single">Let's Talk</span>
+                                                        </a>
+                                                    </li><li>
+                                                        <a href="explore.html">
+                                                            <span class="number">05</span>
+                                                            <span class="single">Explore More</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -408,7 +414,7 @@
                     <div class="contact-stack">
                         <span class="contact-name">Currently Tech Stack</span>
                         <ul id="tech-stack" class="nav"></ul>
- 
+
                     </div>
                 </div>
             </div>
@@ -708,23 +714,16 @@
             <div class="container">
                 <div class="wants-wrapper w-padding">
                     <div class="row align-items-center justify-content-between">
-                        <div class="col-xl-6 col-lg-7 col-md-7">
+                        <div class="col-xl-12 col-lg-12 col-md-12">
                             <div class="wantToWork-caption">
                                 <!-- Hiring -->
-                                <p class="hireing"><span>Now Hiring : </span> Do you Need a Front-End Developer ! <i
-                                        class="icon-circles"><span></span></i></p>
+                                <p class="hireing"><span>Open for Hiring : </span> I'm Here, Ready to Be a Member
+                                    of Your Team
+                                    <i class="icon-circles p-3"><span></span></i>
+                                </p>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-5 col-md-5 ">
-                            <div class="double-btn f-right mb-20">
-                                <a href="#" target="_blank" class="btn_01 wantToWork-btn mr-20">
-                                    <img src="assets/img/gallery/fiver.png" alt="img">
-                                </a>
-                                <a href="" target="_blank" class="btn_01 wantToWork-btn mr-20">
-                                    <img src="assets/img/gallery/upwork.png" alt="img">
-                                </a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -977,7 +976,7 @@
                         <i class="${tech.icon}" style="color: ${tech.color};"></i>
                         <span>${tech.name} </span>
                     </li>`;
-                    console.log(techHtml);
+                console.log(techHtml);
                 techStackContainer.append(techHtml);
             });
         }
