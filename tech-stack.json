@@ -14,21 +14,8 @@
         "icon": "fab fa-react",
         "color": "#61DAFB"
     },
-    {
-        "name": "Next.js",
-        "icon": "fab fa-react",
-        "color": "#000000"
-    },
-    {
-        "name": "Gatsby",
-        "icon": "fab fa-gatsby",
-        "color": "#663399"
-    },
-    {
-        "name": "React Native",
-        "icon": "fab fa-react",
-        "color": "#61DAFB"
-    },
+ 
+  
     {
         "name": "Express",
         "icon": "fab fa-node-js",
@@ -54,41 +41,14 @@
         "icon": "fab fa-node-js",
         "color": "#68A063"
     },
-    {
-        "name": "Vue.js",
-        "icon": "fab fa-vuejs",
-        "color": "#41B883"
-    },
+ 
     {
         "name": "Python",
         "icon": "fab fa-python",
         "color": "#3776AB"
     },
-    {
-        "name": "Django",
-        "icon": "fab fa-python",
-        "color": "#092E20"
-    },
-    {
-        "name": "Ruby",
-        "icon": "fas fa-gem",
-        "color": "#CC0000"
-    },
-    {
-        "name": "Ruby on Rails",
-        "icon": "fas fa-gem",
-        "color": "#CC0000"
-    },
-    {
-        "name": "Angular",
-        "icon": "fab fa-angular",
-        "color": "#DD0031"
-    },
-    {
-        "name": "Vue.js",
-        "icon": "fab fa-vuejs",
-        "color": "#41B883"
-    },
+ 
+  
     {
         "name": "PHP",
         "icon": "fab fa-php",

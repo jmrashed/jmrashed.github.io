@@ -12,15 +12,22 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-schooled-school-management-system\/46801130",
         "file_path": null,
         "file_size": "",
-        "tags": "",
-        "requirements": null,
-        "compatibility": null
+        "tags": "Laravel, School-Management, PHP, Education, Database, Web-Application, Admin-Panel, Open-Source, Responsive, User-Management",
+        "technologies": [
+            "Laravel 9",
+            "PHP",
+            "MySQL",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "compatibility": "Laravel 9, PHP 7.4, MySQL 5.7, Modern Browsers"
     },
     {
         "id": "2",
         "title": "Onest LMS - Online Learning Management System Mobile App",
         "slug": "onest-lms-online-learning-management-system-mobile-app",
-        "description": "",
+        "description": "Introducing Onest LMS – Onest LMS Mobile App is a comprehensive learning management system that includes a range of features for students to purchase online courses and access course materials.",
         "sales": "1",
         "review": "2",
         "rating": "4",
@@ -29,15 +36,20 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-lms-online-learning-management-system-mobile-app\/46647555",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "Online-Learning, Mobile-App, Learning-Management, Educational-Technology, iOS, Android, User-Interface, User-Experience, Mobile-Development, E-Learning",
+        "technologies": [
+            "iOS",
+            "Android",
+            "Mobile-App Development",
+            "Educational-Technology"
+        ],
+        "compatibility": "iOS 14+, Android 8+, Modern Mobile Devices"
     },
     {
         "id": "3",
         "title": "Onest LMS - Online Learning Management System Web Application",
         "slug": "onest-lms-online-learning-management-system-web-application",
-        "description": "Onest LMS- Online Learning Management System web application(LMS) Template crafted specifically for Online courses, University, College, School, LMS course, Training center, or any type of educational institution. It is meticulously developed using cutting-edge technologies like Laravel, MySQL, Bootstrap, HTML5, CSS3, and jQuery. This template offers a responsive and pristine design that ensures optimal user experience. It is exceptionally effortless to personalize, thanks to its comprehensive and well-crafted documentation. We have included extensive documentation to cater to your requirements adequately. Also, users have the option to seamlessly switch to a Dark mode, which aids in mitigating eye strain, especially during extended periods of screen time. The blog section boasts a diverse range of articles encompassing various subjects, including courses, universities, technology, and RTL\/LRT compatibility, among others.",
+        "description": "Onest LMS- Online Learning Management System web application(LMS) Template crafted specifically for Online courses, University, College, School, LMS course, Training center, or any type of educational institution. It is meticulously developed using cutting-edge technologies like Laravel, MySQL, Bootstrap, HTML5, CSS3, and jQuery. This template offers a responsive and pristine design that ensures optimal user experience. It is exceptionally effortless to personalize, thanks to its comprehensive and well-crafted documentation. We have included extensive documentation to cater to your technologies adequately. Also, users have the option to seamlessly switch to a Dark mode, which aids in mitigating eye strain, especially during extended periods of screen time. The blog section boasts a diverse range of articles encompassing various subjects, including courses, universities, technology, and RTL\/LRT compatibility, among others.",
         "sales": "38",
         "review": "2",
         "rating": "4",
@@ -46,15 +58,22 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-academy-learning-management-system-web-application\/45779709",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "Online-Learning, Web-Application, Learning-Management, Educational-Technology, User-Interface, User-Experience, Web-Development, E-Learning, Responsive-Design, Educational-Content",
+        "technologies": [
+            "Laravel",
+            "MySQL",
+            "Bootstrap",
+            "HTML5",
+            "CSS3",
+            "jQuery"
+        ],
+        "compatibility": "Modern Web Browsers, Responsive Design"
     },
     {
         "id": "4",
         "title": "Onest CRM - Customer Relation Management System",
         "slug": "onest-crm-customer-relation-management-system",
-        "description": "",
+        "description": "Onest CRM - Customer Relation Management System",
         "sales": "24",
         "review": "2",
         "rating": "4",
@@ -63,15 +82,19 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/one-stop-crm-customer-relation-management-system\/45217456",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "CRM, Customer-Relation, Sales, Customer-Management, Business-Software, Client-Relationships, Customer-Service, Sales-Management, Data-Management, Relationship-Building",
+        "technologies": [
+            "Customer Relationship Management",
+            "Sales Management",
+            "Data Management"
+        ],
+        "compatibility": "Web Browsers, Business Environments"
     },
     {
         "id": "5",
         "title": "Onest CRM - Multiple Platform CRM Mobile Application",
         "slug": "onest-crm-multiple-platform-crm-mobile-application",
-        "description": "",
+        "description": "Onest CRM - Multiple Platform CRM Mobile Application",
         "sales": "33",
         "review": "2",
         "rating": "4",
@@ -80,13 +103,18 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-crm-multiple-platform\/42321418",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "CRM, Mobile-Application, Cross-Platform, Customer-Management, Business-Software, Sales, Client-Relationships, Customer-Service, Data-Management, Multi-Platform",
+        "technologies": [
+            "Cross-Platform Development",
+            "Customer Relationship Management",
+            "Sales Management",
+            "Data Management"
+        ],
+        "compatibility": "iOS, Android, Cross-Platform Mobile Devices"
     },
     {
         "id": "6",
-        "title": "Chat + Calling + Live - Social media - iOS,Android Application",
+        "title": "Chat + Calling + Live - Social media - iOS, Android Application",
         "slug": "chat-calling-live-social-media-iosandroid-application",
         "description": "Onest Meet is a social media application that allows users to chat, make audio and video calls, and participate in live streams, all in one platform. The application will be available on both iOS and Android platforms, with a version number of 1.0.",
         "sales": "3",
@@ -97,30 +125,18 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-video-and-chat-flutter-application\/40189650",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
-    },
-    {
-        "id": "7",
-        "title": "Flutter Delivery Man UI KIT",
-        "slug": "flutter-delivery-man-ui-kit",
-        "description": "Flutter Delivery Man UI KIT is likely a user interface kit developed using the Flutter framework for building mobile applications. It provides pre-designed and pre-coded UI elements for building an app for delivery management, potentially for delivery persons, businesses, or customers. The kit may include features such as order tracking, delivery scheduling, and notifications.",
-        "sales": "2",
-        "review": "2",
-        "rating": "4",
-        "version": "V1.0",
-        "demo_url": "",
-        "envato_link": "https:\/\/codecanyon.net\/item\/onest-delivery-ui-kit\/40036140",
-        "file_path": null,
-        "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "Social-Media, Chat, Calling, Live-Streaming, iOS, Android, Mobile-App, Messaging, Video-Chat, Social-Networking",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "iOS Development",
+            "Android Development"
+        ],
+        "compatibility": "iOS, Android"
     },
     {
         "id": "8",
-        "title": "Reviews for Branding & Advertising- Moving Billboard Flutter And Web Application",
+        "title": "Branding & Advertising- Moving Billboard Flutter And Web Application",
         "slug": "reviews-for-branding-advertising-moving-billboard-flutter-and-web-application",
         "description": "Promote ads, banners or products nationally or internationally. If you have a transportation business that runs a good number of vehicles, you can hop in this business too. From start-up businesses to large brands, you can grow yours or others’ market in a very short period of time. And our software will help you to monitor and analyze improvements throughout the process.",
         "sales": "5",
@@ -131,13 +147,16 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-moving-billboard-flutter-and-web-application\/39928777",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "Branding, Advertising, Reviews, Flutter, Web-Application, Mobile-App, Marketing, Outdoor-Advertising, Digital-Marketing, Advertising-Technology",
+        "technologies": [
+            "Flutter",
+            "Web Development"
+        ],
+        "compatibility": "Web Browsers, Mobile Devices"
     },
     {
         "id": "9",
-        "title": "HRM QR Attendance",
+        "title": "Onest HRM QR Attendance",
         "slug": "hrm-qr-attendance",
         "description": "HRM software is needed to streamline HR processes, improve data management, enhance decision-making, and foster collaboration. It automates and centralizes HR tasks, providing valuable insights and analytics, and facilitating communication and teamwork among HR professionals, managers, and employees.",
         "sales": "8",
@@ -148,15 +167,18 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/hrm-qr-attendance\/39287393",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "HRM, QR-Code, Attendance, Mobile-App, Employee-Management, Time-Tracking, Workforce-Management, HR-Technology, Employee-Attendance, Mobile-Workforce",
+        "technologies": [
+            "Mobile App Development",
+            "QR Code Technology"
+        ],
+        "compatibility": "iOS, Android"
     },
     {
         "id": "10",
-        "title": "Onex Club multi-purpose Flutter App",
+        "title": "Onex Club Multi-Purpose Flutter App",
         "slug": "onex-club-multi-purpose-flutter-app",
-        "description": "Welcome to Onex Club App. Onex Club is a mobile app which run under flutter platform that used for your own club application. With powerful features and beautiful design and Responsive Admin Panel can manage Matches, players ,users ,notifications ,rankings and others.",
+        "description": "Welcome to Onex Club App. Onex Club is a mobile app that runs under the Flutter platform and is used for various club applications. With powerful features and a beautiful design, along with a Responsive Admin Panel, you can manage matches, players, users, notifications, rankings, and more.",
         "sales": "0",
         "review": "2",
         "rating": "4",
@@ -165,32 +187,20 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onex-club-multipurpose-flutter-app\/39029286",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
-    },
-    {
-        "id": "11",
-        "title": "Flutter News & Magazine App UI Template",
-        "slug": "flutter-news-magazine-app-ui-template",
-        "description": "One of the most popular apps for news is the Flutter UI Kit for News, Blog and Article type apps. The complete UI Kit containing all widgets and snippets you need to create a News app. Flutter UI Kit contains the latest UI components for apps. UI templates are user-friendly interfaces that support latest Flutter 3 and use GetX for navigation and state management.",
-        "sales": "2",
-        "review": "2",
-        "rating": "4",
-        "version": "",
-        "demo_url": "",
-        "envato_link": "https:\/\/codecanyon.net\/item\/flutter-news-magazine-app-ui-template\/38910638",
-        "file_path": null,
-        "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "Flutter, Multi-Purpose, Mobile-App, Cross-Platform, Application-Development, UI\/UX, Versatile, Mobile-Development, User-Experience, App-Design",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Cross-Platform Development",
+            "UI/UX Design"
+        ],
+        "compatibility": "iOS, Android, Cross-Platform Mobile Devices"
     },
     {
         "id": "12",
-        "title": "Multipurpose and Multivendor eCommerce App, Web, Admin Panel - Flutter, React, Next, Laravel",
-        "slug": "multipurpose-and-multivendor-ecommerce-app-web-admin-panel-flutter-react-next-laravel",
-        "description": "",
+        "title": "Onest Gro - Multipurpose and Multivendor eCommerce",
+        "slug": "onest-gro-ecommerce",
+        "description": "Onest Gro is a multipurpose and multivendor eCommerce solution that includes mobile apps, web apps, and an admin panel. It is built using a combination of technologies, including Flutter, React, Next.js, and Laravel. This comprehensive eCommerce platform is designed to support multiple vendors, making it suitable for a wide range of online businesses.",
         "sales": "3",
         "review": "2",
         "rating": "5",
@@ -199,32 +209,20 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-gro-ecommerce-complete-ecommerce-mobile-app-web-seller-and-admin-panel\/38482403",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
-    },
-    {
-        "id": "13",
-        "title": "Multi Vendor Pharmacy Ecommerce App UI kit with Google Map Complete Address",
-        "slug": "multi-vendor-pharmacy-ecommerce-app-ui-kit-with-google-map-complete-address",
-        "description": "Multivendor pharmacy e-commerce Super Store is a Multi-Vendor online shopping app. Its contain advance feature like voice search, autosuggestion, intelligence search, live notification, auto-assign, etc.",
-        "sales": "4",
-        "review": "2",
-        "rating": "4",
-        "version": "",
-        "demo_url": "",
-        "envato_link": "https:\/\/codecanyon.net\/item\/onest-pharma-ui-kit\/38350679",
-        "file_path": null,
-        "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "eCommerce, Multi-Purpose, Multi-Vendor, Mobile-App, Web-App, Admin-Panel, Flutter, React, Next.js, Laravel",
+        "technologies": [
+            "Flutter",
+            "React",
+            "Next.js",
+            "Laravel"
+        ],
+        "compatibility": "iOS, Android, Web Browsers"
     },
     {
         "id": "14",
-        "title": "Onest HRM Human Resource Management System App and Website",
+        "title": "Onest HRM - Human Resource Management System",
         "slug": "onest-hrm-human-resource-management-system-app-and-website",
-        "description": "HRM software is needed to streamline HR processes, improve data management, enhance decision-making, and foster collaboration. It automates and centralizes HR tasks, providing valuable insights and analytics, and facilitating communication and teamwork among HR professionals, managers, and employees.",
+        "description": "Onest HRM is a comprehensive Human Resource Management System (HRMS) that includes both a mobile app and a web app. It is designed to streamline HR processes, improve data management, enhance decision-making, and foster collaboration among HR professionals, managers, and employees. The system automates and centralizes HR tasks, providing valuable insights, analytics, and workforce solutions.",
         "sales": "109",
         "review": "7",
         "rating": "5",
@@ -233,9 +231,12 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/honest-hrm\/38089948",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
+        "tags": "HRM, Human-Resources, Management-System, Mobile-App, Web-App, HR-Software, Employee-Management, HR-Tech, HR-App, Workforce-Solutions",
+        "technologies": [
+            "Mobile App Development",
+            "Web Development"
+        ],
+        "compatibility": "iOS, Android, Web Browsers"
     },
     {
         "id": "15",
@@ -250,25 +251,8 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/party-time-android-ios-application\/47796201",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
-    },
-    {
-        "id": "16",
-        "title": "Flutter smart food menu - Android, IOS, Web, Desktop",
-        "slug": "flutter-smart-food-menu-android-ios-web-desktop",
-        "description": "",
-        "sales": "0",
-        "review": "2",
-        "rating": "4",
-        "version": "",
-        "demo_url": "",
-        "envato_link": "https:\/\/codecanyon.net\/item\/flutter-smart-food-menu-android-ios-web-desktop\/47612126",
-        "file_path": null,
-        "file_size": "",
-        "tags": null,
-        "requirements": null,
+        "tags": "Event-Management, Party-Planning, Event-Booking, Ticket-Sales, Android-App, iOS-App, Event-Creation, Party-App, Event-Organization, Ticket-Purchase",
+        "technologies": null,
         "compatibility": null
     },
     {
@@ -284,8 +268,8 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/queue-management-system-flutter-v310-android-ios-flutter-web\/47326433",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
+        "tags": "Queue-Management, Flutter, Mobile-App, Web-App, Android, iOS, Cross-Platform, Customer-Service, Waitlist-App, Appointment-Scheduling",
+        "technologies": null,
         "compatibility": null
     },
     {
@@ -301,8 +285,8 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-ecommerce-seller-app-android-ios\/46730141",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
+        "tags": "eCommerce, Seller-App, Mobile-App, Android, iOS, Online-Store, Retail, E-Commerce-Management, Inventory-Management, Sales-App",
+        "technologies": null,
         "compatibility": null
     },
     {
@@ -318,25 +302,8 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/tailor-all-in-one-app-for-tailor-and-customer-management\/46310140",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
-    },
-    {
-        "id": "20",
-        "title": "School Inspection Report Flutter Application",
-        "slug": "school-inspection-report-flutter-application",
-        "description": "The Onest School Inspection Report Software enables you to regulate and report the validity of educational institutions within your vicinity, both fluently and effectively. View all important school-related information and other relevant documents within our robust application and completely eliminate the need of stressful paperwork. Additionally, the application is easy to use, seamlessly navigable, and is designed for holding large amounts of data.",
-        "sales": "1",
-        "review": "2",
-        "rating": "4",
-        "version": "",
-        "demo_url": "https:\/\/inspectionschool.onesttech.com",
-        "envato_link": "https:\/\/codecanyon.net\/item\/school-inspection-report-flutter-application\/46064807",
-        "file_path": null,
-        "file_size": "",
-        "tags": null,
-        "requirements": null,
+        "tags": "Tailoring-App, Customer-Management, Tailor-App, Mobile-App, Sewing, Clothing, Fashion, Tailor-Service, Customer-Relations, Garment-Management",
+        "technologies": null,
         "compatibility": null
     },
     {
@@ -352,8 +319,8 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/onest-landlord-property-apartment-rent-collection-tenant-and-invoice-bill\/43992841",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
+        "tags": "Property-Management, Apartment, Rent-Collection, Tenant-Management, Invoice-Billing, Real-Estate, Rental-Property, Landlord-Software, Lease-Management, Property-Administration",
+        "technologies": null,
         "compatibility": null
     },
     {
@@ -369,8 +336,8 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/dhakdol-flutter-music-application\/40871176",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
+        "tags": "Music-App, Offline-Music, Online-Music, Streaming-App, Podcast, Audio-Player, Music-Streaming, Music-Downloads, Playlist-Management, Podcast-Streaming",
+        "technologies": null,
         "compatibility": null
     },
     {
@@ -386,25 +353,8 @@
         "envato_link": "https:\/\/codecanyon.net\/item\/best-ecommerce-flutter-ui-kit\/40491788",
         "file_path": null,
         "file_size": "",
-        "tags": null,
-        "requirements": null,
-        "compatibility": null
-    },
-    {
-        "id": "24",
-        "title": "Onest Ultra 11 Responsive Login and Registration Form",
-        "slug": "onest-ultra-11-responsive-login-and-registration-form",
-        "description": "TheDrax Ultra Responsive Template will be your best choice. Anyone can easily update\/edit this item based on our Well Sorted Documentation. There are 11 different professional animated designs and photo effects included in this item. HTML5, CSS3, JavaScript, and jQuery Animated Responsive Forms are made to be easily modified and customised to fit your needs along with flexible styling options. You can change the dark mode, light mode, form background and button colour through the colour theme changer for every form. And see the changed class names for them.",
-        "sales": "2",
-        "review": "2",
-        "rating": "4",
-        "version": "",
-        "demo_url": "https:\/\/login.onesttech.com",
-        "envato_link": "https:\/\/codecanyon.net\/item\/onest-ultra-11-responsive-login-and-registration-form\/38479936",
-        "file_path": null,
-        "file_size": "",
-        "tags": null,
-        "requirements": null,
+        "tags": "eCommerce, Multi-Vendor, Mobile-App, Web-App, Seller-Panel, Admin-Panel, Marketplace, Online-Store, E-Commerce-Platform, Vendor-Management",
+        "technologies": null,
         "compatibility": null
     }
 ]

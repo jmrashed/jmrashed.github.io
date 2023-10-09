@@ -1015,15 +1015,24 @@
                 // Loop through the JSON data
                 $.each(data, function (index, product) {
                     // Truncate description to a maximum of 100 characters
-                    var truncatedDescription = product.description.substring(0, 100) + (product.description.length > 100 ? "..." : "");
+                    var truncatedDescription = product.description.substring(0, 130) + (product.description.length > 100 ? "..." : "");
+                    var tagsArray = product.tags.split(',');
 
                     // Create HTML markup for each product
                     html += `
                     <div class=" mb-12 col-md-6 p-3">
                         <div class="my-recent-projects single-services ${classArray[index]} bg-dark" id="product-${product.id}">
-                            <h6 class="text-white mt-1">${product.title}</h6>
-                            <p>${truncatedDescription}</p>
-                            <a target="_blank" class="text-warning mb-3" href="${product.envato_link}">Demo</a>
+                            <span class="highlight-text">${index + 1}</span>
+                            <h6 class="text-white mt-1 mb-2">${product.title}</h6>
+                            <p class=" mb-3 mt-3">${truncatedDescription}</p>
+                            <div class="tag-list">`;
+                    tagsArray.forEach(tag => {
+                        html += `<a href="#" class="cmn-btn0">${tag}</a>`;
+                    });
+
+                    html += `</div>
+                    
+                            <a target="_blank" class="text-warning" href="${product.envato_link}">Demo</a>
                         </div>
                     </div>`;
                 });
