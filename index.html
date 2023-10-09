@@ -96,12 +96,14 @@
                                                             <span class="number">03</span>
                                                             <span class="single">About</span>
                                                         </a>
-                                                    </li><li>
+                                                    </li>
+                                                    <li>
                                                         <a href="#contact">
                                                             <span class="number">04</span>
                                                             <span class="single">Let's Talk</span>
                                                         </a>
-                                                    </li><li>
+                                                    </li>
+                                                    <li>
                                                         <a href="explore.html">
                                                             <span class="number">05</span>
                                                             <span class="single">Explore More</span>
@@ -271,6 +273,10 @@
                 </div>
                 <div class="row" id="projects">
 
+                </div>
+
+                <div id="product-list" class="row">
+                    <!-- Dynamic content will be inserted here -->
                 </div>
             </div>
         </section>
@@ -860,7 +866,7 @@
             }
 
             // Call the function to fetch and append projects
-            appendProjects();
+            //  appendProjects();
         });
 
 
@@ -976,17 +982,60 @@
                         <i class="${tech.icon}" style="color: ${tech.color};"></i>
                         <span>${tech.name} </span>
                     </li>`;
-                console.log(techHtml);
+                // console.log(techHtml);
                 techStackContainer.append(techHtml);
             });
         }
 
         // Fetch JSON data
         $.getJSON('tech-stack.json', function (data) {
-            console.log(data);
+            //  console.log(data);
             generateTechStack(data);
         });
     </script>
+
+
+    <script>
+        $(document).ready(function () {
+            // Fetch the JSON data
+            $.getJSON("products.json", function (data) {
+                // Initialize an empty variable to store HTML markup
+                var html = "";
+                let classArray = [
+                    "border-color-one",
+                    "border-color-two",
+                    "border-color-three",
+                    "border-color-four",
+                    "border-color-five",
+                    "border-color-six",
+                    "border-color-seven",
+                    "border-color-eight",
+                ];
+
+                // Loop through the JSON data
+                $.each(data, function (index, product) {
+                    // Truncate description to a maximum of 100 characters
+                    var truncatedDescription = product.description.substring(0, 100) + (product.description.length > 100 ? "..." : "");
+
+                    // Create HTML markup for each product
+                    html += `
+                    <div class=" mb-12 col-md-6 p-3">
+                        <div class="my-recent-projects single-services ${classArray[index]} bg-dark" id="product-${product.id}">
+                            <h3 class="text-white mt-1">${product.title}</h3>
+                            <p>${truncatedDescription}</p>
+                            <a target="_blank" class="text-warning mb-3" href="${product.envato_link}">Demo</a>
+                        </div>
+                    </div>`;
+                });
+
+                // Replace the content of the "product-list" div with the generated HTML
+                $("#product-list").html(html);
+            });
+        });
+    </script>
+
+
+
 </body>
 
 </html>
