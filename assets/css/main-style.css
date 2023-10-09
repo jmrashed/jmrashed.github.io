@@ -15213,7 +15213,7 @@ input[type=number] {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   margin-bottom: 5px;
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .cmn-btn0 .icon {
@@ -22552,4 +22552,12 @@ span.highlight-text {
 .single-services:hover {
   background-color: #171f2f !important;
   cursor: pointer;
+}
+
+.bg-height {
+  color: linear-gradient(90deg, rgb(14, 165, 234), rgb(11, 209, 209) 51%, rgb(14, 165, 234)) var(--x, 0)/200%;
+}
+.small{
+  margin-top: 5px;
+  font-size: 12px !important;
 }
