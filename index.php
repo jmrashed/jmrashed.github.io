@@ -19,10 +19,8 @@
                 </div>
                 <div class="col-xxl-8 col-xl-8 col-lg-7 col-md-7 col-sm-8">
                     <div class="hero-caption">
-                        <h1 class="hero-title color-linear wow fadeInUp" data-wow-delay="0.2s">Hi, I’m <span
-                                class="text-danger">Md Rasheduzzaman</span>.<br></h1>
-                        <p class="hero-pera wow fadeInUp" data-wow-delay="0.3s">Tech Lead at <a
-                                href="https://www.sookh.com/" target="_blank" class="present-company">Onesttech
+                        <h1 class="hero-title color-linear wow fadeInUp" data-wow-delay="0.2s">Hi, I’m <span class="text-danger">Md Rasheduzzaman</span>.<br></h1>
+                        <p class="hero-pera wow fadeInUp" data-wow-delay="0.3s">Tech Lead at <a href="https://www.sookh.com/" target="_blank" class="present-company">Onesttech
                                 LLC</a>
                         </p>
                         <p class="wow fadeInUp" data-wow-delay="0.4s">Banani, Dhaka, Bangladesh</p>
@@ -44,8 +42,7 @@
             </div>
 
             <div class="elementor-background-video-container">
-                <video class="elementor-background-video-hosted elementor-html5-video inited" autoplay="" muted=""
-                    playsinline="" loop="" src="assets/video-bg.mp4" style="width: 1855px; height: 1043.44px;"></video>
+                <video class="elementor-background-video-hosted elementor-html5-video inited" autoplay="" muted="" playsinline="" loop="" src="assets/video-bg.mp4" style="width: 1855px; height: 1043.44px;"></video>
             </div>
 
         </div>
@@ -74,18 +71,15 @@
                         <a href="https://github.com/jmrashed/" target="_blank" class="see-more-two">Github</a> |
                         <a href="https://medium.com/@jmrashed" target="_blank" class="see-more-three">Medium</a>
                         |
-                        <a href="https://www.linkedin.com/in/jmrashed/" target="_blank"
-                            class="see-more-four">Linkedin</a> |
-                        <a href="https://www.facebook.com/MdRasheduzzamanOfficial/" target="_blank"
-                            class="see-more-five">Facebook</a> |
+                        <a href="https://www.linkedin.com/in/jmrashed/" target="_blank" class="see-more-four">Linkedin</a> |
+                        <a href="https://www.facebook.com/MdRasheduzzamanOfficial/" target="_blank" class="see-more-five">Facebook</a> |
                         <a href="https://www.behance.net/jmrashed" target="_blank" class="see-more-six">Behance</a>
                         |
                         <a href="https://dribbble.com/jmrashed" target="_blank" class="see-more-seven">Dribbble</a>
                         |
                         <a href="https://leetcode.com/jmrashed/" target="_blank" class="see-more-eight">Leetcode</a>
                         |
-                        <a href="https://www.hackerrank.com/jmrashed" target="_blank"
-                            class="see-more-one">Hackerrank</a>
+                        <a href="https://www.hackerrank.com/jmrashed" target="_blank" class="see-more-one">Hackerrank</a>
 
                     </div>
                 </div>
@@ -302,168 +296,56 @@
             <div class="col-xl-5 col-lg-6 d-none">
                 <!-- Contact US -->
                 <div class="row">
-                    <div class="col-sm-6">
-                        <a href="https://join.skype.com/invite/qMm0YHEpFhAB"
-                            class="single-contact border-color-five mb-24" target="_blank">
-                            <div class="icon">
-                                <i class="fa-brands fa-skype"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">Skype</span>
-                                <p class="contact-info">saifulislam.si</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="https://www.facebook.com/users.saiful/" class="single-contact border-color-one mb-24"
-                            target="_blank">
-
-                            <div class="icon">
-                                <i class="lab la-facebook-f"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">facebook</span>
-                                <p class="contact-info">/sai4ull</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="mailto:info.sai4ul@gmail.com" class="single-contact border-color-seven mb-24"
-                            target="_blank">
-                            <div class="icon">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">mail</span>
-                                <p class="contact-info">info.sai4ul@gmail.com</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="https://github.com/sai4ul/" class="single-contact border-color-two mb-24"
-                            target="_blank">
-                            <div class="icon">
-                                <i class="fa-brands fa-github"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">Github</span>
-                                <p class="contact-info">/sai4ul</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <a href="https://discord.com/channels/1030886710638289027"
-                            class="single-contact border-color-three mb-24" target="_blank">
-                            <div class="icon">
-                                <i class="fa-brands fa-discord"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">Discord</span>
-                                <p class="contact-info">sai4ul#7647</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="https://discord.com/channels/1030886710638289027"
-                            class="single-contact border-color-three mb-24" target="_blank">
-                            <div class="icon">
-                                <i class="fa-brands fa-slack"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">Slack</span>
-                                <p class="contact-info">ID: D047D2C8CGG</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="https://wa.me/880018000000" class="single-contact border-color-four mb-24"
-                            target="_blank">
-                            <div class="icon">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">whatsapp</span>
-                                <p class="contact-info">+880 018000000</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="https://www.linkedin.com/in/sai4ul/" class="single-contact border-color-eight mb-24"
-                            target="_blank">
-                            <div class="icon">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">linkedin</span>
-                                <p class="contact-info">in/sai4ul</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="https://twitter.com/sai4ul/" class="single-contact border-color-six mb-24"
-                            target="_blank">
-                            <div class="icon">
-                                <i class="fa-brands fa-twitter"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">twitter</span>
-                                <p class="contact-info">@sai4ul</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="https://www.instagram.com/sai4ul/" class="single-contact border-color-six mb-24"
-                            target="_blank">
-                            <div class="icon">
-                                <i class="fa-brands fa-instagram"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-name">instagram</span>
-                                <p class="contact-info">/sai4ul/</p>
-                            </div>
-                        </a>
-                    </div>
+                    <a href="https://github.com/jmrashed/" target="_blank" class="see-more-two">Github</a> |
+                    <a href="https://medium.com/@jmrashed" target="_blank" class="see-more-three">Medium</a>
+                    |
+                    <a href="https://www.linkedin.com/in/jmrashed/" target="_blank" class="see-more-four">Linkedin</a> |
+                    <a href="https://www.facebook.com/MdRasheduzzamanOfficial/" target="_blank" class="see-more-five">Facebook</a> |
+                    <a href="https://www.behance.net/jmrashed" target="_blank" class="see-more-six">Behance</a>
+                    |
+                    <a href="https://dribbble.com/jmrashed" target="_blank" class="see-more-seven">Dribbble</a>
+                    |
+                    <a href="https://leetcode.com/jmrashed/" target="_blank" class="see-more-eight">Leetcode</a>
+                    |
+                    <a href="https://www.hackerrank.com/jmrashed" target="_blank" class="see-more-one">Hackerrank</a>
                 </div>
-            </div>
-            <div class="col-xl-12 col-lg-12">
-                <div class="form-wrapper">
-                    <form id="contact-form" action="#" method="POST">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-box user-icon mb-25">
-                                    <label>Name</label>
-                                    <input type="text" name="name" placeholder="Your Name">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="form-wrapper">
+                        <form id="contact-form" action="#" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-box user-icon mb-25">
+                                        <label>Name</label>
+                                        <input type="text" name="name" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-box email-icon mb-25">
+                                        <label>Email address</label>
+                                        <input type="text" name="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-6">
+                                    <div class="form-box email-icon mb-25">
+                                        <label>Subject</label>
+                                        <input type="text" name="email" placeholder="Subject.">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-box message-icon mb-25">
+                                        <label>Message</label>
+                                        <textarea name="message" id="message" placeholder="Enter Message"></textarea>
+                                    </div>
+                                    <div class="submit-info">
+                                        <button class="submit-btn2" type="submit">Send Message <i class="fab fa-telegram-plane"></i></button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-box email-icon mb-25">
-                                    <label>Email address</label>
-                                    <input type="text" name="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-6">
-                                <div class="form-box email-icon mb-25">
-                                    <label>Subject</label>
-                                    <input type="text" name="email" placeholder="Subject.">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-box message-icon mb-25">
-                                    <label>Message</label>
-                                    <textarea name="message" id="message" placeholder="Enter Message"></textarea>
-                                </div>
-                                <div class="submit-info">
-                                    <button class="submit-btn2" type="submit">Send Message <i
-                                            class="fab fa-telegram-plane"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <!-- Contact Area E n d -->
 <!-- Services Area s t a r t-->
