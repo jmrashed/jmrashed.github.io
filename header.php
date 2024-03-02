@@ -1,3 +1,8 @@
+<?php
+require_once 'config.php';
+$asset_path = $config['site']['url'];
+$URI = $config['site']['url'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,27 +13,26 @@
     <meta name="description" content="As the Tech Lead at Onest Tech LLC, I bring a diverse
         skill set and extensive experience to lead our technical teams. Proficient in PHP, NodeJs,
         Python, JavaScript, databases, system design, and DevOps, I excel in architecting robust solutions.">
-    <meta name="keywords"
-        content="front-end developer, bangladesh developer, web developer, fiver front-end developer, upwork front-end developer, professional developer, web developer, themeforest,  codecanyon, envato, portfolio, developer dhaka, Bangladesh,">
+    <meta name="keywords" content="front-end developer, bangladesh developer, web developer, fiver front-end developer, upwork front-end developer, professional developer, web developer, themeforest,  codecanyon, envato, portfolio, developer dhaka, Bangladesh,">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="sai4ul">
     <title>Md Rasheduzzaman - Jmrashed | Tech Lead at Onesttech LLC</title>
-    <link rel="icon" type="image/x-icon" sizes="20x20" href="assets/img/logo/favicon.png">
+    <link rel="icon" type="image/x-icon" sizes="20x20" href="<?= $asset_path ?>assets/img/logo/favicon.png">
     <!-- icon -->
-    <link rel="stylesheet" type="text/css" href="assets/css/icon.css">
+    <link rel="stylesheet" type="text/css" href="<?= $asset_path ?>assets/css/icon.css">
     <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-5.0.2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= $asset_path ?>assets/css/bootstrap-5.0.2.min.css">
     <!-- Plugin -->
-    <link rel="stylesheet" type="text/css" href="assets/css/plugin.css">
+    <link rel="stylesheet" type="text/css" href="<?= $asset_path ?>assets/css/plugin.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/main-style.css">
+    <link rel="stylesheet" type="text/css" href="<?= $asset_path ?>assets/css/main-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
 <!-- Loader -->
 <div class="preloader">
     <div class="loader_img">
-        <img class="loader-img" src="assets/img/logo/loder.gif" alt="wait...">
+        <img class="loader-img" src="<?= $asset_path ?>assets/img/logo/loder.gif" alt="wait...">
     </div>
 </div>
 
@@ -64,7 +68,7 @@
                                         <!-- Logo -->
                                         <div class="logo">
                                             <a href="index.html">
-                                                <img src="assets/img/logo/favicon.png" alt="img">
+                                                <img src="<?= $asset_path ?>assets/img/logo/favicon.png" alt="img">
                                             </a>
                                         </div>
                                         <!-- Main-menu -->
@@ -72,19 +76,19 @@
                                             <nav>
                                                 <ul id="navigation">
                                                     <li class="active">
-                                                        <a href="index.php#home">
+                                                        <a href="<?= $URI ?>home">
                                                             <span class="number">00</span>
                                                             <span class="single">Home</span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php#experience">
+                                                        <a href="<?= $URI ?>#experience">
                                                             <span class="number">01</span>
                                                             <span class="single">experience</span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php#portfolio">
+                                                        <a href="<?= $URI ?>#portfolio">
                                                             <span class="number">02</span>
                                                             <span class="single">Project</span>
                                                         </a>
@@ -92,19 +96,19 @@
 
 
                                                     <li>
-                                                        <a href="index.php#about">
+                                                        <a href="<?= $URI ?>#about">
                                                             <span class="number">03</span>
                                                             <span class="single">About</span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php#contact">
+                                                        <a href="<?= $URI ?>#contact">
                                                             <span class="number">04</span>
                                                             <span class="single">Let's Talk</span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="explore.html">
+                                                        <a href="<?= $URI ?>explores">
                                                             <span class="number">05</span>
                                                             <span class="single">Explore More</span>
                                                         </a>
@@ -114,8 +118,7 @@
                                         </div>
                                     </div>
                                     <div class="bottom-right">
-                                        <a href="assets/docs/RASHED RESUME.pdf" target="_blank"
-                                            class="header-btn btn-linear mr-15">
+                                        <a href="assets/docs/RASHED RESUME.pdf" target="_blank" class="header-btn btn-linear mr-15">
                                             <i class="fas fa-cloud-download-alt mr-6"></i>Download CV
                                         </a>
                                     </div>
@@ -136,7 +139,7 @@
         <div class="light-style">
             <button class="bulb">
                 <div class="bulb-image">
-                    <img src="assets/img/gallery/bulb-on.png" alt="Light style">
+                    <img src="<?= $asset_path ?>assets/img/gallery/bulb-on.png" alt="Light style">
                 </div>
             </button>
         </div>

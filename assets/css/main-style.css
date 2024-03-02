@@ -22557,7 +22557,14 @@ span.highlight-text {
 .bg-height {
   color: linear-gradient(90deg, rgb(14, 165, 234), rgb(11, 209, 209) 51%, rgb(14, 165, 234)) var(--x, 0)/200%;
 }
-.small{
+
+.small {
   margin-top: 5px;
   font-size: 12px !important;
+}
+
+.make-sidebar {
+  background: #323b4ea1;
+  border-radius: 5px;
+  padding: 25px;
 }
