@@ -2,6 +2,8 @@
 
 // Define the environment (development, production, testing, etc.)
 define('ENVIRONMENT', 'development'); // You can set this in your server configuration
+$config['protocol'] = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+$domainUrl = $config['protocol'] . '://' . $_SERVER['HTTP_HOST'] . '/';
 
 // Database configuration
 $config['database']['host'] = 'localhost';
@@ -11,7 +13,7 @@ $config['database']['name'] = 'your_db_name';
 
 // Site configuration
 $config['site']['name'] = 'Rasheduzzaman';
-$config['site']['url'] = 'http://rasheduzzaman.test/';
+$config['site']['url'] = $domainUrl;
 // Add other site-wide configurations as needed
 
 // Paths
@@ -34,6 +36,11 @@ if (ENVIRONMENT === 'production') {
     // Add other testing configurations
 }
 
-// You can add more sections or nested arrays as needed
-
+if ($config['site']['url'] != $domainUrl) {
+    echo $config['site']['url'];
+    echo '<pre>';
+    print_r($domainUrl);
+    exit;
+    header('Location:error.php?url=' . $_SERVER['HTTP_HOST']);
+}
 return $config;

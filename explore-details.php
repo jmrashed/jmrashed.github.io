@@ -53,7 +53,7 @@ $technicalSkills = [
     ],
 ];
 ?>
-<section class="contact-us section-padding" id="contact">
+<section class="contact-us section-padding " id="contact">
     <div class="container  mt-5">
         <div class="row">
             <div class="col-lg-3">
@@ -75,7 +75,7 @@ $technicalSkills = [
             </div>
             <div class="col-lg-9">
                 <h4 class="text-white mt-1"><?= $tag ?></h4>
-
+            <?php include('pages/skills/php.php'); ?>
             </div>
 
         </div>
