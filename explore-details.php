@@ -5,8 +5,6 @@ $technicalSkills = [
         'PHP',
         'JavaScript',
         'Python',
-        'Java',
-        'C#',
     ],
     'Web Development' => [
         'HTML5',
@@ -65,7 +63,7 @@ $technicalSkills = [
                                 <div class="skill-category"><?= $category ?></div>
                                 <ul class="skill-list">
                                     <?php foreach ($skills as $skill) : ?>
-                                        <li> <a href="<?= $URI?>explore-details/<?= $skill ?>" class="cmn-btn0"><?= $skill ?></a></li>
+                                        <li> <a href="<?= $URI ?>explore-details.php?page=<?= strtolower($skill) ?>" class="cmn-btn0"><?= $skill ?></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             <?php endforeach; ?>
@@ -74,9 +72,19 @@ $technicalSkills = [
                 </div>
             </div>
             <div class="col-lg-9">
-                <h4 class="text-white mt-1"><?= $tag ?></h4>
-            <?php include('pages/skills/php.php'); ?>
+                <?php
+                $page = isset($_GET['page']) ? $_GET['page'] . '.php' : 'blank.php';
+
+                // Check if the file exists
+                if (file_exists('pages/skills/' . $page)) {
+                    include('pages/skills/' . $page);
+                } else {
+                    // File does not exist, include an error or default page
+                    include('pages/blank.php'); // You can customize 'error.php' as needed
+                }
+                ?>
             </div>
+
 
         </div>
 

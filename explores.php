@@ -4,9 +4,7 @@ $technicalSkills = [
     'Programming Languages' => [
         'PHP',
         'JavaScript',
-        'Python',
-        'Java',
-        'C#',
+        'Python', 
     ],
     'Web Development' => [
         'HTML5',
@@ -65,7 +63,7 @@ $technicalSkills = [
                                 <div class="skill-category"><?= $category ?></div>
                                 <ul class="skill-list">
                                     <?php foreach ($skills as $skill) : ?>
-                                        <li> <a href="explore-details/<?= $skill ?>" class="cmn-btn0"><?= $skill ?></a></li>
+                                        <li> <a href="explore-details.php?page=<?= $skill ?>" class="cmn-btn0"><?= $skill ?></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             <?php endforeach; ?>

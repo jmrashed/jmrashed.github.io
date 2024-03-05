@@ -27,8 +27,10 @@ $route = isset($segments[0]) ? $segments[0] : 'home';
 if (array_key_exists($route, $routes)) {
     // Include the associated file
     include $routes[$route];
-} elseif ($route === 'explore-details' && isset($segments[1])) {
-    // Handle explore-details with tag parameter
+} elseif ($route === 'explore-details') {
+    echo '<pre>';
+    print_r($routes);
+    exit();
     $tag = $segments[1];
     include 'explore-details.php';
 } else {
