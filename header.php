@@ -118,7 +118,7 @@ $URI = $config['site']['url'];
                                         </div>
                                     </div>
                                     <div class="bottom-right">
-                                        <a href="assets/docs/RASHED RESUME.pdf" target="_blank" class="header-btn btn-linear mr-15">
+                                        <a href="<?= $asset_path ?>assets/docs/RASHED RESUME.pdf" target="_blank" class="header-btn btn-linear mr-15">
                                             <i class="fas fa-cloud-download-alt mr-6"></i>Download CV
                                         </a>
                                     </div>
