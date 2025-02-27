@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "deploy": "npm run export && gh-pages -d out"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

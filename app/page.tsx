@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Phone, ChevronDown, ExternalLink } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Phone, ChevronDown, ExternalLink } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
@@ -327,7 +327,6 @@ export default function Home() {
                   "Docker",
                 ]}
                 description="A comprehensive HR management system built with a microservices architecture, handling employee data, payroll, attendance, and performance tracking."
-                status="Ongoing"
               />
 
               <ProjectCard
@@ -493,10 +492,25 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
-function ExperienceCard({ title, company, period, duration, location, responsibilities }) {
+interface ExperienceCardProps {
+  title: string;
+  company: string;
+  period: string;
+  duration: string;
+  location: string;
+  responsibilities: string[];
+}
+// Define the ExperienceCard component with TypeScript types
+const ExperienceCard: React.FC<ExperienceCardProps> = ({
+  title,
+  company,
+  period,
+  duration,
+  location,
+  responsibilities,
+}) => {
   return (
     <div className="border rounded-lg p-6 hover:shadow-md transition-shadow bg-background">
       <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
@@ -519,10 +533,16 @@ function ExperienceCard({ title, company, period, duration, location, responsibi
         ))}
       </ul>
     </div>
-  )
+  );
+};
+
+interface SkillCategoryProps {
+  title: string;
+  skills: string[];
 }
 
-function SkillCategory({ title, skills }) {
+// Define the SkillCategory component with TypeScript types
+const SkillCategory: React.FC<SkillCategoryProps> = ({ title, skills }) => {
   return (
     <div className="border rounded-lg p-6 hover:shadow-md transition-shadow">
       <h3 className="text-xl font-semibold mb-4">{title}</h3>
@@ -534,20 +554,33 @@ function SkillCategory({ title, skills }) {
         ))}
       </div>
     </div>
-  )
+  );
+};
+
+type ExperienceProps = {
+  title: string;
+  company: string;
+  period: string;
+  duration: string;
+  location: string;
+  responsibilities: string[];
+};
+// Define the ProjectCard component
+
+// Define the prop types
+interface ProjectCardProps {
+  title: string;
+  technologies: string[];
+  description: string;
 }
 
-function ProjectCard({ title, technologies, description, status }) {
+// Define the component with TypeScript types
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, technologies, description }) => {
   return (
     <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow bg-background">
       <div className="p-6">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-semibold">{title}</h3>
-          {status && (
-            <Badge variant="outline" className="text-xs">
-              {status}
-            </Badge>
-          )}
         </div>
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
         <div className="flex flex-wrap gap-2 mt-4">
@@ -565,6 +598,5 @@ function ProjectCard({ title, technologies, description, status }) {
         </div>
       </div>
     </div>
-  )
-}
-
+  );
+};
