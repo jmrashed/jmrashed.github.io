@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',  // Required for static export
+    output: 'export',  // Static export setting
     basePath: "/jmrashed.github.io",  // GitHub Pages base path
-    assetPrefix: "/jmrashed.github.io/",  // Prefix for assets
-    trailingSlash: true,  // Ensures proper URL routing (important for GitHub Pages)
-  };
-  
-  module.exports = nextConfig;
-  
+    assetPrefix: "/jmrashed.github.io/",  // Assets prefix for GitHub Pages
+    trailingSlash: true,  // Ensures URLs have a trailing slash (important for GitHub Pages)
+};
+
+module.exports = nextConfig;
