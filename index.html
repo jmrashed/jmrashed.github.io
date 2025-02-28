@@ -43,8 +43,7 @@
                         <div class="col-xl-12">
                             <div class="header-top d-flex justify-content-between align-items-center flex-wrap">
                                 <!-- Hiring -->
-                                <p><span>Open to Work : </span> Seeking Tech Lead or Team Lead position, history of
-                                    remarkable results ! <i class="icon-circles"><span></span></i></p>
+                                <p><span>Open to Work : </span> Seeking Tech Lead / Team Lead / Project Manager position ! <i class="icon-circles"><span></span></i></p>
                                 <!-- Social -->
                                 <ul class="header-social">
 
@@ -103,12 +102,7 @@
                                                             <span class="single">Let's Talk</span>
                                                         </a>
                                                     </li>
-                                                    <li>
-                                                        <a href="explore.html">
-                                                            <span class="number">05</span>
-                                                            <span class="single">Explore More</span>
-                                                        </a>
-                                                    </li>
+                                                    
                                                 </ul>
                                             </nav>
                                         </div>
@@ -609,7 +603,7 @@
         </section>
         <!-- Contact Area E n d -->
         <!-- Services Area s t a r t-->
-        <div class="servicesArea">
+        <div class="servicesArea d-none">
             <div class="container">
                 <div class="row ">
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
@@ -762,22 +756,25 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-7">
                             <div class="single-footer-caption">
                                 <div class="footer-tittle">
-                                    <h4>Tech Stack</h4>
+                                    <h4>Tech & Management Stack</h4>
                                     <div class="tag-list pt-10">
-                                        <a href="#" class="cmn-btn0">react</a>
-                                        <a href="#" class="cmn-btn0">SASS</a>
-                                        <a href="#" class="cmn-btn0">bootstrap</a>
-                                        <a href="#" class="cmn-btn0">CSS</a>
-                                        <a href="#" class="cmn-btn0">HTML</a>
-                                        <a href="#" class="cmn-btn0">JavaScript</a>
-                                        <a href="#" class="cmn-btn0">JQuery</a>
-                                        <a href="#" class="cmn-btn0">Figma</a>
-                                        <a href="#" class="cmn-btn0">UI/UX</a>
+                                        <a href="#" class="cmn-btn0">Agile</a>
+                                        <a href="#" class="cmn-btn0">Scrum</a>
+                                        <a href="#" class="cmn-btn0">Kanban</a>
+                                        <a href="#" class="cmn-btn0">Jira</a>
+                                        <a href="#" class="cmn-btn0">Trello</a>
+                                        <a href="#" class="cmn-btn0">Asana</a>
+                                        <a href="#" class="cmn-btn0">Slack</a>
+                                        <a href="#" class="cmn-btn0">Confluence</a>
                                         <a href="#" class="cmn-btn0">Git</a>
                                         <a href="#" class="cmn-btn0">GitLab</a>
+                                        <a href="#" class="cmn-btn0">CI/CD</a>
+                                        <a href="#" class="cmn-btn0">Product Management</a>
+                                        <a href="#" class="cmn-btn0">Stakeholder Management</a>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
                             <div class="single-footer-caption">
@@ -796,7 +793,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
                             <div class="footer-nav">
-                                <ul class="listing">
+                                <ul class="listing d-none">
                                     <li class="single-list"><a href="#about">About</a></li>
                                     <li class="single-list"><a href="blog.html">Blog</a></li>
                                     <li class="single-list"><a href="#portfolio">Projects</a></li>
@@ -805,7 +802,7 @@
                                     </li>
                                     <li class="single-list"><a href="#contact">Newsletter</a></li>
                                 </ul>
-                                <p class="copyRight">@2022 saiful islam. All rights reserved</p>
+                                <p class="copyRight">@2025 Jmrashed. All rights reserved</p>
                             </div>
                         </div>
                     </div>
@@ -1015,14 +1012,16 @@
                 // Loop through the JSON data
                 $.each(data, function (index, product) {
                     // Truncate description to a maximum of 100 characters
-                    var truncatedDescription = product.description.substring(0, 130) + (product.description.length > 100 ? "..." : "");
+                    var truncatedDescription = product.description;
                     var tagsArray = product.tags.split(',');
+                    var technologyArray = product.technology.split(',');
 
+                    var firstOnecharacterFromTitle = product.title.charAt(0).toUpperCase();
                     // Create HTML markup for each product
                     html += `
                     <div class=" mb-12 col-md-6 p-3">
                         <div class="my-recent-projects single-services ${classArray[index]} bg-dark" id="product-${product.id}">
-                            <span class="highlight-text">${index + 1}</span>
+                            <span class="highlight-text">${firstOnecharacterFromTitle}</span>
                             <h6 class="text-white mt-1 mb-2">${product.title}</h6>
                             <p class=" mb-3 mt-3">${truncatedDescription}</p>
                             <div class="tag-list">`;
@@ -1031,8 +1030,16 @@
                     });
 
                     html += `</div>
+                    <p class="text-white mt-3">Technology: </p>
+                    <div class="tag-list">`;
+                    technologyArray.forEach(technology => {
+                        html += `<a href="#" class="cmn-btn0">${technology}</a>`;
+                    });
+
+                    html += `</div>
+                            
+                            
                     
-                            <a target="_blank" class="text-warning" href="${product.envato_link}">Demo</a>
                         </div>
                     </div>`;
                 });

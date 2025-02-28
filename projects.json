@@ -1,182 +1,170 @@
 [
     {
-        "background-image": "assets/img/products/1.png",
         "clients": 200,
         "title": "HRM",
         "description": "Human Resource Management Software",
-        "url": "https://onesttech.com/projects/hrm",
+        "url": "",
         "technology": "Java, Spring Boot",
         "keywords": [
             "HR software",
             "Employee management",
             "Payroll"
         ],
-        "seoTitle": "HRM Software - OneSTech",
+        "seoTitle": "HRM Software",
         "seoDescription": "Manage your HR tasks efficiently with our HRM software. Streamline employee management and payroll processing."
     },
     {
-        "background-image": "assets/img/products/2.png",
         "clients": 200,
         "title": "CRM",
         "description": "Customer Relationship Management System",
-        "url": "https://onesttech.com/projects/crm",
+        "url": "",
         "technology": "Python, Django",
         "keywords": [
             "CRM system",
             "Customer relationship",
             "Sales management"
         ],
-        "seoTitle": "CRM System - OneSTech",
+        "seoTitle": "CRM System",
         "seoDescription": "Enhance customer relationships and streamline sales management with our CRM system."
     },
     {
-        "background-image": "assets/img/products/3.png",
         "clients": 150,
         "title": "ERP",
         "description": "Enterprise Resource Planning Software",
-        "url": "https://onesttech.com/projects/erp",
+        "url": "",
         "technology": "C#, ASP.NET",
         "keywords": [
             "ERP solution",
             "Business process automation",
             "Inventory management"
         ],
-        "seoTitle": "ERP Software - OneSTech",
+        "seoTitle": "ERP Software",
         "seoDescription": "Optimize your business operations with our ERP software. Automate processes and manage inventory efficiently."
     },
     {
-        "background-image": "assets/img/products/4.png",
         "clients": 180,
         "title": "SaaS",
         "description": "Software as a Service Platform",
-        "url": "https://onesttech.com/projects/saas",
+        "url": "",
         "technology": "Node.js, React",
         "keywords": [
             "SaaS platform",
             "Cloud software",
             "Subscription management"
         ],
-        "seoTitle": "SaaS Platform - OneSTech",
+        "seoTitle": "SaaS Platform",
         "seoDescription": "Experience the benefits of our SaaS platform. Manage subscriptions and deliver cloud software effortlessly."
     },
     {
-        "background-image": "assets/img/products/5.png",
         "clients": 250,
         "title": "CMS",
         "description": "Content Management System",
-        "url": "https://onesttech.com/projects/cms",
+        "url": "",
         "technology": "PHP, Laravel",
         "keywords": [
             "Content management",
             "Website development",
             "SEO-friendly CMS"
         ],
-        "seoTitle": "CMS - OneSTech",
+        "seoTitle": "CMS",
         "seoDescription": "Create and manage content easily with our CMS. Build SEO-friendly websites and boost online visibility."
     },
     {
-        "background-image": "assets/img/products/6.png",
         "clients": 180,
         "title": "E-commerce",
         "description": "E-commerce Platform",
-        "url": "https://onesttech.com/projects/ecommerce",
+        "url": "",
         "technology": "Ruby on Rails, PostgreSQL",
         "keywords": [
             "E-commerce solution",
             "Online store",
             "Shopping cart"
         ],
-        "seoTitle": "E-commerce Platform - OneSTech",
+        "seoTitle": "E-commerce Platform",
         "seoDescription": "Launch your online store with our e-commerce platform. Manage products, orders, and payments effortlessly."
     },
     {
-        "background-image": "assets/img/products/7.png",
         "clients": 220,
         "title": "AI Chatbot",
         "description": "Artificial Intelligence Chatbot",
-        "url": "https://onesttech.com/projects/chatbot",
+        "url": "",
         "technology": "Python, TensorFlow",
         "keywords": [
             "AI chatbot",
             "Natural language processing",
             "Customer support"
         ],
-        "seoTitle": "AI Chatbot - OneSTech",
+        "seoTitle": "AI Chatbot",
         "seoDescription": "Enhance customer support with our AI chatbot. Provide quick and accurate responses using natural language processing."
     },
     {
-        "background-image": "assets/img/products/8.png",
         "clients": 150,
         "title": "BI Tools",
         "description": "Business Intelligence Tools",
-        "url": "https://onesttech.com/projects/bi-tools",
+        "url": "",
         "technology": "Tableau, Power BI",
         "keywords": [
             "Business intelligence",
             "Data analytics",
             "Dashboard reporting"
         ],
-        "seoTitle": "BI Tools - OneSTech",
+        "seoTitle": "BI Tools",
         "seoDescription": "Unlock valuable insights with our BI tools. Visualize data, create reports, and make informed decisions."
     },
     {
-        "background-image": "assets/img/products/9.png",
         "clients": 300,
         "title": "Mobile App",
         "description": "Mobile Application Development",
-        "url": "https://onesttech.com/projects/mobile-app",
+        "url": "",
         "technology": "Swift, Android Studio",
         "keywords": [
             "Mobile app development",
             "iOS app",
             "Android app"
         ],
-        "seoTitle": "Mobile App Development - OneSTech",
+        "seoTitle": "Mobile App Development",
         "seoDescription": "Turn your ideas into mobile apps with our development services. Reach users on iOS and Android platforms."
     },
     {
-        "background-image": "assets/img/products/10.png",
         "clients": 200,
         "title": "Blockchain",
         "description": "Blockchain Technology Solutions",
-        "url": "https://onesttech.com/projects/blockchain",
+        "url": "",
         "technology": "Ethereum, Hyperledger",
         "keywords": [
             "Blockchain solutions",
             "Smart contracts",
             "Decentralized applications"
         ],
-        "seoTitle": "Blockchain Technology - OneSTech",
+        "seoTitle": "Blockchain Technology",
         "seoDescription": "Explore the potential of blockchain with our solutions. Create secure and transparent applications."
     },
     {
-        "background-image": "assets/img/products/11.png",
         "clients": 180,
         "title": "Big Data",
         "description": "Big Data Analytics Services",
-        "url": "https://onesttech.com/projects/big-data",
+        "url": "",
         "technology": "Hadoop, Spark",
         "keywords": [
             "Big data analytics",
             "Data processing",
             "Data-driven insights"
         ],
-        "seoTitle": "Big Data Analytics - OneSTech",
+        "seoTitle": "Big Data Analytics",
         "seoDescription": "Harness the power of big data with our analytics services. Extract valuable insights from large datasets."
     },
     {
-        "background-image": "assets/img/products/12.png",
         "clients": 250,
         "title": "IoT",
         "description": "Internet of Things Solutions",
-        "url": "https://onesttech.com/projects/iot",
+        "url": "",
         "technology": "Raspberry Pi, MQTT",
         "keywords": [
             "IoT solutions",
             "Connected devices",
             "Smart applications"
         ],
-        "seoTitle": "IoT Solutions - OneSTech",
+        "seoTitle": "IoT Solutions",
         "seoDescription": "Connect devices and build smart applications with our IoT solutions. Embrace the Internet of Things era."
     }
 ]
