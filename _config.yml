@@ -1,0 +1,39 @@
+title: RASHED ZAMAN
+description: >-
+  Tech Lead with 10+ years of experience delivering scalable enterprise solutions.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://jmrashed.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Site navigation
+navigation:
+  - title: About
+    url: /about/
+  - title: Skills
+    url: /skills/
+  - title: Experience
+    url: /experience/
+  - title: Projects
+    url: /projects/
+  - title: Education
+    url: /education/
+  - title: Blog
+    url: /blog/
+  - title: Contact
+    url: /contact/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
