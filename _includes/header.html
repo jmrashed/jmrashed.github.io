@@ -1,15 +1,14 @@
 <header>
-  <div class="container">
-    <div class="profile-pic-container">
-        <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/profile.svg' | relative_url }}" alt="Profile Picture" class="profile-pic"></a>
-    </div>
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    <nav>
-      <ul>
-        {% for item in site.navigation %}
-        <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/skills/">Skills</a></li>
+      <li><a href="/experience/">Experience</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/education/">Education</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
 </header>

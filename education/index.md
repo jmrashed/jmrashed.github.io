@@ -1,17 +1,15 @@
 ---
 layout: default
-title: Education & Certifications
+title: Education
 ---
 
-## EDUCATION
+## Education
 
 ### Bachelor of Science in Computer Science & Engineering
-**Stamford University Bangladesh**  
+**Stamford University Bangladesh**
 **CGPA:** 3.73/4.0 | **April 2012 - April 2016**
 
----
-
-## CERTIFICATIONS & ACHIEVEMENTS
+## Certifications & Achievements
 
 ### Professional Certifications
 - Building Database Applications in PHP - University of Michigan (Coursera) - 2016

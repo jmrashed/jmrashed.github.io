@@ -1,65 +1,74 @@
 ---
 layout: default
-title: Professional Experience
+title: Experience
 ---
 
-## Professional Experience
+## Experience
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Chief Technology Officer</h3>
-    <p><strong>Strawberry Dhaka Tech Ltd</strong> | Dhaka, Bangladesh</p>
-    <p><em>March 2025 - Present</em></p>
-    <ul>
-      <li>Defined and executed long-term technology strategies for scalable SaaS platforms serving 10,000+ users</li>
-      <li>Recruited and mentored cross-functional engineering teams, improving delivery speed by 25%</li>
-      <li>Led implementation of AI/ML capabilities, creating new revenue streams worth $500K annually</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Tech Lead Officer</h3>
-    <p><strong>Onest Tech LLC</strong> | Dhaka, Bangladesh</p>
-    <p><em>September 2022 - March 2025</em></p>
-    <ul>
-      <li>Successfully led 36 developers across multiple projects, achieving 98% client satisfaction rate</li>
-      <li>Improved application performance by 10% through architectural improvements and code optimization</li>
-      <li>Designed 4 complex software systems, reducing downtime by 35% and increasing scalability by 15%</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Project Manager</h3>
-    <p><strong>Onest Tech LLC</strong> | Dhaka, Bangladesh</p>
-    <p><em>February 2021 - August 2022</em></p>
-    <ul>
-      <li>Managed 15+ concurrent projects with 95% on-time delivery rate</li>
-      <li>Maintained relationships with 100+ clients, ensuring project success and customer satisfaction</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Project Manager</h3>
-    <p><strong>Spondon IT</strong> | Dhaka, Bangladesh</p>
-    <p><em>November 2018 - January 2021</em></p>
-    <ul>
-      <li>Defined project objectives and deliverables using modern tech stack (PHP, Node.js, Python)</li>
-      <li>Implemented infrastructure-as-code practices using AWS, Docker, and CI/CD pipelines</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Senior Software Engineer</h3>
-    <p><strong>Boishakhi Media Limited</strong> | Dhaka, Bangladesh</p>
-    <p><em>July 2017 - October 2018</em></p>
-    <ul>
-      <li>Led full-stack development using PHP (Laravel, CodeIgniter) and JavaScript frameworks</li>
-      <li>Managed and optimized MySQL and NoSQL databases for improved performance</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Software Engineer</h3>
-    <p><strong>United Group</strong> | Dhaka, Bangladesh</p>
-    <p><em>January 2016 - June 2017</em></p>
-    <ul>
-      <li>Awarded "Employee of the Year 2017" for outstanding performance</li>
-      <li>Led end-to-end software development from database design to UI implementation</li>
-    </ul>
-  </div>
-</div>
+### Chief Technology Officer
+**Strawberry Dhaka Tech Ltd** | Dhaka, Bangladesh
+**March 2025 - Present**
+
+- Defined and executed long-term technology strategies for scalable SaaS platforms serving 10,000+ users
+- Recruited and mentored cross-functional engineering teams, improving delivery speed by 25%
+- Led implementation of AI/ML capabilities, creating new revenue streams worth $500K annually
+- Established cybersecurity protocols achieving 99.9% uptime and regulatory compliance
+- Optimized multi-million-dollar technology budgets, achieving 20% cost reduction while improving performance
+
+### Tech Lead Officer
+**Onest Tech LLC** | Dhaka, Bangladesh
+**September 2022 - March 2025**
+
+- Successfully led 36 developers across multiple projects, achieving 98% client satisfaction rate
+- Improved application performance by 10% through architectural improvements and code optimization
+- Designed 4 complex software systems, reducing downtime by 35% and increasing scalability by 15%
+- Deployed CI/CD pipelines and Docker, reducing deployment time by 10% and post-deployment issues
+- Implemented Agile methodologies, improving project delivery time and team productivity
+- Mentored 40+ developers, significantly improving code quality and technical skills across the team
+
+### Project Manager
+**Onest Tech LLC** | Dhaka, Bangladesh
+**February 2021 - August 2022**
+
+- Managed 15+ concurrent projects with 95% on-time delivery rate
+- Maintained relationships with 100+ clients, ensuring project success and customer satisfaction
+- Implemented Agile/Scrum methodologies, reducing project delivery time by 20%
+- Effectively allocated technical resources, maximizing project efficiency and ROI
+- Proactively identified and mitigated project risks, maintaining on-budget delivery
+
+### Project Manager
+**Spondon IT** | Dhaka, Bangladesh
+**November 2018 - January 2021**
+
+- Defined project objectives and deliverables using modern tech stack (PHP, Node.js, Python)
+- Implemented infrastructure-as-code practices using AWS, Docker, and CI/CD pipelines
+- Deployed robust monitoring solutions, improving system reliability by 25%
+- Facilitated seamless collaboration between development and operations teams
+- Supervised creation of user-friendly interfaces, increasing user satisfaction by 30%
+
+### Senior Software Engineer
+**Boishakhi Media Limited** | Dhaka, Bangladesh
+**July 2017 - October 2018**
+
+- Led full-stack development using PHP (Laravel, CodeIgniter) and JavaScript frameworks
+- Managed and optimized MySQL and NoSQL databases for improved performance
+- Designed and implemented RESTful APIs and GraphQL endpoints for seamless data communication
+- Created visually appealing interfaces using modern CSS frameworks and design principles
+- Architected scalable systems handling increased user loads through optimization strategies
+
+### Software Engineer
+**United Group** | Dhaka, Bangladesh
+**January 2016 - June 2017**
+
+- **Recognition:** Awarded "Employee of the Year 2017" for outstanding performance
+- Led end-to-end software development from database design to UI implementation
+- Developed and maintained RESTful APIs for front-end and back-end communication
+- Enhanced web application interactivity using JavaScript and jQuery
+
+### Software Engineer Intern
+**IWFM, BUET** | Dhaka, Bangladesh
+**January 2015 - December 2015**
+
+- Gained hands-on experience in web development and database management
+- Customized WordPress themes and plugins for client requirements
+- Created comprehensive technical documentation for knowledge sharing
