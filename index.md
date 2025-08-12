@@ -3,20 +3,17 @@ layout: default
 title: Home
 ---
 
-## Welcome
-
-RASHED ZAMAN - Portfolio Website
-
-### Professional Summary
-
-Results-driven Tech Lead with 10+ years of experience leading cross-functional teams and delivering scalable enterprise solutions. Proven track record of managing $2M+ budgets, leading 40+ developers, and improving system performance by 35%. Expert in PHP, Laravel, Node.js, React with strong focus on microservices architecture and AI integration. Seeking remote leadership roles to drive digital transformation and innovation.
-
-[Learn more about me](about/)
-
-### Download CV
-
-[Download my CV](assets/RASHED_ZAMAN_CV.pdf)
-
-### Testimonials
-
-[Placeholder for testimonials]
+<section class="hero py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ site.baseurl }}/assets/profile.svg" alt="Profile Picture" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-md-6">
+                <h1>Hi, I'm Rashed Zaman</h1>
+                <p class="lead">A passionate web developer with expertise in frontend and backend technologies.</p>
+                <a href="{{ site.baseurl }}/projects/" class="btn btn-primary">View Projects</a>
+            </div>
+        </div>
+    </div>
+</section>
