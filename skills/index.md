@@ -3,31 +3,72 @@ layout: default
 title: Skills
 ---
 
-## CORE COMPETENCIES
+## Core Competencies
 
 ### Programming Languages & Frameworks
-- **Backend:** PHP, Laravel, CodeIgniter, Node.js, Express, Fastify, Python, FastAPI, Flask
-- **Frontend:** React, JavaScript, jQuery, HTML5, CSS3, Bootstrap, Tailwind CSS
-- **Databases:** MySQL, PostgreSQL, MongoDB, Redis
-- **APIs:** RESTful APIs, GraphQL
+
+<ul class="skills-list">
+  <li>PHP</li>
+  <li>Laravel</li>
+  <li>CodeIgniter</li>
+  <li>Node.js</li>
+  <li>Express</li>
+  <li>Fastify</li>
+  <li>Python</li>
+  <li>FastAPI</li>
+  <li>Flask</li>
+  <li>React</li>
+  <li>JavaScript</li>
+  <li>jQuery</li>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>Bootstrap</li>
+  <li>Tailwind CSS</li>
+  <li>MySQL</li>
+  <li>PostgreSQL</li>
+  <li>MongoDB</li>
+  <li>Redis</li>
+  <li>RESTful APIs</li>
+  <li>GraphQL</li>
+</ul>
 
 ### DevOps & Infrastructure
-- **Cloud Platforms:** AWS (EC2, S3), Digital Ocean, VPS Management
-- **Containerization:** Docker, Docker Compose
-- **CI/CD:** GitLab CI, GitHub Actions, Jenkins
-- **Web Servers:** Apache, Nginx
-- **Monitoring:** ELK Stack, Performance Monitoring
+
+<ul class="skills-list">
+  <li>AWS (EC2, S3)</li>
+  <li>Digital Ocean</li>
+  <li>VPS Management</li>
+  <li>Docker</li>
+  <li>Docker Compose</li>
+  <li>GitLab CI</li>
+  <li>GitHub Actions</li>
+  <li>Jenkins</li>
+  <li>Apache</li>
+  <li>Nginx</li>
+  <li>ELK Stack</li>
+</ul>
 
 ### Leadership & Management
-- **Team Management:** Led teams of 40+ developers
-- **Project Management:** Agile, Scrum, Kanban, Waterfall
-- **Tools:** Jira, Trello, Asana, Slack, Clockify
-- **Budget Management:** Multi-million dollar project oversight
+
+<ul class="skills-list">
+  <li>Team Management</li>
+  <li>Project Management</li>
+  <li>Agile</li>
+  <li>Scrum</li>
+  <li>Kanban</li>
+  <li>Jira</li>
+  <li>Trello</li>
+  <li>Asana</li>
+  <li>Budget Management</li>
+</ul>
 
 ### Emerging Technologies
-- AI/ML Integration
-- Microservices Architecture
-- Message Queues (RabbitMQ, Kafka)
-- Security & Compliance
-- System Architecture
-- Performance Optimization
+
+<ul class="skills-list">
+  <li>AI/ML Integration</li>
+  <li>Microservices</li>
+  <li>Message Queues</li>
+  <li>Security & Compliance</li>
+  <li>System Architecture</li>
+  <li>Performance Optimization</li>
+</ul>
