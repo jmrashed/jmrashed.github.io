@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -17,16 +19,19 @@ export default function Navbar() {
     };
 
     const handleSectionInView = () => {
-      const sections = ["hero", "expertise", "experience", "contact"];
-      const scrollPosition = window.scrollY + 100;
+      // Only run section detection on home page
+      if (pathname === "/") {
+        const sections = ["hero", "expertise", "experience", "contact"];
+        const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const { offsetTop, offsetHeight } = element;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              setActiveSection(section);
+              break;
+            }
           }
         }
       }
@@ -41,7 +46,7 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("scroll", handleSectionInView);
     };
-  }, []);
+  }, [pathname]);
 
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
@@ -53,26 +58,25 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const scrollToSection = useCallback((sectionId: string) => {
+    if (pathname !== "/") {
+      // If not on home page, navigate to home first
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
     setIsBlogsDropdownOpen(false);
-  }, []);
+  }, [pathname]);
 
   const navItems = [
     { id: "hero", label: "Home" },
     { id: "expertise", label: "Expertise" },
     { id: "experience", label: "Experience" },
     { id: "contact", label: "Contact" },
-  ];
-
-  const blogCategories = [
-    { label: "Tech Leadership", href: "/blog/tech-leadership" },
-    { label: "Software Architecture", href: "/blog/architecture" },
-    { label: "Team Management", href: "/blog/management" },
-    { label: "AI & Innovation", href: "/blog/ai-innovation" },
   ];
 
   return (
@@ -106,7 +110,7 @@ export default function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded ${
+                className={`transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded cursor-pointer ${
                   activeSection === item.id
                     ? isScrolled
                       ? "text-indigo-600"
@@ -121,23 +125,20 @@ export default function Navbar() {
               </button>
             ))}
 
-            {/* Blogs Dropdown */}
-            <div
-              
-                className={`transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded ${
-                  activeSection === "blogs"
-                    ? isScrolled
-                      ? "text-indigo-600"
-                      : "text-indigo-400"
-                    : isScrolled
-                    ? "text-gray-700 hover:text-indigo-600"
-                    : "text-gray-300 hover:text-white"
-                }`}
-                aria-current={activeSection === "blogs" ? "page" : undefined}
-              >
-                <Link href="/blogs">Blogs</Link>
-              
-            </div>
+            <Link 
+              href="/blogs" 
+              className={`transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded cursor-pointer ${
+                pathname === "/blogs"
+                  ? isScrolled
+                    ? "text-indigo-600"
+                    : "text-indigo-400"
+                  : isScrolled
+                  ? "text-gray-700 hover:text-indigo-600"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              Blogs
+            </Link>
 
             <Link href="/projects">
               <Button
@@ -157,7 +158,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              className={`p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer ${
                 isScrolled ? "text-gray-700 hover:text-indigo-600" : "text-white hover:text-gray-300"
               }`}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -177,7 +178,7 @@ export default function Navbar() {
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className={`block w-full text-left px-4 py-3 rounded-md font-medium transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                      className={`block w-full text-left px-4 py-3 rounded-md font-medium transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer ${
                         activeSection === item.id
                           ? "text-indigo-600 bg-indigo-50"
                           : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
@@ -189,25 +190,27 @@ export default function Navbar() {
                   </li>
                 ))}
 
-                {/* Mobile Blogs Section */}
-                <li className="px-4 py-3">
+                <li>
                   <Link
                     href="/blogs"
-                    className={`block w-full text-left px-4 py-3 rounded-md font-medium transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-                      activeSection === "blogs"
+                    className={`block w-full text-left px-4 py-3 rounded-md font-medium transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer ${
+                      pathname === "/blogs"
                         ? "text-indigo-600 bg-indigo-50"
                         : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
                     }`}
-                    aria-current={activeSection === "blogs" ? "page" : undefined}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Blogs
                   </Link>
                 </li>
 
-                <li className="px-4 py-3">
-                  <Link href="/projects" className="block" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white min-h-[44px]">
+                <li>
+                  <Link 
+                    href="/projects" 
+                    className="block" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white min-h-[44px] cursor-pointer">
                       View Projects
                     </Button>
                   </Link>

@@ -581,7 +581,7 @@ const experiences = [
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
-                <Link href={`/blog/${blog.slug}`}>
+                <Link href={`/blogs/${blog.slug}`}>
                   <Card className="group cursor-pointer border-0 shadow-lg hover:shadow-xl h-full transition-all duration-300">
                     <div className="relative overflow-hidden rounded-t-lg">
                       <Image
@@ -635,7 +635,7 @@ const experiences = [
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Link href="/blog">
+            <Link href="/blogs">
               <Button
                 size="lg"
                 variant="outline"

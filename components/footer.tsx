@@ -1,9 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { latestBlogs } from "@/app/blogs/blogs-data"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Phone, Github, Linkedin, Twitter, MapPin, ArrowUp } from "lucide-react"
+import { motion } from "framer-motion"
+import { ArrowUp, Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react"
 import Link from "next/link"
 
 export default function Footer() {
@@ -19,12 +20,7 @@ export default function Footer() {
     { label: "Contact", href: "#contact" },
   ]
 
-  const blogCategories = [
-    { label: "Tech Leadership", href: "/blog/tech-leadership" },
-    { label: "Software Architecture", href: "/blog/architecture" },
-    { label: "Team Management", href: "/blog/management" },
-    { label: "AI & Innovation", href: "/blog/ai-innovation" },
-  ]
+  
 
   const socialLinks = [
     { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/rashed-zaman", color: "hover:text-blue-600" },
@@ -82,25 +78,25 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Blog Categories */}
+          {/* Latest 5 blogs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-lg mb-4 text-white">Blog Categories</h4>
+            <h4 className="font-semibold text-lg mb-4 text-white">Recent Blogs</h4>
             <ul className="space-y-3">
-              {blogCategories.map((category) => (
-                <li key={category.href}>
+              {latestBlogs.slice(0, 5).map((blog) => (
+                <li key={blog.slug}>
                   <Link
-                    href={category.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center group"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform duration-200">
-                      {category.label}
-                    </span>
-                  </Link>
+  href={`/blogs/${blog.slug}`}
+  className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center group"
+>
+  <span className="inline-block max-w-[200px] truncate transition-transform duration-200 group-hover:translate-x-1">
+    {blog.title.length > 50 ? `${blog.title.substring(0, 50)}...` : blog.title}
+  </span>
+</Link>
                 </li>
               ))}
             </ul>
