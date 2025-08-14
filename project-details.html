@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Rasheduzzaman - Tech Lead & Full-Stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <script>
         tailwind.config = {
             theme: {
@@ -30,124 +25,13 @@
                 }
             }
         }
-
     </script>
-    <style>
-        @keyframes float {
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 20px #3b82f6;
-            }
-
-            to {
-                box-shadow: 0 0 30px #3b82f6, 0 0 40px #3b82f6;
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6, #1e40af, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .glass {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-
-        .project-card {
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        .nav-link {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, #3b82f6, #f59e0b);
-            transition: left 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            left: 0;
-        }
-
-        .typing::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-
-            0%,
-            50% {
-                opacity: 1;
-            }
-
-            51%,
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
 </head>
 
 <body class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-x-hidden">
@@ -190,15 +74,18 @@
 
     <!-- Main Content - Project Details -->
     <main class="container mx-auto py-8 px-4 pt-24">
-        <div id="project-details" class=" bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30 rounded-lg shadow-lg p-8">
+        <div id="project-details"
+            class=" bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30 rounded-lg shadow-lg p-8">
             <h1 class="text-4xl font-bold text-gray-300 mb-4" id="product-name"></h1>
             <p class="text-blue-300 text-lg mb-6" id="description"></p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div>
                     <h2 class="text-2xl font-semibold text-gray-300 mb-2">Category & Industry</h2>
-                    <p class=" text-green-300"><span class="font-medium">Category:</span> <span id="category"></span></p>
-                    <p class=" text-green-300"><span class="font-medium">Industry:</span> <span id="industry"></span></p>
+                    <p class=" text-green-300"><span class="font-medium">Category:</span> <span id="category"></span>
+                    </p>
+                    <p class=" text-green-300"><span class="font-medium">Industry:</span> <span id="industry"></span>
+                    </p>
                 </div>
                 <div>
                     <h2 class="text-2xl font-semibold text-gray-300 mb-2">Technology Stack</h2>
@@ -218,34 +105,53 @@
                 </div>
                 <div>
                     <h2 class="text-2xl font-semibold text-gray-300 mb-2">Pricing & Development</h2>
-                    <p class=" text-green-300"><span class="font-medium">Pricing Model:</span> <span id="pricing-model"></span></p>
-                    <p class=" text-green-300"><span class="font-medium">Estimated Price Range:</span> <span id="price-range"></span></p>
-                    <p class=" text-green-300"><span class="font-medium">Development Time:</span> <span id="development-time"></span></p>
-                    <p class=" text-green-300"><span class="font-medium">Team Size:</span> <span id="team-size"></span></p>
+                    <p class=" text-green-300"><span class="font-medium">Pricing Model:</span> <span
+                            id="pricing-model"></span></p>
+                    <p class=" text-green-300"><span class="font-medium">Estimated Price Range:</span> <span
+                            id="price-range"></span></p>
+                    <p class=" text-green-300"><span class="font-medium">Development Time:</span> <span
+                            id="development-time"></span></p>
+                    <p class=" text-green-300"><span class="font-medium">Team Size:</span> <span id="team-size"></span>
+                    </p>
                 </div>
             </div>
 
             <div class="mb-8">
                 <h2 class="text-2xl font-semibold text-gray-300 mb-2">Market Insights</h2>
-                <p class=" text-green-300"><span class="font-medium">Market Size:</span> <span id="market-size"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Growth Rate:</span> <span id="growth-rate"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Key Competitors:</span> <span id="competitors"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Market Demand:</span> <span id="market-demand"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Risk Level:</span> <span id="risk-level"></span></p>
-                <p class=" text-green-300"><span class="font-medium">ROI Potential:</span> <span id="roi-potential"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Market Size:</span> <span id="market-size"></span>
+                </p>
+                <p class=" text-green-300"><span class="font-medium">Growth Rate:</span> <span id="growth-rate"></span>
+                </p>
+                <p class=" text-green-300"><span class="font-medium">Key Competitors:</span> <span
+                        id="competitors"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Market Demand:</span> <span
+                        id="market-demand"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Risk Level:</span> <span id="risk-level"></span>
+                </p>
+                <p class=" text-green-300"><span class="font-medium">ROI Potential:</span> <span
+                        id="roi-potential"></span></p>
             </div>
 
             <div class="mb-8">
                 <h2 class="text-2xl font-semibold text-gray-300 mb-2">Technical Details</h2>
-                <p class=" text-green-300"><span class="font-medium">Deployment Options:</span> <span id="deployment-options"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Scalability:</span> <span id="scalability"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Security Features:</span> <span id="security-features"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Integration Capabilities:</span> <span id="integration-capabilities"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Support Languages:</span> <span id="support-languages"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Mobile Support:</span> <span id="mobile-support"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Database Requirements:</span> <span id="database-requirements"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Server Requirements:</span> <span id="server-requirements"></span></p>
-                <p class=" text-green-300"><span class="font-medium">Compliance:</span> <span id="compliance"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Deployment Options:</span> <span
+                        id="deployment-options"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Scalability:</span> <span id="scalability"></span>
+                </p>
+                <p class=" text-green-300"><span class="font-medium">Security Features:</span> <span
+                        id="security-features"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Integration Capabilities:</span> <span
+                        id="integration-capabilities"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Support Languages:</span> <span
+                        id="support-languages"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Mobile Support:</span> <span
+                        id="mobile-support"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Database Requirements:</span> <span
+                        id="database-requirements"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Server Requirements:</span> <span
+                        id="server-requirements"></span></p>
+                <p class=" text-green-300"><span class="font-medium">Compliance:</span> <span id="compliance"></span>
+                </p>
             </div>
 
             <div class="mb-8">
@@ -259,111 +165,54 @@
                 <div id="related-blogs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Related blog cards will be injected here by jQuery -->
                 </div>
-                <p id="no-related-blogs" class="text-blue-300 text-center hidden">No related blogs found for this project.</p>
+                <p id="no-related-blogs" class="text-blue-300 text-center hidden">No related blogs found for this
+                    project.</p>
             </div>
 
-            <a href="projects.html" class="inline-block bg-gray-600 text-white px-6 py-3 rounded-md hover:bg-gray-700 transition duration-300 mt-8">Back to Projects</a>
+            <a href="projects.html"
+                class="inline-block bg-gray-600 text-white px-6 py-3 rounded-md hover:bg-gray-700 transition duration-300 mt-8">Back
+                to Projects</a>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="container mx-auto text-center px-4">
-            <p>&copy; 2025 JM Rashed. All rights reserved.</p>
+    <footer class="bg-slate-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-8">
+                    <h3 class="text-3xl font-bold gradient-text mb-4">MD Rasheduzzaman</h3>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Tech Lead passionate about creating innovative solutions and leading high-performing teams.
+                        Let's build something amazing together.
+                    </p>
+                </div>
+
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-300 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="mailto:jmrashedbd@gmail.com" class="text-gray-400 hover:text-red-400 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+
+                <div class="pt-8 border-t border-gray-800">
+                    <p class="text-gray-500">
+                        © 2024 MD Rasheduzzaman. All rights reserved. | Built with passion and <i
+                            class="fas fa-code text-blue-400"></i>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
+    <script src="./assets/js/main.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const projectId = parseInt(urlParams.get('id'));
-
-            if (isNaN(projectId)) {
-                $('#project-details').html('<p class="text-red-500 text-center">Project ID not found in URL.</p>');
-                return;
-            }
-
-            $.getJSON('projects.json', function(data) {
-                const project = data.find(p => p.id === projectId);
-
-                if (project) {
-                    $('#product-name').text(project['Product Name']);
-                    $('#description').text(project.Description);
-                    $('#category').text(project.Category);
-                    $('#industry').text(project.Industry);
-
-                    // Technology
-                    const technologyList = $('#technology');
-                    project.Technology.forEach(tech => {
-                        technologyList.append(`<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${tech}</span>`);
-                    });
-
-                    // Features
-                    const featuresList = $('#features');
-                    project.Features.forEach(feature => {
-                        featuresList.append(`<li>${feature}</li>`);
-                    });
-
-                    $('#target-audience').text(project['Target Audience']);
-                    $('#pricing-model').text(project['Pricing Model']);
-                    $('#price-range').text(project['Estimated Price Range']);
-                    $('#development-time').text(project['Development Time']);
-                    $('#team-size').text(project['Team Size']);
-
-                    $('#market-size').text(project['Market Size']);
-                    $('#growth-rate').text(project['Growth Rate']);
-                    $('#competitors').text(project['Key Competitors'].join(', '));
-                    $('#market-demand').text(project['Market Demand']);
-                    $('#risk-level').text(project['Risk Level']);
-                    $('#roi-potential').text(project['ROI Potential']);
-
-                    $('#deployment-options').text(project['Deployment Options'].join(', '));
-                    $('#scalability').text(project.Scalability);
-                    $('#security-features').text(project['Security Features'].join(', '));
-                    $('#integration-capabilities').text(project['Integration Capabilities'].join(', '));
-                    $('#support-languages').text(project['Support Languages'].join(', '));
-                    $('#mobile-support').text(project['Mobile Support']);
-                    $('#database-requirements').text(project['Database Requirements']);
-                    $('#server-requirements').text(project['Server Requirements']);
-                    $('#compliance').text(project.Compliance.join(', '));
-
-                    // Unique Selling Points
-                    const uspList = $('#unique-selling-points');
-                    project['Unique Selling Points'].forEach(usp => {
-                        uspList.append(`<li>${usp}</li>`);
-                    });
-
-                    // Load related blogs
-                    $.getJSON('blogs.json', function(blogsData) {
-                        const relatedBlogs = blogsData.filter(blog => blog.product_id === projectId).slice(0, 3);
-                        const relatedBlogsGrid = $('#related-blogs-grid');
-
-                        if (relatedBlogs.length > 0) {
-                            relatedBlogs.forEach(blog => {
-                                const blogCard = `
-                                    <div class="bg-dark-80 rounded-lg shadow-md overflow-hidden p-4">
-                                        <h3 class="text-xl font-semibold text-gray-300 mb-2">${blog.title}</h3>
-                                        <p class="text-blue-300 text-sm mb-4">${blog.excerpt}</p>
-                                        <a href="blog-details.html?id=${blog.id}" class="inline-block text-blue-600 hover:underline">Read Blog</a>
-                                    </div>
-                                `;
-                                relatedBlogsGrid.append(blogCard);
-                            });
-                        } else {
-                            $('#no-related-blogs').removeClass('hidden');
-                        }
-                    }).fail(function() {
-                        $('#no-related-blogs').removeClass('hidden').text('Error loading related blogs.');
-                    });
-
-                } else {
-                    $('#project-details').html('<p class="text-red-500 text-center">Project not found.</p>');
-                }
-            }).fail(function() {
-                $('#project-details').html('<p class="text-red-500 text-center">Error loading project details. Please try again later.</p>');
-            });
-        });
-    </script>
 </body>
 
 </html>
