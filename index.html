@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Rasheduzzaman - Tech Lead & Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js">    </script>
+
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold gradient-text">MR</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#home"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Home</a>
+                        <a href="index.html#about"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">About</a>
+                        <a href="index.html#skills"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Skills</a>
+                        <a href="index.html#experience"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Experience</a>
+                        <a href="projects.html"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                        <a href="blogs.html"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Blogs</a>
+                        <a href="index.html#contact"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-accent">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden glass">
+            <div id="mobile-menu-container" class="px-2 pt-2 pb-3 space-y-1">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 opacity-10">
+            <div
+                class="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-float">
+            </div>
+            <div class="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-float"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-float"
+                style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <div class="animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Hi, I'm <span class="gradient-text">MD Rasheduzzaman</span>
+                </h1>
+                <div class="text-2xl md:text-4xl text-blue-300 mb-8 h-16">
+                    <span id="typed-text" class="typing">Tech Lead & Full-Stack Developer</span>
+                </div>
+                <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Results-driven Tech Lead with 10+ years of experience in full-stack development, team leadership,
+                    and project management. Leading teams of 36+ developers and delivering scalable solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-glow">
+                        <i class="fas fa-envelope mr-2"></i>Get In Touch
+                    </a>
+                    <a href="#projects"
+                        class="border-2 border-blue-500 hover:bg-blue-500 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-code mr-2"></i>View My Work
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-blue-400 hover:text-blue-300">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-r from-slate-800 to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate-slide-up">
+                    <!-- Headline -->
+                    <h3
+                        class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                        Driving Innovation, Building Impact
+                    </h3>
+
+                    <!-- Intro -->
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        As a <span class="font-semibold text-blue-300">Tech Leader with 10+ years of experience</span>,
+                        I have transformed ideas into scalable, high-impact software solutions, leading teams of
+                        engineers to deliver products that
+                        accelerate business growth and delight users.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Currently spearheading a <span class="font-semibold text-green-300">36-member development team
+                            at Onest Tech LLC</span>, I blend deep technical expertise in <span
+                            class="font-medium text-purple-300">PHP, Node.js, React, and Cloud Infrastructure</span>
+                        with strategic leadership to consistently deliver projects on time, on budget, and above
+                        expectations.
+                    </p>
+
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        I am passionate about fostering a culture of <span
+                            class="font-semibold text-yellow-300">innovation, mentorship, and continuous
+                            learning</span>, empowering engineers to grow while driving organizational success. By
+                        aligning technology strategy with business goals, I focus on building <span
+                            class="font-medium text-pink-300">robust, maintainable, and future-ready systems</span> that
+                        enhance efficiency, solve complex problems, and elevate user experiences.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        With a proven track record of delivering high-impact solutions across diverse industries, I
+                        thrive at the intersection of <span class="font-semibold text-red-300">technology innovation and
+                            business strategy</span>. I excel in driving <span
+                            class="font-medium text-indigo-300">cross-functional collaboration, scaling high-performing
+                            teams, and implementing best-in-class development practices</span> that consistently exceed
+                        expectations and create measurable value for organizations.
+                    </p>
+
+
+                    <!-- Stats: Row 1 -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+                        <div
+                            class="bg-gradient-to-br from-blue-700/20 to-purple-600/20 p-6 rounded-2xl border border-blue-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-blue-400">10+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Years Experience</div>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-green-700/20 to-teal-600/20 p-6 rounded-2xl border border-green-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-green-400">36+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Team Members Led</div>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-purple-700/20 to-pink-600/20 p-6 rounded-2xl border border-purple-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-purple-400">100+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Projects Delivered</div>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-yellow-700/20 to-orange-600/20 p-6 rounded-2xl border border-yellow-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-yellow-400">98%</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Client Satisfaction</div>
+                        </div>
+                    </div>
+
+                    <!-- Stats: Row 2 -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+                        <div
+                            class="bg-gradient-to-br from-pink-700/20 to-red-600/20 p-6 rounded-2xl border border-pink-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-pink-400">$2M+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Budget Managed</div>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-indigo-700/20 to-blue-600/20 p-6 rounded-2xl border border-indigo-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-3xl font-extrabold text-indigo-400">500K+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Revenue Generated via AI</div>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-green-700/20 to-teal-600/20 p-6 rounded-2xl border border-green-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-3xl font-extrabold text-green-400">120+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Projects Delivered</div>
+                        </div>
+                        <div
+                            class="bg-yellow-800/20 p-6 rounded-2xl border border-yellow-500/40 shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col items-center justify-center">
+                            <div class="text-5xl font-extrabold text-yellow-400 mb-2">🏆</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase text-center">Award-Winning
+                                Leadership</div>
+                        </div>
+                    </div>
+
+
+                    <!-- Key Impact Statement -->
+                    <div
+                        class="mt-8 p-6 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-2xl shadow-md">
+                        <p class="text-gray-200 text-lg italic">
+                            “I don’t just build software — I build solutions that scale, empower businesses, and inspire
+                            teams to achieve more.”
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="relative animate-slide-up">
+                    <div
+                        class="relative z-10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <h4 class="text-2xl font-bold text-blue-300 mb-6">Core Achievements</h4>
+
+                        <!-- Dynamic Achievements List -->
+                        <div id="achievements-container" class="space-y-8"></div>
+
+                        <div class="mt-8 pt-6 border-t border-gray-700">
+                            <h5 class="text-xl font-semibold text-blue-300 mb-4">Education & Certifications</h5>
+                            <div class="space-y-2 text-gray-300">
+                                <p><i class="fas fa-graduation-cap text-blue-400 mr-2"></i>B.Sc. Computer Science &
+                                    Engineering - CGPA 3.73</p>
+                                <p><i class="fas fa-certificate text-green-400 mr-2"></i>Project Management - Rice
+                                    University</p>
+                                <p><i class="fas fa-certificate text-purple-400 mr-2"></i>Web Development Specialization
+                                    - University of Michigan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg -z-10">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Technical Expertise</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">
+                    Comprehensive full-stack development skills with expertise in modern technologies and frameworks
+                </p>
+            </div>
+            <div id="appendBySkillContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamic skills will be appended here -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-r from-slate-800 to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Professional Journey</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">
+                    Over the years, I have led diverse teams and delivered impactful projects across web development,
+                    full-stack engineering, and project management, driving innovation and optimizing performance for
+                    clients in Bangladesh and beyond.
+                </p>
+
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-600"></div>
+
+                <div class="space-y-12" id="appendByExperienceContent">
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">Showcase of innovative solutions and complex
+                    systems I've architected and delivered</p>
+            </div>
+
+            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact"
+                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-eye mr-2"></i>View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="py-20 bg-gradient-to-r from-slate-800 to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Recognition & Awards</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-yellow-500/30">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-trophy text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-yellow-300 mb-2">Innovator of the Year</h3>
+                    <p class="text-gray-300">Onest Tech LLC - 2022</p>
+                </div>
+
+                <div
+                    class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-green-500/30">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-300 mb-2">Employee of The Year</h3>
+                    <p class="text-gray-300">United Group - 2017</p>
+                </div>
+
+                <div
+                    class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-blue-500/30 md:col-span-2 lg:col-span-1">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-300 mb-2">Leadership Excellence</h3>
+                    <p class="text-gray-300">Multiple Projects - 2022-2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Let's Work Together</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">Ready to bring your next project to life? Let's
+                    discuss how I can help you achieve your goals.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div
+                        class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <h3 class="text-2xl font-bold text-blue-300 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Email</p>
+                                    <a href="mailto:jmrashedbd@gmail.com"
+                                        class="text-blue-300 hover:text-blue-200 transition-colors">jmrashedbd@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Phone</p>
+                                    <a href="tel:+8801734446514"
+                                        class="text-green-300 hover:text-green-200 transition-colors">+88
+                                        01734446514</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Location</p>
+                                    <p class="text-purple-300">Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-8 border-t border-gray-700">
+                            <h4 class="text-xl font-semibold text-blue-300 mb-4">Social Links</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                                    <i class="fab fa-linkedin text-white"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                                    <i class="fab fa-github text-white"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                                    <i class="fab fa-twitter text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/30">
+                    <h3 class="text-2xl font-bold text-purple-300 mb-6">Send a Message</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-300 text-sm font-semibold mb-2">Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400"
+                                    placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 text-sm font-semibold mb-2">Email</label>
+                                <input type="email"
+                                    class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400"
+                                    placeholder="Your email">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 text-sm font-semibold mb-2">Subject</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400"
+                                placeholder="Project inquiry">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 text-sm font-semibold mb-2">Message</label>
+                            <textarea rows="5"
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400 resize-none"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-8">
+                    <h3 class="text-3xl font-bold gradient-text mb-4">MD Rasheduzzaman</h3>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Tech Lead passionate about creating innovative solutions and leading high-performing teams.
+                        Let's build something amazing together.
+                    </p>
+                </div>
+
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-300 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="mailto:jmrashedbd@gmail.com" class="text-gray-400 hover:text-red-400 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+
+                <div class="pt-8 border-t border-gray-800">
+                    <p class="text-gray-500">
+                        © 2024 MD Rasheduzzaman. All rights reserved. | Built with passion and <i
+                            class="fas fa-code text-blue-400"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Typing animation
+        const roles = [
+            'Tech Lead & Full-Stack Developer',
+            'Project Manager & Team Leader',
+            'System Architect & Innovator',
+            'Full-Stack Engineer & Mentor'
+        ];
+
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typedTextElement = document.getElementById('typed-text');
+
+        function typeRole() {
+            const currentRole = roles[roleIndex];
+
+            if (isDeleting) {
+                typedTextElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500; // Pause before typing next
+            }
+
+            setTimeout(typeRole, typeSpeed);
+        }
+
+        // Start typing animation
+        typeRole();
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('.skill-card, .project-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+                nav.style.backdropFilter = 'blur(20px)';
+            } else {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                nav.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        // Particle background effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'fixed w-1 h-1 bg-blue-400 rounded-full opacity-30 pointer-events-none';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.animation = `float ${Math.random() * 3 + 2}s linear infinite`;
+
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 2000);
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const subject = this.querySelectorAll('input[type="text"]')[1].value;
+            const message = this.querySelector('textarea').value;
+
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                submitBtn.style.background = 'linear-gradient(to right, #10b981, #059669)';
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Add floating animation to hero elements
+        document.querySelectorAll('.animate-float').forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.5}s`;
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
+                }
+            }
+
+            updateCounter();
+        }
+
+        // Trigger counter animations when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.text-3xl');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.textContent);
+                        animateCounter(counter, target);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('#about .grid.grid-cols-2');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('button, .btn').forEach(button => {
+            button.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            button, .btn {
+                position: relative;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth reveal animations for sections
+        const revealElements = document.querySelectorAll('section');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+                this.style.boxShadow = '0 25px 50px -12px rgba(59, 130, 246, 0.25)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '';
+            });
+        });
+
+        // Initialize AOS (Animate On Scroll) alternative
+        function initScrollAnimations() {
+            const animateElements = document.querySelectorAll('[data-animate]');
+
+            const animateObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animation = entry.target.dataset.animate;
+                        entry.target.classList.add(`animate-${animation}`);
+                        animateObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(element => {
+                animateObserver.observe(element);
+            });
+        }
+
+        // Initialize all animations
+        initScrollAnimations();
+
+        // Preloader (optional)
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Add performance optimization
+        let ticking = false;
+
+        function updateScrollEffects() {
+            // Update any scroll-based effects here
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffects);
+                ticking = true;
+            }
+        });
+
+        // Add touch gestures for mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartY = e.changedTouches[0].screenY;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartY - touchEndY;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe up - could trigger next section
+                } else {
+                    // Swipe down - could trigger previous section
+                }
+            }
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+    </script>
+    <script>
+        $.getJSON('projects.json', function (projects) {
+            const $projectsContainer = $('#projects-container');
+
+            projects.forEach(project => {
+                const techBadges = Array.isArray(project.Technology)
+                    ? project.Technology.map(tech =>
+                        `<span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs border border-green-500/30">${tech}</span>`
+                    ).join('')
+                    : '';
+
+                const projectCard = `
+        <div class="project-card bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30 hover:shadow-lg transition-all duration-300">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+              <i class="fas fa-project-diagram text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-blue-300">${project['Product Name'] || 'Untitled Project'}</h3>
+            <p class="text-gray-400 text-sm">${project.Category || ''}</p>
+          </div>
+          <p class="text-gray-300 mb-6 leading-relaxed">${project.Description || ''}</p>
+          <div class="flex flex-wrap gap-2 mb-6">${techBadges}</div>
+          <div class="flex space-x-4">
+                                           <a href="project-details.html?id=${project.id}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">View Details</a>
+
+            <a href="${project.CodeLink || '#'}" target="_blank"
+              class="px-4 py-2 border border-blue-500 hover:bg-blue-500 hover:text-white rounded-lg text-sm font-semibold transition-all duration-300">
+              <i class="fab fa-github mr-2"></i>Code
+            </a>
+          </div>
+        </div>
+      `;
+
+                $projectsContainer.append(projectCard);
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $.getJSON("assets/data/skills.json", function (data) {
+                let html = "";
+
+                // Loop technical_skills
+                $.each(data.technical_skills, function (i, category) {
+                    html += `
+                <div class="p-6 border ${category.border_color} rounded-2xl bg-gradient-to-br ${category.background_gradient} shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="${category.icon_class} ${category.icon_color} text-3xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">${category.category}</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        ${category.skills.map(skill => `
+                            <li class="flex items-center space-x-2">
+                                <i class="${skill.icon_class} ${skill.icon_color} text-lg"></i>
+                                <span>${skill.name}</span>
+                            </li>
+                        `).join("")}
+                    </ul>
+                </div>
+            `;
+                });
+
+                // Leadership skills
+                if (data.leadership_skills && data.leadership_skills.length) {
+                    html += `
+                <div class="p-6 border border-gray-500/30 rounded-2xl bg-gradient-to-br from-gray-700/30 to-gray-800/30 shadow-lg col-span-full">
+                    <h3 class="text-xl font-semibold mb-4">Leadership Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        ${data.leadership_skills.map(skill => `
+                            <span class="px-3 py-1 border ${skill.border_color} ${skill.text_color} rounded-full text-sm font-medium bg-gradient-to-br ${skill.background_gradient}">
+                                ${skill.name}
+                            </span>
+                        `).join("")}
+                    </div>
+                </div>
+            `;
+                }
+
+                $("#appendBySkillContent").html(html);
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON("assets/data/achivements.json", function (data) {
+                let container = $("#achievements-container");
+
+                data.forEach(category => {
+                    let categoryBlock = `
+                <div>
+                    <h5 class="text-xl font-semibold text-blue-400 mb-4 border-b border-blue-500/30 pb-2">
+                        ${category.category}
+                    </h5>
+                    <ul class="space-y-4">
+                        ${category.items.map(item => `
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                <span class="text-gray-300">${item.description}</span>
+                            </li>
+                        `).join("")}
+                    </ul>
+                </div>
+            `;
+                    container.append(categoryBlock);
+                });
+            }).fail(function () {
+                $("#achievements-container").html(`<p class="text-red-400">Failed to load achievements data.</p>`);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("assets/data/experience.json", function (data) {
+                const $container = $("#appendByExperienceContent");
+
+                $.each(data, function (index, exp) {
+                    const expId = "exp-" + index;
+
+                    // Create stack badges
+                    let stackHTML = '';
+                    if (exp.stack && exp.stack.length > 0) {
+                        stackHTML = '<div class="mt-2"><h4 class="uppercase font-semibold text-blue-400 mb-2">Stack</h4>';
+                        $.each(exp.stack, function (i, tech) {
+                            stackHTML += `<span class="inline-block bg-purple-600/20 text-purple-300 px-2 py-1 mr-1 rounded-full text-xs">${tech}</span>`;
+                        });
+                        stackHTML += '</div>';
+                    }
+
+                    // Create skills badges
+                    let skillsHTML = '';
+                    if (exp.skills && exp.skills.length > 0) {
+                        skillsHTML = '<div class="mt-2"> <h4 class="uppercase font-semibold text-blue-400 mb-2"> Skills</h4> ';
+                        $.each(exp.skills, function (i, skill) {
+                            skillsHTML += `<span class="inline-block bg-green-600/20 text-green-300 px-2 py-1 mr-1 rounded-full text-xs">${skill}</span>`;
+                        });
+                        skillsHTML += '</div>';
+                    }
+
+                    // Create responsibilities list
+                    let responsibilitiesHTML = '<ul class="list-disc list-inside text-gray-300 space-y-2">';
+                    $.each(exp.responsibilities, function (i, res) {
+                        responsibilitiesHTML += `<li>${res}</li>`;
+                    });
+                    responsibilitiesHTML += '</ul>';
+
+                    // Dynamic icon (fallback to fa-briefcase if not specified)
+                    const iconClass = exp.icon ? exp.icon : 'fa-briefcase';
+
+                    // Build the experience card
+                    const expHTML = `
+                <div id="${expId}" class="relative flex items-start space-x-8">
+                    <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
+                        <i class="fas ${iconClass} text-white text-xl"></i>
+                    </div>
+                    <div class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-300">${exp.role}</h3>
+                                <p class="text-xl text-gray-300">${exp.company}, ${exp.location}</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">${exp.duration}</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h4 class="uppercase font-semibold text-blue-400 mb-2">Responsibilities</h4>
+                            ${responsibilitiesHTML}</div>
+                        ${stackHTML}
+                        ${skillsHTML}
+                    </div>
+                </div>
+            `;
+
+                    $container.append(expHTML);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
