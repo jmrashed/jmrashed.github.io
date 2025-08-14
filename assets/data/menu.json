@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Home",
+    "href": "index.html#home"
+  },
+  {
+    "label": "About",
+    "href": "index.html#about"
+  },
+  {
+    "label": "Skills",
+    "href": "index.html#skills"
+  },
+  {
+    "label": "Experience",
+    "href": "index.html#experience"
+  },
+  {
+    "label": "Projects",
+    "href": "projects.html"
+  },
+  {
+    "label": "Blogs",
+    "href": "blogs.html"
+  },
+  {
+    "label": "Contact",
+    "href": "index.html#contact"
+  }
+]

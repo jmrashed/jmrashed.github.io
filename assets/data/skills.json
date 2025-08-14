@@ -1,0 +1,102 @@
+{
+  "technical_skills": [
+    {
+      "category": "Frontend",
+      "icon_class": "fab fa-html5",
+      "icon_color": "text-orange-500",
+      "border_color": "border-blue-500/30",
+      "background_gradient": "from-blue-500/30 to-blue-600/30",
+      "skills": [
+        {"name": "React.js", "icon_class": "fab fa-react", "icon_color": "text-blue-400"},
+        {"name": "JavaScript", "icon_class": "fab fa-js", "icon_color": "text-yellow-400"},
+        {"name": "HTML5", "icon_class": "fab fa-html5", "icon_color": "text-orange-500"},
+        {"name": "CSS3", "icon_class": "fab fa-css3-alt", "icon_color": "text-blue-500"},
+        {"name": "Tailwind CSS", "icon_class": "fas fa-paint-brush", "icon_color": "text-purple-400"},
+        {"name": "Bootstrap", "icon_class": "fab fa-bootstrap", "icon_color": "text-purple-600"}
+      ]
+    },
+    {
+      "category": "Backend",
+      "icon_class": "fas fa-server",
+      "icon_color": "text-green-500",
+      "border_color": "border-green-500/30",
+      "background_gradient": "from-green-500/30 to-green-600/30",
+      "skills": [
+        {"name": "PHP", "icon_class": "fab fa-php", "icon_color": "text-purple-500"},
+        {"name": "Laravel", "icon_class": "fab fa-laravel", "icon_color": "text-red-500"},
+        {"name": "Node.js", "icon_class": "fab fa-node-js", "icon_color": "text-green-500"},
+        {"name": "Python", "icon_class": "fab fa-python", "icon_color": "text-yellow-400"},
+        {"name": "FastAPI", "icon_class": "fas fa-fire", "icon_color": "text-orange-500"},
+        {"name": "RESTful APIs", "icon_class": "fas fa-code", "icon_color": "text-blue-400"}
+      ]
+    },
+    {
+      "category": "Database",
+      "icon_class": "fas fa-database",
+      "icon_color": "text-yellow-500",
+      "border_color": "border-yellow-500/30",
+      "background_gradient": "from-yellow-500/30 to-yellow-600/30",
+      "skills": [
+        {"name": "MySQL", "icon_class": "fas fa-database", "icon_color": "text-blue-500"},
+        {"name": "MongoDB", "icon_class": "fas fa-leaf", "icon_color": "text-green-500"},
+        {"name": "NoSQL", "icon_class": "fas fa-database", "icon_color": "text-red-500"},
+        {"name": "Redis", "icon_class": "fas fa-search", "icon_color": "text-purple-400"},
+        {"name": "GraphQL", "icon_class": "fas fa-chart-line", "icon_color": "text-orange-400"},
+        {"name": "Database Optimization", "icon_class": "fas fa-sync", "icon_color": "text-blue-400"}
+      ]
+    },
+    {
+      "category": "DevOps & Cloud",
+      "icon_class": "fab fa-aws",
+      "icon_color": "text-orange-400",
+      "border_color": "border-purple-500/30",
+      "background_gradient": "from-purple-500/30 to-purple-600/30",
+      "skills": [
+        {"name": "Docker", "icon_class": "fab fa-docker", "icon_color": "text-blue-500"},
+        {"name": "AWS", "icon_class": "fab fa-aws", "icon_color": "text-orange-400"},
+        {"name": "CI/CD", "icon_class": "fas fa-infinity", "icon_color": "text-green-400"},
+        {"name": "Git", "icon_class": "fab fa-git-alt", "icon_color": "text-red-500"},
+        {"name": "Nginx", "icon_class": "fas fa-server", "icon_color": "text-gray-400"},
+        {"name": "System Architecture", "icon_class": "fas fa-tools", "icon_color": "text-yellow-400"}
+      ]
+    },
+    {
+      "category": "AI & Emerging Tech",
+      "icon_class": "fas fa-robot",
+      "icon_color": "text-pink-500",
+      "border_color": "border-pink-500/30",
+      "background_gradient": "from-pink-500/30 to-pink-600/30",
+      "skills": [
+        {"name": "AI/ML Integration", "icon_class": "fas fa-brain", "icon_color": "text-purple-400"},
+        {"name": "Machine Learning", "icon_class": "fas fa-project-diagram", "icon_color": "text-green-400"},
+        {"name": "Natural Language Processing", "icon_class": "fas fa-language", "icon_color": "text-blue-400"},
+        {"name": "Microservices Architecture", "icon_class": "fas fa-cubes", "icon_color": "text-yellow-400"},
+        {"name": "Message Queues (RabbitMQ, Kafka)", "icon_class": "fas fa-stream", "icon_color": "text-orange-400"},
+        {"name": "AI-Powered SaaS", "icon_class": "fas fa-cloud", "icon_color": "text-indigo-400"}
+      ]
+    },
+    {
+      "category": "Security & Optimization",
+      "icon_class": "fas fa-shield-alt",
+      "icon_color": "text-red-500",
+      "border_color": "border-red-500/30",
+      "background_gradient": "from-red-500/30 to-red-600/30",
+      "skills": [
+        {"name": "Security & Compliance", "icon_class": "fas fa-user-shield", "icon_color": "text-yellow-400"},
+        {"name": "Penetration Testing", "icon_class": "fas fa-bug", "icon_color": "text-orange-400"},
+        {"name": "Encryption", "icon_class": "fas fa-lock", "icon_color": "text-green-400"},
+        {"name": "Performance Optimization", "icon_class": "fas fa-tachometer-alt", "icon_color": "text-blue-400"},
+        {"name": "Load Testing", "icon_class": "fas fa-weight-hanging", "icon_color": "text-purple-400"},
+        {"name": "System Hardening", "icon_class": "fas fa-user-secret", "icon_color": "text-pink-400"}
+      ]
+    }
+  ],
+  "leadership_skills": [
+    {"name": "Team Leadership", "background_gradient": "from-blue-600/20 to-purple-600/20", "border_color": "border-blue-500/30", "text_color": "text-blue-300"},
+    {"name": "Project Management", "background_gradient": "from-green-600/20 to-blue-600/20", "border_color": "border-green-500/30", "text_color": "text-green-300"},
+    {"name": "Agile/Scrum", "background_gradient": "from-purple-600/20 to-pink-600/20", "border_color": "border-purple-500/30", "text_color": "text-purple-300"},
+    {"name": "Mentoring", "background_gradient": "from-yellow-600/20 to-orange-600/20", "border_color": "border-yellow-500/30", "text_color": "text-yellow-300"},
+    {"name": "Strategic Planning", "background_gradient": "from-red-600/20 to-pink-600/20", "border_color": "border-red-500/30", "text_color": "text-red-300"},
+    {"name": "System Architecture", "background_gradient": "from-indigo-600/20 to-purple-600/20", "border_color": "border-indigo-500/30", "text_color": "text-indigo-300"}
+  ]
+}

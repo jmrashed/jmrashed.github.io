@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Rasheduzzaman - Tech Lead & Full-Stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
@@ -25,531 +30,84 @@
                 }
             }
         }
-const projects = [
-  {
-    "Product Name": "Adi ERP",
-    "Description": "Comprehensive Business ERP Solution for Enterprise Resource Planning",
-    "Category": "Enterprise Software",
-    "Industry": "Business Management",
-    "Technology": ["Laravel", "React", "MySQL", "REST API", "Docker", "Redis", "JWT Authentication"],
-    "Keywords": ["ERP", "Business Management", "Accounting", "Inventory", "CRM", "Scalability", "Enterprise"],
-    "Features": [
-      "Financial management and accounting",
-      "Advanced inventory control system",
-      "Sales and purchase management",
-      "Real-time reporting and analytics",
-      "User role and permissions management",
-      "Multi-currency and multi-language support",
-      "Automated workflow processes",
-      "Integration with third-party services"
-    ],
-    "Target Audience": "Medium to large enterprises, Manufacturing companies, Retail businesses",
-    "Pricing Model": "Subscription-based (SaaS)",
-    "Estimated Price Range": "$50-500/month per user",
-    "Development Time": "8-12 months",
-    "Team Size": "6-8 developers",
-    "Complexity Level": "High",
-    "Market Size": "$147.7 billion (2025)",
-    "Growth Rate": "11.7% CAGR",
-    "Key Competitors": ["SAP", "Oracle", "Microsoft Dynamics", "NetSuite"],
-    "Deployment Options": ["Cloud", "On-premise", "Hybrid"],
-    "Scalability": "Highly scalable - supports 1000+ concurrent users",
-    "Security Features": ["SSL encryption", "Two-factor authentication", "Role-based access", "Data backup"],
-    "Integration Capabilities": ["Payment gateways", "Email services", "Third-party APIs", "Export/Import tools"],
-    "Support Languages": ["English", "Spanish", "French", "German", "Chinese"],
-    "Mobile Support": "Responsive web app + Native mobile app",
-    "Database Requirements": "MySQL 8.0+, 100GB+ storage recommended",
-    "Server Requirements": "8GB RAM, 4 CPU cores minimum",
-    "Compliance": ["GDPR", "SOX", "HIPAA ready"],
-    "ROI Potential": "25-40% cost reduction in operational processes",
-    "Market Demand": "Very High",
-    "Risk Level": "Medium",
-    "Unique Selling Points": ["AI-powered analytics", "Industry-specific modules", "No-code customization"]
-  },
-  {
-    "Product Name": "Ai Attendance Checker",
-    "Description": "AI-Powered Human Resource Management with Facial Recognition",
-    "Category": "HR Technology",
-    "Industry": "Human Resources",
-    "Technology": ["Node.js", "React", "Facial Recognition AI", "Firebase", "REST API", "OpenCV", "TensorFlow"],
-    "Keywords": ["HRM", "Attendance", "AI", "Facial Recognition", "Employee Monitoring", "Biometric"],
-    "Features": [
-      "AI-based facial attendance recognition",
-      "Real-time attendance tracking and monitoring",
-      "Advanced leave and absence management",
-      "Comprehensive employee database",
-      "Intelligent shift scheduling",
-      "Detailed attendance reports and analytics",
-      "GPS location tracking",
-      "Anti-spoofing technology"
-    ],
-    "Target Audience": "SMEs, Corporate offices, Educational institutions, Healthcare facilities",
-    "Pricing Model": "Per employee/month + Setup fee",
-    "Estimated Price Range": "$5-15/employee/month",
-    "Development Time": "4-6 months",
-    "Team Size": "4-5 developers + AI specialist",
-    "Complexity Level": "High",
-    "Market Size": "$54.64 billion (2025)",
-    "Growth Rate": "11.55% CAGR through 2032",
-    "Key Competitors": ["BambooHR", "Workday", "ADP", "Kronos"],
-    "Deployment Options": ["Cloud", "Hybrid"],
-    "Scalability": "Supports 10,000+ employees",
-    "Security Features": ["Encrypted biometric data", "GDPR compliant", "Secure cloud storage"],
-    "Integration Capabilities": ["Payroll systems", "HR software", "Door access systems", "Email notifications"],
-    "Support Languages": ["English", "Spanish", "Hindi", "Arabic", "Portuguese"],
-    "Mobile Support": "Native iOS/Android apps",
-    "Database Requirements": "Firebase/MongoDB, Biometric data encryption",
-    "Server Requirements": "GPU support for AI processing",
-    "Compliance": ["GDPR", "CCPA", "Biometric data protection laws"],
-    "ROI Potential": "30-50% reduction in time theft and administrative costs",
-    "Market Demand": "High",
-    "Risk Level": "Medium-High (Privacy concerns)",
-    "Unique Selling Points": ["99.9% accuracy", "Works in low light", "Mask detection capability"]
-  },
-  {
-    "Product Name": "Ai Chatbot",
-    "Description": "Intelligent Business Live Chatbot Software with NLP",
-    "Category": "Customer Service AI",
-    "Industry": "Customer Support",
-    "Technology": ["Python", "TensorFlow", "React", "Dialogflow API", "Node.js", "Natural Language Processing", "MongoDB"],
-    "Keywords": ["Chatbot", "AI", "Customer Support", "Automation", "NLP", "Conversational AI"],
-    "Features": [
-      "Advanced natural language processing",
-      "Multi-channel support (web, mobile, social media)",
-      "24/7 automated customer service",
-      "Pre-built and customizable conversation flows",
-      "Seamless live chat handover to humans",
-      "Comprehensive analytics and reporting",
-      "Sentiment analysis",
-      "Multi-language support"
-    ],
-    "Target Audience": "E-commerce, SaaS companies, Financial services, Healthcare providers",
-    "Pricing Model": "Tiered subscription based on conversations/month",
-    "Estimated Price Range": "$29-299/month",
-    "Development Time": "3-5 months",
-    "Team Size": "3-4 developers + NLP specialist",
-    "Complexity Level": "Medium-High",
-    "Market Size": "80% of companies using AI chatbots by 2025",
-    "Growth Rate": "25%+ annually",
-    "Key Competitors": ["Intercom", "Zendesk", "ChatGPT", "Drift"],
-    "Deployment Options": ["Cloud", "API integration"],
-    "Scalability": "Unlimited concurrent conversations",
-    "Security Features": ["End-to-end encryption", "Data privacy controls", "GDPR compliance"],
-    "Integration Capabilities": ["CRM systems", "Help desk software", "E-commerce platforms", "Social media"],
-    "Support Languages": ["50+ languages"],
-    "Mobile Support": "SDK for mobile apps",
-    "Database Requirements": "Conversation history storage, Analytics data",
-    "Server Requirements": "Auto-scaling cloud infrastructure",
-    "Compliance": ["GDPR", "HIPAA", "SOC 2"],
-    "ROI Potential": "40-60% reduction in customer service costs",
-    "Market Demand": "Very High",
-    "Risk Level": "Low-Medium",
-    "Unique Selling Points": ["Industry-specific training", "Voice integration", "Emotional intelligence"]
-  },
-  {
-    "Product Name": "Adi Bank",
-    "Description": "Comprehensive Digital Banking Solutions Platform",
-    "Category": "Financial Technology",
-    "Industry": "Banking & Finance",
-    "Technology": ["Java", "Spring Boot", "Angular", "PostgreSQL", "Microservices", "Kubernetes", "OAuth 2.0"],
-    "Keywords": ["Banking", "Fintech", "Security", "Payments", "Loans", "Digital Banking", "Core Banking"],
-    "Features": [
-      "Advanced account management system",
-      "Secure funds transfer and payments",
-      "Automated loan processing and approval",
-      "Comprehensive transaction history and statements",
-      "Multi-factor authentication",
-      "AI-powered fraud detection and prevention",
-      "Real-time notifications",
-      "Mobile banking integration"
-    ],
-    "Target Audience": "Banks, Credit unions, Fintech startups, Microfinance institutions",
-    "Pricing Model": "License + Implementation + Annual maintenance",
-    "Estimated Price Range": "$100,000-500,000 initial + $50,000/year maintenance",
-    "Development Time": "12-18 months",
-    "Team Size": "8-12 developers + Security specialists",
-    "Complexity Level": "Very High",
-    "Market Size": "$13.79 billion (2025) → $33.10 billion (2034)",
-    "Growth Rate": "10.2% CAGR",
-    "Key Competitors": ["Temenos", "FIS", "Finastra", "TCS BaNCS"],
-    "Deployment Options": ["On-premise", "Private cloud", "Hybrid"],
-    "Scalability": "Handles millions of transactions daily",
-    "Security Features": ["PCI DSS compliance", "End-to-end encryption", "Blockchain integration", "Biometric authentication"],
-    "Integration Capabilities": ["Payment networks", "Regulatory reporting", "Third-party financial services", "Open banking APIs"],
-    "Support Languages": ["Multiple currencies and languages"],
-    "Mobile Support": "Native mobile banking apps",
-    "Database Requirements": "High-availability PostgreSQL cluster",
-    "Server Requirements": "Enterprise-grade infrastructure with redundancy",
-    "Compliance": ["PCI DSS", "Basel III", "KYC", "AML", "Regional banking regulations"],
-    "ROI Potential": "20-35% operational cost reduction",
-    "Market Demand": "High",
-    "Risk Level": "High (Regulatory and security)",
-    "Unique Selling Points": ["Real-time processing", "Regulatory compliance automation", "AI-driven insights"]
-  },
-  {
-    "Product Name": "Adi Stock",
-    "Description": "Advanced Stock and Inventory Management Software",
-    "Category": "Inventory Management",
-    "Industry": "Supply Chain & Logistics",
-    "Technology": ["PHP", "Laravel", "Vue.js", "MySQL", "REST API", "Barcode/QR Scanner", "IoT Integration"],
-    "Keywords": ["Stock Management", "Inventory", "Warehouse", "Supply Chain", "Logistics", "Tracking"],
-    "Features": [
-      "Real-time stock tracking and monitoring",
-      "Advanced barcode and QR code scanning",
-      "Automated purchase and sales orders",
-      "Comprehensive supplier and customer management",
-      "Smart stock alerts and notifications",
-      "Detailed inventory reports and analytics",
-      "Multi-location warehouse support",
-      "Demand forecasting"
-    ],
-    "Target Audience": "Retailers, Wholesalers, Manufacturers, E-commerce businesses",
-    "Pricing Model": "Per location/month + Setup fee",
-    "Estimated Price Range": "$49-199/location/month",
-    "Development Time": "4-6 months",
-    "Team Size": "4-5 developers",
-    "Complexity Level": "Medium",
-    "Market Size": "$2.38 billion (2025) → $8.48 billion (2035)",
-    "Growth Rate": "13.1% CAGR",
-    "Key Competitors": ["Fishbowl", "inFlow", "Zoho Inventory", "TradeGecko"],
-    "Deployment Options": ["Cloud", "On-premise"],
-    "Scalability": "Supports unlimited products and locations",
-    "Security Features": ["Role-based access", "Data encryption", "Regular backups"],
-    "Integration Capabilities": ["E-commerce platforms", "Accounting software", "POS systems", "Shipping carriers"],
-    "Support Languages": ["English", "Spanish", "French", "German"],
-    "Mobile Support": "Mobile app for iOS/Android",
-    "Database Requirements": "MySQL 8.0+, Optimized for large datasets",
-    "Server Requirements": "4GB RAM minimum, SSD storage recommended",
-    "Compliance": ["Industry-specific regulations", "Tax compliance"],
-    "ROI Potential": "25-40% reduction in inventory carrying costs",
-    "Market Demand": "High",
-    "Risk Level": "Low-Medium",
-    "Unique Selling Points": ["AI-powered demand forecasting", "IoT sensor integration", "Advanced analytics"]
-  },
-  {
-    "Product Name": "Adi Bazar",
-    "Description": "Multi-Store eCommerce Shopping Cart Solution Platform",
-    "Category": "E-commerce Platform",
-    "Industry": "Retail & E-commerce",
-    "Technology": ["Magento", "React", "Node.js", "MongoDB", "AWS", "Elasticsearch", "CDN"],
-    "Keywords": ["eCommerce", "Multi-store", "Shopping Cart", "Payment Gateway", "Scalable", "Marketplace"],
-    "Features": [
-      "Multiple independent vendor stores",
-      "Unified shopping cart experience",
-      "Multiple payment gateway integrations",
-      "Advanced order and shipment tracking",
-      "Customer reviews and ratings system",
-      "Fully mobile responsive design",
-      "SEO optimization tools",
-      "Advanced analytics dashboard"
-    ],
-    "Target Audience": "Multi-brand retailers, Shopping mall operators, Franchise businesses",
-    "Pricing Model": "Monthly subscription + Transaction fees",
-    "Estimated Price Range": "$199-999/month + 1-3% transaction fee",
-    "Development Time": "6-8 months",
-    "Team Size": "5-7 developers",
-    "Complexity Level": "High",
-    "Market Size": "Multi-trillion dollar e-commerce market",
-    "Growth Rate": "15%+ annually",
-    "Key Competitors": ["Shopify Plus", "Magento Commerce", "WooCommerce", "BigCommerce"],
-    "Deployment Options": ["Cloud", "Hybrid"],
-    "Scalability": "Handles millions of products and high traffic",
-    "Security Features": ["PCI compliance", "SSL certificates", "DDoS protection", "Regular security updates"],
-    "Integration Capabilities": ["Payment processors", "Shipping carriers", "Marketing tools", "Analytics platforms"],
-    "Support Languages": ["50+ languages and currencies"],
-    "Mobile Support": "Progressive Web App + Native apps",
-    "Database Requirements": "MongoDB cluster, Redis caching",
-    "Server Requirements": "Auto-scaling cloud infrastructure",
-    "Compliance": ["PCI DSS", "GDPR", "Regional e-commerce regulations"],
-    "ROI Potential": "200-400% increase in online sales",
-    "Market Demand": "Very High",
-    "Risk Level": "Medium",
-    "Unique Selling Points": ["Omnichannel integration", "AI-powered personalization", "Advanced vendor management"]
-  },
-  {
-    "Product Name": "Adi Marketplace",
-    "Description": "Comprehensive Multi-Vendor Marketplace Platform",
-    "Category": "Marketplace Platform",
-    "Industry": "E-commerce & Technology",
-    "Technology": ["Laravel", "Vue.js", "MySQL", "Stripe API", "ElasticSearch", "Redis", "AWS"],
-    "Keywords": ["Marketplace", "Multi-vendor", "Ecommerce", "Vendor Management", "Payments", "Commission"],
-    "Features": [
-      "Comprehensive vendor registration and management",
-      "Advanced product catalog management",
-      "Flexible commission management system",
-      "Sophisticated order management",
-      "Multiple integrated payment gateways",
-      "Advanced search and filtering capabilities",
-      "Dispute resolution system",
-      "Analytics and reporting dashboard"
-    ],
-    "Target Audience": "Entrepreneurs, Existing retailers, Platform businesses",
-    "Pricing Model": "Setup fee + Monthly subscription + Commission",
-    "Estimated Price Range": "$5,000 setup + $299-999/month + 2-5% commission",
-    "Development Time": "6-10 months",
-    "Team Size": "6-8 developers",
-    "Complexity Level": "High",
-    "Market Size": "$5.89 trillion by 2029",
-    "Growth Rate": "20%+ annually",
-    "Key Competitors": ["Amazon Marketplace", "eBay", "Etsy", "Alibaba"],
-    "Deployment Options": ["Cloud", "Dedicated servers"],
-    "Scalability": "Supports thousands of vendors and millions of products",
-    "Security Features": ["Payment security", "Vendor verification", "Fraud detection", "Data protection"],
-    "Integration Capabilities": ["Payment systems", "Logistics partners", "Marketing tools", "Tax systems"],
-    "Support Languages": ["Global multi-language support"],
-    "Mobile Support": "Native marketplace apps",
-    "Database Requirements": "High-performance MySQL with caching",
-    "Server Requirements": "High-availability cloud infrastructure",
-    "Compliance": ["International e-commerce standards", "Tax regulations"],
-    "ROI Potential": "300-500% revenue growth potential",
-    "Market Demand": "Very High",
-    "Risk Level": "Medium-High",
-    "Unique Selling Points": ["AI-powered vendor matching", "Blockchain transaction verification", "Advanced analytics"]
-  },
-  {
-    "Product Name": "Adi Trainer",
-    "Description": "Advanced Online Course Selling Marketplace Platform",
-    "Category": "Educational Technology",
-    "Industry": "Education & Training",
-    "Technology": ["Django", "React", "PostgreSQL", "AWS S3", "Stripe API", "WebRTC", "AI Proctoring"],
-    "Keywords": ["Edtech", "Online Courses", "E-learning", "Course Marketplace", "LMS", "Education"],
-    "Features": [
-      "Comprehensive course creation and management",
-      "High-quality video hosting and streaming",
-      "Advanced student enrollment and progress tracking",
-      "Multiple payment options and pricing models",
-      "Interactive quizzes and assignments",
-      "Automated certificate generation",
-      "Live streaming capabilities",
-      "AI-powered course recommendations"
-    ],
-    "Target Audience": "Educators, Corporate trainers, Educational institutions, Content creators",
-    "Pricing Model": "Revenue sharing + Subscription tiers",
-    "Estimated Price Range": "$49-299/month + 5-15% revenue share",
-    "Development Time": "5-7 months",
-    "Team Size": "5-6 developers",
-    "Complexity Level": "Medium-High",
-    "Market Size": "27,000+ courses on major platforms",
-    "Growth Rate": "25%+ annually in online education",
-    "Key Competitors": ["Udemy", "Coursera", "Teachable", "Thinkific"],
-    "Deployment Options": ["Cloud", "White-label solutions"],
-    "Scalability": "Supports unlimited courses and students",
-    "Security Features": ["Content protection", "Secure payments", "User authentication", "Data privacy"],
-    "Integration Capabilities": ["Video platforms", "Payment processors", "Email marketing", "CRM systems"],
-    "Support Languages": ["Multi-language platform"],
-    "Mobile Support": "Mobile learning apps",
-    "Database Requirements": "PostgreSQL with media storage optimization",
-    "Server Requirements": "CDN for global content delivery",
-    "Compliance": ["COPPA", "GDPR", "Educational standards"],
-    "ROI Potential": "150-300% increase in course sales",
-    "Market Demand": "Very High",
-    "Risk Level": "Low-Medium",
-    "Unique Selling Points": ["AI-powered learning paths", "Interactive content tools", "Advanced analytics"]
-  },
-  {
-    "Product Name": "Adi Crypto",
-    "Description": "Professional Cryptocurrency Trading and Wallet Platform",
-    "Category": "Cryptocurrency Exchange",
-    "Industry": "Financial Technology",
-    "Technology": ["Node.js", "React", "Blockchain APIs", "MongoDB", "WebSocket", "Kubernetes", "Security Protocols"],
-    "Keywords": ["Cryptocurrency", "Trading", "Wallet", "Blockchain", "Exchange", "DeFi", "Bitcoin"],
-    "Features": [
-      "Real-time cryptocurrency price tracking",
-      "Advanced buy/sell order management",
-      "Multi-currency wallet with cold storage",
-      "Comprehensive KYC and AML compliance",
-      "Detailed transaction history and analytics",
-      "Military-grade private key management",
-      "DeFi integration capabilities",
-      "Automated trading bots"
-    ],
-    "Target Audience": "Crypto traders, Institutional investors, Fintech companies",
-    "Pricing Model": "Trading fees + Premium subscriptions",
-    "Estimated Price Range": "0.1-0.5% trading fee + $29-199/month premium",
-    "Development Time": "8-12 months",
-    "Team Size": "6-8 developers + Blockchain specialists",
-    "Complexity Level": "Very High",
-    "Market Size": "14.1% CAGR (2025-2032)",
-    "Growth Rate": "Highly volatile, trend-dependent",
-    "Key Competitors": ["Binance", "Coinbase", "Kraken", "FTX"],
-    "Deployment Options": ["Cloud", "Hybrid with cold storage"],
-    "Scalability": "High-frequency trading capable",
-    "Security Features": ["Multi-signature wallets", "Cold storage", "Advanced encryption", "Security audits"],
-    "Integration Capabilities": ["Major blockchains", "Payment processors", "Banking systems", "DeFi protocols"],
-    "Support Languages": ["Global multi-language"],
-    "Mobile Support": "Native trading apps",
-    "Database Requirements": "High-performance with real-time capabilities",
-    "Server Requirements": "Enterprise-grade with global distribution",
-    "Compliance": ["AML", "KYC", "Cryptocurrency regulations by jurisdiction"],
-    "ROI Potential": "High risk/high reward - market dependent",
-    "Market Demand": "High but volatile",
-    "Risk Level": "Very High (Regulatory and market risks)",
-    "Unique Selling Points": ["Advanced trading algorithms", "Institutional-grade security", "DeFi integration"]
-  },
-  {
-    "Product Name": "Adi HosManager",
-    "Description": "Advanced Hospital Management System Software",
-    "Category": "Healthcare Management",
-    "Industry": "Healthcare",
-    "Technology": ["PHP", "Laravel", "React", "MySQL", "REST API", "HL7 FHIR", "DICOM"],
-    "Keywords": ["Hospital Management", "Healthcare", "Patient Records", "Scheduling", "Billing", "EMR", "HMS"],
-    "Features": [
-      "Comprehensive patient registration and EMR",
-      "Advanced appointment scheduling system",
-      "Automated billing and insurance processing",
-      "Integrated pharmacy and inventory management",
-      "Complete staff and department management",
-      "Clinical reports and dashboards",
-      "Telemedicine integration",
-      "Medical device integration"
-    ],
-    "Target Audience": "Hospitals, Clinics, Healthcare networks, Medical practices",
-    "Pricing Model": "Per bed/month + Implementation",
-    "Estimated Price Range": "$50-200/bed/month + $10,000-50,000 implementation",
-    "Development Time": "10-15 months",
-    "Team Size": "8-10 developers + Healthcare IT specialists",
-    "Complexity Level": "Very High",
-    "Market Size": "$31.19 billion (2025) → $54.20 billion (2034)",
-    "Growth Rate": "6.3% CAGR",
-    "Key Competitors": ["Epic", "Cerner", "Allscripts", "MEDITECH"],
-    "Deployment Options": ["On-premise", "Cloud", "Hybrid"],
-    "Scalability": "Supports multi-facility healthcare networks",
-    "Security Features": ["HIPAA compliance", "End-to-end encryption", "Audit trails", "Role-based access"],
-    "Integration Capabilities": ["Medical devices", "Laboratory systems", "Imaging systems", "Insurance networks"],
-    "Support Languages": ["Multiple languages for diverse patient populations"],
-    "Mobile Support": "Healthcare professional mobile apps",
-    "Database Requirements": "HIPAA-compliant database with high availability",
-    "Server Requirements": "Healthcare-grade infrastructure with redundancy",
-    "Compliance": ["HIPAA", "HL7", "ICD-10", "Regional healthcare regulations"],
-    "ROI Potential": "20-30% operational efficiency improvement",
-    "Market Demand": "High",
-    "Risk Level": "Medium-High (Compliance and patient safety)",
-    "Unique Selling Points": ["AI-powered diagnostics support", "Interoperability focus", "Patient engagement tools"]
-  },
-  {
-    "Product Name": "Adi BookShop",
-    "Description": "Advanced Multi-Vendor Online Bookstore Platform",
-    "Category": "E-commerce Specialty",
-    "Industry": "Publishing & Retail",
-    "Technology": ["Magento", "React", "Node.js", "MySQL", "AWS", "Elasticsearch", "PDF DRM"],
-    "Keywords": ["eCommerce", "Bookstore", "Multi-vendor", "Online Shopping", "Publishing", "Digital Books"],
-    "Features": [
-      "Comprehensive multi-vendor support",
-      "Advanced book categorization and search",
-      "Sophisticated shopping cart and checkout",
-      "Complete order and inventory management",
-      "Customer reviews and ratings system",
-      "Dynamic discounts and promotions",
-      "Digital book delivery system",
-      "Author and publisher portals"
-    ],
-    "Target Audience": "Independent bookstores, Publishers, Educational institutions, Book lovers",
-    "Pricing Model": "Monthly subscription + Transaction fees",
-    "Estimated Price Range": "$99-499/month + 2-4% transaction fee",
-    "Development Time": "4-6 months",
-    "Team Size": "4-5 developers",
-    "Complexity Level": "Medium",
-    "Market Size": "$26.04 billion (2025) → $48.27 billion (2034)",
-    "Growth Rate": "Strong growth in digital segments",
-    "Key Competitors": ["Amazon Books", "Barnes & Noble", "AbeBooks", "Book Depository"],
-    "Deployment Options": ["Cloud", "Hybrid"],
-    "Scalability": "Supports millions of books and authors",
-    "Security Features": ["Payment security", "Digital rights management", "User data protection"],
-    "Integration Capabilities": ["Publishing platforms", "Payment systems", "Shipping carriers", "Review platforms"],
-    "Support Languages": ["Global multi-language book support"],
-    "Mobile Support": "Reading apps and mobile commerce",
-    "Database Requirements": "Optimized for large catalog searches",
-    "Server Requirements": "CDN for global book delivery",
-    "Compliance": ["Publishing industry standards", "Copyright protection"],
-    "ROI Potential": "150-250% increase in online book sales",
-    "Market Demand": "Medium-High",
-    "Risk Level": "Low-Medium",
-    "Unique Selling Points": ["AI book recommendations", "Community features", "Publisher analytics"]
-  },
-  {
-    "Product Name": "Adi DocApp",
-    "Description": "Comprehensive Doctor Appointment and Telemedicine Platform",
-    "Category": "Telehealth Platform",
-    "Industry": "Healthcare Technology",
-    "Technology": ["Flutter", "Firebase", "Node.js", "MongoDB", "REST API", "WebRTC", "AI Diagnostics"],
-    "Keywords": ["Telehealth", "Appointments", "Prescriptions", "Healthcare", "Telemedicine", "Digital Health"],
-    "Features": [
-      "Comprehensive doctor and patient profiles",
-      "Intelligent appointment booking and reminders",
-      "Secure digital prescriptions and e-pharmacy",
-      "High-quality teleconsultation support",
-      "Complete medical history tracking",
-      "Secure HIPAA-compliant messaging",
-      "AI-powered symptom checker",
-      "Insurance and payment processing"
-    ],
-    "Target Audience": "Healthcare providers, Patients, Telemedicine companies, Insurance providers",
-    "Pricing Model": "Per consultation fee + Monthly subscriptions",
-    "Estimated Price Range": "$5-15 per consultation + $29-199/month for providers",
-    "Development Time": "6-8 months",
-    "Team Size": "5-6 developers + Healthcare compliance specialist",
-    "Complexity Level": "High",
-    "Market Size": "Rising healthcare digitization trend",
-    "Growth Rate": "30%+ annually post-pandemic",
-    "Key Competitors": ["Teladoc", "Amwell", "Doxy.me", "MDLive"],
-    "Deployment Options": ["Cloud", "Mobile-first"],
-    "Scalability": "Supports thousands of concurrent consultations",
-    "Security Features": ["HIPAA compliance", "End-to-end encryption", "Secure video", "Protected health information"],
-    "Integration Capabilities": ["EMR systems", "Pharmacy networks", "Insurance systems", "Payment processors"],
-    "Support Languages": ["Multi-language for diverse patient base"],
-    "Mobile Support": "Native iOS/Android apps",
-    "Database Requirements": "HIPAA-compliant with encryption",
-    "Server Requirements": "Healthcare-grade cloud infrastructure",
-    "Compliance": ["HIPAA", "HITECH", "State telemedicine regulations", "Medical licensing"],
-    "ROI Potential": "40-60% increase in patient reach and efficiency",
-    "Market Demand": "Very High",
-    "Risk Level": "Medium-High (Healthcare compliance)",
-    "Unique Selling Points": ["AI-powered triage", "Integrated pharmacy", "Multi-specialty support"]
-  }
-];
+
     </script>
     <style>
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
+
         @keyframes glow {
-            from { box-shadow: 0 0 20px #3b82f6; }
-            to { box-shadow: 0 0 30px #3b82f6, 0 0 40px #3b82f6; }
+            from {
+                box-shadow: 0 0 20px #3b82f6;
+            }
+
+            to {
+                box-shadow: 0 0 30px #3b82f6, 0 0 40px #3b82f6;
+            }
         }
+
         @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #3b82f6, #1e40af, #f59e0b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .glass {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.1);
         }
+
         .skill-card:hover {
             transform: translateY(-5px);
             transition: all 0.3s ease;
         }
+
         .project-card {
             transition: all 0.3s ease;
         }
+
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+
         .nav-link {
             position: relative;
             overflow: hidden;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -560,17 +118,29 @@ const projects = [
             background: linear-gradient(90deg, #3b82f6, #f59e0b);
             transition: left 0.3s ease;
         }
+
         .nav-link:hover::after {
             left: 0;
         }
+
         .typing::after {
             content: '|';
             animation: blink 1s infinite;
         }
+
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
         }
+
         .parallax {
             background-attachment: fixed;
             background-position: center;
@@ -579,8 +149,9 @@ const projects = [
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-x-hidden">
-    
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -590,12 +161,20 @@ const projects = [
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Home</a>
-                        <a href="#about" class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">About</a>
-                        <a href="#skills" class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Skills</a>
-                        <a href="#experience" class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Experience</a>
-                        <a href="#projects" class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Projects</a>
-                        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Contact</a>
+                        <a href="index.html#home"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Home</a>
+                        <a href="index.html#about"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">About</a>
+                        <a href="index.html#skills"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Skills</a>
+                        <a href="index.html#experience"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Experience</a>
+                        <a href="projects.html"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                        <a href="blogs.html"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Blogs</a>
+                        <a href="index.html#contact"
+                            class="nav-link px-3 py-2 text-sm font-medium hover:text-accent transition-colors">Contact</a>
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -606,13 +185,7 @@ const projects = [
             </div>
         </div>
         <div id="mobile-menu" class="md:hidden hidden glass">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-base font-medium hover:text-accent transition-colors">Home</a>
-                <a href="#about" class="block px-3 py-2 text-base font-medium hover:text-accent transition-colors">About</a>
-                <a href="#skills" class="block px-3 py-2 text-base font-medium hover:text-accent transition-colors">Skills</a>
-                <a href="#experience" class="block px-3 py-2 text-base font-medium hover:text-accent transition-colors">Experience</a>
-                <a href="#projects" class="block px-3 py-2 text-base font-medium hover:text-accent transition-colors">Projects</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-medium hover:text-accent transition-colors">Contact</a>
+            <div id="mobile-menu-container" class="px-2 pt-2 pb-3 space-y-1">
             </div>
         </div>
     </nav>
@@ -620,11 +193,15 @@ const projects = [
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
         <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-            <div class="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: 2s;"></div>
+            <div
+                class="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-float">
+            </div>
+            <div class="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-float"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-float"
+                style="animation-delay: 2s;"></div>
         </div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
             <div class="animate-fade-in">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -634,19 +211,22 @@ const projects = [
                     <span id="typed-text" class="typing">Tech Lead & Full-Stack Developer</span>
                 </div>
                 <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                    Results-driven Tech Lead with 10+ years of experience in full-stack development, team leadership, and project management. Leading teams of 36+ developers and delivering scalable solutions.
+                    Results-driven Tech Lead with 10+ years of experience in full-stack development, team leadership,
+                    and project management. Leading teams of 36+ developers and delivering scalable solutions.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#contact" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-glow">
+                    <a href="#contact"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-glow">
                         <i class="fas fa-envelope mr-2"></i>Get In Touch
                     </a>
-                    <a href="#projects" class="border-2 border-blue-500 hover:bg-blue-500 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <a href="#projects"
+                        class="border-2 border-blue-500 hover:bg-blue-500 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                         <i class="fas fa-code mr-2"></i>View My Work
                     </a>
                 </div>
             </div>
         </div>
-        
+
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
             <a href="#about" class="text-blue-400 hover:text-blue-300">
                 <i class="fas fa-chevron-down text-3xl"></i>
@@ -661,70 +241,106 @@ const projects = [
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">About Me</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
             </div>
-            
+
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 animate-slide-up">
-                    <h3 class="text-3xl font-bold text-blue-300 mb-4">Innovative Tech Leader</h3>
+                <div class="space-y-8 animate-slide-up">
+                    <!-- Headline -->
+                    <h3
+                        class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                        Driving Innovation, Building Impact
+                    </h3>
+
+                    <!-- Intro -->
                     <p class="text-gray-300 text-lg leading-relaxed">
-                        With over a decade of experience in the tech industry, I've successfully led cross-functional teams, architected scalable systems, and delivered high-performance solutions that drive business growth.
+                        As a <span class="font-semibold text-blue-300">Tech Leader with 10+ years of experience</span>,
+                        I have transformed ideas into scalable, high-impact software solutions, leading teams of
+                        engineers to deliver products that
+                        accelerate business growth and delight users.
                     </p>
                     <p class="text-gray-300 text-lg leading-relaxed">
-                        Currently leading a team of 36 developers at Onest Tech LLC, I specialize in full-stack development using modern technologies like PHP, Node.js, React, and cloud infrastructure. My approach combines technical excellence with strong leadership to deliver exceptional results.
+                        Currently spearheading a <span class="font-semibold text-green-300">36-member development team
+                            at Onest Tech LLC</span>, I blend deep technical expertise in <span
+                            class="font-medium text-purple-300">PHP, Node.js, React, and Cloud Infrastructure</span>
+                        with strategic leadership to consistently deliver projects on time, on budget, and above
+                        expectations.
                     </p>
-                    
-                    <div class="grid grid-cols-2 gap-6 mt-8">
-                        <div class="bg-gradient-to-br from-blue-600/20 to-purple-600/20 p-6 rounded-xl border border-blue-500/30">
-                            <div class="text-3xl font-bold text-blue-400">10+</div>
-                            <div class="text-gray-300">Years Experience</div>
+
+                    <!-- Stats: Row 1 -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+                        <div
+                            class="bg-gradient-to-br from-blue-700/20 to-purple-600/20 p-6 rounded-2xl border border-blue-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-blue-400">10+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Years Experience</div>
                         </div>
-                        <div class="bg-gradient-to-br from-green-600/20 to-blue-600/20 p-6 rounded-xl border border-green-500/30">
-                            <div class="text-3xl font-bold text-green-400">36+</div>
-                            <div class="text-gray-300">Team Members</div>
+                        <div
+                            class="bg-gradient-to-br from-green-700/20 to-teal-600/20 p-6 rounded-2xl border border-green-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-green-400">36+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Team Members Led</div>
                         </div>
-                        <div class="bg-gradient-to-br from-purple-600/20 to-pink-600/20 p-6 rounded-xl border border-purple-500/30">
-                            <div class="text-3xl font-bold text-purple-400">100+</div>
-                            <div class="text-gray-300">Projects Delivered</div>
+                        <div
+                            class="bg-gradient-to-br from-purple-700/20 to-pink-600/20 p-6 rounded-2xl border border-purple-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-purple-400">100+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Projects Delivered</div>
                         </div>
-                        <div class="bg-gradient-to-br from-yellow-600/20 to-orange-600/20 p-6 rounded-xl border border-yellow-500/30">
-                            <div class="text-3xl font-bold text-yellow-400">98%</div>
-                            <div class="text-gray-300">Client Satisfaction</div>
+                        <div
+                            class="bg-gradient-to-br from-yellow-700/20 to-orange-600/20 p-6 rounded-2xl border border-yellow-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-yellow-400">98%</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Client Satisfaction</div>
                         </div>
                     </div>
+
+                    <!-- Stats: Row 2 -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+                        <div
+                            class="bg-gradient-to-br from-pink-700/20 to-red-600/20 p-6 rounded-2xl border border-pink-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-4xl font-extrabold text-pink-400">$2M+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Budget Managed</div>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-indigo-700/20 to-blue-600/20 p-6 rounded-2xl border border-indigo-500/40 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div class="text-3xl font-extrabold text-indigo-400">500K+</div>
+                            <div class="text-gray-300 text-sm tracking-wide uppercase">Revenue Generated via AI</div>
+                        </div>
+                    </div>
+
+                    <!-- Key Impact Statement -->
+                    <div
+                        class="mt-8 p-6 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-2xl shadow-md">
+                        <p class="text-gray-200 text-lg italic">
+                            “I don’t just build software — I build solutions that scale, empower businesses, and inspire
+                            teams to achieve more.”
+                        </p>
+                    </div>
                 </div>
-                
+
+
+
+
                 <div class="relative animate-slide-up">
-                    <div class="relative z-10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                    <div
+                        class="relative z-10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                         <h4 class="text-2xl font-bold text-blue-300 mb-6">Core Achievements</h4>
-                        <ul class="space-y-4">
-                            <li class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
-                                <span class="text-gray-300">Led development teams resulting in 35% reduction in system downtime</span>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
-                                <span class="text-gray-300">Improved application performance by 15% and reduced infrastructure costs by 5%</span>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
-                                <span class="text-gray-300">Mentored 40+ developers and increased team productivity significantly</span>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
-                                <span class="text-gray-300">Implemented CI/CD pipelines reducing deployment time by 10%</span>
-                            </li>
-                        </ul>
-                        
+
+                        <!-- Dynamic Achievements List -->
+                        <div id="achievements-container" class="space-y-8"></div>
+
                         <div class="mt-8 pt-6 border-t border-gray-700">
                             <h5 class="text-xl font-semibold text-blue-300 mb-4">Education & Certifications</h5>
                             <div class="space-y-2 text-gray-300">
-                                <p><i class="fas fa-graduation-cap text-blue-400 mr-2"></i>B.Sc. Computer Science & Engineering - CGPA 3.73</p>
-                                <p><i class="fas fa-certificate text-green-400 mr-2"></i>Project Management - Rice University</p>
-                                <p><i class="fas fa-certificate text-purple-400 mr-2"></i>Web Development Specialization - University of Michigan</p>
+                                <p><i class="fas fa-graduation-cap text-blue-400 mr-2"></i>B.Sc. Computer Science &
+                                    Engineering - CGPA 3.73</p>
+                                <p><i class="fas fa-certificate text-green-400 mr-2"></i>Project Management - Rice
+                                    University</p>
+                                <p><i class="fas fa-certificate text-purple-400 mr-2"></i>Web Development Specialization
+                                    - University of Michigan</p>
                             </div>
                         </div>
                     </div>
-                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg -z-10"></div>
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg -z-10">
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -735,89 +351,17 @@ const projects = [
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Technical Expertise</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
-                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">Comprehensive full-stack development skills with expertise in modern technologies and frameworks</p>
+                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">
+                    Comprehensive full-stack development skills with expertise in modern technologies and frameworks
+                </p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Frontend Skills -->
-                <div class="skill-card glass p-8 rounded-2xl border border-blue-500/30 text-center">
-                    <div class="mb-6">
-                        <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-blue-300">Frontend</h3>
-                    </div>
-                    <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center justify-center"><i class="fab fa-react text-blue-400 mr-2"></i>React.js</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-js text-yellow-400 mr-2"></i>JavaScript</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-html5 text-orange-500 mr-2"></i>HTML5</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-css3-alt text-blue-500 mr-2"></i>CSS3</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-paint-brush text-purple-400 mr-2"></i>Tailwind CSS</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-bootstrap text-purple-600 mr-2"></i>Bootstrap</li>
-                    </ul>
-                </div>
-                
-                <!-- Backend Skills -->
-                <div class="skill-card glass p-8 rounded-2xl border border-green-500/30 text-center">
-                    <div class="mb-6">
-                        <i class="fas fa-server text-5xl text-green-500 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-green-300">Backend</h3>
-                    </div>
-                    <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center justify-center"><i class="fab fa-php text-purple-500 mr-2"></i>PHP</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-laravel text-red-500 mr-2"></i>Laravel</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-node-js text-green-500 mr-2"></i>Node.js</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-python text-yellow-400 mr-2"></i>Python</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-fire text-orange-500 mr-2"></i>FastAPI</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-code text-blue-400 mr-2"></i>RESTful APIs</li>
-                    </ul>
-                </div>
-                
-                <!-- Database Skills -->
-                <div class="skill-card glass p-8 rounded-2xl border border-yellow-500/30 text-center">
-                    <div class="mb-6">
-                        <i class="fas fa-database text-5xl text-yellow-500 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-yellow-300">Database</h3>
-                    </div>
-                    <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center justify-center"><i class="fas fa-database text-blue-500 mr-2"></i>MySQL</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-leaf text-green-500 mr-2"></i>MongoDB</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-database text-red-500 mr-2"></i>NoSQL</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-search text-purple-400 mr-2"></i>Redis</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-chart-line text-orange-400 mr-2"></i>GraphQL</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-sync text-blue-400 mr-2"></i>Database Optimization</li>
-                    </ul>
-                </div>
-                
-                <!-- DevOps Skills -->
-                <div class="skill-card glass p-8 rounded-2xl border border-purple-500/30 text-center">
-                    <div class="mb-6">
-                        <i class="fab fa-aws text-5xl text-orange-400 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-purple-300">DevOps & Cloud</h3>
-                    </div>
-                    <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center justify-center"><i class="fab fa-docker text-blue-500 mr-2"></i>Docker</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-aws text-orange-400 mr-2"></i>AWS</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-infinity text-green-400 mr-2"></i>CI/CD</li>
-                        <li class="flex items-center justify-center"><i class="fab fa-git-alt text-red-500 mr-2"></i>Git</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-server text-gray-400 mr-2"></i>Nginx</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-tools text-yellow-400 mr-2"></i>System Architecture</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Leadership Skills -->
-            <div class="mt-12 text-center">
-                <h3 class="text-3xl font-bold text-blue-300 mb-8">Leadership & Management</h3>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <span class="px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 text-blue-300">Team Leadership</span>
-                    <span class="px-6 py-3 bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-full border border-green-500/30 text-green-300">Project Management</span>
-                    <span class="px-6 py-3 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full border border-purple-500/30 text-purple-300">Agile/Scrum</span>
-                    <span class="px-6 py-3 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 rounded-full border border-yellow-500/30 text-yellow-300">Mentoring</span>
-                    <span class="px-6 py-3 bg-gradient-to-r from-red-600/20 to-pink-600/20 rounded-full border border-red-500/30 text-red-300">Strategic Planning</span>
-                    <span class="px-6 py-3 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full border border-indigo-500/30 text-indigo-300">System Architecture</span>
-                </div>
+            <div id="appendBySkillContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamic skills will be appended here -->
             </div>
         </div>
     </section>
+
+
 
     <!-- Experience Section -->
     <section id="experience" class="py-20 bg-gradient-to-r from-slate-800 to-slate-900">
@@ -826,181 +370,254 @@ const projects = [
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Professional Journey</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
             </div>
-            
+
             <div class="relative">
                 <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-600"></div>
-                
+
                 <div class="space-y-12">
-                    
+
                     <div class="relative flex items-start space-x-8">
-                        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
                             <i class="fas fa-crown text-white text-xl"></i>
                         </div>
-                        <div class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <div
+                            class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <div>
                                     <h3 class="text-2xl font-bold text-blue-300">Tech Lead Officer</h3>
                                     <p class="text-xl text-gray-300">Onest Tech LLC Banani, Dhaka, BD</p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="bg-green-600/20 text-green-300 px-4 py-2 rounded-full text-sm border border-green-500/30">09/2022 - Current</span>
+                                    <span
+                                        class="bg-green-600/20 text-green-300 px-4 py-2 rounded-full text-sm border border-green-500/30">09/2022
+                                        - Current</span>
                                 </div>
                             </div>
                             <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Lead a team of 36 developers in making critical technical decisions and implementing architectural strategies using PHP, Node, Python, JavaScript, jQuery, React, and various databases.</li>
-                                <li>Oversee the successful development and deployment of full-stack applications, utilizing PHP, Node, React, and databases such as MySQL and NoSQL, resulting in a 10% increase in application performance and a 5% reduction in infrastructure costs.</li>
-                                <li>Architect and maintain RESTful APIs and GraphQL endpoints, enabling seamless data exchange and improvement in data retrieval.</li>
-                                <li>Led the design of 4 complex software systems, resulting in a 35% reduction in system downtime, a 15% increase in scalability, and improved user satisfaction by 20%.</li>
-                                <li>Implemented CI/CD pipelines and Docker for projects, resulting in a 10% decrease in deployment time and post-deployment issues.</li>
-                                <li>Implemented Agile methodologies to improve project delivery time and increase client satisfaction.</li>
-                                <li>Mentored 40 developers, increased team productivity, improved code quality, and collaborated directly with 100+ clients, resulting in a 98% accuracy in understanding and delivering on client requirements.</li>
+                                <li>Lead a team of 36 developers in making critical technical decisions and implementing
+                                    architectural strategies using PHP, Node, Python, JavaScript, jQuery, React, and
+                                    various databases.</li>
+                                <li>Oversee the successful development and deployment of full-stack applications,
+                                    utilizing PHP, Node, React, and databases such as MySQL and NoSQL, resulting in a
+                                    10% increase in application performance and a 5% reduction in infrastructure costs.
+                                </li>
+                                <li>Architect and maintain RESTful APIs and GraphQL endpoints, enabling seamless data
+                                    exchange and improvement in data retrieval.</li>
+                                <li>Led the design of 4 complex software systems, resulting in a 35% reduction in system
+                                    downtime, a 15% increase in scalability, and improved user satisfaction by 20%.</li>
+                                <li>Implemented CI/CD pipelines and Docker for projects, resulting in a 10% decrease in
+                                    deployment time and post-deployment issues.</li>
+                                <li>Implemented Agile methodologies to improve project delivery time and increase client
+                                    satisfaction.</li>
+                                <li>Mentored 40 developers, increased team productivity, improved code quality, and
+                                    collaborated directly with 100+ clients, resulting in a 98% accuracy in
+                                    understanding and delivering on client requirements.</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="relative flex items-start space-x-8">
-                        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
                             <i class="fas fa-tasks text-white text-xl"></i>
                         </div>
-                        <div class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <div
+                            class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <div>
                                     <h3 class="text-2xl font-bold text-blue-300">Project Manager</h3>
                                     <p class="text-xl text-gray-300">Onest Tech LLC Banani, Dhaka, BD</p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">01/2021 - 08/2022</span>
+                                    <span
+                                        class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">01/2021
+                                        - 08/2022</span>
                                 </div>
                             </div>
                             <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Expertise in project management methodologies, including Agile, Scrum, Waterfall, Kanban, etc.</li>
-                                <li>Strong leadership skills to guide and motivate cross-functional teams, including developers, designers, and business analysts.</li>
-                                <li>Excellent communication skills to effectively convey project goals, progress, and requirements to stakeholders at all levels.</li>
-                                <li>Proficiency in identifying, assessing, and mitigating project risks to ensure on-time and on-budget delivery.</li>
-                                <li>Skill in managing relationships with clients, sponsors, and other stakeholders to ensure project success and customer satisfaction.</li>
-                                <li>Effective allocation of resources, including personnel, equipment, and budget, to maximize project efficiency.</li>
-                                <li>Familiarity with project management software and tools, such as Microsoft Project, Jira, Trello, Asana, or similar platforms.</li>
+                                <li>Expertise in project management methodologies, including Agile, Scrum, Waterfall,
+                                    Kanban, etc.</li>
+                                <li>Strong leadership skills to guide and motivate cross-functional teams, including
+                                    developers, designers, and business analysts.</li>
+                                <li>Excellent communication skills to effectively convey project goals, progress, and
+                                    requirements to stakeholders at all levels.</li>
+                                <li>Proficiency in identifying, assessing, and mitigating project risks to ensure
+                                    on-time and on-budget delivery.</li>
+                                <li>Skill in managing relationships with clients, sponsors, and other stakeholders to
+                                    ensure project success and customer satisfaction.</li>
+                                <li>Effective allocation of resources, including personnel, equipment, and budget, to
+                                    maximize project efficiency.</li>
+                                <li>Familiarity with project management software and tools, such as Microsoft Project,
+                                    Jira, Trello, Asana, or similar platforms.</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="relative flex items-start space-x-8">
-                        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
                             <i class="fas fa-tasks text-white text-xl"></i>
                         </div>
-                        <div class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <div
+                            class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <div>
                                     <h3 class="text-2xl font-bold text-blue-300">Project Manager</h3>
                                     <p class="text-xl text-gray-300">Spondon IT Panthapath,Dhaka, BD</p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">04/2019 - 12/2020</span>
+                                    <span
+                                        class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">04/2019
+                                        - 12/2020</span>
                                 </div>
                             </div>
                             <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Define project scope, objectives, and deliverables, aligning requirements using PHP, Node, Python, and relevant technologies</li>
-                                <li>Allocate and manage technical resources efficiently, identifying and mitigating risks using MySql, NoSQL, MongoDB, and Rest API.</li>
-                                <li>Facilitate collaboration between development and operations teams, bridging the gap by leveraging Git, CI/CD, and Docker.</li>
-                                <li>Implement infrastructure management through code, ensuring consistency with cPanel, WHM Panel, VPS, Apache, and Nginx.</li>
-                                <li>Implement robust monitoring solutions, tracking performance and detecting issues using AWS, EC2, and security measures.</li>
-                                <li>Supervise and creation of user-friendly interfaces using HTML, CSS, Bootstrap, SASS, and Tailwind CSS, increase in user satisfaction.</li>
+                                <li>Define project scope, objectives, and deliverables, aligning requirements using PHP,
+                                    Node, Python, and relevant technologies</li>
+                                <li>Allocate and manage technical resources efficiently, identifying and mitigating
+                                    risks using MySql, NoSQL, MongoDB, and Rest API.</li>
+                                <li>Facilitate collaboration between development and operations teams, bridging the gap
+                                    by leveraging Git, CI/CD, and Docker.</li>
+                                <li>Implement infrastructure management through code, ensuring consistency with cPanel,
+                                    WHM Panel, VPS, Apache, and Nginx.</li>
+                                <li>Implement robust monitoring solutions, tracking performance and detecting issues
+                                    using AWS, EC2, and security measures.</li>
+                                <li>Supervise and creation of user-friendly interfaces using HTML, CSS, Bootstrap, SASS,
+                                    and Tailwind CSS, increase in user satisfaction.</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="relative flex items-start space-x-8">
-                        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
                             <i class="fas fa-user-tie text-white text-xl"></i>
                         </div>
-                        <div class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <div
+                            class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <div>
                                     <h3 class="text-2xl font-bold text-blue-300">Senior Software Engineer</h3>
                                     <p class="text-xl text-gray-300">Spondon IT Panthapath,Dhaka, BD</p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">10/2017 - 03/2019</span>
+                                    <span
+                                        class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">10/2017
+                                        - 03/2019</span>
                                 </div>
                             </div>
                             <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Lead the development using PHP (Laravel, CodeIgniter) and JavaScript, jQuery, Ajax for both front-end and back-end components.</li>
-                                <li>Manage and optimize databases, including MySQL and NoSQL, ensuring efficient data storage, retrieval, and performance.</li>
-                                <li>Design and implement RESTful APIs and GraphQL endpoints to facilitate seamless communication between various application modules.</li>
-                                <li>Utilize HTML, CSS, SASS, Tailwind CSS, and UI/UX design principles (Figma) to create visually appealing and user-friendly interfaces.</li>
-                                <li>Architect scalable systems, considering load balancing, caching strategies, and database optimizations to handle increasing user loads.</li>
-                                <li>Configure and maintain web servers Apache on cPanel, WHM Panel, VPS, ensuring high availability and security.</li>
-                                <li>Implement best practices in version control Git, CI/CD pipelines, and Docker for development workflows and deployment processes.</li>
+                                <li>Lead the development using PHP (Laravel, CodeIgniter) and JavaScript, jQuery, Ajax
+                                    for both front-end and back-end components.</li>
+                                <li>Manage and optimize databases, including MySQL and NoSQL, ensuring efficient data
+                                    storage, retrieval, and performance.</li>
+                                <li>Design and implement RESTful APIs and GraphQL endpoints to facilitate seamless
+                                    communication between various application modules.</li>
+                                <li>Utilize HTML, CSS, SASS, Tailwind CSS, and UI/UX design principles (Figma) to create
+                                    visually appealing and user-friendly interfaces.</li>
+                                <li>Architect scalable systems, considering load balancing, caching strategies, and
+                                    database optimizations to handle increasing user loads.</li>
+                                <li>Configure and maintain web servers Apache on cPanel, WHM Panel, VPS, ensuring high
+                                    availability and security.</li>
+                                <li>Implement best practices in version control Git, CI/CD pipelines, and Docker for
+                                    development workflows and deployment processes.</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="relative flex items-start space-x-8">
-                        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
                             <i class="fas fa-laptop-code text-white text-xl"></i>
                         </div>
-                        <div class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <div
+                            class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <div>
                                     <h3 class="text-2xl font-bold text-blue-300">Software Engineer</h3>
                                     <p class="text-xl text-gray-300">United Group Gulshan-2, Dhaka, BD</p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">01/2017 - 10/2017</span>
+                                    <span
+                                        class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">01/2017
+                                        - 10/2017</span>
                                 </div>
                             </div>
                             <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Lead end-to-end software development, from designing database schemas using MySQL and NoSQL to implementing server-side logic in PHP frameworks like Laravel and CodeIgniter.</li>
-                                <li>Create responsive and visually appealing user interfaces using HTML, CSS, Bootstrap and enhancing the overall user experience.</li>
-                                <li>Design, develop, and maintain RESTful APIs, facilitating communication between front-end and back-end systems</li>
-                                <li>Manage database systems, including data modeling, optimization, and querying, primarily with MySQL databases.</li>
-                                <li>Utilize JavaScript and jQuery to enhance interactivity and user engagement on web applications, ensuring a seamless user experience.</li>
+                                <li>Lead end-to-end software development, from designing database schemas using MySQL
+                                    and NoSQL to implementing server-side logic in PHP frameworks like Laravel and
+                                    CodeIgniter.</li>
+                                <li>Create responsive and visually appealing user interfaces using HTML, CSS, Bootstrap
+                                    and enhancing the overall user experience.</li>
+                                <li>Design, develop, and maintain RESTful APIs, facilitating communication between
+                                    front-end and back-end systems</li>
+                                <li>Manage database systems, including data modeling, optimization, and querying,
+                                    primarily with MySQL databases.</li>
+                                <li>Utilize JavaScript and jQuery to enhance interactivity and user engagement on web
+                                    applications, ensuring a seamless user experience.</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="relative flex items-start space-x-8">
-                        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
                             <i class="fas fa-code text-white text-xl"></i>
                         </div>
-                        <div class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <div
+                            class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <div>
                                     <h3 class="text-2xl font-bold text-blue-300">Junior Software Engineer</h3>
                                     <p class="text-xl text-gray-300">United Group Gulshan-2, Dhaka, BD</p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">01/2017 - 10/2017</span>
+                                    <span
+                                        class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">01/2017
+                                        - 10/2017</span>
                                 </div>
                             </div>
                             <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Write, test, and maintain code for software applications using PHP, Javascript, MySql etc.</li>
-                                <li>Design and maintain relational databases using SQL for data storage and retrieval.</li>
-                                <li>Develop user interfaces and interactive web applications using HTML, CSS, Bootstrap and other front-end technologies.</li>
-                                <li>Build server-side applications and APIs using PHP, Node.js and related technologies</li>
+                                <li>Write, test, and maintain code for software applications using PHP, Javascript,
+                                    MySql etc.</li>
+                                <li>Design and maintain relational databases using SQL for data storage and retrieval.
+                                </li>
+                                <li>Develop user interfaces and interactive web applications using HTML, CSS, Bootstrap
+                                    and other front-end technologies.</li>
+                                <li>Build server-side applications and APIs using PHP, Node.js and related technologies
+                                </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="relative flex items-start space-x-8">
-                        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white/20">
                             <i class="fas fa-user-graduate text-white text-xl"></i>
                         </div>
-                        <div class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                        <div
+                            class="flex-grow bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <div>
                                     <h3 class="text-2xl font-bold text-blue-300">Software Engineer, Intern</h3>
                                     <p class="text-xl text-gray-300">IWFM, BUET Polashi, Dhaka, BD</p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">06/2016 - 12/2016</span>
+                                    <span
+                                        class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">06/2016
+                                        - 12/2016</span>
                                 </div>
                             </div>
                             <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Assist in designing and developing user-friendly interfaces using HTML, CSS, Bootstrap, and JavaScript to enhance user experience</li>
-                                <li>Collaborate with the team to customize and modify WordPress themes and plugins, ensuring alignment with project requirements</li>
-                                <li>Assist in designing, implementing, and querying MySQL databases to support web applications.</li>
-                                <li>Create technical documentation, including code comments and project reports, to facilitate knowledge sharing and project tracking.</li>
+                                <li>Assist in designing and developing user-friendly interfaces using HTML, CSS,
+                                    Bootstrap, and JavaScript to enhance user experience</li>
+                                <li>Collaborate with the team to customize and modify WordPress themes and plugins,
+                                    ensuring alignment with project requirements</li>
+                                <li>Assist in designing, implementing, and querying MySQL databases to support web
+                                    applications.</li>
+                                <li>Create technical documentation, including code comments and project reports, to
+                                    facilitate knowledge sharing and project tracking.</li>
                             </ul>
                         </div>
                     </div>
@@ -1016,15 +633,17 @@ const projects = [
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Featured Projects</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
-                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">Showcase of innovative solutions and complex systems I've architected and delivered</p>
+                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">Showcase of innovative solutions and complex
+                    systems I've architected and delivered</p>
             </div>
-            
+
             <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projects will be dynamically inserted here -->
             </div>
-            
+
             <div class="text-center mt-12">
-                <a href="#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                <a href="#contact"
+                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-eye mr-2"></i>View All Projects
                 </a>
             </div>
@@ -1038,26 +657,32 @@ const projects = [
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Recognition & Awards</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-yellow-500/30">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div
+                    class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-yellow-500/30">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-trophy text-white text-3xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-yellow-300 mb-2">Innovator of the Year</h3>
                     <p class="text-gray-300">Onest Tech LLC - 2022</p>
                 </div>
-                
-                <div class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-green-500/30">
-                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                <div
+                    class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-green-500/30">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-star text-white text-3xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-green-300 mb-2">Employee of The Year</h3>
                     <p class="text-gray-300">United Group - 2017</p>
                 </div>
-                
-                <div class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-blue-500/30 md:col-span-2 lg:col-span-1">
-                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                <div
+                    class="text-center p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-blue-500/30 md:col-span-2 lg:col-span-1">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-medal text-white text-3xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-blue-300 mb-2">Leadership Excellence</h3>
@@ -1073,36 +698,44 @@ const projects = [
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Let's Work Together</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
-                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">Ready to bring your next project to life? Let's discuss how I can help you achieve your goals.</p>
+                <p class="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">Ready to bring your next project to life? Let's
+                    discuss how I can help you achieve your goals.</p>
             </div>
-            
+
             <div class="grid lg:grid-cols-2 gap-12">
                 <div class="space-y-8">
-                    <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
+                    <div
+                        class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
                         <h3 class="text-2xl font-bold text-blue-300 mb-6">Contact Information</h3>
                         <div class="space-y-6">
                             <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-envelope text-white"></i>
                                 </div>
                                 <div>
                                     <p class="text-gray-400 text-sm">Email</p>
-                                    <a href="mailto:jmrashedbd@gmail.com" class="text-blue-300 hover:text-blue-200 transition-colors">jmrashedbd@gmail.com</a>
+                                    <a href="mailto:jmrashedbd@gmail.com"
+                                        class="text-blue-300 hover:text-blue-200 transition-colors">jmrashedbd@gmail.com</a>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-phone text-white"></i>
                                 </div>
                                 <div>
                                     <p class="text-gray-400 text-sm">Phone</p>
-                                    <a href="tel:+8801734446514" class="text-green-300 hover:text-green-200 transition-colors">+88 01734446514</a>
+                                    <a href="tel:+8801734446514"
+                                        class="text-green-300 hover:text-green-200 transition-colors">+88
+                                        01734446514</a>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-map-marker-alt text-white"></i>
                                 </div>
                                 <div>
@@ -1111,46 +744,59 @@ const projects = [
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="mt-8 pt-8 border-t border-gray-700">
                             <h4 class="text-xl font-semibold text-blue-300 mb-4">Social Links</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
                                     <i class="fab fa-linkedin text-white"></i>
                                 </a>
-                                <a href="#" class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
                                     <i class="fab fa-github text-white"></i>
                                 </a>
-                                <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
                                     <i class="fab fa-twitter text-white"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/30">
+
+                <div
+                    class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/30">
                     <h3 class="text-2xl font-bold text-purple-300 mb-6">Send a Message</h3>
                     <form class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-gray-300 text-sm font-semibold mb-2">Name</label>
-                                <input type="text" class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400" placeholder="Your name">
+                                <input type="text"
+                                    class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400"
+                                    placeholder="Your name">
                             </div>
                             <div>
                                 <label class="block text-gray-300 text-sm font-semibold mb-2">Email</label>
-                                <input type="email" class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400" placeholder="Your email">
+                                <input type="email"
+                                    class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400"
+                                    placeholder="Your email">
                             </div>
                         </div>
                         <div>
                             <label class="block text-gray-300 text-sm font-semibold mb-2">Subject</label>
-                            <input type="text" class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400" placeholder="Project inquiry">
+                            <input type="text"
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400"
+                                placeholder="Project inquiry">
                         </div>
                         <div>
                             <label class="block text-gray-300 text-sm font-semibold mb-2">Message</label>
-                            <textarea rows="5" class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400 resize-none" placeholder="Tell me about your project..."></textarea>
+                            <textarea rows="5"
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400 resize-none"
+                                placeholder="Tell me about your project..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                             <i class="fas fa-paper-plane mr-2"></i>Send Message
                         </button>
                     </form>
@@ -1166,10 +812,11 @@ const projects = [
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold gradient-text mb-4">MD Rasheduzzaman</h3>
                     <p class="text-gray-400 max-w-2xl mx-auto">
-                        Tech Lead passionate about creating innovative solutions and leading high-performing teams. Let's build something amazing together.
+                        Tech Lead passionate about creating innovative solutions and leading high-performing teams.
+                        Let's build something amazing together.
                     </p>
                 </div>
-                
+
                 <div class="flex justify-center space-x-6 mb-8">
                     <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
                         <i class="fab fa-linkedin text-2xl"></i>
@@ -1184,10 +831,11 @@ const projects = [
                         <i class="fas fa-envelope text-2xl"></i>
                     </a>
                 </div>
-                
+
                 <div class="pt-8 border-t border-gray-800">
                     <p class="text-gray-500">
-                        © 2024 MD Rasheduzzaman. All rights reserved. | Built with passion and <i class="fas fa-code text-blue-400"></i>
+                        © 2024 MD Rasheduzzaman. All rights reserved. | Built with passion and <i
+                            class="fas fa-code text-blue-400"></i>
                     </p>
                 </div>
             </div>
@@ -1199,7 +847,7 @@ const projects = [
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -1227,7 +875,7 @@ const projects = [
             'System Architect & Innovator',
             'Full-Stack Engineer & Mentor'
         ];
-        
+
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -1235,7 +883,7 @@ const projects = [
 
         function typeRole() {
             const currentRole = roles[roleIndex];
-            
+
             if (isDeleting) {
                 typedTextElement.textContent = currentRole.substring(0, charIndex - 1);
                 charIndex--;
@@ -1303,9 +951,9 @@ const projects = [
             particle.style.left = Math.random() * window.innerWidth + 'px';
             particle.style.top = window.innerHeight + 'px';
             particle.style.animation = `float ${Math.random() * 3 + 2}s linear infinite`;
-            
+
             document.body.appendChild(particle);
-            
+
             setTimeout(() => {
                 particle.remove();
             }, 5000);
@@ -1315,32 +963,32 @@ const projects = [
         setInterval(createParticle, 2000);
 
         // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const name = this.querySelector('input[type="text"]').value;
             const email = this.querySelector('input[type="email"]').value;
             const subject = this.querySelectorAll('input[type="text"]')[1].value;
             const message = this.querySelector('textarea').value;
-            
+
             // Simple validation
             if (!name || !email || !subject || !message) {
                 alert('Please fill in all fields');
                 return;
             }
-            
+
             // Simulate form submission
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
             submitBtn.disabled = true;
-            
+
             setTimeout(() => {
                 submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
                 submitBtn.style.background = 'linear-gradient(to right, #10b981, #059669)';
-                
+
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
@@ -1359,7 +1007,7 @@ const projects = [
         function animateCounter(element, target, duration = 2000) {
             let start = 0;
             const increment = target / (duration / 16);
-            
+
             function updateCounter() {
                 start += increment;
                 if (start < target) {
@@ -1369,7 +1017,7 @@ const projects = [
                     element.textContent = target + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
                 }
             }
-            
+
             updateCounter();
         }
 
@@ -1394,20 +1042,20 @@ const projects = [
 
         // Add ripple effect to buttons
         document.querySelectorAll('button, .btn').forEach(button => {
-            button.addEventListener('click', function(e) {
+            button.addEventListener('click', function (e) {
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
                 const x = e.clientX - rect.left - size / 2;
                 const y = e.clientY - rect.top - size / 2;
-                
+
                 ripple.style.width = ripple.style.height = size + 'px';
                 ripple.style.left = x + 'px';
                 ripple.style.top = y + 'px';
                 ripple.classList.add('ripple');
-                
+
                 this.appendChild(ripple);
-                
+
                 setTimeout(() => {
                     ripple.remove();
                 }, 600);
@@ -1456,12 +1104,12 @@ const projects = [
 
         // Add hover effects to project cards
         document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
                 this.style.boxShadow = '0 25px 50px -12px rgba(59, 130, 246, 0.25)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
                 this.style.boxShadow = '';
             });
@@ -1470,7 +1118,7 @@ const projects = [
         // Initialize AOS (Animate On Scroll) alternative
         function initScrollAnimations() {
             const animateElements = document.querySelectorAll('[data-animate]');
-            
+
             const animateObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1480,7 +1128,7 @@ const projects = [
                     }
                 });
             }, { threshold: 0.1 });
-            
+
             animateElements.forEach(element => {
                 animateObserver.observe(element);
             });
@@ -1496,12 +1144,12 @@ const projects = [
 
         // Add performance optimization
         let ticking = false;
-        
+
         function updateScrollEffects() {
             // Update any scroll-based effects here
             ticking = false;
         }
-        
+
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(updateScrollEffects);
@@ -1512,20 +1160,20 @@ const projects = [
         // Add touch gestures for mobile
         let touchStartY = 0;
         let touchEndY = 0;
-        
+
         document.addEventListener('touchstart', e => {
             touchStartY = e.changedTouches[0].screenY;
         });
-        
+
         document.addEventListener('touchend', e => {
             touchEndY = e.changedTouches[0].screenY;
             handleSwipe();
         });
-        
+
         function handleSwipe() {
             const swipeThreshold = 50;
             const diff = touchStartY - touchEndY;
-            
+
             if (Math.abs(diff) > swipeThreshold) {
                 if (diff > 0) {
                     // Swipe up - could trigger next section
@@ -1542,40 +1190,120 @@ const projects = [
             }
         });
 
-        console.log('🚀 Portfolio loaded successfully!');
-        console.log('💼 MD Rasheduzzaman - Tech Lead & Full-Stack Developer');
-        console.log('📧 Contact: jmrashedbd@gmail.com');
     </script>
     <script>
-        const projectsContainer = document.getElementById('projects-container');
-        projects.forEach(project => {
-            const projectCard = `
-                <div class="project-card bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30">
-                    <div class="mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                            <i class="fas fa-project-diagram text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-blue-300">${project['Product Name']}</h3>
-                        <p class="text-gray-400 text-sm">${project.Category}</p>
+        $.getJSON('projects.json', function (projects) {
+            const $projectsContainer = $('#projects-container');
+
+            projects.forEach(project => {
+                const techBadges = Array.isArray(project.Technology)
+                    ? project.Technology.map(tech =>
+                        `<span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs border border-green-500/30">${tech}</span>`
+                    ).join('')
+                    : '';
+
+                const projectCard = `
+        <div class="project-card bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30 hover:shadow-lg transition-all duration-300">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+              <i class="fas fa-project-diagram text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-blue-300">${project['Product Name'] || 'Untitled Project'}</h3>
+            <p class="text-gray-400 text-sm">${project.Category || ''}</p>
+          </div>
+          <p class="text-gray-300 mb-6 leading-relaxed">${project.Description || ''}</p>
+          <div class="flex flex-wrap gap-2 mb-6">${techBadges}</div>
+          <div class="flex space-x-4">
+                                           <a href="project-details.html?id=${project.id}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">View Details</a>
+
+            <a href="${project.CodeLink || '#'}" target="_blank"
+              class="px-4 py-2 border border-blue-500 hover:bg-blue-500 hover:text-white rounded-lg text-sm font-semibold transition-all duration-300">
+              <i class="fab fa-github mr-2"></i>Code
+            </a>
+          </div>
+        </div>
+      `;
+
+                $projectsContainer.append(projectCard);
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $.getJSON("assets/data/skills.json", function (data) {
+                let html = "";
+
+                // Loop technical_skills
+                $.each(data.technical_skills, function (i, category) {
+                    html += `
+                <div class="p-6 border ${category.border_color} rounded-2xl bg-gradient-to-br ${category.background_gradient} shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="${category.icon_class} ${category.icon_color} text-3xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">${category.category}</h3>
                     </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        ${project.Description}
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        ${project.Technology.map(tech => `<span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs border border-green-500/30">${tech}</span>`).join('')}
-                    </div>
-                    <div class="flex space-x-4">
-                        <button class="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
-                            <i class="fas fa-eye mr-2"></i>View Details
-                        </button>
-                        <button class="px-4 py-2 border border-blue-500 hover:bg-blue-500 rounded-lg text-sm font-semibold transition-all duration-300">
-                            <i class="fab fa-github mr-2"></i>Code
-                        </button>
+                    <ul class="space-y-2">
+                        ${category.skills.map(skill => `
+                            <li class="flex items-center space-x-2">
+                                <i class="${skill.icon_class} ${skill.icon_color} text-lg"></i>
+                                <span>${skill.name}</span>
+                            </li>
+                        `).join("")}
+                    </ul>
+                </div>
+            `;
+                });
+
+                // Leadership skills
+                if (data.leadership_skills && data.leadership_skills.length) {
+                    html += `
+                <div class="p-6 border border-gray-500/30 rounded-2xl bg-gradient-to-br from-gray-700/30 to-gray-800/30 shadow-lg col-span-full">
+                    <h3 class="text-xl font-semibold mb-4">Leadership Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        ${data.leadership_skills.map(skill => `
+                            <span class="px-3 py-1 border ${skill.border_color} ${skill.text_color} rounded-full text-sm font-medium bg-gradient-to-br ${skill.background_gradient}">
+                                ${skill.name}
+                            </span>
+                        `).join("")}
                     </div>
                 </div>
             `;
-            projectsContainer.innerHTML += projectCard;
+                }
+
+                $("#appendBySkillContent").html(html);
+            });
         });
     </script>
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON("assets/data/achivements.json", function (data) {
+                let container = $("#achievements-container");
+
+                data.forEach(category => {
+                    let categoryBlock = `
+                <div>
+                    <h5 class="text-xl font-semibold text-blue-400 mb-4 border-b border-blue-500/30 pb-2">
+                        ${category.category}
+                    </h5>
+                    <ul class="space-y-4">
+                        ${category.items.map(item => `
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                <span class="text-gray-300">${item.description}</span>
+                            </li>
+                        `).join("")}
+                    </ul>
+                </div>
+            `;
+                    container.append(categoryBlock);
+                });
+            }).fail(function () {
+                $("#achievements-container").html(`<p class="text-red-400">Failed to load achievements data.</p>`);
+            });
+        });
+    </script>
+
 </body>
+
 </html>
