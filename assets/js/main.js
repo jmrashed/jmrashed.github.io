@@ -498,8 +498,76 @@ document.addEventListener('DOMContentLoaded', () => {
             return; // Exit if not on the projects page
         }
 
+        // Show loading UI
+        $projectsContainer.html(`
+            <div class="loader-wrapper">
+                <div class="lds-ripple"><div></div><div></div></div>
+                <p class="loader-text">Loading projects...</p>
+            </div>
+        `);
+
         $.getJSON('assets/data/projects.json', function (projects) {
+            $projectsContainer.empty(); // clear loader
             projects.forEach(project => {
+                const techBadges = Array.isArray(project.Technology)
+                    ? project.Technology.map(tech =>
+                        `<span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs border border-green-500/30">${tech}</span>`
+                    ).join('')
+                    : '';
+
+                const projectCard = `
+                    <div class="project-card bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30 hover:shadow-lg transition-all duration-300">
+                      <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                          <i class="fas fa-project-diagram text-white text-2xl"></i>
+                        </div>
+                       <a href="project-details.html?id=${project.id}" class="block text-blue-400 hover:text-blue-500 transform hover:scale-[1.02] transition-all duration-200">
+                        <h3 class="text-2xl font-bold text-blue-300">${project['Product Name'] || 'Untitled Project'}</h3>
+                        </a>
+                        <p class="text-gray-400 text-sm">${project.Category || ''}</p>
+                      </div>
+                      <p class="text-white-300 mb-6 leading-relaxed">${project.Description || ''}</p>
+                      <div class="flex flex-wrap gap-2 mb-6">${techBadges}</div>
+                      <div class="flex space-x-4">
+                        <a href="project-details.html?id=${project.id}" 
+   class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg">
+  <i class="fas fa-desktop"></i> Details
+</a>
+
+<a href="${project.CodeLink || '#'}" target="_blank"
+   class="inline-flex items-center gap-2 px-4 py-2 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-lg text-sm font-semibold transition-all duration-300 shadow-sm hover:shadow-md">
+  <i class="fab fa-github"></i> Code
+</a>
+
+                      </div>
+                    </div>
+                `;
+                $projectsContainer.append(projectCard);
+            });
+            // Re-apply hover effects for newly added cards
+            try { setupProjectCardHoverEffects(); } catch (e) { /* ignore if function not present */ }
+            console.log(`Loaded ${projects.length} projects successfully.`);
+        }).fail(function () {
+            console.error('Failed to load projects.json!');
+            $projectsContainer.html('<p class="text-red-400">Failed to load projects. Please try again later.</p>');
+        });
+    }
+
+    /**
+     * Handles dynamic loading of projects specifically for the home page from projects.json.
+     * Appends to the #home-page-projects-container.
+     */
+    function loadHomepageProjects() {
+        const $homePageProjectsContainer = $('#home-page-projects-container');
+        if ($homePageProjectsContainer.length === 0) {
+            console.info('Home page projects container not found. Skipping homepage project loading.');
+            return; // Exit if not on the homepage or container is missing
+        }
+
+        $.getJSON('assets/data/projects.json', function (projects) {
+            // Take only the first 3 projects for the homepage, if available
+            const homepageProjects = projects.slice(0, 3);
+            homepageProjects.forEach(project => {
                 const techBadges = Array.isArray(project.Technology)
                     ? project.Technology.map(tech =>
                         `<span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs border border-green-500/30">${tech}</span>`
@@ -515,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3 class="text-2xl font-bold text-blue-300">${project['Product Name'] || 'Untitled Project'}</h3>
                         <p class="text-gray-400 text-sm">${project.Category || ''}</p>
                       </div>
-                      <p class="text-gray-300 mb-6 leading-relaxed">${project.Description || ''}</p>
+                      <p class="text-white-300 mb-6 leading-relaxed">${project.Description || ''}</p>
                       <div class="flex flex-wrap gap-2 mb-6">${techBadges}</div>
                       <div class="flex space-x-4">
                         <a href="project-details.html?id=${project.id}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">View Details</a>
@@ -526,12 +594,13 @@ document.addEventListener('DOMContentLoaded', () => {
                       </div>
                     </div>
                 `;
-                $projectsContainer.append(projectCard);
+                $homePageProjectsContainer.append(projectCard);
             });
-            console.log(`Loaded ${projects.length} projects successfully.`);
+            console.log(`Loaded ${homepageProjects.length} homepage projects successfully.`);
+            setupProjectCardHoverEffects(); // Re-apply hover effects to new cards
         }).fail(function () {
-            console.error('Failed to load projects.json!');
-            $projectsContainer.html('<p class="text-red-400">Failed to load projects.</p>');
+            console.error('Failed to load projects.json for homepage projects!');
+            $homePageProjectsContainer.html('<p class="text-red-400">Failed to load projects.</p>');
         });
     }
 
@@ -764,31 +833,103 @@ document.addEventListener('DOMContentLoaded', () => {
             return; // Exit if not on the blogs page
         }
 
-        $.getJSON('assets/data/blogs.json', function (blogs) {
-            blogs.forEach(blog => {
-                const tagsBadges = Array.isArray(blog.tags)
-                    ? blog.tags.map(tag =>
-                        `<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${tag}</span>`
-                    ).join('')
-                    : '';
+        // Show loading UI
+        $blogsGrid.html(`
+            <div class="loader-wrapper">
+                <div class="lds-ripple"><div></div><div></div></div>
+                <p class="loader-text">Loading blogs...</p>
+            </div>
+        `);
 
-                const blogCard = `
-                    <div class="blog-card bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30 rounded-lg shadow-lg overflow-hidden">
-                        <div class="p-6">
-                            <h2 class="text-2xl font-semibold text-blue-300 mb-2 hover:text-blue-500 transition-colors duration-300">${blog.title || 'Untitled Blog Post'}</h2>
-                            <p class="text-gray-400 text-sm mb-4">${blog.excerpt || ''}</p>
-                            <div class="flex flex-wrap gap-2 mb-4">${tagsBadges}</div>
-                            <a href="blog-details.html?id=${blog.id}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Read More</a>
+  function checkImageExists(url, callback) {
+    fetch(url, { method: 'HEAD' })
+        .then(res => callback(res.ok))
+        .catch(() => callback(false));
+}
+
+$.getJSON('assets/data/blogs.json', function (blogs) {
+    $blogsGrid.empty(); // clear loader
+
+    blogs.forEach(blog => {
+        const tagsBadges = Array.isArray(blog.tags)
+            ? blog.tags.map(tag =>
+                `<span class="bg-green-100/10 text-green-400 text-xs font-medium px-3 py-1 rounded-full border border-green-400/30">
+                    ${tag}
+                </span>`
+            ).join('')
+            : '';
+
+        const imagePath = `assets/images/${blog.featured_image}`;
+        
+        checkImageExists(imagePath, function (exists) {
+            const blogImage = exists
+                ? `<img src="${imagePath}" alt="${blog.title}" 
+                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">`
+                : `
+                    <div class="w-full h-full bg-[url('assets/images/glass-texture.avif')] bg-cover bg-center flex items-center justify-center">
+                        <span class="bg-black/60 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                            Image not found!
+                        </span>
+                    </div>
+                  `;
+
+            const blogCard = `
+                <div class="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl border border-blue-500/20 shadow-lg overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+                    
+                    <!-- Image Section with fixed ratio -->
+                    <div class="aspect-[16/9] overflow-hidden">
+                        ${blogImage}
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="p-6 flex flex-col h-full">
+                        
+                        <!-- Category Badge -->
+                        <span class="inline-block bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-400/30 mb-3">
+                            ${blog.category || 'Uncategorized'}
+                        </span>
+
+                        <!-- Title -->
+                        <a href="blog-details.html?id=${blog.id}" 
+                           class="block text-blue-400 hover:text-blue-300 transition-colors duration-200">
+                            <h2 class="text-2xl font-bold mb-3 group-hover:underline underline-offset-4">
+                                ${blog.title || 'Untitled Blog Post'}
+                            </h2>
+                        </a>
+
+                        <!-- Excerpt -->
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">${blog.excerpt || ''}</p>
+                        
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${tagsBadges}
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="text-xs text-gray-500">
+                                ${new Date(blog.published_at).toLocaleDateString()}
+                            </span>
+                            <a href="blog-details.html?id=${blog.id}" 
+                               class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium text-sm transition-all duration-200">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
-                `;
-                $blogsGrid.append(blogCard);
-            });
-            console.log(`Loaded ${blogs.length} blog posts for the main blogs page.`);
-        }).fail(function () {
-            console.error('Failed to load blogs.json for blogs main page!');
-            $blogsGrid.html('<p class="text-red-500 text-center col-span-full">Error loading blogs. Please try again later.</p>');
+                </div>
+            `;
+
+            $blogsGrid.append(blogCard);
         });
+    });
+
+    console.log(`Loaded ${blogs.length} blog posts for the main blogs page.`);
+}).fail(function () {
+    console.error('Failed to load blogs.json for blogs main page!');
+    $blogsGrid.html('<p class="text-red-500 text-center col-span-full">Error loading blogs. Please try again later.</p>');
+});
+
+
     }
 
     /**
@@ -811,41 +952,74 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        $.getJSON('assets/data/blogs.json', function (data) {
-            const blog = data.find(b => b.id === blogId);
+      function checkImageExists(url, callback) {
+    fetch(url, { method: 'HEAD' })
+        .then(res => callback(res.ok))
+        .catch(() => callback(false));
+}
 
-            if (blog) {
-                document.title = blog.meta_title || blog.title;
-                $('meta[name="description"]').attr('content', blog.meta_description || 'A blog post.');
-                $('meta[name="keywords"]').attr('content', blog.meta_keywords || 'blog, technology');
-                console.log(`Displaying blog: "${blog.title}". Meta tags updated.`);
+$.getJSON('assets/data/blogs.json', function (data) {
+    const blog = data.find(b => b.id === blogId);
 
-                $('#blog-title').text(blog.title);
-                $('#published-date').text(new Date(blog.published_at).toLocaleDateString());
-                $('#blog-category').text(blog.category);
-                $('#featured-image').attr('src', blog.featured_image || 'https://via.placeholder.com/800x400');
-                let formattedContent = blog.content.replace(/\n/g, '<br>');
-                $('#blog-content').html(formattedContent);
+    if (blog) {
+        // Meta tags
+        document.title = blog.meta_title || blog.title;
+        $('meta[name="description"]').attr('content', blog.meta_description || 'A blog post.');
+        $('meta[name="keywords"]').attr('content', blog.meta_keywords || 'blog, technology');
+        console.log(`Displaying blog: "${blog.title}". Meta tags updated.`);
 
-                const tagsList = $('#blog-tags');
-                tagsList.empty();
-                if (blog.tags && blog.tags.length > 0) {
-                    blog.tags.forEach(tag => {
-                        tagsList.append(`<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${tag}</span>`);
-                    });
-                    console.log(`Loaded ${blog.tags.length} tags for blog.`);
-                } else {
-                    console.info('No tags found for this blog post.');
-                }
+        // Blog details
+        $('#blog-title').text(blog.title);
+        $('#published-date').text(new Date(blog.published_at).toLocaleDateString());
+        $('#blog-category').text(blog.category);
 
+        const imagePath = `assets/images/${blog.featured_image}`;
+
+        // Check if image exists
+        checkImageExists(imagePath, function (exists) {
+            if (exists) {
+                $('#featured-image').attr('src', imagePath);
             } else {
-                blogDetailsContainer.html('<p class="text-red-500 text-center">Blog post not found.</p>');
-                console.warn(`Blog post with ID: ${blogId} not found.`);
+                $('#featured-image')
+                    .replaceWith(`
+                        <div class="aspect-[16/9] bg-[url('assets/images/glass-texture.avif')] bg-cover bg-center flex items-center justify-center rounded-lg">
+                            <span class="bg-black/60 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                                Image not found!
+                            </span>
+                        </div>
+                    `);
             }
-        }).fail(function () {
-            console.error('Failed to load blogs.json for blog details!');
-            blogDetailsContainer.html('<p class="text-red-500 text-center">Error loading blog details. Please try again later.</p>');
         });
+
+        // Blog content
+        let formattedContent = blog.content.replace(/\n/g, '<br>');
+        $('#blog-content').html(formattedContent);
+
+        // Tags
+        const tagsList = $('#blog-tags');
+        tagsList.empty();
+        if (blog.tags && blog.tags.length > 0) {
+            blog.tags.forEach(tag => {
+                tagsList.append(`
+                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                        ${tag}
+                    </span>
+                `);
+            });
+            console.log(`Loaded ${blog.tags.length} tags for blog.`);
+        } else {
+            console.info('No tags found for this blog post.');
+        }
+
+    } else {
+        blogDetailsContainer.html('<p class="text-red-500 text-center">Blog post not found.</p>');
+        console.warn(`Blog post with ID: ${blogId} not found.`);
+    }
+}).fail(function () {
+    console.error('Failed to load blogs.json for blog details!');
+    blogDetailsContainer.html('<p class="text-red-500 text-center">Error loading blog details. Please try again later.</p>');
+});
+
     }
 
     /**
@@ -958,6 +1132,39 @@ document.addEventListener('DOMContentLoaded', () => {
                     $('#no-related-blogs').removeClass('hidden').text('Error loading related blogs.');
                 });
 
+                // Load related case studies based on projectId
+                $.getJSON('assets/data/case-studies.json', function (caseStudiesData) {
+                    const relatedCaseStudies = caseStudiesData.filter(cs => cs.projectId === projectId).slice(0, 3);
+                    const relatedCaseStudiesGrid = $('#related-case-studies-grid');
+                    const noRelatedCaseStudiesMsg = $('#no-related-case-studies');
+
+                    relatedCaseStudiesGrid.empty(); // Clear existing
+                    noRelatedCaseStudiesMsg.addClass('hidden'); // Hide by default
+
+                    if (relatedCaseStudies.length > 0) {
+                        relatedCaseStudies.forEach(cs => {
+                            const csCard = `
+                                <div class="bg-dark-80 rounded-lg shadow-md overflow-hidden p-4">
+                                <a href="case-studies-details.html?id=${cs.id}" class="block text-blue-400 hover:text-blue-500 transform hover:scale-[1.02] transition-all duration-200">
+                                    <h3 class="text-xl font-semibold text-gray-300 mb-2">${cs.title}</h3>
+                                </a>
+                                    <p class="text-blue-300 text-sm mb-2">Client: ${cs.client || ''}</p>
+                                    <p class="text-gray-400 text-sm mb-4">${(cs.challenge && cs.challenge.substring(0, 120)) || ''}${cs.challenge && cs.challenge.length > 120 ? '...' : ''}</p>
+                                    <a href="case-studies-details.html?id=${cs.id}" class="inline-block text-blue-600 hover:underline">View Case Study</a>
+                                </div>
+                            `;
+                            relatedCaseStudiesGrid.append(csCard);
+                        });
+                        console.log(`Loaded ${relatedCaseStudies.length} related case studies for project ID ${projectId}.`);
+                    } else {
+                        noRelatedCaseStudiesMsg.removeClass('hidden').text('No related case studies found.');
+                        console.info(`No related case studies found for project ID ${projectId}.`);
+                    }
+                }).fail(function () {
+                    console.error('Failed to load case-studies.json for related case studies!');
+                    $('#no-related-case-studies').removeClass('hidden').text('Error loading related case studies.');
+                });
+
             } else {
                 projectDetailsContainer.html('<p class="text-red-500 text-center">Project not found.</p>');
                 console.warn(`Project with ID: ${projectId} not found.`);
@@ -968,83 +1175,338 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Function Calls to Initialize Script Modules ---
-    setupMobileMenuToggle();
-    setupSmoothScrolling();
-    setupTypingAnimation(
-        [
-            'Tech Lead & Full-Stack Developer',
-            'SaaS Architect & Innovator',
-            'AI/ML Enthusiast & Data Scientist',
-            'Full-Stack Engineer & Mentor'
-        ],
-        document.getElementById('typed-text')
-    );
-    // Initial styles for skill and project cards to enable fade-in/slide-up
-    const cardInitialStyles = {
-        opacity: '0',
-        transform: 'translateY(30px)',
-        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-    };
-    setupScrollAnimations('.skill-card, .project-card', cardInitialStyles, null, { threshold: 0.1 });
-    setupScrollAnimations('section', null, 'animate-fade-in', { threshold: 0.1 }); // Smooth reveal for sections
+    /**
+     * Handles dynamic loading of case study data from case-studies.json and appends to the DOM.
+     */
+    function loadCaseStudies() {
+        const $caseStudiesContainer = $('#case-studies-grid');
+        if ($caseStudiesContainer.length === 0) {
+            console.info('Case studies grid container not found. Skipping case study loading.');
+            return;
+        }
 
-    // Performance optimization: Using data-animate for AOS-like animations.
-    // Ensure that elements with data-animate are initially hidden or correctly styled by CSS
-    // to prevent FOUC (Flash Of Unstyled Content) before animation triggers.
-    initAOSAlternative();
+        // Show loading UI
+        $caseStudiesContainer.html(`
+            <div class="loader-wrapper">
+                <div class="lds-ripple"><div></div><div></div></div>
+                <p class="loader-text">Loading case studies...</p>
+            </div>
+        `);
 
-    setupNavbarScrollEffect();
-    setupParticleBackground();
-    setupFormSubmission();
-    setupFloatingAnimation('.animate-float');
-    setupStatsCounterAnimation();
-    setupRippleEffect();
-    setupProjectCardHoverEffects();
-    setupPreloader();
+        $.getJSON('assets/data/case-studies.json', function (caseStudies) {
+            $caseStudiesContainer.empty(); // clear loader
+            caseStudies.forEach(caseStudy => {
+                const techBadges = Array.isArray(caseStudy.technologiesUsed)
+                    ? caseStudy.technologiesUsed.map(tech =>
+                        `<span class="px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs border border-green-500/30">${tech}</span>`
+                    ).join('')
+                    : '';
 
-    // Load dynamic content, ensure jQuery is available
-    if (typeof jQuery !== 'undefined') {
-        // These will run only if elements with target IDs are present on the page
-        loadProjects(); // Now specific to projects.html
-        loadSkills();
-        loadAchievements();
-        loadExperience();
-        loadMenu();
-        loadBlogDetails(); // Only runs on blog-details.html due to internal check
-        loadProjectDetails(); // Only runs on project-details.html due to internal check
-        loadBlogsMainPage(); // New function for blogs.html
-    } else {
-        console.error('jQuery is not loaded. Dynamic content functions will not execute.');
+                const caseStudyCard = `
+                    <div class="case-study-card bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30 hover:shadow-lg transition-all duration-300">
+                      <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                          <i class="fas fa-lightbulb text-white text-2xl"></i>
+                        </div>
+                     <a href="case-studies-details.html?id=${caseStudy.id}" 
+   class="block text-blue-400 hover:text-blue-500 transition-colors duration-200">
+  <h3 class="text-2xl font-bold">
+    ${caseStudy.title || 'Untitled Case Study'}
+  </h3>
+</a>
+
+                        <p class="text-gray-400 text-sm">Client: ${caseStudy.client || ''} | Industry: ${caseStudy.industry || ''}</p>
+                      </div>
+                      <p class="text-white-300 mb-6 leading-relaxed">${caseStudy.challenge || ''}</p>
+                      <div class="flex flex-wrap gap-2 mb-6">${techBadges}</div>
+                       
+                    </div>
+                `;
+                $caseStudiesContainer.append(caseStudyCard);
+            });
+            console.log(`Loaded ${caseStudies.length} case studies successfully.`);
+        }).fail(function () {
+            console.error('Failed to load case-studies.json!');
+            $caseStudiesContainer.html('<p class="text-red-400">Failed to load case studies. Please try again later.</p>');
+        });
     }
 
-    // Touch gesture setup (basic, can be expanded)
-    let touchStartY = 0;
-    document.addEventListener('touchstart', e => {
-        touchStartY = e.changedTouches[0].screenY;
-        console.log('Touch start detected.');
-    });
-
-    document.addEventListener('touchend', e => {
-        const touchEndY = e.changedTouches[0].screenY;
-        const swipeThreshold = 50;
-        const diff = touchStartY - touchEndY;
-
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                console.log('Swipe up detected.');
-                // Add logic for swipe up (e.g., next section, scroll down)
-            } else {
-                console.log('Swipe down detected.');
-                // Add logic for swipe down (e.g., previous section, scroll up)
-            }
+    /**
+     * Handles dynamic loading and display of case study details based on URL parameters.
+     */
+    function loadCaseStudyDetails() {
+        const caseStudyDetailsContainer = $('#case-study-details');
+        if (caseStudyDetailsContainer.length === 0) {
+            console.info('Case study details container not found. Skipping case study details loading.');
+            return;
         }
-    });
 
-    console.log('✨ Core portfolio scripts fully executed.');
-});
+        const urlParams = new URLSearchParams(window.location.search);
+        const caseStudyId = parseInt(urlParams.get('id'));
+
+        if (isNaN(caseStudyId)) {
+            caseStudyDetailsContainer.html('<p class="text-red-500 text-center">Case Study ID not found in URL.</p>');
+            console.warn('Case Study ID not found or invalid in URL for case study details page.');
+            return;
+        }
+
+        $.getJSON('assets/data/case-studies.json', function (data) {
+            const caseStudy = data.find(cs => cs.id === caseStudyId);
+
+            if (caseStudy) {
+                console.log(`Displaying case study details for: "${caseStudy.title}".`);
+                $('#case-study-title').text(caseStudy.title);
+                $('#case-study-client-industry').text(`Client: ${caseStudy.client} | Industry: ${caseStudy.industry}`);
+                $('#case-study-image').attr('src', `assets/images/${caseStudy.image || 'placeholder.jpg'}`);
+
+                $('#client-name').text(caseStudy.client);
+                $('#industry-name').text(caseStudy.industry);
+
+                const technologiesUsedList = $('#technologies-used');
+                technologiesUsedList.empty();
+                if (caseStudy.technologiesUsed && caseStudy.technologiesUsed.length > 0) {
+                    caseStudy.technologiesUsed.forEach(tech => {
+                        technologiesUsedList.append(`<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${tech}</span>`);
+                    });
+                }
+
+                $('#case-study-challenge').text(caseStudy.challenge);
+                $('#case-study-solution').text(caseStudy.solution);
+
+                const resultsList = $('#case-study-results');
+                resultsList.empty();
+                if (caseStudy.results && caseStudy.results.length > 0) {
+                    caseStudy.results.forEach(result => {
+                        resultsList.append(`<li>${result}</li>`);
+                    });
+                }
+
+            } else {
+                caseStudyDetailsContainer.html('<p class="text-red-500 text-center">Case study not found.</p>');
+                console.warn(`Case study with ID: ${caseStudyId} not found.`);
+            }
+        }).fail(function () {
+            console.error('Failed to load case-studies.json for case study details!');
+            caseStudyDetailsContainer.html('<p class="text-red-500 text-center">Error loading case study details. Please try again later.</p>');
+        });
+    }
+
+    // --- Function Calls to Initialize Script Modules ---
+       /**
+        * Initialize everything that depends on the navigation being present.
+        * We load navigation.html into #nav-placeholder (if present) and only then
+        * run the UI initializers and dynamic content loaders so elements like
+        * #mobile-menu-button and #mobile-menu exist.
+        */
+       function initAllAfterNav() {
+           setupMobileMenuToggle();
+           setupSmoothScrolling();
+           setupTypingAnimation(
+               [
+                   'Tech Lead & Full-Stack Developer',
+                   'SaaS Architect & Innovator',
+                   'AI/ML Enthusiast & Data Scientist',
+                   'Full-Stack Engineer & Mentor'
+               ],
+               document.getElementById('typed-text')
+           );
+   
+           // Initial styles for skill and project cards to enable fade-in/slide-up
+           const cardInitialStyles = {
+               opacity: '0',
+               transform: 'translateY(30px)',
+               transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+           };
+           setupScrollAnimations('.skill-card, .project-card', cardInitialStyles, null, { threshold: 0.1 });
+           setupScrollAnimations('section', null, 'animate-fade-in', { threshold: 0.1 }); // Smooth reveal for sections
+   
+           // Performance optimization: Using data-animate for AOS-like animations.
+           // Ensure that elements with data-animate are initially hidden or correctly styled by CSS
+           // to prevent FOUC (Flash Of Unstyled Content) before animation triggers.
+           initAOSAlternative();
+   
+           setupNavbarScrollEffect();
+           setupParticleBackground();
+           setupFormSubmission();
+           setupFloatingAnimation('.animate-float');
+           setupStatsCounterAnimation();
+           setupRippleEffect();
+           setupProjectCardHoverEffects();
+           setupPreloader();
+   
+           // Load dynamic content, ensure jQuery is available
+           if (typeof jQuery !== 'undefined') {
+               // These will run only if elements with target IDs are present on the page
+               loadProjects(); // Now specific to projects.html
+               loadHomepageProjects(); // Load projects for the home page
+               loadSkills();
+               loadAchievements();
+               loadExperience();
+               loadMenu();
+               loadBlogDetails(); // Only runs on blog-details.html due to internal check
+               loadProjectDetails(); // Only runs on project-details.html due to internal check
+               loadBlogsMainPage(); // New function for blogs.html
+               loadCaseStudies(); // Only runs on case-studies.html due to internal check
+               loadCaseStudyDetails(); // Only runs on case-studies-details.html due to internal check
+           } else {
+               console.error('jQuery is not loaded. Dynamic content functions will not execute.');
+           }
+       }
+   
+       // If a placeholder exists, load navigation.html into it before initialization.
+       // Prefer jQuery's load when available; fallback to fetch for environments without jQuery.
+       if (document.getElementById('nav-placeholder')) {
+           if (typeof jQuery !== 'undefined') {
+               $('#nav-placeholder').load('navigation.html', function () {
+                   console.log('Navigation loaded into #nav-placeholder (via jQuery).');
+                   initAllAfterNav();
+               });
+           } else {
+               // Fallback using fetch (vanilla)
+               fetch('navigation.html')
+                   .then(response => {
+                       if (!response.ok) throw new Error('Network response was not ok');
+                       return response.text();
+                   })
+                   .then(html => {
+                       document.getElementById('nav-placeholder').innerHTML = html;
+                       console.log('Navigation loaded into #nav-placeholder (via fetch).');
+                       initAllAfterNav();
+                   })
+                   .catch(err => {
+                       console.error('Failed to load navigation.html:', err);
+                       // Proceed with initialization anyway so site doesn't hang
+                       initAllAfterNav();
+                   });
+           }
+       } else {
+           // No placeholder — just initialize normally
+           initAllAfterNav();
+       }
+   
+       // Touch gesture setup (basic, can be expanded)
+       let touchStartY = 0;
+       document.addEventListener('touchstart', e => {
+           touchStartY = e.changedTouches[0].screenY;
+           console.log('Touch start detected.');
+       });
+   
+       document.addEventListener('touchend', e => {
+           const touchEndY = e.changedTouches[0].screenY;
+           const swipeThreshold = 50;
+           const diff = touchStartY - touchEndY;
+   
+           if (Math.abs(diff) > swipeThreshold) {
+               if (diff > 0) {
+                   console.log('Swipe up detected.');
+                   // Add logic for swipe up (e.g., next section, scroll down)
+               } else {
+                   console.log('Swipe down detected.');
+                   // Add logic for swipe down (e.g., previous section, scroll up)
+               }
+           }
+       });
+   
+       console.log('✨ Core portfolio scripts fully executed.');
+   });
 
 // Global console logs for portfolio identity (outside DOMContentLoaded as they are meta)
 console.log('Portfolio initialized.');
-console.log('MD Rasheduzzaman - Tech Lead & Full-Stack Developer');
-console.log('Contact: jmrashedbd@gmail.com');
+console.log('Rashed Zaman - Tech Lead & Full-Stack Developer');
+console.log('Contact: jmrashed@gmail.com');
+
+
+$(document).ready(function() {
+    // Inject minimal styles for enhanced social icons (id prevents duplication)
+    if (!document.getElementById('social-icons-style')) {
+        const css = `
+          
+        `;
+        const styleEl = document.createElement('style');
+        styleEl.id = 'social-icons-style';
+        styleEl.appendChild(document.createTextNode(css));
+        document.head.appendChild(styleEl);
+    }
+
+    $.getJSON('assets/data/socialLinks.json', function(socialLinks) {
+        // Clear container first (safe to call multiple times)
+        $('.social-links').empty();
+
+        socialLinks.forEach(function(link) {
+            // Build accessible, attractive button-like link
+            const $a = $('<a>')
+                .attr('href', link.url || '#')
+                .attr('target', link.target || '_blank')
+                .attr('rel', 'noopener noreferrer')
+                .attr('title', link.name || '')
+                .attr('aria-label', link.name || '')
+                .addClass('social-icon')
+                .data('description', link.description || '');
+
+            // Icon element; keep color class from JSON so icon color matches intent
+            const $icon = $('<i>').addClass('bi ' + (link.icon || '') + ' ' + (link.colorClass || ''));
+
+            // Optional small label (visually hidden) for screen readers
+            const $sr = $('<span>').addClass('sr-only').text(link.name || '');
+
+            $a.append($icon).append($sr);
+
+            // Append to container
+            $('.social-links').append($a);
+
+            // Subtle accessible focus ring (added via JS to avoid relying on external CSS)
+            $a.on('focus', function() {
+                this.style.outline = '2px solid rgba(99,102,241,0.9)';
+                this.style.outlineOffset = '3px';
+            }).on('blur', function() {
+                this.style.outline = '';
+                this.style.outlineOffset = '';
+            });
+        });
+
+        // Simple tooltip implementation using delegation
+        let tooltipEl = null;
+        $('.social-links').on('mouseenter focus', '.social-icon', function(e) {
+            const desc = $(this).data('description');
+            if (!desc) return;
+            // create tooltip element
+            tooltipEl = $('<div>').addClass('social-tooltip').text(desc);
+            $('body').append(tooltipEl);
+    
+            // position
+            const $el = $(this);
+            const offset = $el.offset();
+            const elW = $el.outerWidth();
+            const elH = $el.outerHeight();
+            const ttW = tooltipEl.outerWidth();
+            const left = offset.left + elW / 2 - ttW / 2;
+            const top = offset.top - tooltipEl.outerHeight() - 10;
+    
+            tooltipEl.css({ left: left + 'px', top: top + 'px' });
+            // animate in — guard against tooltip being removed before RAF runs
+            if (tooltipEl) {
+                requestAnimationFrame(() => {
+                    if (tooltipEl) tooltipEl.addClass('show');
+                });
+            }
+        }).on('mouseleave blur', '.social-icon', function() {
+            if (tooltipEl) {
+                tooltipEl.remove();
+                tooltipEl = null;
+            }
+        });
+
+        // Small entrance animation: fade/slide each icon in sequence
+        $('.social-links .social-icon').each(function(i, el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(8px)';
+            setTimeout(() => {
+                el.style.transition = 'opacity 360ms ease, transform 360ms ease';
+                el.style.opacity = '1';
+                el.style.transform = '';
+            }, 80 * i);
+        });
+    }).fail(function() {
+        console.error('Failed to load socialLinks.json for social icons!');
+    });
+});
