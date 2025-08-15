@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease'; // Ensure smooth transition
                 console.log('Project card hover: entered');
             });
-
+    
             card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
                 this.style.boxShadow = '';
@@ -444,6 +444,136 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
         console.log('Project card hover effects initialized.');
+    }
+    
+    /**
+     * Testimonials slider
+     * Uses jQuery where available; gracefully falls back to a simple show/hide with fade.
+     */
+    function setupTestimonialsSlider() {
+        // Require jQuery for convenience; if not present, use vanilla fallback
+        if (typeof jQuery === 'undefined') {
+            console.info('jQuery not found — testimonials slider will use a minimal vanilla fallback.');
+            const container = document.getElementById('testimonials-container');
+            if (!container) return;
+            const cards = Array.from(container.querySelectorAll('.testimonial-card'));
+            if (cards.length <= 1) return; // nothing to slide
+            let current = 0;
+            cards.forEach((c, i) => { c.style.display = i === 0 ? '' : 'none'; c.classList.toggle('hidden', i !== 0); });
+            const nextBtn = document.getElementById('testimonial-next');
+            const prevBtn = document.getElementById('testimonial-prev');
+            const dotsContainer = document.getElementById('testimonial-dots');
+            if (dotsContainer && dotsContainer.children.length !== cards.length) {
+                dotsContainer.innerHTML = '';
+                cards.forEach((_, i) => {
+                    const b = document.createElement('button');
+                    b.className = `w-3 h-3 rounded-full ${i === 0 ? 'bg-blue-500' : 'bg-gray-600'}`;
+                    b.dataset.index = i;
+                    dotsContainer.appendChild(b);
+                });
+            }
+            function show(i) {
+                cards.forEach((c, idx) => {
+                    c.style.display = idx === i ? '' : 'none';
+                    c.classList.toggle('hidden', idx !== i);
+                });
+                if (dotsContainer) {
+                    Array.from(dotsContainer.children).forEach((d, idx) => {
+                        d.classList.toggle('bg-blue-500', idx === i);
+                        d.classList.toggle('bg-gray-600', idx !== i);
+                    });
+                }
+            }
+            if (nextBtn) nextBtn.addEventListener('click', () => { current = (current + 1) % cards.length; show(current); });
+            if (prevBtn) prevBtn.addEventListener('click', () => { current = (current - 1 + cards.length) % cards.length; show(current); });
+            if (dotsContainer) {
+                dotsContainer.addEventListener('click', (e) => {
+                    const idx = parseInt(e.target.dataset.index);
+                    if (!isNaN(idx)) { current = idx; show(current); }
+                });
+            }
+            // Autoplay with pause on hover
+            let autoplay = setInterval(() => { current = (current + 1) % cards.length; show(current); }, 5000);
+            container.addEventListener('mouseenter', () => clearInterval(autoplay));
+            container.addEventListener('mouseleave', () => { autoplay = setInterval(() => { current = (current + 1) % cards.length; show(current); }, 5000); });
+            console.log('Testimonials slider initialized (vanilla fallback).');
+            return;
+        }
+    
+        // jQuery implementation
+        $(function () {
+            const $container = $('#testimonials-container');
+            if ($container.length === 0) {
+                console.info('Testimonials container not found. Skipping slider initialization.');
+                return;
+            }
+    
+            const $cards = $container.find('.testimonial-card');
+            if ($cards.length <= 1) {
+                console.info('Not enough testimonial cards to initialize slider.');
+                return;
+            }
+    
+            let current = 0;
+            const total = $cards.length;
+    
+            // Ensure cards are in consistent state
+            $cards.addClass('hidden').hide().eq(0).removeClass('hidden').show();
+    
+            const $dots = $('#testimonial-dots');
+            if ($dots.length && $dots.children().length !== total) {
+                $dots.empty();
+                for (let i = 0; i < total; i++) {
+                    const btn = $(`<button class="w-3 h-3 rounded-full ${i === 0 ? 'bg-blue-500' : 'bg-gray-600'}" data-index="${i}"></button>`);
+                    $dots.append(btn);
+                }
+            }
+    
+            function show(index) {
+                $cards.stop(true, true).fadeOut(300).addClass('hidden');
+                $cards.eq(index).stop(true, true).removeClass('hidden').fadeIn(400);
+    
+                if ($dots.length) {
+                    $dots.find('button').removeClass('bg-blue-500').addClass('bg-gray-600').eq(index).removeClass('bg-gray-600').addClass('bg-blue-500');
+                }
+            }
+    
+            $('#testimonial-next').off('click.testimonial').on('click.testimonial', function () {
+                current = (current + 1) % total;
+                show(current);
+            });
+    
+            $('#testimonial-prev').off('click.testimonial').on('click.testimonial', function () {
+                current = (current - 1 + total) % total;
+                show(current);
+            });
+    
+            if ($dots.length) {
+                $dots.off('click.testimonial').on('click.testimonial', 'button', function () {
+                    const idx = parseInt($(this).data('index'), 10);
+                    if (!isNaN(idx)) {
+                        current = idx;
+                        show(current);
+                    }
+                });
+            }
+    
+            // Autoplay with pause on hover
+            let autoplay = setInterval(() => {
+                current = (current + 1) % total;
+                show(current);
+            }, 5000);
+    
+            $container.on('mouseenter', () => clearInterval(autoplay));
+            $container.on('mouseleave', () => {
+                autoplay = setInterval(() => {
+                    current = (current + 1) % total;
+                    show(current);
+                }, 5000);
+            });
+    
+            console.log(`Testimonials slider initialized (jQuery). ${total} cards registered.`);
+        });
     }
 
     /**
@@ -737,10 +867,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         }</div>`
                         : '';
 
-                    // Create responsibilities list
+                    // Create responsibilities as a collapsible block (collapsed by default)
                     const responsibilitiesHTML = (exp.responsibilities && exp.responsibilities.length > 0)
-                        ? `<ul class="list-disc list-inside text-gray-300 space-y-2">${exp.responsibilities.map(res => `<li>${res}</li>`).join('')
-                        }</ul>`
+                        ? `<div class="mt-4 collapsibleResponsibility">
+                                <button type="button" class="collapsible-toggle w-full flex items-center justify-between cursor-pointer focus:outline-none" aria-expanded="false">
+                                    <h4 class="uppercase font-semibold text-blue-400 mb-0">Responsibilities</h4>
+                                    <span class="toggle-icon text-blue-300 ml-4">+</span>
+                                </button>
+                                <div class="responsibilitiesContent hidden mt-3" aria-hidden="true">
+                                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                        ${exp.responsibilities.map(res => `<li>${res}</li>`).join('')}
+                                    </ul>
+                                </div>
+                           </div>`
                         : '';
 
                     // Dynamic icon (fallback to fa-briefcase if not specified)
@@ -762,9 +901,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <span class="bg-gray-600/20 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-500/30">${exp.duration}</span>
                                     </div>
                                 </div>
-                                <div class="mt-4">
-                                    <h4 class="uppercase font-semibold text-blue-400 mb-2">Responsibilities</h4>
-                                    ${responsibilitiesHTML}</div>
+                                ${responsibilitiesHTML}
                                 ${stackHTML}
                                 ${skillsHTML}
                             </div>
@@ -772,6 +909,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                     $container.append(expHTML);
                 });
+
+                // After appending all experience entries, initialize collapsible behavior:
+                // Ensure all are collapsed by default (handled via Tailwind 'hidden' class),
+                // and attach click handlers to toggle the responsibilities content.
+                $container.find('.collapsibleResponsibility .collapsible-toggle').off('click').on('click', function () {
+                    const $btn = $(this);
+                    const $parent = $btn.closest('.collapsibleResponsibility');
+                    const $content = $parent.find('.responsibilitiesContent');
+                    const $icon = $btn.find('.toggle-icon');
+
+                    const isHidden = $content.hasClass('hidden');
+
+                    if (isHidden) {
+                        $content.removeClass('hidden');
+                        $content.attr('aria-hidden', 'false');
+                        $btn.attr('aria-expanded', 'true');
+                        $icon.text('−');
+                    } else {
+                        $content.addClass('hidden');
+                        $content.attr('aria-hidden', 'true');
+                        $btn.attr('aria-expanded', 'false');
+                        $icon.text('+');
+                    }
+                });
+
                 console.log(`Loaded ${data.length} experience entries.`);
             } else {
                 console.info('No experience data found.');
@@ -1332,6 +1494,8 @@ $.getJSON('assets/data/blogs.json', function (data) {
            setupStatsCounterAnimation();
            setupRippleEffect();
            setupProjectCardHoverEffects();
+           // Initialize testimonials slider (depends on DOM + optionally jQuery)
+           try { setupTestimonialsSlider(); } catch (e) { console.error('Failed to initialize testimonials slider:', e); }
            setupPreloader();
    
            // Load dynamic content, ensure jQuery is available

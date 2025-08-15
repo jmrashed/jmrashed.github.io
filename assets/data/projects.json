@@ -87,7 +87,19 @@
       "AI-powered analytics",
       "Industry-specific modules",
       "No-code customization"
-    ]
+    ],
+    "role": "Tech Lead & Architect",
+    "tech_stack_summary": [
+      "Laravel",
+      "React",
+      "MySQL",
+      "Docker",
+      "Redis",
+      "REST API"
+    ],
+    "impact": "Improved scalability to support 1000+ concurrent users and reduced operational costs by implementing automation and optimized workflows.",
+    "github": "https://github.com/jmrashed/adi-erp",
+    "live_demo": ""
   },
   {
     "id": 2,
@@ -174,7 +186,20 @@
       "99.9% accuracy",
       "Works in low light",
       "Mask detection capability"
-    ]
+    ],
+    "role": "Lead Developer & AI Engineer",
+    "tech_stack_summary": [
+      "Node.js",
+      "React",
+      "OpenCV",
+      "TensorFlow",
+      "Firebase",
+      "REST API",
+      "Docker"
+    ],
+    "impact": "Achieved high facial recognition accuracy and reduced manual attendance processing by automating workflows and reporting; improved attendance accuracy for large organizations.",
+    "github": "https://github.com/jmrashed/ai-attendance-checker",
+    "live_demo": ""
   },
   {
     "id": 3,
@@ -514,7 +539,19 @@
       "Omnichannel integration",
       "AI-powered personalization",
       "Advanced vendor management"
-    ]
+    ],
+    "role": "Technical Lead",
+    "tech_stack_summary": [
+      "Magento",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "AWS",
+      "Elasticsearch"
+    ],
+    "impact": "Optimized search & indexing with Elasticsearch and horizontal scaling to support high SKUs; improved conversion rate through personalization and performance optimizations.",
+    "github": "https://github.com/jmrashed/adi-bazar",
+    "live_demo": ""
   },
   {
     "id": 7,
