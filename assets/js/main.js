@@ -1217,11 +1217,21 @@ $.getJSON('assets/data/blogs.json', function (data) {
                 // Technology badges
                 const technologyList = $('#technology');
                 technologyList.empty(); // Clear existing
+
                 if (project.Technology && project.Technology.length > 0) {
                     project.Technology.forEach(tech => {
-                        technologyList.append(`<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${tech}</span>`);
+                        technologyList.append(`
+                            <span class="inline-block m-1 px-3 py-1 text-sm font-semibold 
+                                        text-white bg-gradient-to-r from-blue-500 to-purple-600 
+                                        rounded-full shadow-md hover:shadow-lg 
+                                        transition-all duration-300 transform hover:-translate-y-1 
+                                        cursor-pointer">
+                                ${tech}
+                            </span>
+                        `);
                     });
                 }
+
 
                 // Features list
                 const featuresList = $('#features');

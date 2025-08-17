@@ -1,106 +1,114 @@
 [
-  {
-    "id": 1,
-    "Product Name": "Adi ERP",
-    "Description": "Comprehensive Business ERP Solution for Enterprise Resource Planning",
-    "Category": "Enterprise Software",
-    "Industry": "Business Management",
-    "Technology": [
-      "Laravel",
-      "React",
-      "MySQL",
-      "REST API",
-      "Docker",
-      "Redis",
-      "JWT Authentication"
-    ],
-    "Keywords": [
-      "ERP",
-      "Business Management",
-      "Accounting",
-      "Inventory",
-      "CRM",
-      "Scalability",
-      "Enterprise"
-    ],
-    "Features": [
-      "Financial management and accounting",
-      "Advanced inventory control system",
-      "Sales and purchase management",
-      "Real-time reporting and analytics",
-      "User role and permissions management",
-      "Multi-currency and multi-language support",
-      "Automated workflow processes",
-      "Integration with third-party services"
-    ],
-    "Target Audience": "Medium to large enterprises, Manufacturing companies, Retail businesses",
-    "Pricing Model": "Subscription-based (SaaS)",
-    "Estimated Price Range": "$50-500/month per user",
-    "Development Time": "8-12 months",
-    "Team Size": "6-8 developers",
-    "Complexity Level": "High",
-    "Market Size": "$147.7 billion (2025)",
-    "Growth Rate": "11.7% CAGR",
-    "Key Competitors": [
-      "SAP",
-      "Oracle",
-      "Microsoft Dynamics",
-      "NetSuite"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "On-premise",
-      "Hybrid"
-    ],
-    "Scalability": "Highly scalable - supports 1000+ concurrent users",
-    "Security Features": [
-      "SSL encryption",
-      "Two-factor authentication",
-      "Role-based access",
-      "Data backup"
-    ],
-    "Integration Capabilities": [
-      "Payment gateways",
-      "Email services",
-      "Third-party APIs",
-      "Export/Import tools"
-    ],
-    "Support Languages": [
-      "English",
-      "Spanish",
-      "French",
-      "German",
-      "Chinese"
-    ],
-    "Mobile Support": "Responsive web app + Native mobile app",
-    "Database Requirements": "MySQL 8.0+, 100GB+ storage recommended",
-    "Server Requirements": "8GB RAM, 4 CPU cores minimum",
-    "Compliance": [
-      "GDPR",
-      "SOX",
-      "HIPAA ready"
-    ],
-    "ROI Potential": "25-40% cost reduction in operational processes",
-    "Market Demand": "Very High",
-    "Risk Level": "Medium",
-    "Unique Selling Points": [
-      "AI-powered analytics",
-      "Industry-specific modules",
-      "No-code customization"
-    ],
-    "role": "Tech Lead & Architect",
-    "tech_stack_summary": [
-      "Laravel",
-      "React",
-      "MySQL",
-      "Docker",
-      "Redis",
-      "REST API"
-    ],
-    "impact": "Improved scalability to support 1000+ concurrent users and reduced operational costs by implementing automation and optimized workflows.",
-    "github": "https://github.com/jmrashed/adi-erp",
-    "live_demo": ""
-  },
+   {
+  "id": 1,
+  "Product Name": "Adi ERP",
+  "Description": "Comprehensive Business ERP Solution for Enterprise Resource Planning",
+  "Category": "Enterprise Software",
+  "Industry": "Business Management",
+  "Technology": [
+    "CodeIgniter",
+    "React",
+    "MySQL",
+    "REST API",
+    "Docker",
+    "Redis",
+    "JWT Authentication"
+  ],
+  "Keywords": [
+    "ERP",
+    "Business Management",
+    "Accounting",
+    "Inventory",
+    "CRM",
+    "Scalability",
+    "Enterprise"
+  ],
+  "Features": [
+    "Financial management and accounting",
+    "Advanced inventory control system",
+    "Sales and purchase management",
+    "Real-time reporting and analytics",
+    "User role and permissions management",
+    "Multi-currency and multi-language support",
+    "Automated workflow processes",
+    "Integration with third-party services"
+  ],
+  "Target Audience": "Medium to large enterprises, Manufacturing companies, Retail businesses",
+  "Pricing Model": "Subscription-based (SaaS)",
+  "Estimated Price Range": "$50-500/month per user",
+  "Development Time": "8-12 months",
+  "Team Size": "6-8 developers",
+  "Complexity Level": "High",
+  "Market Size": "$147.7 billion (2025)",
+  "Growth Rate": "11.7% CAGR",
+  "Key Competitors": [
+    "SAP",
+    "Oracle",
+    "Microsoft Dynamics",
+    "NetSuite"
+  ],
+  "Deployment Options": [
+    "Cloud",
+    "On-premise",
+    "Hybrid"
+  ],
+  "Scalability": "Highly scalable - supports 1000+ concurrent users",
+  "Security Features": [
+    "SSL encryption",
+    "Two-factor authentication",
+    "Role-based access",
+    "Data backup"
+  ],
+  "Integration Capabilities": [
+    "Payment gateways",
+    "Email services",
+    "Third-party APIs",
+    "Export/Import tools"
+  ],
+  "Support Languages": [
+    "English",
+    "Spanish",
+    "French",
+    "German",
+    "Chinese"
+  ],
+  "Mobile Support": "Responsive web app + Native mobile app",
+  "Database Requirements": "MySQL 8.0+, 100GB+ storage recommended",
+  "Server Requirements": "8GB RAM, 4 CPU cores minimum",
+  "Compliance": [
+    "GDPR",
+    "SOX",
+    "HIPAA ready"
+  ],
+  "ROI Potential": "25-40% cost reduction in operational processes",
+  "Market Demand": "Very High",
+  "Risk Level": "Medium",
+  "Unique Selling Points": [
+    "AI-powered analytics",
+    "Industry-specific modules",
+    "No-code customization"
+  ],
+  "role": "Tech Lead & Architect",
+  "tech_stack_summary": [
+    "CodeIgniter",
+    "React",
+    "MySQL",
+    "Docker",
+    "Redis",
+    "REST API"
+  ],
+  "impact": "Improved scalability to support 1000+ concurrent users and reduced operational costs by implementing automation and optimized workflows.",
+  "github": "https://github.com/jmrashed/adi-erp",
+  "live_demo": "",
+  "Last Update": "28 July 2025",
+  "High Resolution": "Yes",
+  "Compatible Browsers": "IE10, IE11, Firefox, Safari, Opera, Chrome, Edge",
+  "Files Included": "JavaScript JS, HTML, CSS, PHP, SQL",
+  "Software Framework": "CodeIgniter",
+  "Software Version": "PHP 8.x, MySQL 8.x",
+  "Tags": "account management, ai billing and pos software, business erp, company erp, erp, inventory, inventory erp, inventory pos, inventory software, php open source pos, pos billing software, sale and billing pos, small business erp, stock management software"
+},
+
   {
     "id": 2,
     "Product Name": "Ai Attendance Checker",
