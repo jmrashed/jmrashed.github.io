@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Download, Handshake, GraduationCap, Award } from "lucide-react";
+import { Download, GraduationCap, Award } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import HireMeButton from "@/components/ui/HireMeButton";
 import type { AchievementCategory } from "@/types";
 import { siteConfig } from "@/lib/utils";
 
@@ -111,15 +112,7 @@ export default function About({ achievements }: AboutProps) {
 
             {/* CTA buttons */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => {
-                  const modal = document.getElementById("hire-modal");
-                  if (modal) { modal.classList.remove("hidden"); modal.classList.add("flex"); document.body.style.overflow = "hidden"; }
-                }}
-                className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-green-500 to-teal-400 hover:from-green-600 hover:to-teal-500 rounded-lg text-sm font-semibold transition-all"
-              >
-                <Handshake className="w-4 h-4" /> Hire Me
-              </button>
+              <HireMeButton className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-green-500 to-teal-400 hover:from-green-600 hover:to-teal-500 rounded-lg text-sm font-semibold transition-all" />
               <Link
                 href={siteConfig.cvPath}
                 target="_blank"

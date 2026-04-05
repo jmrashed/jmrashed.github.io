@@ -3,8 +3,9 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, Code, Handshake, Download, ChevronDown } from "lucide-react";
+import { Mail, Code, Download, ChevronDown } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
+import HireMeButton from "@/components/ui/HireMeButton";
 
 const roles = [
   "Tech Lead & Full-Stack Developer",
@@ -107,7 +108,7 @@ export default function Hero() {
             >
               <Code className="w-5 h-5" /> View My Work
             </Link>
-            <HireMeButton />
+            <HireMeButton className="bg-gradient-to-r from-green-500 to-teal-400 hover:from-green-600 hover:to-teal-500 px-6 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2" label="Hire Me" />
             <Link
               href={siteConfig.cvPath}
               target="_blank"
@@ -129,20 +130,3 @@ export default function Hero() {
   );
 }
 
-function HireMeButton() {
-  return (
-    <button
-      onClick={() => {
-        const modal = document.getElementById("hire-modal");
-        if (modal) {
-          modal.classList.remove("hidden");
-          modal.classList.add("flex");
-          document.body.style.overflow = "hidden";
-        }
-      }}
-      className="bg-gradient-to-r from-green-500 to-teal-400 hover:from-green-600 hover:to-teal-500 px-6 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2"
-    >
-      <Handshake className="w-5 h-5" /> Hire Me
-    </button>
-  );
-}

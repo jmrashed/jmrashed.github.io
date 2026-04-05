@@ -1,4 +1,5 @@
 node_modules/
+.next/
 dist/
 build/
 .DS_Store
@@ -15,3 +16,4 @@ yarn-error.log*
 .env
 .env.local
 .env.*.local
+tsconfig.tsbuildinfo
