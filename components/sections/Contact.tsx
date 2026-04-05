@@ -55,21 +55,14 @@ export default function Contact({ socialLinks }: ContactProps) {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = (data: FormData) => {
     setStatus('loading');
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        setStatus('success');
-        reset();
-        setTimeout(() => setStatus('idle'), 4000);
-      } else {
-        setStatus('error');
-      }
+      const mailto = `mailto:${siteConfig.email}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`)}`;
+      window.location.href = mailto;
+      setStatus('success');
+      reset();
+      setTimeout(() => setStatus('idle'), 4000);
     } catch {
       setStatus('error');
     }
