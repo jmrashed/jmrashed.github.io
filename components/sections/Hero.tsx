@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, Code, Download, ChevronDown, Sparkles } from "lucide-react";
+import { Mail, Code, Download, ChevronDown } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
 import HireMeButton from "@/components/ui/HireMeButton";
 
@@ -21,7 +21,7 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" as const } },
 };
 
 export default function Hero() {
