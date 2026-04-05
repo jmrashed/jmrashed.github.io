@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Send, Mail, MapPin, CheckCircle, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { SocialLink } from "@/types";
@@ -35,6 +36,13 @@ const iconMap: Record<string, string> = {
   "bi-code-slash": "LC",
   "bi-terminal": "HR",
   "bi-brush": "Dr",
+};
+
+const inputBase =
+  "w-full px-4 py-3 rounded-xl text-white placeholder-gray-600 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50";
+const inputStyle = {
+  background: "rgba(255,255,255,0.04)",
+  border: "1px solid rgba(255,255,255,0.08)",
 };
 
 export default function Contact({ socialLinks }: ContactProps) {
@@ -67,48 +75,57 @@ export default function Contact({ socialLinks }: ContactProps) {
     }
   };
 
-  const inputClass =
-    "w-full px-4 py-3 bg-slate-800/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400 transition-all";
-
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-24 relative">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 100%, rgba(99,102,241,0.08) 0%, transparent 70%)" }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Let's Work Together"
+          badge="Contact"
           subtitle="Ready to bring your next project to life? Let's discuss how I can help you achieve your goals."
         />
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-10">
           {/* Contact info */}
           <AnimatedSection direction="left">
-            <div className="card-glass p-8">
-              <h3 className="text-2xl font-bold text-blue-300 mb-6">Contact Information</h3>
-              <div className="space-y-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-white" />
+            <div className="card-glass p-8 h-full">
+              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                <span className="w-1 h-5 rounded-full" style={{ background: "linear-gradient(to bottom, #6366f1, #f59e0b)" }} />
+                Contact Information
+              </h3>
+
+              <div className="space-y-4 mb-8">
+                {[
+                  { icon: Mail, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}`, accent: "#818cf8" },
+                  { icon: MapPin, label: "Location", value: siteConfig.location, href: null, accent: "#c084fc" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-4">
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: `${item.accent}18`, border: `1px solid ${item.accent}30` }}
+                    >
+                      <item.icon className="w-4 h-4" style={{ color: item.accent }} />
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-xs mb-0.5">{item.label}</p>
+                      {item.href ? (
+                        <Link href={item.href} className="text-sm text-white hover:text-indigo-300 transition-colors">
+                          {item.value}
+                        </Link>
+                      ) : (
+                        <p className="text-sm text-white">{item.value}</p>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Email</p>
-                    <Link href={`mailto:${siteConfig.email}`} className="text-blue-300 hover:text-blue-200 transition-colors">
-                      {siteConfig.email}
-                    </Link>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Location</p>
-                    <p className="text-purple-300">{siteConfig.location}</p>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              <div className="mt-8 pt-8 border-t border-gray-700">
-                <h4 className="text-xl font-semibold text-blue-300 mb-4">Social Links</h4>
-                <div className="flex flex-wrap gap-3">
+              <div className="pt-6 border-t border-white/[0.06]">
+                <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">Find me on</p>
+                <div className="flex flex-wrap gap-2.5">
                   {socialLinks.map((link) => (
                     <Link
                       key={link.name}
@@ -117,7 +134,8 @@ export default function Contact({ socialLinks }: ContactProps) {
                       rel="noopener noreferrer"
                       aria-label={link.name}
                       title={link.description}
-                      className="w-11 h-11 inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:-translate-y-1 transition-all duration-200 text-xs font-bold text-gray-300"
+                      className="w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-400 hover:text-white transition-all duration-200 hover:-translate-y-1 hover:scale-110"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
                     >
                       {iconMap[link.icon] ?? link.name.slice(0, 2)}
                     </Link>
@@ -128,58 +146,96 @@ export default function Contact({ socialLinks }: ContactProps) {
           </AnimatedSection>
 
           {/* Contact form */}
-          <AnimatedSection direction="right" delay={0.2}>
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/30">
-              <h3 className="text-2xl font-bold text-purple-300 mb-6">Send a Message</h3>
+          <AnimatedSection direction="right" delay={0.15}>
+            <div className="card-glass p-8">
+              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                <span className="w-1 h-5 rounded-full" style={{ background: "linear-gradient(to bottom, #c084fc, #6366f1)" }} />
+                Send a Message
+              </h3>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
-                <div className="grid md:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-gray-300 text-sm font-semibold mb-2">Name</label>
-                    <input {...register("name")} type="text" className={inputClass} placeholder="Your name" />
+                    <label className="block text-xs text-gray-500 mb-1.5 uppercase tracking-wider">Name</label>
+                    <input
+                      {...register("name")}
+                      type="text"
+                      className={inputBase}
+                      style={inputStyle}
+                      placeholder="Your name"
+                    />
                     {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
                   </div>
                   <div>
-                    <label className="block text-gray-300 text-sm font-semibold mb-2">Email</label>
-                    <input {...register("email")} type="email" className={inputClass} placeholder="Your email" />
+                    <label className="block text-xs text-gray-500 mb-1.5 uppercase tracking-wider">Email</label>
+                    <input
+                      {...register("email")}
+                      type="email"
+                      className={inputBase}
+                      style={inputStyle}
+                      placeholder="your@email.com"
+                    />
                     {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-semibold mb-2">Subject</label>
-                  <input {...register("subject")} type="text" className={inputClass} placeholder="Project inquiry" />
+                  <label className="block text-xs text-gray-500 mb-1.5 uppercase tracking-wider">Subject</label>
+                  <input
+                    {...register("subject")}
+                    type="text"
+                    className={inputBase}
+                    style={inputStyle}
+                    placeholder="Project inquiry"
+                  />
                   {errors.subject && <p className="text-red-400 text-xs mt-1">{errors.subject.message}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-semibold mb-2">Message</label>
-                  <textarea {...register("message")} rows={5} className={`${inputClass} resize-none`} placeholder="Tell me about your project..." />
+                  <label className="block text-xs text-gray-500 mb-1.5 uppercase tracking-wider">Message</label>
+                  <textarea
+                    {...register("message")}
+                    rows={5}
+                    className={`${inputBase} resize-none`}
+                    style={inputStyle}
+                    placeholder="Tell me about your project..."
+                  />
                   {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>}
                 </div>
 
                 {status === "success" && (
-                  <div className="flex items-center gap-2 text-green-400 bg-green-400/10 border border-green-400/30 rounded-lg p-3">
-                    <CheckCircle className="w-5 h-5" />
-                    <span className="text-sm">Message sent successfully! I&apos;ll get back to you soon.</span>
-                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 text-emerald-400 text-sm p-3 rounded-xl"
+                    style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)" }}
+                  >
+                    <CheckCircle className="w-4 h-4 flex-shrink-0" />
+                    Message sent! I&apos;ll get back to you soon.
+                  </motion.div>
                 )}
                 {status === "error" && (
-                  <div className="flex items-center gap-2 text-red-400 bg-red-400/10 border border-red-400/30 rounded-lg p-3">
-                    <AlertCircle className="w-5 h-5" />
-                    <span className="text-sm">Something went wrong. Please try again or email directly.</span>
-                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 text-red-400 text-sm p-3 rounded-xl"
+                    style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)" }}
+                  >
+                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                    Something went wrong. Please try again or email directly.
+                  </motion.div>
                 )}
 
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 disabled:opacity-60 px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:scale-105 flex items-center justify-center gap-2"
+                  className="w-full btn-primary justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{ background: "linear-gradient(135deg, #6366f1, #4f46e5)" }}
                 >
                   {status === "loading" ? (
-                    <span className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full" />
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                   ) : (
-                    <Send className="w-5 h-5" />
+                    <Send className="w-4 h-4" />
                   )}
                   {status === "loading" ? "Sending..." : "Send Message"}
                 </button>

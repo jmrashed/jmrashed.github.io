@@ -5,50 +5,91 @@ interface FooterProps {
   socialLinks: SocialLink[];
 }
 
-// Map Bootstrap icon names to simple SVG paths or use text fallback
 const iconMap: Record<string, string> = {
-  "bi-linkedin": "LinkedIn",
-  "bi-github": "GitHub",
+  "bi-linkedin": "in",
+  "bi-github": "GH",
   "bi-x": "X",
-  "bi-medium": "Medium",
-  "bi-behance": "Behance",
+  "bi-medium": "M",
+  "bi-behance": "Be",
   "bi-stack": "SO",
   "bi-code": "CP",
   "bi-code-slash": "LC",
   "bi-terminal": "HR",
-  "bi-brush": "Dribbble",
+  "bi-brush": "Dr",
 };
+
+const footerLinks = [
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Contact", href: "/#contact" },
+];
 
 export default function Footer({ socialLinks }: FooterProps) {
   return (
-    <footer className="bg-slate-900 border-t border-gray-800 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h3 className="text-3xl font-bold gradient-text mb-4">Rashed Zaman</h3>
-        <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-          Tech Lead passionate about creating innovative solutions and leading
-          high-performing teams. Let&apos;s build something amazing together.
-        </p>
+    <footer className="relative pt-16 pb-8" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+      {/* Gradient top line */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px"
+        style={{ background: "linear-gradient(90deg, transparent, #6366f1, #f59e0b, transparent)" }}
+      />
 
-        <div className="flex justify-center flex-wrap gap-3 mb-8">
-          {socialLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.url}
-              target={link.target}
-              rel="noopener noreferrer"
-              aria-label={link.name}
-              title={link.description}
-              className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:-translate-y-1 transition-all duration-200 text-xs font-bold text-gray-300"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center text-center">
+          {/* Logo */}
+          <div className="flex items-center gap-2 mb-4">
+            <span
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold text-white"
+              style={{ background: "linear-gradient(135deg, #6366f1, #f59e0b)" }}
             >
-              {iconMap[link.icon] ?? link.name.slice(0, 2)}
-            </Link>
-          ))}
-        </div>
+              RZ
+            </span>
+            <span className="text-xl font-bold gradient-text">Rashed Zaman</span>
+          </div>
 
-        <div className="pt-8 border-t border-gray-800">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Rashed Zaman. All rights reserved. |
-            Built with Next.js & ❤️
+          <p className="text-gray-500 text-sm max-w-md mb-8 leading-relaxed">
+            Tech Lead passionate about creating innovative solutions and leading high-performing teams.
+            Let&apos;s build something amazing together.
+          </p>
+
+          {/* Nav links */}
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-gray-500 hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Social links */}
+          <div className="flex flex-wrap justify-center gap-2.5 mb-10">
+            {socialLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.url}
+                target={link.target}
+                rel="noopener noreferrer"
+                aria-label={link.name}
+                title={link.description}
+                className="w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-white transition-all duration-200 hover:-translate-y-1"
+                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
+              >
+                {iconMap[link.icon] ?? link.name.slice(0, 2)}
+              </Link>
+            ))}
+          </div>
+
+          <div
+            className="w-full h-px mb-6"
+            style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
+          />
+
+          <p className="text-gray-600 text-xs">
+            © {new Date().getFullYear()} Rashed Zaman. All rights reserved. · Built with Next.js & ❤️
           </p>
         </div>
       </div>
