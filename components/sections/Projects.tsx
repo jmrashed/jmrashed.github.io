@@ -1,26 +1,26 @@
-import Link from "next/link";
-import { GitFork, Eye, ArrowRight } from "lucide-react";
-import { StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import SectionHeading from "@/components/ui/SectionHeading";
-import Badge from "@/components/ui/Badge";
-import type { Project } from "@/types";
+import Link from 'next/link';
+import { GitFork, Eye, ArrowRight } from 'lucide-react';
+import { StaggerContainer, StaggerItem } from '@/components/ui/AnimatedSection';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import SectionHeading from '@/components/ui/SectionHeading';
+import Badge from '@/components/ui/Badge';
+import type { Project } from '@/types';
 
 interface ProjectsProps {
   projects: Project[];
 }
 
 const categoryColors: Record<string, string> = {
-  SaaS: "#818cf8",
-  FinTech: "#34d399",
-  Healthcare: "#f472b6",
-  "E-Commerce": "#fbbf24",
-  DevOps: "#67e8f9",
-  AI: "#c084fc",
+  SaaS: '#818cf8',
+  FinTech: '#34d399',
+  Healthcare: '#f472b6',
+  'E-Commerce': '#fbbf24',
+  DevOps: '#67e8f9',
+  AI: '#c084fc',
 };
 
 export function ProjectCard({ project }: { project: Project }) {
-  const accent = categoryColors[project.Category] ?? "#818cf8";
+  const accent = categoryColors[project.Category] ?? '#818cf8';
 
   return (
     <div
@@ -44,15 +44,17 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <h3 className="text-base font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
-        {project["Product Name"]}
+        {project['Product Name']}
       </h3>
       <p className="text-gray-400 text-sm mb-4 leading-relaxed flex-grow line-clamp-3">
         {project.Description}
       </p>
 
       <div className="flex flex-wrap gap-1.5 mb-5">
-        {project.Technology.slice(0, 4).map((tech) => (
-          <Badge key={tech} variant="green">{tech}</Badge>
+        {project.Technology.slice(0, 4).map(tech => (
+          <Badge key={tech} variant="green">
+            {tech}
+          </Badge>
         ))}
         {project.Technology.length > 4 && (
           <Badge variant="blue">+{project.Technology.length - 4}</Badge>
@@ -69,7 +71,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </Link>
         {(project.github ?? project.CodeLink) && (
           <Link
-            href={project.github ?? project.CodeLink ?? "#"}
+            href={project.github ?? project.CodeLink ?? '#'}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline !px-4 !py-2 !text-sm !rounded-lg"
@@ -93,7 +95,7 @@ export default function Projects({ projects }: ProjectsProps) {
         />
 
         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
-          {projects.map((project) => (
+          {projects.map(project => (
             <StaggerItem key={project.id} direction="up">
               <ProjectCard project={project} />
             </StaggerItem>
@@ -104,7 +106,7 @@ export default function Projects({ projects }: ProjectsProps) {
           <Link
             href="/projects"
             className="btn-primary inline-flex"
-            style={{ background: "linear-gradient(135deg, #6366f1, #4f46e5)" }}
+            style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)' }}
           >
             <Eye className="w-4 h-4" /> View All Projects
           </Link>

@@ -1,20 +1,14 @@
-import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import Skills from "@/components/sections/Skills";
-import ExperienceSection from "@/components/sections/Experience";
-import Projects from "@/components/sections/Projects";
-import OpenSource from "@/components/sections/OpenSource";
-import Testimonials from "@/components/sections/Testimonials";
-import Awards from "@/components/sections/Awards";
-import Contact from "@/components/sections/Contact";
-import HireMeModal from "@/components/sections/HireMeModal";
-import {
-  getAchievements,
-  getSkills,
-  getExperience,
-  getProjects,
-  getSocialLinks,
-} from "@/lib/data";
+import Hero from '@/components/sections/Hero';
+import About from '@/components/sections/About';
+import Skills from '@/components/sections/Skills';
+import ExperienceSection from '@/components/sections/Experience';
+import Projects from '@/components/sections/Projects';
+import OpenSource from '@/components/sections/OpenSource';
+import Testimonials from '@/components/sections/Testimonials';
+import Awards from '@/components/sections/Awards';
+import Contact from '@/components/sections/Contact';
+import HireMeModal from '@/components/sections/HireMeModal';
+import { getAchievements, getSkills, getExperience, getProjects, getSocialLinks } from '@/lib/data';
 
 export default function HomePage() {
   const achievements = getAchievements();

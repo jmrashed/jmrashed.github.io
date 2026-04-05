@@ -1,113 +1,87 @@
 [
-   {
-  "id": 1,
-  "Product Name": "Adi ERP",
-  "Description": "Comprehensive Business ERP Solution for Enterprise Resource Planning",
-  "Category": "Enterprise Software",
-  "Industry": "Business Management",
-  "Technology": [
-    "CodeIgniter",
-    "React",
-    "MySQL",
-    "REST API",
-    "Docker",
-    "Redis",
-    "JWT Authentication"
-  ],
-  "Keywords": [
-    "ERP",
-    "Business Management",
-    "Accounting",
-    "Inventory",
-    "CRM",
-    "Scalability",
-    "Enterprise"
-  ],
-  "Features": [
-    "Financial management and accounting",
-    "Advanced inventory control system",
-    "Sales and purchase management",
-    "Real-time reporting and analytics",
-    "User role and permissions management",
-    "Multi-currency and multi-language support",
-    "Automated workflow processes",
-    "Integration with third-party services"
-  ],
-  "Target Audience": "Medium to large enterprises, Manufacturing companies, Retail businesses",
-  "Pricing Model": "Subscription-based (SaaS)",
-  "Estimated Price Range": "$50-500/month per user",
-  "Development Time": "8-12 months",
-  "Team Size": "6-8 developers",
-  "Complexity Level": "High",
-  "Market Size": "$147.7 billion (2025)",
-  "Growth Rate": "11.7% CAGR",
-  "Key Competitors": [
-    "SAP",
-    "Oracle",
-    "Microsoft Dynamics",
-    "NetSuite"
-  ],
-  "Deployment Options": [
-    "Cloud",
-    "On-premise",
-    "Hybrid"
-  ],
-  "Scalability": "Highly scalable - supports 1000+ concurrent users",
-  "Security Features": [
-    "SSL encryption",
-    "Two-factor authentication",
-    "Role-based access",
-    "Data backup"
-  ],
-  "Integration Capabilities": [
-    "Payment gateways",
-    "Email services",
-    "Third-party APIs",
-    "Export/Import tools"
-  ],
-  "Support Languages": [
-    "English",
-    "Spanish",
-    "French",
-    "German",
-    "Chinese"
-  ],
-  "Mobile Support": "Responsive web app + Native mobile app",
-  "Database Requirements": "MySQL 8.0+, 100GB+ storage recommended",
-  "Server Requirements": "8GB RAM, 4 CPU cores minimum",
-  "Compliance": [
-    "GDPR",
-    "SOX",
-    "HIPAA ready"
-  ],
-  "ROI Potential": "25-40% cost reduction in operational processes",
-  "Market Demand": "Very High",
-  "Risk Level": "Medium",
-  "Unique Selling Points": [
-    "AI-powered analytics",
-    "Industry-specific modules",
-    "No-code customization"
-  ],
-  "role": "Tech Lead & Architect",
-  "tech_stack_summary": [
-    "CodeIgniter",
-    "React",
-    "MySQL",
-    "Docker",
-    "Redis",
-    "REST API"
-  ],
-  "impact": "Improved scalability to support 1000+ concurrent users and reduced operational costs by implementing automation and optimized workflows.",
-  "github": "https://github.com/jmrashed/adi-erp",
-  "live_demo": "",
-  "Last Update": "28 July 2025",
-  "High Resolution": "Yes",
-  "Compatible Browsers": "IE10, IE11, Firefox, Safari, Opera, Chrome, Edge",
-  "Files Included": "JavaScript JS, HTML, CSS, PHP, SQL",
-  "Software Framework": "CodeIgniter",
-  "Software Version": "PHP 8.x, MySQL 8.x",
-  "Tags": "account management, ai billing and pos software, business erp, company erp, erp, inventory, inventory erp, inventory pos, inventory software, php open source pos, pos billing software, sale and billing pos, small business erp, stock management software"
-},
+  {
+    "id": 1,
+    "Product Name": "Adi ERP",
+    "Description": "Comprehensive Business ERP Solution for Enterprise Resource Planning",
+    "Category": "Enterprise Software",
+    "Industry": "Business Management",
+    "Technology": [
+      "CodeIgniter",
+      "React",
+      "MySQL",
+      "REST API",
+      "Docker",
+      "Redis",
+      "JWT Authentication"
+    ],
+    "Keywords": [
+      "ERP",
+      "Business Management",
+      "Accounting",
+      "Inventory",
+      "CRM",
+      "Scalability",
+      "Enterprise"
+    ],
+    "Features": [
+      "Financial management and accounting",
+      "Advanced inventory control system",
+      "Sales and purchase management",
+      "Real-time reporting and analytics",
+      "User role and permissions management",
+      "Multi-currency and multi-language support",
+      "Automated workflow processes",
+      "Integration with third-party services"
+    ],
+    "Target Audience": "Medium to large enterprises, Manufacturing companies, Retail businesses",
+    "Pricing Model": "Subscription-based (SaaS)",
+    "Estimated Price Range": "$50-500/month per user",
+    "Development Time": "8-12 months",
+    "Team Size": "6-8 developers",
+    "Complexity Level": "High",
+    "Market Size": "$147.7 billion (2025)",
+    "Growth Rate": "11.7% CAGR",
+    "Key Competitors": ["SAP", "Oracle", "Microsoft Dynamics", "NetSuite"],
+    "Deployment Options": ["Cloud", "On-premise", "Hybrid"],
+    "Scalability": "Highly scalable - supports 1000+ concurrent users",
+    "Security Features": [
+      "SSL encryption",
+      "Two-factor authentication",
+      "Role-based access",
+      "Data backup"
+    ],
+    "Integration Capabilities": [
+      "Payment gateways",
+      "Email services",
+      "Third-party APIs",
+      "Export/Import tools"
+    ],
+    "Support Languages": ["English", "Spanish", "French", "German", "Chinese"],
+    "Mobile Support": "Responsive web app + Native mobile app",
+    "Database Requirements": "MySQL 8.0+, 100GB+ storage recommended",
+    "Server Requirements": "8GB RAM, 4 CPU cores minimum",
+    "Compliance": ["GDPR", "SOX", "HIPAA ready"],
+    "ROI Potential": "25-40% cost reduction in operational processes",
+    "Market Demand": "Very High",
+    "Risk Level": "Medium",
+    "Unique Selling Points": [
+      "AI-powered analytics",
+      "Industry-specific modules",
+      "No-code customization"
+    ],
+    "role": "Tech Lead & Architect",
+    "tech_stack_summary": ["CodeIgniter", "React", "MySQL", "Docker", "Redis", "REST API"],
+    "impact": "Improved scalability to support 1000+ concurrent users and reduced operational costs by implementing automation and optimized workflows.",
+    "github": "https://github.com/jmrashed/adi-erp",
+    "live_demo": "",
+    "Last Update": "28 July 2025",
+    "High Resolution": "Yes",
+    "Compatible Browsers": "IE10, IE11, Firefox, Safari, Opera, Chrome, Edge",
+    "Files Included": "JavaScript JS, HTML, CSS, PHP, SQL",
+    "Software Framework": "CodeIgniter",
+    "Software Version": "PHP 8.x, MySQL 8.x",
+    "Tags": "account management, ai billing and pos software, business erp, company erp, erp, inventory, inventory erp, inventory pos, inventory software, php open source pos, pos billing software, sale and billing pos, small business erp, stock management software"
+  },
 
   {
     "id": 2,
@@ -150,51 +124,25 @@
     "Complexity Level": "High",
     "Market Size": "$54.64 billion (2025)",
     "Growth Rate": "11.55% CAGR through 2032",
-    "Key Competitors": [
-      "BambooHR",
-      "Workday",
-      "ADP",
-      "Kronos"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "Hybrid"
-    ],
+    "Key Competitors": ["BambooHR", "Workday", "ADP", "Kronos"],
+    "Deployment Options": ["Cloud", "Hybrid"],
     "Scalability": "Supports 10,000+ employees",
-    "Security Features": [
-      "Encrypted biometric data",
-      "GDPR compliant",
-      "Secure cloud storage"
-    ],
+    "Security Features": ["Encrypted biometric data", "GDPR compliant", "Secure cloud storage"],
     "Integration Capabilities": [
       "Payroll systems",
       "HR software",
       "Door access systems",
       "Email notifications"
     ],
-    "Support Languages": [
-      "English",
-      "Spanish",
-      "Hindi",
-      "Arabic",
-      "Portuguese"
-    ],
+    "Support Languages": ["English", "Spanish", "Hindi", "Arabic", "Portuguese"],
     "Mobile Support": "Native iOS/Android apps",
     "Database Requirements": "Firebase/MongoDB, Biometric data encryption",
     "Server Requirements": "GPU support for AI processing",
-    "Compliance": [
-      "GDPR",
-      "CCPA",
-      "Biometric data protection laws"
-    ],
+    "Compliance": ["GDPR", "CCPA", "Biometric data protection laws"],
     "ROI Potential": "30-50% reduction in time theft and administrative costs",
     "Market Demand": "High",
     "Risk Level": "Medium-High (Privacy concerns)",
-    "Unique Selling Points": [
-      "99.9% accuracy",
-      "Works in low light",
-      "Mask detection capability"
-    ],
+    "Unique Selling Points": ["99.9% accuracy", "Works in low light", "Mask detection capability"],
     "role": "Lead Developer & AI Engineer",
     "tech_stack_summary": [
       "Node.js",
@@ -224,14 +172,7 @@
       "Natural Language Processing",
       "MongoDB"
     ],
-    "Keywords": [
-      "Chatbot",
-      "AI",
-      "Customer Support",
-      "Automation",
-      "NLP",
-      "Conversational AI"
-    ],
+    "Keywords": ["Chatbot", "AI", "Customer Support", "Automation", "NLP", "Conversational AI"],
     "Features": [
       "Advanced natural language processing",
       "Multi-channel support (web, mobile, social media)",
@@ -250,39 +191,21 @@
     "Complexity Level": "Medium-High",
     "Market Size": "80% of companies using AI chatbots by 2025",
     "Growth Rate": "25%+ annually",
-    "Key Competitors": [
-      "Intercom",
-      "Zendesk",
-      "ChatGPT",
-      "Drift"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "API integration"
-    ],
+    "Key Competitors": ["Intercom", "Zendesk", "ChatGPT", "Drift"],
+    "Deployment Options": ["Cloud", "API integration"],
     "Scalability": "Unlimited concurrent conversations",
-    "Security Features": [
-      "End-to-end encryption",
-      "Data privacy controls",
-      "GDPR compliance"
-    ],
+    "Security Features": ["End-to-end encryption", "Data privacy controls", "GDPR compliance"],
     "Integration Capabilities": [
       "CRM systems",
       "Help desk software",
       "E-commerce platforms",
       "Social media"
     ],
-    "Support Languages": [
-      "50+ languages"
-    ],
+    "Support Languages": ["50+ languages"],
     "Mobile Support": "SDK for mobile apps",
     "Database Requirements": "Conversation history storage, Analytics data",
     "Server Requirements": "Auto-scaling cloud infrastructure",
-    "Compliance": [
-      "GDPR",
-      "HIPAA",
-      "SOC 2"
-    ],
+    "Compliance": ["GDPR", "HIPAA", "SOC 2"],
     "ROI Potential": "40-60% reduction in customer service costs",
     "Market Demand": "Very High",
     "Risk Level": "Low-Medium",
@@ -334,17 +257,8 @@
     "Complexity Level": "Very High",
     "Market Size": "$13.79 billion (2025) → $33.10 billion (2034)",
     "Growth Rate": "10.2% CAGR",
-    "Key Competitors": [
-      "Temenos",
-      "FIS",
-      "Finastra",
-      "TCS BaNCS"
-    ],
-    "Deployment Options": [
-      "On-premise",
-      "Private cloud",
-      "Hybrid"
-    ],
+    "Key Competitors": ["Temenos", "FIS", "Finastra", "TCS BaNCS"],
+    "Deployment Options": ["On-premise", "Private cloud", "Hybrid"],
     "Scalability": "Handles millions of transactions daily",
     "Security Features": [
       "PCI DSS compliance",
@@ -358,19 +272,11 @@
       "Third-party financial services",
       "Open banking APIs"
     ],
-    "Support Languages": [
-      "Multiple currencies and languages"
-    ],
+    "Support Languages": ["Multiple currencies and languages"],
     "Mobile Support": "Native mobile banking apps",
     "Database Requirements": "High-availability PostgreSQL cluster",
     "Server Requirements": "Enterprise-grade infrastructure with redundancy",
-    "Compliance": [
-      "PCI DSS",
-      "Basel III",
-      "KYC",
-      "AML",
-      "Regional banking regulations"
-    ],
+    "Compliance": ["PCI DSS", "Basel III", "KYC", "AML", "Regional banking regulations"],
     "ROI Potential": "20-35% operational cost reduction",
     "Market Demand": "High",
     "Risk Level": "High (Regulatory and security)",
@@ -421,41 +327,21 @@
     "Complexity Level": "Medium",
     "Market Size": "$2.38 billion (2025) → $8.48 billion (2035)",
     "Growth Rate": "13.1% CAGR",
-    "Key Competitors": [
-      "Fishbowl",
-      "inFlow",
-      "Zoho Inventory",
-      "TradeGecko"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "On-premise"
-    ],
+    "Key Competitors": ["Fishbowl", "inFlow", "Zoho Inventory", "TradeGecko"],
+    "Deployment Options": ["Cloud", "On-premise"],
     "Scalability": "Supports unlimited products and locations",
-    "Security Features": [
-      "Role-based access",
-      "Data encryption",
-      "Regular backups"
-    ],
+    "Security Features": ["Role-based access", "Data encryption", "Regular backups"],
     "Integration Capabilities": [
       "E-commerce platforms",
       "Accounting software",
       "POS systems",
       "Shipping carriers"
     ],
-    "Support Languages": [
-      "English",
-      "Spanish",
-      "French",
-      "German"
-    ],
+    "Support Languages": ["English", "Spanish", "French", "German"],
     "Mobile Support": "Mobile app for iOS/Android",
     "Database Requirements": "MySQL 8.0+, Optimized for large datasets",
     "Server Requirements": "4GB RAM minimum, SSD storage recommended",
-    "Compliance": [
-      "Industry-specific regulations",
-      "Tax compliance"
-    ],
+    "Compliance": ["Industry-specific regulations", "Tax compliance"],
     "ROI Potential": "25-40% reduction in inventory carrying costs",
     "Market Demand": "High",
     "Risk Level": "Low-Medium",
@@ -471,15 +357,7 @@
     "Description": "Multi-Store eCommerce Shopping Cart Solution Platform",
     "Category": "E-commerce Platform",
     "Industry": "Retail & E-commerce",
-    "Technology": [
-      "Magento",
-      "React",
-      "Node.js",
-      "MongoDB",
-      "AWS",
-      "Elasticsearch",
-      "CDN"
-    ],
+    "Technology": ["Magento", "React", "Node.js", "MongoDB", "AWS", "Elasticsearch", "CDN"],
     "Keywords": [
       "eCommerce",
       "Multi-store",
@@ -506,16 +384,8 @@
     "Complexity Level": "High",
     "Market Size": "Multi-trillion dollar e-commerce market",
     "Growth Rate": "15%+ annually",
-    "Key Competitors": [
-      "Shopify Plus",
-      "Magento Commerce",
-      "WooCommerce",
-      "BigCommerce"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "Hybrid"
-    ],
+    "Key Competitors": ["Shopify Plus", "Magento Commerce", "WooCommerce", "BigCommerce"],
+    "Deployment Options": ["Cloud", "Hybrid"],
     "Scalability": "Handles millions of products and high traffic",
     "Security Features": [
       "PCI compliance",
@@ -529,17 +399,11 @@
       "Marketing tools",
       "Analytics platforms"
     ],
-    "Support Languages": [
-      "50+ languages and currencies"
-    ],
+    "Support Languages": ["50+ languages and currencies"],
     "Mobile Support": "Progressive Web App + Native apps",
     "Database Requirements": "MongoDB cluster, Redis caching",
     "Server Requirements": "Auto-scaling cloud infrastructure",
-    "Compliance": [
-      "PCI DSS",
-      "GDPR",
-      "Regional e-commerce regulations"
-    ],
+    "Compliance": ["PCI DSS", "GDPR", "Regional e-commerce regulations"],
     "ROI Potential": "200-400% increase in online sales",
     "Market Demand": "Very High",
     "Risk Level": "Medium",
@@ -549,14 +413,7 @@
       "Advanced vendor management"
     ],
     "role": "Technical Lead",
-    "tech_stack_summary": [
-      "Magento",
-      "React",
-      "Node.js",
-      "MongoDB",
-      "AWS",
-      "Elasticsearch"
-    ],
+    "tech_stack_summary": ["Magento", "React", "Node.js", "MongoDB", "AWS", "Elasticsearch"],
     "impact": "Optimized search & indexing with Elasticsearch and horizontal scaling to support high SKUs; improved conversion rate through personalization and performance optimizations.",
     "github": "https://github.com/jmrashed/adi-bazar",
     "live_demo": ""
@@ -567,15 +424,7 @@
     "Description": "Comprehensive Multi-Vendor Marketplace Platform",
     "Category": "Marketplace Platform",
     "Industry": "E-commerce & Technology",
-    "Technology": [
-      "Laravel",
-      "Vue.js",
-      "MySQL",
-      "Stripe API",
-      "ElasticSearch",
-      "Redis",
-      "AWS"
-    ],
+    "Technology": ["Laravel", "Vue.js", "MySQL", "Stripe API", "ElasticSearch", "Redis", "AWS"],
     "Keywords": [
       "Marketplace",
       "Multi-vendor",
@@ -602,16 +451,8 @@
     "Complexity Level": "High",
     "Market Size": "$5.89 trillion by 2029",
     "Growth Rate": "20%+ annually",
-    "Key Competitors": [
-      "Amazon Marketplace",
-      "eBay",
-      "Etsy",
-      "Alibaba"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "Dedicated servers"
-    ],
+    "Key Competitors": ["Amazon Marketplace", "eBay", "Etsy", "Alibaba"],
+    "Deployment Options": ["Cloud", "Dedicated servers"],
     "Scalability": "Supports thousands of vendors and millions of products",
     "Security Features": [
       "Payment security",
@@ -625,16 +466,11 @@
       "Marketing tools",
       "Tax systems"
     ],
-    "Support Languages": [
-      "Global multi-language support"
-    ],
+    "Support Languages": ["Global multi-language support"],
     "Mobile Support": "Native marketplace apps",
     "Database Requirements": "High-performance MySQL with caching",
     "Server Requirements": "High-availability cloud infrastructure",
-    "Compliance": [
-      "International e-commerce standards",
-      "Tax regulations"
-    ],
+    "Compliance": ["International e-commerce standards", "Tax regulations"],
     "ROI Potential": "300-500% revenue growth potential",
     "Market Demand": "Very High",
     "Risk Level": "Medium-High",
@@ -685,16 +521,8 @@
     "Complexity Level": "Medium-High",
     "Market Size": "27,000+ courses on major platforms",
     "Growth Rate": "25%+ annually in online education",
-    "Key Competitors": [
-      "Udemy",
-      "Coursera",
-      "Teachable",
-      "Thinkific"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "White-label solutions"
-    ],
+    "Key Competitors": ["Udemy", "Coursera", "Teachable", "Thinkific"],
+    "Deployment Options": ["Cloud", "White-label solutions"],
     "Scalability": "Supports unlimited courses and students",
     "Security Features": [
       "Content protection",
@@ -708,17 +536,11 @@
       "Email marketing",
       "CRM systems"
     ],
-    "Support Languages": [
-      "Multi-language platform"
-    ],
+    "Support Languages": ["Multi-language platform"],
     "Mobile Support": "Mobile learning apps",
     "Database Requirements": "PostgreSQL with media storage optimization",
     "Server Requirements": "CDN for global content delivery",
-    "Compliance": [
-      "COPPA",
-      "GDPR",
-      "Educational standards"
-    ],
+    "Compliance": ["COPPA", "GDPR", "Educational standards"],
     "ROI Potential": "150-300% increase in course sales",
     "Market Demand": "Very High",
     "Risk Level": "Low-Medium",
@@ -770,16 +592,8 @@
     "Complexity Level": "Very High",
     "Market Size": "14.1% CAGR (2025-2032)",
     "Growth Rate": "Highly volatile, trend-dependent",
-    "Key Competitors": [
-      "Binance",
-      "Coinbase",
-      "Kraken",
-      "FTX"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "Hybrid with cold storage"
-    ],
+    "Key Competitors": ["Binance", "Coinbase", "Kraken", "FTX"],
+    "Deployment Options": ["Cloud", "Hybrid with cold storage"],
     "Scalability": "High-frequency trading capable",
     "Security Features": [
       "Multi-signature wallets",
@@ -793,17 +607,11 @@
       "Banking systems",
       "DeFi protocols"
     ],
-    "Support Languages": [
-      "Global multi-language"
-    ],
+    "Support Languages": ["Global multi-language"],
     "Mobile Support": "Native trading apps",
     "Database Requirements": "High-performance with real-time capabilities",
     "Server Requirements": "Enterprise-grade with global distribution",
-    "Compliance": [
-      "AML",
-      "KYC",
-      "Cryptocurrency regulations by jurisdiction"
-    ],
+    "Compliance": ["AML", "KYC", "Cryptocurrency regulations by jurisdiction"],
     "ROI Potential": "High risk/high reward - market dependent",
     "Market Demand": "High but volatile",
     "Risk Level": "Very High (Regulatory and market risks)",
@@ -819,15 +627,7 @@
     "Description": "Advanced Hospital Management System Software",
     "Category": "Healthcare Management",
     "Industry": "Healthcare",
-    "Technology": [
-      "PHP",
-      "Laravel",
-      "React",
-      "MySQL",
-      "REST API",
-      "HL7 FHIR",
-      "DICOM"
-    ],
+    "Technology": ["PHP", "Laravel", "React", "MySQL", "REST API", "HL7 FHIR", "DICOM"],
     "Keywords": [
       "Hospital Management",
       "Healthcare",
@@ -855,17 +655,8 @@
     "Complexity Level": "Very High",
     "Market Size": "$31.19 billion (2025) → $54.20 billion (2034)",
     "Growth Rate": "6.3% CAGR",
-    "Key Competitors": [
-      "Epic",
-      "Cerner",
-      "Allscripts",
-      "MEDITECH"
-    ],
-    "Deployment Options": [
-      "On-premise",
-      "Cloud",
-      "Hybrid"
-    ],
+    "Key Competitors": ["Epic", "Cerner", "Allscripts", "MEDITECH"],
+    "Deployment Options": ["On-premise", "Cloud", "Hybrid"],
     "Scalability": "Supports multi-facility healthcare networks",
     "Security Features": [
       "HIPAA compliance",
@@ -879,18 +670,11 @@
       "Imaging systems",
       "Insurance networks"
     ],
-    "Support Languages": [
-      "Multiple languages for diverse patient populations"
-    ],
+    "Support Languages": ["Multiple languages for diverse patient populations"],
     "Mobile Support": "Healthcare professional mobile apps",
     "Database Requirements": "HIPAA-compliant database with high availability",
     "Server Requirements": "Healthcare-grade infrastructure with redundancy",
-    "Compliance": [
-      "HIPAA",
-      "HL7",
-      "ICD-10",
-      "Regional healthcare regulations"
-    ],
+    "Compliance": ["HIPAA", "HL7", "ICD-10", "Regional healthcare regulations"],
     "ROI Potential": "20-30% operational efficiency improvement",
     "Market Demand": "High",
     "Risk Level": "Medium-High (Compliance and patient safety)",
@@ -906,15 +690,7 @@
     "Description": "Advanced Multi-Vendor Online Bookstore Platform",
     "Category": "E-commerce Specialty",
     "Industry": "Publishing & Retail",
-    "Technology": [
-      "Magento",
-      "React",
-      "Node.js",
-      "MySQL",
-      "AWS",
-      "Elasticsearch",
-      "PDF DRM"
-    ],
+    "Technology": ["Magento", "React", "Node.js", "MySQL", "AWS", "Elasticsearch", "PDF DRM"],
     "Keywords": [
       "eCommerce",
       "Bookstore",
@@ -941,38 +717,21 @@
     "Complexity Level": "Medium",
     "Market Size": "$26.04 billion (2025) → $48.27 billion (2034)",
     "Growth Rate": "Strong growth in digital segments",
-    "Key Competitors": [
-      "Amazon Books",
-      "Barnes & Noble",
-      "AbeBooks",
-      "Book Depository"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "Hybrid"
-    ],
+    "Key Competitors": ["Amazon Books", "Barnes & Noble", "AbeBooks", "Book Depository"],
+    "Deployment Options": ["Cloud", "Hybrid"],
     "Scalability": "Supports millions of books and authors",
-    "Security Features": [
-      "Payment security",
-      "Digital rights management",
-      "User data protection"
-    ],
+    "Security Features": ["Payment security", "Digital rights management", "User data protection"],
     "Integration Capabilities": [
       "Publishing platforms",
       "Payment systems",
       "Shipping carriers",
       "Review platforms"
     ],
-    "Support Languages": [
-      "Global multi-language book support"
-    ],
+    "Support Languages": ["Global multi-language book support"],
     "Mobile Support": "Reading apps and mobile commerce",
     "Database Requirements": "Optimized for large catalog searches",
     "Server Requirements": "CDN for global book delivery",
-    "Compliance": [
-      "Publishing industry standards",
-      "Copyright protection"
-    ],
+    "Compliance": ["Publishing industry standards", "Copyright protection"],
     "ROI Potential": "150-250% increase in online book sales",
     "Market Demand": "Medium-High",
     "Risk Level": "Low-Medium",
@@ -1023,16 +782,8 @@
     "Complexity Level": "High",
     "Market Size": "Rising healthcare digitization trend",
     "Growth Rate": "30%+ annually post-pandemic",
-    "Key Competitors": [
-      "Teladoc",
-      "Amwell",
-      "Doxy.me",
-      "MDLive"
-    ],
-    "Deployment Options": [
-      "Cloud",
-      "Mobile-first"
-    ],
+    "Key Competitors": ["Teladoc", "Amwell", "Doxy.me", "MDLive"],
+    "Deployment Options": ["Cloud", "Mobile-first"],
     "Scalability": "Supports thousands of concurrent consultations",
     "Security Features": [
       "HIPAA compliance",
@@ -1046,25 +797,14 @@
       "Insurance systems",
       "Payment processors"
     ],
-    "Support Languages": [
-      "Multi-language for diverse patient base"
-    ],
+    "Support Languages": ["Multi-language for diverse patient base"],
     "Mobile Support": "Native iOS/Android apps",
     "Database Requirements": "HIPAA-compliant with encryption",
     "Server Requirements": "Healthcare-grade cloud infrastructure",
-    "Compliance": [
-      "HIPAA",
-      "HITECH",
-      "State telemedicine regulations",
-      "Medical licensing"
-    ],
+    "Compliance": ["HIPAA", "HITECH", "State telemedicine regulations", "Medical licensing"],
     "ROI Potential": "40-60% increase in patient reach and efficiency",
     "Market Demand": "Very High",
     "Risk Level": "Medium-High (Healthcare compliance)",
-    "Unique Selling Points": [
-      "AI-powered triage",
-      "Integrated pharmacy",
-      "Multi-specialty support"
-    ]
+    "Unique Selling Points": ["AI-powered triage", "Integrated pharmacy", "Multi-specialty support"]
   }
 ]

@@ -166,7 +166,14 @@
       "Secured customer data with military-grade encryption and fraud prevention.",
       "Enabled rapid development and deployment of new financial products."
     ],
-    "technologiesUsed": ["Java", "Spring Boot", "Angular", "PostgreSQL", "Microservices", "Kubernetes"],
+    "technologiesUsed": [
+      "Java",
+      "Spring Boot",
+      "Angular",
+      "PostgreSQL",
+      "Microservices",
+      "Kubernetes"
+    ],
     "image": "case-study-adi-bank-1.jpg"
   },
   {
@@ -200,7 +207,13 @@
       "Reduced fraud incidents through AI-powered detection.",
       "Provided members with a more secure and reliable banking experience."
     ],
-    "technologiesUsed": ["Java", "Spring Boot", "PostgreSQL", "Microservices", "Blockchain integration"],
+    "technologiesUsed": [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "Microservices",
+      "Blockchain integration"
+    ],
     "image": "case-study-adi-bank-3.jpg"
   },
   {
@@ -421,7 +434,14 @@
       "Achieved full regulatory compliance in multiple jurisdictions.",
       "Provided advanced trading tools and analytics for professional investors."
     ],
-    "technologiesUsed": ["Node.js", "React", "Blockchain APIs", "MongoDB", "Kubernetes", "Security Protocols"],
+    "technologiesUsed": [
+      "Node.js",
+      "React",
+      "Blockchain APIs",
+      "MongoDB",
+      "Kubernetes",
+      "Security Protocols"
+    ],
     "image": "case-study-adi-crypto-1.jpg"
   },
   {
@@ -489,7 +509,14 @@
       "Streamlined patient follow-up and care coordination.",
       "Provided better insights into clinic performance and patient outcomes."
     ],
-    "technologiesUsed": ["PHP", "Laravel", "React", "MySQL", "REST API", "Medical device integration"],
+    "technologiesUsed": [
+      "PHP",
+      "Laravel",
+      "React",
+      "MySQL",
+      "REST API",
+      "Medical device integration"
+    ],
     "image": "case-study-hosmanager-2.jpg"
   },
   {
@@ -608,7 +635,14 @@
       "Reduced hospital readmissions by providing continuous virtual care.",
       "Enhanced patient engagement and self-management of health."
     ],
-    "technologiesUsed": ["Flutter", "Firebase", "Node.js", "WebRTC", "AI Diagnostics", "HIPAA-compliant messaging"],
+    "technologiesUsed": [
+      "Flutter",
+      "Firebase",
+      "Node.js",
+      "WebRTC",
+      "AI Diagnostics",
+      "HIPAA-compliant messaging"
+    ],
     "image": "case-study-adi-docapp-3.jpg"
   }
 ]

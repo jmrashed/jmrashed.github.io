@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { getCaseStudies } from "@/lib/data";
-import SectionHeading from "@/components/ui/SectionHeading";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import Badge from "@/components/ui/Badge";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { getCaseStudies } from '@/lib/data';
+import SectionHeading from '@/components/ui/SectionHeading';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import Badge from '@/components/ui/Badge';
 
 export const metadata: Metadata = {
-  title: "Case Studies",
-  description: "In-depth case studies showcasing real-world solutions and measurable impact delivered by Rashed Zaman.",
+  title: 'Case Studies',
+  description:
+    'In-depth case studies showcasing real-world solutions and measurable impact delivered by Rashed Zaman.',
 };
 
 export default function CaseStudiesPage() {
@@ -38,8 +39,10 @@ export default function CaseStudiesPage() {
                 </p>
                 <p className="text-gray-300 text-sm mb-4 line-clamp-3 flex-grow">{cs.challenge}</p>
                 <div className="flex flex-wrap gap-2 mt-auto">
-                  {cs.technologiesUsed.slice(0, 3).map((tech) => (
-                    <Badge key={tech} variant="green">{tech}</Badge>
+                  {cs.technologiesUsed.slice(0, 3).map(tech => (
+                    <Badge key={tech} variant="green">
+                      {tech}
+                    </Badge>
                   ))}
                   {cs.technologiesUsed.length > 3 && (
                     <Badge variant="blue">+{cs.technologiesUsed.length - 3}</Badge>

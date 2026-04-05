@@ -1,33 +1,36 @@
-import Link from "next/link";
-import { GitFork, Package, ExternalLink } from "lucide-react";
-import SectionHeading from "@/components/ui/SectionHeading";
-import { StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
-import AnimatedSection from "@/components/ui/AnimatedSection";
+import Link from 'next/link';
+import { GitFork, Package, ExternalLink } from 'lucide-react';
+import SectionHeading from '@/components/ui/SectionHeading';
+import { StaggerContainer, StaggerItem } from '@/components/ui/AnimatedSection';
+import AnimatedSection from '@/components/ui/AnimatedSection';
 
 const packages = [
   {
-    name: "jmrashed/zkteco",
-    description: "A PHP package for seamless integration with ZKTeco biometric devices — used for attendance and access control systems.",
-    github: "https://github.com/jmrashed/zkteco",
-    packagist: "https://packagist.org/packages/jmrashed/zkteco",
-    accent: "#818cf8",
-    tag: "PHP",
+    name: 'jmrashed/zkteco',
+    description:
+      'A PHP package for seamless integration with ZKTeco biometric devices — used for attendance and access control systems.',
+    github: 'https://github.com/jmrashed/zkteco',
+    packagist: 'https://packagist.org/packages/jmrashed/zkteco',
+    accent: '#818cf8',
+    tag: 'PHP',
   },
   {
-    name: "jmrashed/laravel-installer",
-    description: "A simple installer scaffold for Laravel applications to speed up new project setup and onboarding.",
-    github: "https://github.com/jmrashed/laravel-installer",
-    packagist: "https://packagist.org/packages/jmrashed/laravel-installer",
-    accent: "#f472b6",
-    tag: "Laravel",
+    name: 'jmrashed/laravel-installer',
+    description:
+      'A simple installer scaffold for Laravel applications to speed up new project setup and onboarding.',
+    github: 'https://github.com/jmrashed/laravel-installer',
+    packagist: 'https://packagist.org/packages/jmrashed/laravel-installer',
+    accent: '#f472b6',
+    tag: 'Laravel',
   },
   {
-    name: "jmrashed-api-rate-limiter",
-    description: "A lightweight API rate-limiting middleware to protect endpoints and ensure fair usage for public APIs.",
-    github: "https://github.com/jmrashed/jmrashed-api-rate-limiter",
-    packagist: "https://packagist.org/packages/jmrashed/jmrashed-api-rate-limiter",
-    accent: "#34d399",
-    tag: "Middleware",
+    name: 'jmrashed-api-rate-limiter',
+    description:
+      'A lightweight API rate-limiting middleware to protect endpoints and ensure fair usage for public APIs.',
+    github: 'https://github.com/jmrashed/jmrashed-api-rate-limiter',
+    packagist: 'https://packagist.org/packages/jmrashed/jmrashed-api-rate-limiter',
+    accent: '#34d399',
+    tag: 'Middleware',
   },
 ];
 
@@ -42,7 +45,7 @@ export default function OpenSource() {
         />
 
         <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.1}>
-          {packages.map((pkg) => (
+          {packages.map(pkg => (
             <StaggerItem key={pkg.name} direction="up">
               <div
                 className="glass-card rounded-2xl p-6 h-full flex flex-col group hover:scale-[1.02] transition-transform duration-300"
@@ -57,16 +60,25 @@ export default function OpenSource() {
                   </div>
                   <span
                     className="text-xs font-medium px-2.5 py-1 rounded-full"
-                    style={{ background: `${pkg.accent}15`, color: pkg.accent, border: `1px solid ${pkg.accent}25` }}
+                    style={{
+                      background: `${pkg.accent}15`,
+                      color: pkg.accent,
+                      border: `1px solid ${pkg.accent}25`,
+                    }}
                   >
                     {pkg.tag}
                   </span>
                 </div>
 
-                <h3 className="font-mono text-sm font-bold text-white mb-2" style={{ color: pkg.accent }}>
+                <h3
+                  className="font-mono text-sm font-bold text-white mb-2"
+                  style={{ color: pkg.accent }}
+                >
                   {pkg.name}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed flex-grow mb-5">{pkg.description}</p>
+                <p className="text-gray-400 text-sm leading-relaxed flex-grow mb-5">
+                  {pkg.description}
+                </p>
 
                 <div className="flex items-center gap-2.5">
                   <Link
@@ -74,7 +86,9 @@ export default function OpenSource() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: `linear-gradient(135deg, ${pkg.accent}, ${pkg.accent}99)` }}
+                    style={{
+                      background: `linear-gradient(135deg, ${pkg.accent}, ${pkg.accent}99)`,
+                    }}
                   >
                     <GitFork className="w-3.5 h-3.5" /> GitHub
                   </Link>

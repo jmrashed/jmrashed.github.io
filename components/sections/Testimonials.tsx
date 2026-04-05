@@ -1,31 +1,34 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import SectionHeading from "@/components/ui/SectionHeading";
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 const testimonials = [
   {
-    quote: "Rashed led our distributed engineering team with clarity and focus. He improved our CI/CD pipelines and reduced deployment time by 40%.",
-    name: "Client",
-    role: "Acme Corp",
-    initials: "CL",
-    color: "#6366f1",
+    quote:
+      'Rashed led our distributed engineering team with clarity and focus. He improved our CI/CD pipelines and reduced deployment time by 40%.',
+    name: 'Client',
+    role: 'Acme Corp',
+    initials: 'CL',
+    color: '#6366f1',
   },
   {
-    quote: "His asynchronous workflow and documentation practices made onboarding remote engineers painless. Communication was excellent.",
-    name: "Product Manager",
-    role: "FinTech Co",
-    initials: "PM",
-    color: "#10b981",
+    quote:
+      'His asynchronous workflow and documentation practices made onboarding remote engineers painless. Communication was excellent.',
+    name: 'Product Manager',
+    role: 'FinTech Co',
+    initials: 'PM',
+    color: '#10b981',
   },
   {
-    quote: "Rashed is a strong technical leader — excellent mentor and reliable remote collaborator. He delivered our microservice migration on time.",
-    name: "Lead Developer",
-    role: "Startup X",
-    initials: "LD",
-    color: "#c084fc",
+    quote:
+      'Rashed is a strong technical leader — excellent mentor and reliable remote collaborator. He delivered our microservice migration on time.',
+    name: 'Lead Developer',
+    role: 'Startup X',
+    initials: 'LD',
+    color: '#c084fc',
   },
 ];
 
@@ -35,7 +38,7 @@ export default function Testimonials() {
 
   const navigate = (dir: number) => {
     setDirection(dir);
-    setCurrent((c) => (c + dir + testimonials.length) % testimonials.length);
+    setCurrent(c => (c + dir + testimonials.length) % testimonials.length);
   };
 
   const t = testimonials[current];
@@ -67,9 +70,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-gray-200 text-lg leading-relaxed mb-8">
-                &ldquo;{t.quote}&rdquo;
-              </p>
+              <p className="text-gray-200 text-lg leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
 
               <div className="flex items-center gap-4">
                 <div
@@ -99,7 +100,10 @@ export default function Testimonials() {
             <button
               onClick={() => navigate(-1)}
               className="p-2.5 rounded-xl transition-all hover:scale-110"
-              style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }}
               aria-label="Previous"
             >
               <ChevronLeft className="w-4 h-4 text-gray-300" />
@@ -108,12 +112,18 @@ export default function Testimonials() {
               {testimonials.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+                  onClick={() => {
+                    setDirection(i > current ? 1 : -1);
+                    setCurrent(i);
+                  }}
                   className="rounded-full transition-all duration-300"
                   style={{
-                    width: i === current ? "24px" : "8px",
-                    height: "8px",
-                    background: i === current ? "linear-gradient(90deg, #6366f1, #f59e0b)" : "rgba(255,255,255,0.15)",
+                    width: i === current ? '24px' : '8px',
+                    height: '8px',
+                    background:
+                      i === current
+                        ? 'linear-gradient(90deg, #6366f1, #f59e0b)'
+                        : 'rgba(255,255,255,0.15)',
                   }}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
@@ -122,7 +132,10 @@ export default function Testimonials() {
             <button
               onClick={() => navigate(1)}
               className="p-2.5 rounded-xl transition-all hover:scale-110"
-              style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }}
               aria-label="Next"
             >
               <ChevronRight className="w-4 h-4 text-gray-300" />

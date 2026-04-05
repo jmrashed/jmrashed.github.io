@@ -1,5 +1,5 @@
-import { readFileSync } from "fs";
-import path from "path";
+import { readFileSync } from 'fs';
+import path from 'path';
 import type {
   Project,
   Blog,
@@ -8,49 +8,49 @@ import type {
   AchievementCategory,
   SocialLink,
   CaseStudy,
-} from "@/types";
+} from '@/types';
 
 function readJson<T>(filename: string): T {
-  const filePath = path.join(process.cwd(), "public", "data", filename);
-  return JSON.parse(readFileSync(filePath, "utf-8")) as T;
+  const filePath = path.join(process.cwd(), 'public', 'data', filename);
+  return JSON.parse(readFileSync(filePath, 'utf-8')) as T;
 }
 
 export function getProjects(): Project[] {
-  return readJson<Project[]>("projects.json");
+  return readJson<Project[]>('projects.json');
 }
 
 export function getProjectById(id: number): Project | undefined {
-  return getProjects().find((p) => p.id === id);
+  return getProjects().find(p => p.id === id);
 }
 
 export function getBlogs(): Blog[] {
-  return readJson<Blog[]>("blogs.json");
+  return readJson<Blog[]>('blogs.json');
 }
 
 export function getBlogById(id: string): Blog | undefined {
-  return getBlogs().find((b) => b.id === id);
+  return getBlogs().find(b => b.id === id);
 }
 
 export function getExperience(): Experience[] {
-  return readJson<Experience[]>("experience.json");
+  return readJson<Experience[]>('experience.json');
 }
 
 export function getSkills(): SkillsData {
-  return readJson<SkillsData>("skills.json");
+  return readJson<SkillsData>('skills.json');
 }
 
 export function getAchievements(): AchievementCategory[] {
-  return readJson<AchievementCategory[]>("achivements.json");
+  return readJson<AchievementCategory[]>('achivements.json');
 }
 
 export function getSocialLinks(): SocialLink[] {
-  return readJson<SocialLink[]>("socialLinks.json");
+  return readJson<SocialLink[]>('socialLinks.json');
 }
 
 export function getCaseStudies(): CaseStudy[] {
-  return readJson<CaseStudy[]>("case-studies.json");
+  return readJson<CaseStudy[]>('case-studies.json');
 }
 
 export function getCaseStudyById(id: number): CaseStudy | undefined {
-  return getCaseStudies().find((cs) => cs.id === id);
+  return getCaseStudies().find(cs => cs.id === id);
 }

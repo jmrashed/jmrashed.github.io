@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { ChevronDown, Briefcase } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import SectionHeading from "@/components/ui/SectionHeading";
-import Badge from "@/components/ui/Badge";
-import type { Experience } from "@/types";
+import { useState } from 'react';
+import { ChevronDown, Briefcase } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import SectionHeading from '@/components/ui/SectionHeading';
+import Badge from '@/components/ui/Badge';
+import type { Experience } from '@/types';
 
 interface ExperienceProps {
   experience: Experience[];
@@ -23,8 +23,8 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
           <div
             className="w-12 h-12 rounded-xl flex items-center justify-center z-10 relative"
             style={{
-              background: "linear-gradient(135deg, #6366f1, #4f46e5)",
-              boxShadow: "0 0 20px rgba(99,102,241,0.35)",
+              background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
+              boxShadow: '0 0 20px rgba(99,102,241,0.35)',
             }}
           >
             <Briefcase className="w-5 h-5 text-white" />
@@ -36,14 +36,16 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 mb-4">
             <div>
               <h3 className="text-lg md:text-xl font-bold text-white">{exp.role}</h3>
-              <p className="text-gray-400 text-sm mt-0.5">{exp.company} · {exp.location}</p>
+              <p className="text-gray-400 text-sm mt-0.5">
+                {exp.company} · {exp.location}
+              </p>
             </div>
             <span
               className="self-start px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap"
               style={{
-                background: "rgba(99,102,241,0.1)",
-                border: "1px solid rgba(99,102,241,0.25)",
-                color: "#a5b4fc",
+                background: 'rgba(99,102,241,0.1)',
+                border: '1px solid rgba(99,102,241,0.25)',
+                color: '#a5b4fc',
               }}
             >
               {exp.duration}
@@ -53,10 +55,14 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
           {/* Stack */}
           {exp.stack.length > 0 && (
             <div className="mb-3">
-              <p className="text-xs uppercase font-semibold text-gray-500 mb-2 tracking-wider">Stack</p>
+              <p className="text-xs uppercase font-semibold text-gray-500 mb-2 tracking-wider">
+                Stack
+              </p>
               <div className="flex flex-wrap gap-1.5">
-                {exp.stack.map((tech) => (
-                  <Badge key={tech} variant="purple">{tech}</Badge>
+                {exp.stack.map(tech => (
+                  <Badge key={tech} variant="purple">
+                    {tech}
+                  </Badge>
                 ))}
               </div>
             </div>
@@ -65,10 +71,14 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
           {/* Skills */}
           {exp.skills.length > 0 && (
             <div className="mb-3">
-              <p className="text-xs uppercase font-semibold text-gray-500 mb-2 tracking-wider">Skills</p>
+              <p className="text-xs uppercase font-semibold text-gray-500 mb-2 tracking-wider">
+                Skills
+              </p>
               <div className="flex flex-wrap gap-1.5">
-                {exp.skills.map((skill) => (
-                  <Badge key={skill} variant="green">{skill}</Badge>
+                {exp.skills.map(skill => (
+                  <Badge key={skill} variant="green">
+                    {skill}
+                  </Badge>
                 ))}
               </div>
             </div>
@@ -93,9 +103,9 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
                 {open && (
                   <motion.ul
                     initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
+                    animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    transition={{ duration: 0.25, ease: 'easeInOut' }}
                     className="overflow-hidden mt-3 space-y-1.5"
                   >
                     {exp.responsibilities.map((r, i) => (
@@ -120,7 +130,10 @@ export default function ExperienceSection({ experience }: ExperienceProps) {
     <section id="experience" className="py-24 relative">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(180deg, transparent 0%, rgba(99,102,241,0.03) 50%, transparent 100%)" }}
+        style={{
+          background:
+            'linear-gradient(180deg, transparent 0%, rgba(99,102,241,0.03) 50%, transparent 100%)',
+        }}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -133,7 +146,7 @@ export default function ExperienceSection({ experience }: ExperienceProps) {
           {/* Timeline line */}
           <div
             className="absolute left-6 top-6 bottom-6 w-px hidden md:block"
-            style={{ background: "linear-gradient(to bottom, #6366f1, rgba(99,102,241,0.1))" }}
+            style={{ background: 'linear-gradient(to bottom, #6366f1, rgba(99,102,241,0.1))' }}
           />
           <div className="space-y-8">
             {experience.map((exp, i) => (

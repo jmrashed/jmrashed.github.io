@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
+import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 const schema = z.object({
   name: z.string().min(2),
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     // In production, integrate with an email service (Resend, SendGrid, EmailJS, etc.)
     // For now, we log and return success. Replace with your preferred email provider.
-    console.log("Contact form submission:", data);
+    console.log('Contact form submission:', data);
 
     // Example: Resend integration (uncomment and add RESEND_API_KEY to .env.local)
     // const resend = new Resend(process.env.RESEND_API_KEY);
@@ -33,6 +33,6 @@ export async function POST(req: NextRequest) {
     if (error instanceof z.ZodError) {
       return NextResponse.json({ error: error.issues }, { status: 400 });
     }
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

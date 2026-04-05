@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { getBlogs } from "@/lib/data";
-import SectionHeading from "@/components/ui/SectionHeading";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import Badge from "@/components/ui/Badge";
-import { formatDate } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { getBlogs } from '@/lib/data';
+import SectionHeading from '@/components/ui/SectionHeading';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import Badge from '@/components/ui/Badge';
+import { formatDate } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Articles and insights on technology, software development, and engineering leadership by Rashed Zaman.",
+  title: 'Blog',
+  description:
+    'Articles and insights on technology, software development, and engineering leadership by Rashed Zaman.',
 };
 
 export default function BlogsPage() {
@@ -29,7 +30,9 @@ export default function BlogsPage() {
               <div className="group card-glass overflow-hidden hover:border-blue-500/50 transition-all duration-300 flex flex-col h-full">
                 {/* Category badge */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <Badge variant="blue" className="self-start mb-3">{blog.category}</Badge>
+                  <Badge variant="blue" className="self-start mb-3">
+                    {blog.category}
+                  </Badge>
 
                   <Link href={`/blogs/${blog.id}`} className="block mb-3">
                     <h2 className="text-xl font-bold text-blue-300 group-hover:underline underline-offset-4 line-clamp-2">
@@ -37,11 +40,15 @@ export default function BlogsPage() {
                     </h2>
                   </Link>
 
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">{blog.excerpt}</p>
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">
+                    {blog.excerpt}
+                  </p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {blog.tags.slice(0, 3).map((tag) => (
-                      <Badge key={tag} variant="green">{tag}</Badge>
+                    {blog.tags.slice(0, 3).map(tag => (
+                      <Badge key={tag} variant="green">
+                        {tag}
+                      </Badge>
                     ))}
                   </div>
 

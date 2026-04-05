@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import { getProjects } from "@/lib/data";
-import SectionHeading from "@/components/ui/SectionHeading";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import { ProjectCard } from "@/components/sections/Projects";
+import type { Metadata } from 'next';
+import { getProjects } from '@/lib/data';
+import SectionHeading from '@/components/ui/SectionHeading';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import { ProjectCard } from '@/components/sections/Projects';
 
 export const metadata: Metadata = {
-  title: "Projects",
-  description: "Showcase of innovative solutions and complex systems architected and delivered by Rashed Zaman.",
+  title: 'Projects',
+  description:
+    'Showcase of innovative solutions and complex systems architected and delivered by Rashed Zaman.',
 };
 
 export default function ProjectsPage() {
