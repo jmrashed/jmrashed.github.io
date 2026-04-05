@@ -1,0 +1,13 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/api/contact/route": "/api/contact",
+  "/page": "/",
+  "/blogs/[id]/page": "/blogs/[id]",
+  "/blogs/page": "/blogs",
+  "/case-studies/page": "/case-studies",
+  "/case-studies/[id]/page": "/case-studies/[id]",
+  "/projects/page": "/projects",
+  "/projects/[id]/page": "/projects/[id]"
+}

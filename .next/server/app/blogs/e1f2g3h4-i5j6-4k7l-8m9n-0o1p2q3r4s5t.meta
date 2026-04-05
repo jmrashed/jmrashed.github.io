@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/blogs/layout,_N_T_/blogs/[id]/layout,_N_T_/blogs/[id]/page,_N_T_/blogs/e1f2g3h4-i5j6-4k7l-8m9n-0o1p2q3r4s5t"
+  }
+}
