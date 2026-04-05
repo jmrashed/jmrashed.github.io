@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Behance",
+        "url": "https://www.behance.net/jmrashed",
+        "description": "Showcase of my design and creative projects.",
+        "type": "portfolio",
+        "icon": "bi-behance",
+        "colorClass": "text-blue-600",
+        "target": "_blank"
+    },
+    {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/jmrashed/",
+        "description": "Professional profile and career networking.",
+        "type": "social",
+        "icon": "bi-linkedin",
+        "colorClass": "text-blue-700",
+        "target": "_blank"
+    },
+    {
+        "name": "X (Twitter)",
+        "url": "https://x.com/_jmrashed",
+        "description": "Follow me for updates and thoughts.",
+        "type": "social",
+        "icon": "bi-x",
+        "colorClass": "text-blue-500",
+        "target": "_blank"
+    },
+    {
+        "name": "GitHub",
+        "url": "https://github.com/jmrashed",
+        "description": "Explore my open-source projects and repositories.",
+        "type": "coding",
+        "icon": "bi-github",
+        "colorClass": "text-gray-900",
+        "target": "_blank"
+    },
+    {
+        "name": "LeetCode",
+        "url": "https://leetcode.com/u/jmrashed/",
+        "description": "Problem solving and competitive programming profile.",
+        "type": "coding",
+        "icon": "bi-code-slash",
+        "colorClass": "text-orange-500",
+        "target": "_blank"
+    },
+    {
+        "name": "HackerRank",
+        "url": "https://www.hackerrank.com/profile/jmrashed",
+        "description": "Practice coding challenges and assessments.",
+        "type": "coding",
+        "icon": "bi-terminal",
+        "colorClass": "text-green-600",
+        "target": "_blank"
+    },
+    {
+        "name": "Medium",
+        "url": "https://medium.com/@jmrashed",
+        "description": "Articles and insights I write about tech and software.",
+        "type": "writing",
+        "icon": "bi-medium",
+        "colorClass": "text-black",
+        "target": "_blank"
+    },
+    {
+        "name": "Stack Overflow",
+        "url": "https://stackoverflow.com/users/jmrashed",
+        "description": "My Q&A contributions and coding expertise.",
+        "type": "coding",
+        "icon": "bi-stack",
+        "colorClass": "text-orange-600",
+        "target": "_blank"
+    },
+    {
+        "name": "CodePen",
+        "url": "https://codepen.io/jmrashed",
+        "description": "Front-end experiments and snippets.",
+        "type": "portfolio",
+        "icon": "bi-code",
+        "colorClass": "text-purple-500",
+        "target": "_blank"
+    },
+    {
+        "name": "Dribbble",
+        "url": "https://dribbble.com/jmrashed",
+        "description": "Creative design shots and UI work.",
+        "type": "portfolio",
+        "icon": "bi-brush",
+        "colorClass": "text-pink-500",
+        "target": "_blank"
+    }
+]

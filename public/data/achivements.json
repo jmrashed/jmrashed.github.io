@@ -1,0 +1,72 @@
+[
+    {
+      "category": "Leadership & Management",
+      "items": [
+        {
+          "id": 1,
+          "title": "Leadership in Large-Scale Teams",
+          "description": "Directed cross-functional teams of 40+ developers, delivering scalable enterprise-grade solutions with a 98% client satisfaction rate and zero major post-deployment issues."
+        },
+        {
+          "id": 2,
+          "title": "Budget Optimization & ROI Growth",
+          "description": "Managed technology budgets exceeding $2M, achieving a 20% cost reduction while boosting overall system performance by 35%, directly enhancing profitability."
+        },
+        {
+          "id": 3,
+          "title": "Awards & Recognition",
+          "description": "Recognized as 'Innovator of the Year' (2022) and 'Employee of the Year' (2017) for exceptional contributions to innovation, efficiency, and business impact."
+        }
+      ]
+    },
+    {
+      "category": "Technology Innovation",
+      "items": [
+        {
+          "id": 4,
+          "title": "AI/ML Integration in SaaS",
+          "description": "Integrated AI/ML features into SaaS platforms, unlocking $500K+ in annual recurring revenue through advanced automation and predictive analytics."
+        },
+        {
+          "id": 5,
+          "title": "System Architecture Excellence",
+          "description": "Architected and launched 4 mission-critical software systems, reducing downtime by 35% and increasing scalability by 15% across distributed environments."
+        },
+        {
+          "id": 6,
+          "title": "Scalable Product Development",
+          "description": "Designed and deployed HRM, LMS, and E-commerce platforms serving 15,000+ active users with high availability and performance consistency."
+        }
+      ]
+    },
+    {
+      "category": "Process & Delivery Optimization",
+      "items": [
+        {
+          "id": 7,
+          "title": "Agile-Driven Delivery Speed",
+          "description": "Increased application delivery speed by 25% through Agile transformation, sprint planning optimization, and team velocity improvements."
+        },
+        {
+          "id": 8,
+          "title": "DevOps Automation Excellence",
+          "description": "Implemented CI/CD pipelines, Dockerized environments, and automated deployments—cutting deployment cycles by 10% and minimizing release errors."
+        }
+      ]
+    },
+    {
+      "category": "User Experience & Security",
+      "items": [
+        {
+          "id": 9,
+          "title": "User-Centric Performance Boost",
+          "description": "Enhanced UX and optimized system performance, leading to a 30% increase in user satisfaction and engagement."
+        },
+        {
+          "id": 10,
+          "title": "Cybersecurity & Compliance Leadership",
+          "description": "Established enterprise-grade cybersecurity protocols ensuring 99.9% uptime, zero data breaches, and full compliance with industry regulations."
+        }
+      ]
+    }
+  ]
