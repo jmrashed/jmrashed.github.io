@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next build",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "deploy": "npm run build && gh-pages -d out"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
