@@ -1,7 +1,10 @@
+import Link from 'next/link';
+import { BookOpen, GitBranch } from 'lucide-react';
 import { StaggerContainer, StaggerItem } from '@/components/ui/AnimatedSection';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
 import type { SkillsData } from '@/types';
+import { siteConfig } from '@/lib/utils';
 
 interface SkillsProps {
   skills: SkillsData;
@@ -85,7 +88,7 @@ export default function Skills({ skills }: SkillsProps) {
             style={{ borderColor: 'rgba(255,255,255,0.06)' }}
           >
             <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
-              Leadership & Soft Skills
+              Leadership &amp; Soft Skills
             </h3>
             <div className="flex flex-wrap gap-2.5">
               {skills.leadership_skills.map(skill => (
@@ -102,6 +105,48 @@ export default function Skills({ skills }: SkillsProps) {
                 </span>
               ))}
             </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Currently Exploring + GitHub README */}
+        <AnimatedSection delay={0.35} className="mt-6">
+          <div
+            className="glass-card rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center gap-6"
+            style={{ borderColor: 'rgba(192,132,252,0.15)' }}
+          >
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-3">
+                <BookOpen className="w-4 h-4 text-purple-400" />
+                <h3 className="text-sm font-semibold text-purple-300 uppercase tracking-wider">
+                  Currently Exploring
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {siteConfig.currentlyLearning.map(item => (
+                  <span
+                    key={item.label}
+                    className="px-3 py-1 rounded-full text-xs font-semibold"
+                    style={{
+                      background: `${item.color}15`,
+                      border: `1px solid ${item.color}30`,
+                      color: item.color,
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <Link
+              href={siteConfig.githubReadme}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white shrink-0 transition-all hover:opacity-90 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)' }}
+            >
+              <GitBranch className="w-4 h-4" />
+              GitHub README
+            </Link>
           </div>
         </AnimatedSection>
       </div>

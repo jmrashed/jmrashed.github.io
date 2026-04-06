@@ -71,15 +71,64 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Rashed Zaman',
-              url: siteConfig.url,
-              jobTitle: 'Tech Lead & Full-Stack Developer',
-              worksFor: { '@type': 'Organization', name: 'Onest Tech LLC' },
-              sameAs: [siteConfig.linkedin, siteConfig.github],
-            }),
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Person',
+                name: 'Rashed Zaman',
+                url: siteConfig.url,
+                email: siteConfig.email,
+                jobTitle: 'Tech Lead & Full-Stack Developer',
+                description: siteConfig.description,
+                address: { '@type': 'PostalAddress', addressLocality: 'Dhaka', addressCountry: 'BD' },
+                sameAs: [
+                  siteConfig.linkedin,
+                  siteConfig.github,
+                  'https://x.com/_jmrashed',
+                  'https://medium.com/@jmrashed',
+                ],
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'ItemList',
+                name: 'Featured Projects by Rashed Zaman',
+                itemListElement: [
+                  {
+                    '@type': 'ListItem', position: 1,
+                    item: {
+                      '@type': 'SoftwareApplication',
+                      name: 'Adi ERP',
+                      description: 'Comprehensive Business ERP Solution — scales to 1,000+ concurrent users.',
+                      applicationCategory: 'BusinessApplication',
+                      operatingSystem: 'Web',
+                      url: `${siteConfig.url}/projects/1/`,
+                    },
+                  },
+                  {
+                    '@type': 'ListItem', position: 2,
+                    item: {
+                      '@type': 'SoftwareApplication',
+                      name: 'AI Attendance Checker',
+                      description: 'AI-powered facial recognition attendance system with 99.9% accuracy.',
+                      applicationCategory: 'BusinessApplication',
+                      operatingSystem: 'Web, iOS, Android',
+                      url: `${siteConfig.url}/projects/2/`,
+                    },
+                  },
+                  {
+                    '@type': 'ListItem', position: 3,
+                    item: {
+                      '@type': 'SoftwareApplication',
+                      name: 'Adi Bazar',
+                      description: 'Multi-store eCommerce platform with Elasticsearch and AI personalization.',
+                      applicationCategory: 'BusinessApplication',
+                      operatingSystem: 'Web',
+                      url: `${siteConfig.url}/projects/6/`,
+                    },
+                  },
+                ],
+              },
+            ]),
           }}
         />
       </head>
