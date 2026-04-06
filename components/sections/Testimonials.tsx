@@ -1,147 +1,72 @@
 'use client';
 
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { ExternalLink, MessageSquarePlus } from 'lucide-react';
+import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
-
-const testimonials = [
-  {
-    quote:
-      'Rashed led our distributed engineering team with clarity and focus. He improved our CI/CD pipelines and reduced deployment time by 40%.',
-    name: 'Client',
-    role: 'Acme Corp',
-    initials: 'CL',
-    color: '#6366f1',
-  },
-  {
-    quote:
-      'His asynchronous workflow and documentation practices made onboarding remote engineers painless. Communication was excellent.',
-    name: 'Product Manager',
-    role: 'FinTech Co',
-    initials: 'PM',
-    color: '#10b981',
-  },
-  {
-    quote:
-      'Rashed is a strong technical leader — excellent mentor and reliable remote collaborator. He delivered our microservice migration on time.',
-    name: 'Lead Developer',
-    role: 'Startup X',
-    initials: 'LD',
-    color: '#c084fc',
-  },
-];
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import { siteConfig } from '@/lib/utils';
 
 export default function Testimonials() {
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
-
-  const navigate = (dir: number) => {
-    setDirection(dir);
-    setCurrent(c => (c + dir + testimonials.length) % testimonials.length);
-  };
-
-  const t = testimonials[current];
-
   return (
     <section id="testimonials" className="py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Testimonials"
           badge="Feedback"
-          subtitle="Feedback from clients and colleagues about working with me on remote projects."
+          subtitle="Recommendations from colleagues and clients I've worked with."
         />
 
-        <div className="relative">
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={current}
-              custom={direction}
-              initial={{ opacity: 0, x: direction * 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: direction * -40 }}
-              transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="glass-card rounded-2xl p-8 md:p-10"
+        <AnimatedSection>
+          <motion.div
+            className="glass-card rounded-2xl p-10 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div
+              className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.25)' }}
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-
-              <p className="text-gray-200 text-lg leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
-
-              <div className="flex items-center gap-4">
-                <div
-                  className="w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm text-white flex-shrink-0"
-                  style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}99)` }}
-                >
-                  {t.initials}
-                </div>
-                <div>
-                  <div className="font-semibold text-white text-sm">{t.name}</div>
-                  <div className="text-gray-500 text-xs">{t.role}</div>
-                </div>
-                <a
-                  href="https://www.linkedin.com/in/jmrashed/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-auto text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
-                >
-                  LinkedIn ↗
-                </a>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Controls */}
-          <div className="mt-6 flex items-center justify-center gap-4">
-            <button
-              onClick={() => navigate(-1)}
-              className="p-2.5 rounded-xl transition-all hover:scale-110"
-              style={{
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-4 h-4 text-gray-300" />
-            </button>
-            <div className="flex gap-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    setDirection(i > current ? 1 : -1);
-                    setCurrent(i);
-                  }}
-                  className="rounded-full transition-all duration-300"
-                  style={{
-                    width: i === current ? '24px' : '8px',
-                    height: '8px',
-                    background:
-                      i === current
-                        ? 'linear-gradient(90deg, #6366f1, #f59e0b)'
-                        : 'rgba(255,255,255,0.15)',
-                  }}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                />
-              ))}
+              <MessageSquarePlus className="w-7 h-7 text-indigo-400" />
             </div>
-            <button
-              onClick={() => navigate(1)}
-              className="p-2.5 rounded-xl transition-all hover:scale-110"
-              style={{
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-              aria-label="Next"
-            >
-              <ChevronRight className="w-4 h-4 text-gray-300" />
-            </button>
-          </div>
-        </div>
+
+            <h3 className="text-xl font-bold text-white mb-3">
+              Recommendations on LinkedIn
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-md mx-auto mb-8">
+              I&apos;ve worked with great teams across 10+ years. If we&apos;ve collaborated,
+              I&apos;d genuinely appreciate a recommendation on LinkedIn — it means a lot.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href={`${siteConfig.linkedin}details/recommendations/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all hover:opacity-90 hover:-translate-y-0.5"
+                style={{ background: 'linear-gradient(135deg, #0077b5, #005885)' }}
+              >
+                <ExternalLink className="w-4 h-4" />
+                View LinkedIn Profile
+              </Link>
+              <Link
+                href={`${siteConfig.linkedin}details/recommendations/write/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all hover:-translate-y-0.5"
+                style={{
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  color: '#a5b4fc',
+                }}
+              >
+                <MessageSquarePlus className="w-4 h-4" />
+                Leave a Recommendation
+              </Link>
+            </div>
+          </motion.div>
+        </AnimatedSection>
       </div>
     </section>
   );

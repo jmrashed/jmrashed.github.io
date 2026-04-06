@@ -17,9 +17,11 @@ export const siteConfig = {
     'Rashed Zaman — Tech Lead & Full-Stack Developer from Dhaka, Bangladesh. 10+ years building scalable web & mobile solutions using PHP, Node.js, React and cloud platforms.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://jmrashed.github.io',
   email: 'jmrashed@gmail.com',
-  location: 'Dhaka, Bangladesh',
+  location: 'Dhaka, Bangladesh (UTC+6)',
+  timezone: 'UTC+6 (Bangladesh Standard Time)',
   github: 'https://github.com/jmrashed',
   linkedin: 'https://www.linkedin.com/in/jmrashed/',
   twitter: '@jmrashed',
   cvPath: '/RASHED_ZAMAN_CV.pdf',
+  formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '',
 };

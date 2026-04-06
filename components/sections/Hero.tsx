@@ -118,6 +118,37 @@ export default function Hero() {
             </span>
           </motion.div>
 
+          {/* Profile photo */}
+          <motion.div variants={item} className="flex justify-center mb-8">
+            <div className="relative">
+              <div
+                className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden ring-2 ring-indigo-500/40 ring-offset-4 ring-offset-transparent"
+                style={{ boxShadow: '0 0 40px rgba(99,102,241,0.25)' }}
+              >
+                <img
+                  src="/images/profile.jpg"
+                  alt="Rashed Zaman — Tech Lead & Full-Stack Developer"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                  onError={e => {
+                    const el = e.currentTarget;
+                    el.style.display = 'none';
+                    const parent = el.parentElement;
+                    if (parent) {
+                      parent.innerHTML =
+                        '<div class="w-full h-full flex items-center justify-center text-3xl font-bold text-indigo-300" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(245,158,11,0.1))">RZ</div>';
+                    }
+                  }}
+                />
+              </div>
+              {/* Online indicator */}
+              <span
+                className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-gray-950 animate-pulse"
+              />
+            </div>
+          </motion.div>
+
           {/* Headline */}
           <motion.h1
             variants={item}

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Send, Mail, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, Mail, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -55,14 +55,24 @@ export default function Contact({ socialLinks }: ContactProps) {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     setStatus('loading');
     try {
-      const mailto = `mailto:${siteConfig.email}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`)}`;
-      window.location.href = mailto;
-      setStatus('success');
-      reset();
-      setTimeout(() => setStatus('idle'), 4000);
+      const endpoint = siteConfig.formspreeId
+        ? `https://formspree.io/f/${siteConfig.formspreeId}`
+        : `https://formspree.io/f/xpwzgkqb`;
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setStatus('success');
+        reset();
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+      }
     } catch {
       setStatus('error');
     }
@@ -111,6 +121,13 @@ export default function Contact({ socialLinks }: ContactProps) {
                     value: siteConfig.location,
                     href: null,
                     accent: '#c084fc',
+                  },
+                  {
+                    icon: Clock,
+                    label: 'Timezone',
+                    value: siteConfig.timezone,
+                    href: null,
+                    accent: '#34d399',
                   },
                 ].map(item => (
                   <div key={item.label} className="flex items-center gap-4">
@@ -253,7 +270,7 @@ export default function Contact({ socialLinks }: ContactProps) {
                     }}
                   >
                     <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                    Message sent! I&apos;ll get back to you soon.
+                    Message sent! I’ll get back to you within 24 hours.
                   </motion.div>
                 )}
                 {status === 'error' && (
