@@ -219,7 +219,7 @@ export default function Hero() {
               { value: '10+', label: 'Years Exp.' },
               { value: '36+', label: 'Team Size' },
               { value: '100+', label: 'Projects' },
-              { value: '98%', label: 'Satisfaction' },
+              { value: '40+', label: 'Mentored' },
             ].map(stat => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.value}</div>

@@ -140,6 +140,8 @@ export interface CaseStudy {
   technologiesUsed: string[];
   projectId?: number;
   image?: string;
+  duration?: string;
+  role?: string;
 }
 
 // Contact form types

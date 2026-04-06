@@ -40,6 +40,12 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           <p className="text-gray-400 mb-6">
             Client: <span className="text-gray-200">{cs.client}</span> · Industry:{' '}
             <span className="text-gray-200">{cs.industry}</span>
+            {cs.role && (
+              <> · Role: <span className="text-indigo-300">{cs.role}</span></>
+            )}
+            {cs.duration && (
+              <> · Duration: <span className="text-gray-200">{cs.duration}</span></>
+            )}
           </p>
 
           <div className="flex flex-wrap gap-2 mb-8">

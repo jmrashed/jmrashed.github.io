@@ -329,12 +329,12 @@
     {
       "name": "Project Management",
       "provider": "Rice University",
-      "url": ""
+      "url": "https://www.coursera.org/specializations/project-management"
     },
     {
       "name": "Web Development Specialization",
       "provider": "University of Michigan",
-      "url": ""
+      "url": "https://www.coursera.org/specializations/web-design"
     }
   ]
 }
