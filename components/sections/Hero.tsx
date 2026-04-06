@@ -130,7 +130,7 @@ export default function Hero() {
                   alt="Rashed Zaman — Tech Lead & Full-Stack Developer"
                   width={128}
                   height={128}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   onError={e => {
                     const el = e.currentTarget;
                     el.style.display = 'none';
@@ -144,7 +144,7 @@ export default function Hero() {
               </div>
               {/* Online indicator */}
               <span
-                className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-gray-950 animate-pulse"
+                className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-white dark:border-gray-950 animate-pulse"
               />
             </div>
           </motion.div>
