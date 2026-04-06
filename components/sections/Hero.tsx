@@ -171,15 +171,15 @@ export default function Hero() {
           {/* Description */}
           <motion.p
             variants={item}
-            className="text-lg text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-gray-600 dark:text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed"
           >
-            Results-driven Tech Lead with <span className="text-white font-medium">10+ years</span>{' '}
+            Results-driven Tech Lead with <span className="text-gray-900 dark:text-white font-medium">10+ years</span>{' '}
             of experience in full-stack development, team leadership, and project management.
-            Leading teams of <span className="text-white font-medium">36+ developers</span> and
+            Leading teams of <span className="text-gray-900 dark:text-white font-medium">36+ developers</span> and
             delivering scalable solutions.
           </motion.p>
 
-          <motion.p variants={item} className="text-sm text-gray-500 mb-10 max-w-xl mx-auto">
+          <motion.p variants={item} className="text-sm text-gray-500 dark:text-gray-500 mb-10 max-w-xl mx-auto">
             Remote-ready — distributed teams, Git, Docker, CI/CD, Jira, async workflows.
           </motion.p>
 
@@ -227,7 +227,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+          {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -236,7 +236,7 @@ export default function Hero() {
       >
         <Link
           href="/#about"
-          className="flex flex-col items-center gap-1 text-gray-500 hover:text-gray-300 transition-colors group"
+          className="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors group"
         >
           <span className="text-xs tracking-widest uppercase">Scroll</span>
           <motion.div

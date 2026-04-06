@@ -28,8 +28,7 @@ const footerLinks = [
 export default function Footer({ socialLinks }: FooterProps) {
   return (
     <footer
-      className="relative pt-16 pb-8"
-      style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      className="relative pt-16 pb-8 border-t border-black/[0.06] dark:border-white/[0.06]"
     >
       {/* Gradient top line */}
       <div
@@ -50,7 +49,7 @@ export default function Footer({ socialLinks }: FooterProps) {
             <span className="text-xl font-bold gradient-text">Rashed Zaman</span>
           </div>
 
-          <p className="text-gray-500 text-sm max-w-md mb-8 leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-500 text-sm max-w-md mb-8 leading-relaxed">
             Tech Lead passionate about creating innovative solutions and leading high-performing
             teams. Let&apos;s build something amazing together.
           </p>
@@ -61,7 +60,7 @@ export default function Footer({ socialLinks }: FooterProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-500 hover:text-white transition-colors"
+                className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 {link.label}
               </Link>
@@ -78,26 +77,16 @@ export default function Footer({ socialLinks }: FooterProps) {
                 rel="noopener noreferrer"
                 aria-label={link.name}
                 title={link.description}
-                className="w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-white transition-all duration-200 hover:-translate-y-1"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                }}
+                className="w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]"
               >
                 {iconMap[link.icon] ?? link.name.slice(0, 2)}
               </Link>
             ))}
           </div>
 
-          <div
-            className="w-full h-px mb-6"
-            style={{
-              background:
-                'linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)',
-            }}
-          />
+          <div className="w-full h-px mb-6 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.06] to-transparent" />
 
-          <p className="text-gray-600 text-xs">
+          <p className="text-gray-400 dark:text-gray-600 text-xs">
             © {new Date().getFullYear()} Rashed Zaman. All rights reserved. · Built with Next.js &
             ❤️
           </p>

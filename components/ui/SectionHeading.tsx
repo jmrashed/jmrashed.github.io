@@ -51,7 +51,7 @@ export default function SectionHeading({
         style={{ transformOrigin: align === 'left' ? 'left' : 'center' }}
       />
       {subtitle && (
-        <p className="text-gray-400 text-lg mt-6 max-w-2xl leading-relaxed">{subtitle}</p>
+        <p className="text-gray-500 dark:text-gray-400 text-lg mt-6 max-w-2xl leading-relaxed">{subtitle}</p>
       )}
     </motion.div>
   );

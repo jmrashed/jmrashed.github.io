@@ -43,12 +43,11 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'border-b border-white/[0.06]' : 'border-b border-transparent'
+        scrolled
+          ? 'border-b border-black/[0.06] dark:border-white/[0.06] bg-white/85 dark:bg-[#080f1e]/85'
+          : 'border-b border-transparent bg-white/40 dark:bg-[#080f1e]/40'
       }`}
-      style={{
-        backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(12px)',
-        background: scrolled ? 'rgba(8,15,30,0.85)' : 'rgba(8,15,30,0.4)',
-      }}
+      style={{ backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(12px)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -70,12 +69,12 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="nav-link px-3.5 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors rounded-lg hover:bg-white/[0.05]"
+                className="nav-link px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-black/[0.05] dark:hover:bg-white/[0.05]"
               >
                 {link.label}
               </Link>
             ))}
-            <div className="ml-3 pl-3 border-l border-white/10">
+            <div className="ml-3 pl-3 border-l border-black/10 dark:border-white/10">
               <ThemeToggle />
             </div>
           </div>
@@ -85,7 +84,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/[0.06] transition-all"
+              className="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/[0.06] dark:hover:bg-white/[0.06] transition-all"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -112,8 +111,8 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden border-t border-white/[0.06]"
-            style={{ background: 'rgba(8,15,30,0.95)', backdropFilter: 'blur(24px)' }}
+            className="md:hidden overflow-hidden border-t border-black/[0.06] dark:border-white/[0.06] bg-white/95 dark:bg-transparent"
+            style={{ backdropFilter: 'blur(24px)' }}
           >
             <div className="px-4 py-3 space-y-1">
               {navLinks.map((link, i) => (
@@ -126,7 +125,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => handleNavClick(link.href)}
-                    className="block px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/[0.06] transition-all"
+                    className="block px-4 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-black/[0.06] dark:hover:bg-white/[0.06] transition-all"
                   >
                     {link.label}
                   </Link>
