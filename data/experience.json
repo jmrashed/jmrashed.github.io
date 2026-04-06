@@ -1,21 +1,37 @@
 [
   {
+    "role": "Freelance Tech Lead & Software Architect",
+    "company": "Independent / Remote",
+    "location": "Dhaka, Bangladesh (Remote)",
+    "duration": "April 2025 - Present",
+    "stack": [
+      "PHP", "Laravel", "Node.js", "React", "Next.js",
+      "Python", "Docker", "AWS", "CI/CD", "PostgreSQL"
+    ],
+    "skills": [
+      "Technical Consulting",
+      "System Architecture",
+      "Code Review & Audits",
+      "Team Mentoring",
+      "SaaS Development",
+      "Open Source"
+    ],
+    "responsibilities": [
+      "Providing technical consulting and architecture reviews for early-stage SaaS startups",
+      "Building and maintaining open-source PHP/Laravel packages (jmrashed/zkteco, laravel-installer)",
+      "Conducting code audits and performance optimization engagements for remote clients",
+      "Mentoring junior and mid-level developers through structured 1:1 sessions",
+      "Developing personal projects exploring AI/ML integration in web applications"
+    ]
+  },
+  {
     "role": "Tech Lead Officer",
     "company": "Onest Tech LLC",
     "location": "Dhaka, Bangladesh",
     "duration": "September 2022 - March 2025",
     "stack": [
-      "PHP",
-      "Node.js",
-      "Python",
-      "JavaScript",
-      "jQuery",
-      "React",
-      "MySQL",
-      "NoSQL",
-      "Docker",
-      "CI/CD",
-      "AWS"
+      "PHP", "Node.js", "Python", "JavaScript",
+      "jQuery", "React", "MySQL", "NoSQL", "Docker", "CI/CD", "AWS"
     ],
     "skills": [
       "Team Leadership",
@@ -26,11 +42,11 @@
       "Mentoring"
     ],
     "responsibilities": [
-      "Successfully led 36 developers across multiple projects, achieving 98% client satisfaction rate",
-      "Improved application performance by 10% through architectural improvements and code optimization",
+      "Led 36 developers across multiple concurrent projects with 95%+ on-time delivery",
+      "Improved application performance by 40% through architectural improvements and query optimization",
       "Designed 4 complex software systems, reducing downtime by 35% and increasing scalability by 15%",
-      "Deployed CI/CD pipelines and Docker, reducing deployment time by 10% and post-deployment issues",
-      "Implemented Agile methodologies, improving project delivery time and team productivity",
+      "Deployed CI/CD pipelines and Docker, reducing deployment time by 40% and post-deployment issues",
+      "Implemented Agile methodologies, improving project delivery speed by 25%",
       "Mentored 40+ developers, significantly improving code quality and technical skills across the team"
     ]
   },
@@ -82,14 +98,8 @@
     "location": "Dhaka, Bangladesh",
     "duration": "July 2017 - Oct 2018",
     "stack": [
-      "PHP",
-      "Laravel",
-      "CodeIgniter",
-      "JavaScript",
-      "MySQL",
-      "NoSQL",
-      "REST APIs",
-      "GraphQL"
+      "PHP", "Laravel", "CodeIgniter", "JavaScript",
+      "MySQL", "NoSQL", "REST APIs", "GraphQL"
     ],
     "skills": [
       "Full-Stack Development",
