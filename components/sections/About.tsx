@@ -7,15 +7,6 @@ import HireMeButton from '@/components/ui/HireMeButton';
 import type { AchievementCategory } from '@/types';
 import { siteConfig } from '@/lib/utils';
 
-const stats = [
-  { value: '10+', label: 'Years Experience', color: '#818cf8' },
-  { value: '36+', label: 'Team Members Led', color: '#34d399' },
-  { value: '100+', label: 'Projects Delivered', color: '#c084fc' },
-  { value: '40+', label: 'Devs Mentored', color: '#fbbf24' },
-  { value: '$2M+', label: 'Budget Managed', color: '#f472b6' },
-  { value: '500K+', label: 'Revenue via AI', color: '#67e8f9' },
-];
-
 interface AboutProps {
   achievements: AchievementCategory[];
 }
@@ -69,14 +60,14 @@ export default function About({ achievements }: AboutProps) {
               </p>
             </div>
 
-            {/* Stats grid */}
+            {/* Stats grid — driven by siteConfig.stats */}
             <StaggerContainer
               className="grid grid-cols-3 gap-3 mt-10"
               staggerDelay={0.07}
               initialDelay={0.1}
             >
-              {stats.map(stat => (
-                <StaggerItem key={stat.label} direction="scale">
+              {siteConfig.stats.map(stat => (
+                <StaggerItem key={stat.labelLong} direction="scale">
                   <div
                     className="glass-card rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300"
                     style={{ borderColor: `${stat.color}22` }}
@@ -84,7 +75,7 @@ export default function About({ achievements }: AboutProps) {
                     <div className="text-2xl font-bold" style={{ color: stat.color }}>
                       {stat.value}
                     </div>
-                    <div className="text-gray-500 text-xs mt-1 leading-tight">{stat.label}</div>
+                    <div className="text-gray-500 text-xs mt-1 leading-tight">{stat.labelLong}</div>
                   </div>
                 </StaggerItem>
               ))}

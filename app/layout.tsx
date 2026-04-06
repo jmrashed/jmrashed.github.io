@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: { icon: '/favicon.png' },
+  icons: { icon: '/favicon.png', apple: '/favicon.png' },
   keywords: [
     'Rashed Zaman',
     'tech lead',

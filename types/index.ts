@@ -73,8 +73,8 @@ export interface Experience {
 // Skills types
 export interface Skill {
   name: string;
-  icon_class: string;
-  icon_color: string;
+  icon_class?: string;
+  icon_color?: string;
 }
 
 export interface SkillCategory {

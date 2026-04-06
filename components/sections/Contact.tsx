@@ -129,6 +129,13 @@ export default function Contact({ socialLinks }: ContactProps) {
                     href: null,
                     accent: '#34d399',
                   },
+                  {
+                    icon: Clock,
+                    label: 'Hours',
+                    value: siteConfig.contactHours,
+                    href: null,
+                    accent: '#f59e0b',
+                  },
                 ].map(item => (
                   <div key={item.label} className="flex items-center gap-4">
                     <div

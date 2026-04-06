@@ -114,7 +114,7 @@ export default function Hero() {
               }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Available for remote opportunities
+              Available for remote opportunities &mdash; since {siteConfig.availableFrom}
             </span>
           </motion.div>
 
@@ -210,17 +210,12 @@ export default function Hero() {
             </Link>
           </motion.div>
 
-          {/* Stats row */}
+          {/* Stats row — driven by siteConfig.stats */}
           <motion.div
             variants={item}
             className="mt-16 flex flex-wrap justify-center gap-8 md:gap-12"
           >
-            {[
-              { value: '10+', label: 'Years Exp.' },
-              { value: '36+', label: 'Team Size' },
-              { value: '100+', label: 'Projects' },
-              { value: '40+', label: 'Mentored' },
-            ].map(stat => (
+            {siteConfig.stats.slice(0, 4).map(stat => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.value}</div>
                 <div className="text-xs text-gray-500 mt-1 tracking-wide uppercase">
