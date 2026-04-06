@@ -7,15 +7,6 @@ import HireMeButton from '@/components/ui/HireMeButton';
 import type { AchievementCategory } from '@/types';
 import { siteConfig } from '@/lib/utils';
 
-const stats = [
-  { value: '10+', label: 'Years Experience', color: '#818cf8' },
-  { value: '36+', label: 'Team Members Led', color: '#34d399' },
-  { value: '100+', label: 'Projects Delivered', color: '#c084fc' },
-  { value: '98%', label: 'Client Satisfaction', color: '#fbbf24' },
-  { value: '$2M+', label: 'Budget Managed', color: '#f472b6' },
-  { value: '500K+', label: 'Revenue via AI', color: '#67e8f9' },
-];
-
 interface AboutProps {
   achievements: AchievementCategory[];
 }
@@ -50,15 +41,15 @@ export default function About({ achievements }: AboutProps) {
                 teams of engineers to deliver products that accelerate business growth.
               </p>
               <p>
-                Currently spearheading a{' '}
+                Most recently led a{' '}
                 <span className="text-emerald-400 font-medium">
-                  36-member development team at Onest Tech LLC
+                  36-member engineering team at Onest Tech LLC
                 </span>
-                , I blend deep technical expertise in{' '}
+                , blending deep technical expertise in{' '}
                 <span className="text-indigo-300">
                   PHP, Node.js, React, and Cloud Infrastructure
                 </span>{' '}
-                with strategic leadership.
+                with strategic leadership. Currently freelancing and open to full-time remote roles.
               </p>
               <p>
                 Passionate about fostering a culture of{' '}
@@ -69,14 +60,14 @@ export default function About({ achievements }: AboutProps) {
               </p>
             </div>
 
-            {/* Stats grid */}
+            {/* Stats grid — driven by siteConfig.stats */}
             <StaggerContainer
               className="grid grid-cols-3 gap-3 mt-10"
               staggerDelay={0.07}
               initialDelay={0.1}
             >
-              {stats.map(stat => (
-                <StaggerItem key={stat.label} direction="scale">
+              {siteConfig.stats.map(stat => (
+                <StaggerItem key={stat.labelLong} direction="scale">
                   <div
                     className="glass-card rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300"
                     style={{ borderColor: `${stat.color}22` }}
@@ -84,7 +75,7 @@ export default function About({ achievements }: AboutProps) {
                     <div className="text-2xl font-bold" style={{ color: stat.color }}>
                       {stat.value}
                     </div>
-                    <div className="text-gray-500 text-xs mt-1 leading-tight">{stat.label}</div>
+                    <div className="text-gray-500 text-xs mt-1 leading-tight">{stat.labelLong}</div>
                   </div>
                 </StaggerItem>
               ))}
@@ -217,21 +208,35 @@ export default function About({ achievements }: AboutProps) {
                         icon: GraduationCap,
                         text: 'B.Sc. Computer Science & Engineering — CGPA 3.73',
                         color: 'text-indigo-400',
+                        href: null,
                       },
                       {
                         icon: Award,
                         text: 'Project Management — Rice University',
                         color: 'text-emerald-400',
+                        href: 'https://www.coursera.org/specializations/project-management',
                       },
                       {
                         icon: Award,
                         text: 'Web Development Specialization — University of Michigan',
                         color: 'text-purple-400',
+                        href: 'https://www.coursera.org/specializations/web-design',
                       },
                     ].map((e, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <e.icon className={`w-4 h-4 ${e.color} flex-shrink-0`} />
-                        <span className="text-gray-400 text-sm">{e.text}</span>
+                        {e.href ? (
+                          <Link
+                            href={e.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 text-sm hover:text-indigo-300 transition-colors underline-offset-2 hover:underline"
+                          >
+                            {e.text}
+                          </Link>
+                        ) : (
+                          <span className="text-gray-400 text-sm">{e.text}</span>
+                        )}
                       </div>
                     ))}
                   </div>

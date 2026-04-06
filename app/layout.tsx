@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: { icon: '/favicon.png' },
+  icons: { icon: '/favicon.png', apple: '/favicon.png' },
   keywords: [
     'Rashed Zaman',
     'tech lead',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description:
       'Experienced Tech Lead and Full-Stack Developer specializing in scalable web applications, system architecture and team leadership.',
     siteName: siteConfig.name,
-    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

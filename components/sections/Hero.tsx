@@ -114,8 +114,39 @@ export default function Hero() {
               }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Available for remote opportunities
+              Available for remote opportunities &mdash; since {siteConfig.availableFrom}
             </span>
+          </motion.div>
+
+          {/* Profile photo */}
+          <motion.div variants={item} className="flex justify-center mb-8">
+            <div className="relative">
+              <div
+                className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden ring-2 ring-indigo-500/40 ring-offset-4 ring-offset-transparent"
+                style={{ boxShadow: '0 0 40px rgba(99,102,241,0.25)' }}
+              >
+                <img
+                  src="/images/profile.jpg"
+                  alt="Rashed Zaman — Tech Lead & Full-Stack Developer"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                  onError={e => {
+                    const el = e.currentTarget;
+                    el.style.display = 'none';
+                    const parent = el.parentElement;
+                    if (parent) {
+                      parent.innerHTML =
+                        '<div class="w-full h-full flex items-center justify-center text-3xl font-bold text-indigo-300" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(245,158,11,0.1))">RZ</div>';
+                    }
+                  }}
+                />
+              </div>
+              {/* Online indicator */}
+              <span
+                className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-gray-950 animate-pulse"
+              />
+            </div>
           </motion.div>
 
           {/* Headline */}
@@ -179,17 +210,12 @@ export default function Hero() {
             </Link>
           </motion.div>
 
-          {/* Stats row */}
+          {/* Stats row — driven by siteConfig.stats */}
           <motion.div
             variants={item}
             className="mt-16 flex flex-wrap justify-center gap-8 md:gap-12"
           >
-            {[
-              { value: '10+', label: 'Years Exp.' },
-              { value: '36+', label: 'Team Size' },
-              { value: '100+', label: 'Projects' },
-              { value: '98%', label: 'Satisfaction' },
-            ].map(stat => (
+            {siteConfig.stats.slice(0, 4).map(stat => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.value}</div>
                 <div className="text-xs text-gray-500 mt-1 tracking-wide uppercase">
