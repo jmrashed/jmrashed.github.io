@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Send, Mail, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, Mail, MapPin, Clock, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -38,12 +38,27 @@ const iconMap: Record<string, string> = {
   'bi-brush': 'Dr',
 };
 
-const inputBase =
-  'w-full px-4 py-3 rounded-xl text-white placeholder-gray-600 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50';
-const inputStyle = {
-  background: 'rgba(255,255,255,0.04)',
-  border: '1px solid rgba(255,255,255,0.08)',
-};
+const inputCls =
+  'w-full px-4 py-3 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08]';
+
+const contactItems = [
+  { icon: Mail,          label: 'Email',     key: 'email',    accent: '#818cf8', external: false },
+  { icon: MessageCircle, label: 'WhatsApp',  key: 'whatsapp', accent: '#25d366', external: true  },
+  { icon: MapPin,        label: 'Location',  key: 'location', accent: '#c084fc', external: false },
+  { icon: Clock,         label: 'Timezone',  key: 'timezone', accent: '#34d399', external: false },
+  { icon: Clock,         label: 'Hours',     key: 'hours',    accent: '#f59e0b', external: false },
+] as const;
+
+function getContactValue(key: string): { value: string; href: string | null } {
+  switch (key) {
+    case 'email':    return { value: siteConfig.email,        href: `mailto:${siteConfig.email}` };
+    case 'whatsapp': return { value: siteConfig.whatsapp,     href: siteConfig.whatsappUrl };
+    case 'location': return { value: siteConfig.location,     href: null };
+    case 'timezone': return { value: siteConfig.timezone,     href: null };
+    case 'hours':    return { value: siteConfig.contactHours, href: null };
+    default:         return { value: '', href: null };
+  }
+}
 
 export default function Contact({ socialLinks }: ContactProps) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -91,14 +106,14 @@ export default function Contact({ socialLinks }: ContactProps) {
         <SectionHeading
           title="Let's Work Together"
           badge="Contact"
-          subtitle="Ready to bring your next project to life? Let's discuss how I can help you achieve your goals."
+          subtitle="I'm open to discussing remote opportunities in full-stack development, technical leadership, or software engineering. Feel free to reach out!"
         />
 
         <div className="grid lg:grid-cols-2 gap-10">
           {/* Contact info */}
           <AnimatedSection direction="left">
             <div className="card-glass p-8 h-full">
-              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                 <span
                   className="w-1 h-5 rounded-full"
                   style={{ background: 'linear-gradient(to bottom, #6366f1, #f59e0b)' }}
@@ -107,64 +122,37 @@ export default function Contact({ socialLinks }: ContactProps) {
               </h3>
 
               <div className="space-y-4 mb-8">
-                {[
-                  {
-                    icon: Mail,
-                    label: 'Email',
-                    value: siteConfig.email,
-                    href: `mailto:${siteConfig.email}`,
-                    accent: '#818cf8',
-                  },
-                  {
-                    icon: MapPin,
-                    label: 'Location',
-                    value: siteConfig.location,
-                    href: null,
-                    accent: '#c084fc',
-                  },
-                  {
-                    icon: Clock,
-                    label: 'Timezone',
-                    value: siteConfig.timezone,
-                    href: null,
-                    accent: '#34d399',
-                  },
-                  {
-                    icon: Clock,
-                    label: 'Hours',
-                    value: siteConfig.contactHours,
-                    href: null,
-                    accent: '#f59e0b',
-                  },
-                ].map(item => (
-                  <div key={item.label} className="flex items-center gap-4">
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{
-                        background: `${item.accent}18`,
-                        border: `1px solid ${item.accent}30`,
-                      }}
-                    >
-                      <item.icon className="w-4 h-4" style={{ color: item.accent }} />
+                {contactItems.map(({ icon: Icon, label, key, accent, external }) => {
+                  const { value, href } = getContactValue(key);
+                  return (
+                    <div key={label} className="flex items-center gap-4">
+                      <div
+                        className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                        style={{ background: `${accent}18`, border: `1px solid ${accent}30` }}
+                      >
+                        <Icon className="w-4 h-4" style={{ color: accent }} />
+                      </div>
+                      <div>
+                        <p className="text-gray-500 text-xs mb-0.5">{label}</p>
+                        {href ? (
+                          <Link
+                            href={href}
+                            target={external ? '_blank' : undefined}
+                            rel={external ? 'noopener noreferrer' : undefined}
+                            className="text-sm text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors"
+                          >
+                            {value}
+                          </Link>
+                        ) : (
+                          <p className="text-sm text-gray-900 dark:text-white">{value}</p>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-gray-500 text-xs mb-0.5">{item.label}</p>
-                      {item.href ? (
-                        <Link
-                          href={item.href}
-                          className="text-sm text-white hover:text-indigo-300 transition-colors"
-                        >
-                          {item.value}
-                        </Link>
-                      ) : (
-                        <p className="text-sm text-white">{item.value}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
-              <div className="pt-6 border-t border-white/[0.06]">
+              <div className="pt-6 border-t border-black/[0.06] dark:border-white/[0.06]">
                 <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">Find me on</p>
                 <div className="flex flex-wrap gap-2.5">
                   {socialLinks.map(link => (
@@ -175,11 +163,7 @@ export default function Contact({ socialLinks }: ContactProps) {
                       rel="noopener noreferrer"
                       aria-label={link.name}
                       title={link.description}
-                      className="w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-400 hover:text-white transition-all duration-200 hover:-translate-y-1 hover:scale-110"
-                      style={{
-                        background: 'rgba(255,255,255,0.04)',
-                        border: '1px solid rgba(255,255,255,0.08)',
-                      }}
+                      className="w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 hover:scale-110 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08]"
                     >
                       {iconMap[link.icon] ?? link.name.slice(0, 2)}
                     </Link>
@@ -192,7 +176,7 @@ export default function Contact({ socialLinks }: ContactProps) {
           {/* Contact form */}
           <AnimatedSection direction="right" delay={0.15}>
             <div className="card-glass p-8">
-              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                 <span
                   className="w-1 h-5 rounded-full"
                   style={{ background: 'linear-gradient(to bottom, #c084fc, #6366f1)' }}
@@ -203,66 +187,62 @@ export default function Contact({ socialLinks }: ContactProps) {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs text-gray-500 mb-1.5 uppercase tracking-wider">
+                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1.5 uppercase tracking-wider">
                       Name
                     </label>
                     <input
                       {...register('name')}
                       type="text"
-                      className={inputBase}
-                      style={inputStyle}
+                      className={inputCls}
                       placeholder="Your name"
                     />
                     {errors.name && (
-                      <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>
+                      <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="block text-xs text-gray-500 mb-1.5 uppercase tracking-wider">
+                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1.5 uppercase tracking-wider">
                       Email
                     </label>
                     <input
                       {...register('email')}
                       type="email"
-                      className={inputBase}
-                      style={inputStyle}
+                      className={inputCls}
                       placeholder="your@email.com"
                     />
                     {errors.email && (
-                      <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>
+                      <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
                     )}
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs text-gray-500 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1.5 uppercase tracking-wider">
                     Subject
                   </label>
                   <input
                     {...register('subject')}
                     type="text"
-                    className={inputBase}
-                    style={inputStyle}
+                    className={inputCls}
                     placeholder="Project inquiry"
                   />
                   {errors.subject && (
-                    <p className="text-red-400 text-xs mt-1">{errors.subject.message}</p>
+                    <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs text-gray-500 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1.5 uppercase tracking-wider">
                     Message
                   </label>
                   <textarea
                     {...register('message')}
                     rows={5}
-                    className={`${inputBase} resize-none`}
-                    style={inputStyle}
+                    className={`${inputCls} resize-none`}
                     placeholder="Tell me about your project..."
                   />
                   {errors.message && (
-                    <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>
+                    <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
                   )}
                 </div>
 
@@ -270,28 +250,28 @@ export default function Contact({ socialLinks }: ContactProps) {
                   <motion.div
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-emerald-400 text-sm p-3 rounded-xl"
+                    className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-sm p-3 rounded-xl"
                     style={{
                       background: 'rgba(16,185,129,0.08)',
                       border: '1px solid rgba(16,185,129,0.2)',
                     }}
                   >
                     <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                    Message sent! I’ll get back to you within 24 hours.
+                    Message sent! I&apos;ll get back to you within 24 hours.
                   </motion.div>
                 )}
                 {status === 'error' && (
                   <motion.div
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-red-400 text-sm p-3 rounded-xl"
+                    className="flex items-center gap-2 text-red-500 dark:text-red-400 text-sm p-3 rounded-xl"
                     style={{
                       background: 'rgba(239,68,68,0.08)',
                       border: '1px solid rgba(239,68,68,0.2)',
                     }}
                   >
                     <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                    Something went wrong. Please try again or email directly.
+                    Something went wrong. Please try again or reach out via WhatsApp.
                   </motion.div>
                 )}
 
