@@ -1,7 +1,7 @@
 [
   {
-    "role": "Freelance Tech Lead & Software Architect",
-    "company": "Independent / Remote",
+    "role": "Tech Lead & Software Architect",
+    "company": "SDT Ltd",
     "location": "Dhaka, Bangladesh (Remote)",
     "duration": "April 2025 - Present",
     "stack": [
@@ -16,12 +16,18 @@
       "SaaS Development",
       "Open Source"
     ],
+    "highlights": [
+      { "value": "7,600+", "label": "Package Downloads" },
+      { "value": "1,100+", "label": "Downloads / Month" },
+      { "value": "51",     "label": "GitHub Stars" },
+      { "value": "5+",     "label": "Clients Served" }
+    ],
     "responsibilities": [
-      "Providing technical consulting and architecture reviews for early-stage SaaS startups",
-      "Building and maintaining open-source PHP/Laravel packages (jmrashed/zkteco, laravel-installer)",
-      "Conducting code audits and performance optimization engagements for remote clients",
-      "Mentoring junior and mid-level developers through structured 1:1 sessions",
-      "Developing personal projects exploring AI/ML integration in web applications"
+      "Architecting and delivering SaaS products for 5+ remote clients across UK, US & APAC markets",
+      "Open-source package jmrashed/zkteco: 7,600+ total installs, 1,100+ downloads/month, 51 GitHub stars",
+      "Conducted 10+ code audits reducing average bug density by ~30% per engagement",
+      "Mentoring 5 junior-to-mid developers through structured 1:1 sessions and PR reviews",
+      "Integrating LLM-based features (OpenAI, LangChain) into client web applications"
     ]
   },
   {
