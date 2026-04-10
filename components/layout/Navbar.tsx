@@ -42,12 +42,15 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
           ? 'border-b border-black/[0.06] dark:border-white/[0.06] bg-white/85 dark:bg-[#080f1e]/85'
           : 'border-b border-transparent bg-white/40 dark:bg-[#080f1e]/40'
       }`}
-      style={{ backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(12px)' }}
+      style={{
+        backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(12px)',
+        top: 'var(--banner-h, 0px)',
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">

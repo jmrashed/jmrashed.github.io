@@ -11,9 +11,13 @@ export default function OpenToWorkBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Only show if not previously dismissed in this session
     if (!sessionStorage.getItem(STORAGE_KEY)) setVisible(true);
   }, []);
+
+  // Keep --banner-h CSS var in sync so Navbar can offset itself
+  useEffect(() => {
+    document.documentElement.style.setProperty('--banner-h', visible ? '40px' : '0px');
+  }, [visible]);
 
   const dismiss = () => {
     sessionStorage.setItem(STORAGE_KEY, '1');
@@ -24,14 +28,14 @@ export default function OpenToWorkBanner() {
 
   return (
     <div
-      className="relative z-[60] w-full flex items-center justify-center gap-3 px-4 py-2.5 text-sm"
+      className="fixed top-0 left-0 right-0 z-[70] flex items-center justify-center gap-3 px-4 py-2.5 text-sm"
       style={{
         background: 'linear-gradient(90deg, #4f46e5 0%, #0f766e 50%, #4f46e5 100%)',
         backgroundSize: '200% 100%',
         animation: 'banner-slide 6s linear infinite',
+        height: '40px',
       }}
     >
-      {/* Animated shimmer */}
       <style>{`
         @keyframes banner-slide {
           0%   { background-position: 0% 0%; }
@@ -59,7 +63,7 @@ export default function OpenToWorkBanner() {
 
       <span className="hidden lg:block w-px h-4 bg-white/30" />
 
-      <span className="hidden lg:text-white/80 lg:flex items-center gap-1">
+      <span className="hidden lg:flex items-center gap-1 text-white/80">
         ⚡ Available Now &nbsp;·&nbsp; Notice: Immediate
       </span>
 
