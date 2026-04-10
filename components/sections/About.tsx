@@ -206,9 +206,9 @@ export default function About({ achievements }: AboutProps) {
                     {[
                       {
                         icon: GraduationCap,
-                        text: 'B.Sc. Computer Science & Engineering — CGPA 3.73',
+                        text: 'B.Sc. in CSE — Stamford University Bangladesh (2015) · CGPA 3.73',
                         color: 'text-indigo-400',
-                        href: null,
+                        href: 'https://www.stamforduniversity.edu.bd',
                       },
                       {
                         icon: Award,

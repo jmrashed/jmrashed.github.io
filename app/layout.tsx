@@ -1,9 +1,10 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Fira_Code } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import OpenToWorkBanner from '@/components/ui/OpenToWorkBanner';
 import { getSocialLinks } from '@/lib/data';
 import { siteConfig } from '@/lib/utils';
 
@@ -18,6 +19,15 @@ const firaCode = Fira_Code({
   display: 'swap',
   variable: '--font-mono',
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f8faff' },
+    { media: '(prefers-color-scheme: dark)',  color: '#080f1e' },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -71,69 +81,74 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                '@context': 'https://schema.org',
-                '@type': 'Person',
-                name: 'Rashed Zaman',
-                url: siteConfig.url,
-                email: siteConfig.email,
-                jobTitle: 'Tech Lead & Full-Stack Developer',
-                description: siteConfig.description,
-                address: { '@type': 'PostalAddress', addressLocality: 'Dhaka', addressCountry: 'BD' },
-                sameAs: [
-                  siteConfig.linkedin,
-                  siteConfig.github,
-                  'https://x.com/_jmrashed',
-                  'https://medium.com/@jmrashed',
-                ],
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Rashed Zaman',
+              alternateName: 'Md Rasheduzzaman',
+              url: siteConfig.url,
+              email: siteConfig.email,
+              image: `${siteConfig.url}/images/profile.jpg`,
+              jobTitle: 'Tech Lead & Full-Stack Developer',
+              description: siteConfig.description,
+              telephone: siteConfig.whatsapp,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Dhaka',
+                addressCountry: 'BD',
               },
-              {
-                '@context': 'https://schema.org',
-                '@type': 'ItemList',
-                name: 'Featured Projects by Rashed Zaman',
-                itemListElement: [
-                  {
-                    '@type': 'ListItem', position: 1,
-                    item: {
-                      '@type': 'SoftwareApplication',
-                      name: 'Adi ERP',
-                      description: 'Comprehensive Business ERP Solution — scales to 1,000+ concurrent users.',
-                      applicationCategory: 'BusinessApplication',
-                      operatingSystem: 'Web',
-                      url: `${siteConfig.url}/projects/1/`,
-                    },
-                  },
-                  {
-                    '@type': 'ListItem', position: 2,
-                    item: {
-                      '@type': 'SoftwareApplication',
-                      name: 'AI Attendance Checker',
-                      description: 'AI-powered facial recognition attendance system with 99.9% accuracy.',
-                      applicationCategory: 'BusinessApplication',
-                      operatingSystem: 'Web, iOS, Android',
-                      url: `${siteConfig.url}/projects/2/`,
-                    },
-                  },
-                  {
-                    '@type': 'ListItem', position: 3,
-                    item: {
-                      '@type': 'SoftwareApplication',
-                      name: 'Adi Bazar',
-                      description: 'Multi-store eCommerce platform with Elasticsearch and AI personalization.',
-                      applicationCategory: 'BusinessApplication',
-                      operatingSystem: 'Web',
-                      url: `${siteConfig.url}/projects/6/`,
-                    },
-                  },
-                ],
+              alumniOf: {
+                '@type': 'CollegeOrUniversity',
+                name: 'Stamford University Bangladesh',
+                url: 'https://www.stamforduniversity.edu.bd',
               },
-            ]),
+              hasCredential: [
+                {
+                  '@type': 'EducationalOccupationalCredential',
+                  name: 'B.Sc. Computer Science & Engineering',
+                  credentialCategory: 'degree',
+                  recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Stamford University Bangladesh' },
+                },
+                {
+                  '@type': 'EducationalOccupationalCredential',
+                  name: 'Project Management Specialization',
+                  credentialCategory: 'certificate',
+                  recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Rice University (Coursera)' },
+                },
+              ],
+              knowsAbout: [
+                'PHP', 'Laravel', 'Node.js', 'React', 'Next.js', 'TypeScript',
+                'Python', 'Docker', 'AWS', 'PostgreSQL', 'MySQL',
+                'System Architecture', 'Team Leadership', 'SaaS Development',
+                'CI/CD', 'Agile', 'Scrum', 'AI/ML Integration',
+              ],
+              sameAs: [
+                siteConfig.linkedin,
+                siteConfig.github,
+                'https://x.com/jmrashed',
+                'https://medium.com/@jmrashed',
+                'https://leetcode.com/u/jmrashed/',
+                'https://www.hackerrank.com/profile/jmrashed',
+                'https://packagist.org/packages/jmrashed/zkteco',
+                siteConfig.calendly,
+              ],
+              worksFor: {
+                '@type': 'Organization',
+                name: 'SDT Ltd',
+              },
+              seeks: {
+                '@type': 'JobPosting',
+                title: 'Senior Software Engineer / Tech Lead / Engineering Manager',
+                jobLocationType: 'TELECOMMUTE',
+                applicantLocationRequirements: { '@type': 'Country', name: 'Worldwide' },
+              },
+            }),
           }}
         />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
+          <OpenToWorkBanner />
           <Navbar />
           <main>{children}</main>
           <Footer socialLinks={socialLinks} />

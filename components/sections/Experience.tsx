@@ -52,6 +52,20 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
             </span>
           </div>
 
+          {/* Highlights — metrics row, only shown when present */}
+          {exp.highlights && exp.highlights.length > 0 && (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 p-4 rounded-xl"
+              style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.12)' }}
+            >
+              {exp.highlights.map(h => (
+                <div key={h.label} className="text-center">
+                  <div className="text-lg font-bold" style={{ color: '#a5b4fc' }}>{h.value}</div>
+                  <div className="text-xs text-gray-500 mt-0.5 leading-tight">{h.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
+
           {/* Stack */}
           {exp.stack.length > 0 && (
             <div className="mb-3">

@@ -88,17 +88,17 @@ export default function OpenSource() {
                 <h3 className="font-mono text-sm font-bold mb-2" style={{ color: pkg.accent }}>
                   {pkg.name}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed flex-grow mb-4">
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-grow mb-4">
                   {pkg.description}
                 </p>
 
                 {/* Metrics row */}
-                <div className="flex gap-4 mb-5 py-3 border-y border-white/[0.05]">
+                <div className="flex gap-4 mb-5 py-3 border-y border-black/[0.05] dark:border-white/[0.05]">
                   {pkg.metrics.map(m => (
                     <div key={m.label} className="flex items-center gap-1.5">
                       <m.icon className="w-3.5 h-3.5 text-gray-500" />
-                      <span className="text-white text-xs font-semibold">{m.value}</span>
-                      <span className="text-gray-600 text-xs">{m.label}</span>
+                      <span className="text-gray-900 dark:text-white text-xs font-semibold">{m.value}</span>
+                      <span className="text-gray-500 dark:text-gray-600 text-xs">{m.label}</span>
                     </div>
                   ))}
                 </div>
@@ -127,16 +127,16 @@ export default function OpenSource() {
           ))}
         </StaggerContainer>
 
-        {/* GitHub stats card */}
+        {/* GitHub activity — static stats, no external image dependency */}
         <AnimatedSection delay={0.2} className="mt-12">
           <div
             className="glass-card rounded-2xl p-6 md:p-8"
             style={{ borderColor: 'rgba(99,102,241,0.15)' }}
           >
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
               <div>
-                <h4 className="text-white font-bold text-lg mb-1">GitHub Activity</h4>
-                <p className="text-gray-500 text-sm">
+                <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1">GitHub Activity</h4>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">
                   Consistent contributions across open-source and private repositories.
                 </p>
               </div>
@@ -150,26 +150,23 @@ export default function OpenSource() {
               </Link>
             </div>
 
-            {/* GitHub readme stats — rendered as images, no JS needed */}
-            <div className="mt-6 grid sm:grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden bg-[#0d1117]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://github-readme-stats.vercel.app/api?username=jmrashed&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=818cf8&icon_color=34d399&text_color=9ca3af&count_private=true"
-                  alt="Rashed Zaman GitHub Stats"
-                  className="w-full"
-                  loading="lazy"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden bg-[#0d1117]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://github-readme-streak-stats.herokuapp.com/?user=jmrashed&theme=tokyonight&hide_border=true&background=0d1117&ring=818cf8&fire=f59e0b&currStreakLabel=818cf8"
-                  alt="Rashed Zaman GitHub Streak"
-                  className="w-full"
-                  loading="lazy"
-                />
-              </div>
+            {/* Static stat tiles — no external image, works in light + dark */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { value: '80+',  label: 'Repositories',    color: '#818cf8' },
+                { value: '17K+', label: 'Package Installs', color: '#34d399' },
+                { value: '130+', label: 'Stars Earned',     color: '#fbbf24' },
+                { value: '60+',  label: 'Forks',            color: '#f472b6' },
+              ].map(s => (
+                <div
+                  key={s.label}
+                  className="rounded-xl p-4 text-center"
+                  style={{ background: `${s.color}10`, border: `1px solid ${s.color}20` }}
+                >
+                  <div className="text-2xl font-bold mb-1" style={{ color: s.color }}>{s.value}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">{s.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </AnimatedSection>

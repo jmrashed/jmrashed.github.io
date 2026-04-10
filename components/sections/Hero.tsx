@@ -3,15 +3,15 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, Code, Download, ChevronDown } from 'lucide-react';
+import { Mail, Code, Download, ChevronDown, MapPin, Clock } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
 import HireMeButton from '@/components/ui/HireMeButton';
 
 const roles = [
   'Tech Lead & Full-Stack Developer',
+  'Senior Software Engineer',
+  'Engineering Manager',
   'SaaS Architect & Innovator',
-  'AI/ML Enthusiast & Data Scientist',
-  'Full-Stack Engineer & Mentor',
 ];
 
 const container = {
@@ -29,9 +29,12 @@ export default function Hero() {
 
   useEffect(() => {
     let roleIndex = 0;
-    let charIndex = 0;
+    // Start with first role fully visible, only cycle after first display
+    let charIndex = roles[0].length;
     let isDeleting = false;
     let timer: ReturnType<typeof setTimeout>;
+
+    if (typedRef.current) typedRef.current.textContent = roles[0];
 
     function type() {
       const current = roles[roleIndex];
@@ -44,19 +47,20 @@ export default function Hero() {
       if (isDeleting) charIndex--;
       else charIndex++;
 
-      let speed = isDeleting ? 45 : 90;
+      let speed = isDeleting ? 40 : 80;
       if (!isDeleting && charIndex === current.length) {
-        speed = 2200;
+        speed = 2800;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        speed = 400;
+        speed = 350;
       }
       timer = setTimeout(type, speed);
     }
 
-    type();
+    // Delay first cycle so recruiter reads the first role
+    timer = setTimeout(type, 2800);
     return () => clearTimeout(timer);
   }, []);
 
@@ -103,8 +107,9 @@ export default function Hero() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <motion.div variants={container} initial="hidden" animate="visible">
-          {/* Availability badge */}
-          <motion.div variants={item} className="flex justify-center mb-8">
+          {/* Status + location bar */}
+          <motion.div variants={item} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+            {/* Open to work pill */}
             <span
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase"
               style={{
@@ -114,7 +119,26 @@ export default function Hero() {
               }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Available for remote opportunities &mdash; since {siteConfig.availableFrom}
+              Open to Work &mdash; Senior Engineer · Tech Lead · EM
+            </span>
+            {/* Location + timezone */}
+            <span
+              className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full text-xs font-medium"
+              style={{
+                background: 'rgba(99,102,241,0.08)',
+                border: '1px solid rgba(99,102,241,0.2)',
+                color: '#a5b4fc',
+              }}
+            >
+              <span className="inline-flex items-center gap-1">
+                <MapPin className="w-3 h-3" />
+                Dhaka, Bangladesh
+              </span>
+              <span className="w-px h-3 bg-indigo-500/30" />
+              <span className="inline-flex items-center gap-1">
+                <Clock className="w-3 h-3" />
+                UTC+6 · Overlaps UK &amp; US
+              </span>
             </span>
           </motion.div>
 
@@ -173,15 +197,35 @@ export default function Hero() {
             variants={item}
             className="text-lg text-gray-600 dark:text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed"
           >
-            Results-driven Tech Lead with <span className="text-gray-900 dark:text-white font-medium">10+ years</span>{' '}
-            of experience in full-stack development, team leadership, and project management.
-            Leading teams of <span className="text-gray-900 dark:text-white font-medium">36+ developers</span> and
-            delivering scalable solutions.
+            Seeking a{' '}
+            <span className="text-gray-900 dark:text-white font-medium">Senior Engineer, Tech Lead, or Engineering Manager</span>{' '}
+            role. <span className="text-gray-900 dark:text-white font-medium">10+ years</span> building scalable products,
+            leading teams of{' '}
+            <span className="text-gray-900 dark:text-white font-medium">36+ engineers</span>, and shipping
+            solutions used by hundreds of thousands of users.
           </motion.p>
 
-          <motion.p variants={item} className="text-sm text-gray-500 dark:text-gray-500 mb-10 max-w-xl mx-auto">
-            Remote-ready — distributed teams, Git, Docker, CI/CD, Jira, async workflows.
-          </motion.p>
+          {/* Work mode pills */}
+          <motion.div variants={item} className="flex flex-wrap justify-center gap-2 mb-10">
+            {[
+              { label: '🌍 Remote', color: '#34d399' },
+              { label: '🏢 Hybrid', color: '#60a5fa' },
+              { label: '📍 Onsite (Dhaka)', color: '#c084fc' },
+              { label: '⚡ Available Now', color: '#f59e0b' },
+            ].map(({ label, color }) => (
+              <span
+                key={label}
+                className="px-3 py-1 rounded-full text-xs font-semibold"
+                style={{
+                  background: `${color}12`,
+                  border: `1px solid ${color}30`,
+                  color,
+                }}
+              >
+                {label}
+              </span>
+            ))}
+          </motion.div>
 
           {/* CTAs */}
           <motion.div

@@ -53,8 +53,8 @@ export default function Awards() {
                 >
                   <award.icon className="w-7 h-7" style={{ color: award.accent }} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{award.title}</h3>
-                <p className="text-gray-400 text-sm">{award.org}</p>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{award.title}</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">{award.org}</p>
               </div>
             </StaggerItem>
           ))}

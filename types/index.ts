@@ -36,6 +36,7 @@ export interface Project {
   github?: string;
   CodeLink?: string;
   live_demo?: string;
+  company_context?: string;
 }
 
 // Blog types
@@ -59,6 +60,11 @@ export interface Blog {
 }
 
 // Experience types
+export interface ExperienceHighlight {
+  value: string;
+  label: string;
+}
+
 export interface Experience {
   role: string;
   company: string;
@@ -67,6 +73,7 @@ export interface Experience {
   stack: string[];
   skills: string[];
   responsibilities: string[];
+  highlights?: ExperienceHighlight[];
   icon?: string;
 }
 

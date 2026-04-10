@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Send, Mail, MapPin, Clock, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, Mail, MapPin, Clock, MessageCircle, CheckCircle, AlertCircle, CalendarDays, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -106,8 +106,61 @@ export default function Contact({ socialLinks }: ContactProps) {
         <SectionHeading
           title="Let's Work Together"
           badge="Contact"
-          subtitle="I'm open to discussing remote opportunities in full-stack development, technical leadership, or software engineering. Feel free to reach out!"
+          subtitle="Open to Senior Engineer, Tech Lead & Engineering Manager roles — Remote, Hybrid or Onsite (Dhaka). UTC+6 with strong overlap for UK & US teams."
         />
+
+        {/* Calendly booking banner — primary CTA */}
+        <AnimatedSection className="mb-10">
+          <div
+            className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+            style={{
+              background: 'linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(16,185,129,0.08) 100%)',
+              border: '1px solid rgba(99,102,241,0.25)',
+            }}
+          >
+            {/* Glow */}
+            <div
+              className="absolute -top-10 -left-10 w-48 h-48 rounded-full opacity-20 pointer-events-none"
+              style={{ background: 'radial-gradient(circle, #6366f1, transparent 70%)', filter: 'blur(40px)' }}
+            />
+            <div className="flex items-center gap-4 z-10">
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)', boxShadow: '0 4px 20px rgba(99,102,241,0.35)' }}
+              >
+                <CalendarDays className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-0.5">Fastest Way to Connect</p>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Book a 30-min Intro Call</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                  Pick a slot that works for you — I&apos;m available across UK &amp; US time zones.
+                </p>
+              </div>
+            </div>
+            <Link
+              href={siteConfig.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white whitespace-nowrap z-10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg flex-shrink-0"
+              style={{
+                background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
+                boxShadow: '0 4px 16px rgba(99,102,241,0.3)',
+              }}
+            >
+              <CalendarDays className="w-4 h-4" />
+              Schedule a Call
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </AnimatedSection>
+
+        {/* Divider */}
+        <div className="flex items-center gap-4 mb-10">
+          <div className="flex-1 h-px bg-black/[0.06] dark:bg-white/[0.06]" />
+          <span className="text-xs text-gray-400 uppercase tracking-widest px-2">or send a message</span>
+          <div className="flex-1 h-px bg-black/[0.06] dark:bg-white/[0.06]" />
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
           {/* Contact info */}
@@ -153,6 +206,32 @@ export default function Contact({ socialLinks }: ContactProps) {
               </div>
 
               <div className="pt-6 border-t border-black/[0.06] dark:border-white/[0.06]">
+                {/* Calendly shortcut inside info card */}
+                <Link
+                  href={siteConfig.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 mb-6 p-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 group"
+                  style={{
+                    background: 'rgba(99,102,241,0.07)',
+                    border: '1px solid rgba(99,102,241,0.18)',
+                  }}
+                >
+                  <div
+                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)' }}
+                  >
+                    <CalendarDays className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-gray-500">Prefer a call?</p>
+                    <p className="text-sm font-semibold text-indigo-400 group-hover:text-indigo-300 transition-colors">
+                      Book on Calendly
+                    </p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-indigo-500 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
                 <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">Find me on</p>
                 <div className="flex flex-wrap gap-2.5">
                   {socialLinks.map(link => (
