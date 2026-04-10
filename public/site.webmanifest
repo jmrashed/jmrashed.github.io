@@ -1,0 +1,23 @@
+{
+  "name": "Rashed Zaman — Tech Lead & Full-Stack Developer",
+  "short_name": "Rashed Zaman",
+  "description": "Portfolio of Rashed Zaman — Tech Lead, Full-Stack Developer & Software Architect based in Dhaka, Bangladesh.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080f1e",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

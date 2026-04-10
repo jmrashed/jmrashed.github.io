@@ -1,265 +1,394 @@
-# Claude.md - Project Context for AI Code Agents
+# claude.md — AI Agent Context for jmrashed.github.io
 
-This document provides comprehensive context for AI code agents (Claude, GPT-4, etc.) working on this Next.js portfolio project. Use this as your primary reference to understand structure, conventions, and safe modification practices.
-
-## 🚀 Project Overview
-
-**Purpose**: Personal portfolio website for Rashed Zaman, Tech Lead & Full-Stack Developer specializing in scalable web apps, system architecture, PHP/Node.js/React, and cloud infrastructure.
-
-**Audience**: Potential employers, clients, collaborators in tech industry (Dhaka, Bangladesh focus).
-
-**Tech Stack**:
-```
-Framework: Next.js 15 (App Router) + TypeScript
-Styling: Tailwind CSS 3.4 + CSS custom utilities
-Animations: Framer Motion 12.38
-Icons: Lucide React
-Theme: next-themes (dark/light mode)
-Forms: React Hook Form + Zod validation
-Deployment: Static export → GitHub Pages (gh-pages)
-Other: Prettier, ESLint, PostCSS, gh-pages
-```
-
-**Key Features**:
-- ✅ Fully static export (`output: 'export'`) for GitHub Pages
-- ✅ Dark/light mode with `ThemeProvider`
-- ✅ Smooth animations (Framer Motion)
-- ✅ SEO optimized (metadata, sitemap, robots.txt)
-- ✅ Dynamic content from JSON files (blogs, projects, case-studies)
-- ✅ Responsive design (mobile-first)
-- ✅ Accessibility (ARIA labels, semantic HTML)
-
-**Main Sections**:
-1. **Home** (`app/page.tsx`) → Hero, About, Skills, Experience, Projects, Testimonials, Awards, Blog list, Open Source, Contact
-2. **Projects** (`app/projects/page.tsx` + `[id]/page.tsx`) → Dynamic project showcase
-3. **Case Studies** (`app/case-studies/page.tsx` + `[id]/page.tsx`) → Detailed case studies
-4. **Blog** (`app/blogs/page.tsx` + `[id]/page.tsx`) → Dynamic blog from `public/data/blogs.json`
-5. **Contact** → Form + modal (`HireMeModal`)
-
-## 📁 Project Structure
-
-```
-├── app/                          # Next.js 15 App Router (pages + layouts)
-│   ├── globals.css               # Tailwind + custom CSS utilities
-│   ├── layout.tsx                # Root layout (ThemeProvider, Navbar, Footer)
-│   ├── page.tsx                  # Home page (all sections)
-│   ├── blogs/                    # Dynamic blog routes
-│   │   ├── page.tsx              # Blog list
-│   │   └── [id]/page.tsx         # Single blog post
-│   ├── projects/                 # Dynamic project routes
-│   │   ├── page.tsx              # Projects list
-│   │   └── [id]/page.tsx         # Single project
-│   ├── case-studies/             # Dynamic case study routes
-│   │   ├── page.tsx              # Case studies list
-│   │   └── [id]/page.tsx         # Single case study
-│   ├── sitemap.ts                # Auto-generated sitemap
-│   └── robots.ts                 # SEO robots config
-├── components/                   # React components (TypeScript)
-│   ├── layout/                   # Persistent UI
-│   │   ├── Navbar.tsx           # Navigation + ThemeToggle
-│   │   └── Footer.tsx           # Footer + social links
-│   ├── sections/                 # Page sections (self-contained)
-│   │   ├── Hero.tsx             # Animated hero section
-│   │   ├── About.tsx            # About + experience timeline
-│   │   ├── Projects.tsx         # Projects grid + modals
-│   │   ├── BlogList.tsx         # Recent blog previews
-│   │   └── ... (15+ sections)
-│   └── ui/                      # Reusable UI primitives
-│       ├── ThemeProvider.tsx    # next-themes wrapper
-│       ├── ThemeToggle.tsx      # Dark/light toggle
-│       ├── Badge.tsx            # Skill badges
-│       └── AnimatedSection.tsx  # Framer Motion wrapper
-├── lib/                         # Utilities + data fetchers
-│   ├── data.ts                  # Data aggregation (getProjects(), getBlogs())
-│   └── utils.ts                 # siteConfig, cn() utility
-├── public/data/                 # Static JSON data (dynamic content source)
-│   ├── blogs.json               # Blog posts array → dynamic routes
-│   ├── projects.json            # Projects array
-│   ├── case-studies.json        # Case studies array
-│   ├── skills.json              # Skills data
-│   ├── experience.json          # Timeline data
-│   └── ... (8+ JSON files)
-├── public/                      # Static assets
-│   ├── images/                  # Optimized images
-│   └── favicon.png
-├── types/                       # TypeScript definitions
-└── Config files:
-    ├── next.config.ts           # Static export config
-    ├── tailwind.config.ts       # Tailwind setup
-    ├── tsconfig.json            # TypeScript config
-    ├── package.json             # Scripts + deps
-```
-
-## ⚙️ Important Implementation Details
-
-### Dynamic Content Flow
-```
-JSON files (public/data/) 
-  ↓ (imported in lib/data.ts)
-getBlogs() / getProjects() 
-  ↓ (used in page.tsx + [id]/page.tsx)
-Dynamic routes generate static HTML at build time
-```
-
-**Blog JSON Structure Example** (`public/data/blogs.json`):
-```json
-[
-  {
-    "id": "unique-uuid",
-    "title": "How Adi ERP Streamlines...",
-    "slug": "adi-erp-streamlines...",
-    "excerpt": "...",
-    "content": "# Markdown content...",
-    "featured_image": "image.jpg",
-    "meta_title": "...",
-    "tags": ["ERP", "AI"],
-    "published_at": "2025-01-20T10:00:00Z"
-  }
-]
-```
-- **AI Rule**: Always validate new blog JSON against existing schema. Use `slug` for routing.
-
-### Static Export (GitHub Pages)
-```ts
-// next.config.ts
-export default {
-  output: 'export',      // Static HTML generation
-  images: { unoptimized: true },  // No Image Optimization (static)
-  trailingSlash: true    // /blog/ vs /blog
-}
-```
-**Scripts** (`package.json`):
-```json
-{
-  "dev": "next dev",
-  "build": "next build",
-  "export": "next build",  // Alias for static export
-  "deploy": "gh-pages -d out"
-}
-```
-Deployment: `npm run deploy` → pushes `out/` to `gh-pages` branch.
-
-### Styling & Animations
-- **Tailwind**: Utility-first, mobile-first, `@apply` in `globals.css`
-- **Custom CSS**: `app/globals.css` (glassmorphism, gradients)
-- **Framer Motion**: `<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>`
-- **Theme**: `ThemeProvider` wraps entire app, `className="dark:bg-gray-900"`
-
-## 🛠 Coding Conventions
-
-### File Naming & Organization
-```
-PascalCase.tsx     → React components
-camelCase.ts       → Utilities, hooks, types
-kebab-case.json    → Data files
-snake_case (none)  → Avoid
-```
-
-### TypeScript Usage
-- **Strict mode** enabled (`tsconfig.json`)
-- **All props typed**: `interface Props { children: ReactNode }`
-- **Data fetching**: `async function getBlogs()`
-
-### Imports
-```tsx
-// Preferred: Absolute path aliases (@/components/ui/Badge)
-import Badge from '@/components/ui/Badge';
-// Relative only when necessary
-import { cn } from '@/lib/utils';
-```
-
-### Component Structure
-```tsx
-// Every component follows this pattern:
-interface Props { title: string; }
-export default function Section({ title }: Props) {
-  return (
-    <AnimatedSection id="section-id">
-      <SectionHeading>{title}</SectionHeading>
-      {/* Content */}
-    </AnimatedSection>
-  );
-}
-```
-
-## 🚀 Deployment & Scripts
-
-| Script | Purpose | Output |
-|--------|---------|--------|
-| `npm run dev` | Local dev server | `http://localhost:3000` |
-| `npm run build` | Production build | `out/` (static HTML) |
-| `npm run export` | Static export | `out/` for GitHub Pages |
-| `npm run deploy` | Deploy to GitHub Pages | Pushes `out/` to `gh-pages` branch |
-
-**Build Process**:
-1. `npm run build` → generates static HTML in `out/`
-2. `npm run deploy` → `gh-pages -d out`
-
-## 🤖 AI Agent Guidelines
-
-### How to Read/Interpret Files
-```
-1. Start with lib/data.ts → Understand data flow
-2. app/layout.tsx → Theme + global structure
-3. app/page.tsx → Home page composition
-4. public/data/*.json → Dynamic content source
-5. components/sections/* → Individual sections
-```
-
-### Safe Update Patterns
-
-**Adding New Blog Post**:
-```bash
-# 1. Edit public/data/blogs.json (add new entry)
-# 2. Run: npm run build
-# 3. Verify: npx serve out
-# 4. Deploy: npm run deploy
-```
-
-**Component Updates**:
-```
-1. Read existing component → Match exact props interface
-2. Preserve animations + responsive classes
-3. Update types/index.ts if new props
-4. Test dark/light mode
-```
-
-**New Sections**:
-```
-1. Create components/sections/NewSection.tsx
-2. Add to app/page.tsx (import + <NewSection />)
-3. Add AnimatedSection wrapper
-4. Add to Navbar if navigation needed
-```
-
-### Validation Checklist
-```
-✅ TypeScript compiles (npm run build)
-✅ Tailwind classes valid
-✅ Dark mode works (ThemeToggle)
-✅ Animations smooth (Framer Motion)
-✅ Responsive (mobile → desktop)
-✅ Static export works (npm run export)
-✅ SEO metadata updated if needed
-✅ JSON schema preserved for dynamic routes
-```
-
-### Commit Standards
-```
-feat: add new blog post about [topic]
-fix: resolve TypeScript error in [component]
-refactor: improve [component] performance
-docs: update claude.md
-style: fix Tailwind responsive classes
-```
-
-**NEVER**:
-❌ Modify `next.config.ts` without static export compatibility
-❌ Break JSON schema in `public/data/*.json`
-❌ Remove `ThemeProvider` wrapper
-❌ Use `next/image` (requires unoptimized: true)
-❌ Forget `trailingSlash: true` compatibility
+This is the primary reference document for any AI code agent working on this project. Read this before making any changes.
 
 ---
 
-*Last Updated: Auto-generated for AI agents. Human review recommended for major changes.*
+## Project Overview
+
+**What it is**: Personal portfolio website for Rashed Zaman — Tech Lead & Full-Stack Developer (Dhaka, Bangladesh). 10+ years experience in PHP, Node.js, React, and cloud infrastructure.
+
+**Audience**: Potential employers, clients, and collaborators in the tech industry.
+
+**Live URL**: `https://jmrashed.github.io` (configured via `NEXT_PUBLIC_SITE_URL` env var)
+
+**Tech Stack**:
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript 5.8 (strict mode) |
+| Styling | Tailwind CSS 3.4 (class-based dark mode) |
+| Animations | Framer Motion 12.38 |
+| Icons | Lucide React |
+| Theme | next-themes 0.4.6 |
+| Forms | React Hook Form 7.72 + Zod 4.3 |
+| Markdown | react-markdown (blog content rendering) |
+| Fonts | Inter (body) + Fira Code (mono) via `next/font/google` |
+| Deployment | Static export (`output: 'export'`) → GitHub Pages via `gh-pages` |
+
+---
+
+## Project Structure
+
+```
+jmrashed.github.io/
+├── app/                        # Next.js App Router — pages and layouts
+│   ├── layout.tsx              # Root layout: ThemeProvider, Navbar, Footer, SEO metadata, JSON-LD, viewport
+│   ├── page.tsx                # Home page — composes all section components
+│   ├── globals.css             # Tailwind directives + custom CSS utilities (light + dark mode)
+│   ├── not-found.tsx           # 404 page
+│   ├── robots.ts               # SEO robots config
+│   ├── sitemap.ts              # Sitemap — includes /, /projects, /blogs, /case-studies, /uses + dynamic routes
+│   ├── icon.tsx                # Branded RZ favicon (32×32, force-static, Next.js ImageResponse)
+│   ├── opengraph-image.tsx     # OG image 1200×630 (force-static, Next.js ImageResponse)
+│   ├── blogs/
+│   │   ├── page.tsx            # Blog listing page
+│   │   └── [id]/page.tsx       # Single blog post — renders markdown via react-markdown
+│   ├── projects/
+│   │   ├── page.tsx            # Projects page — server component, passes data to ProjectsFilter
+│   │   └── [id]/page.tsx       # Single project detail
+│   ├── case-studies/
+│   │   ├── page.tsx            # Case studies listing
+│   │   └── [id]/page.tsx       # Single case study — shows role + duration fields
+│   └── uses/
+│       └── page.tsx            # /uses page — hardware, editor, stack, tools, currently exploring
+│
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.tsx          # Top navigation + ThemeToggle (light/dark aware bg)
+│   │   └── Footer.tsx          # Footer — receives socialLinks prop from layout.tsx
+│   ├── sections/               # Full-page sections used in app/page.tsx
+│   │   ├── Hero.tsx            # Profile photo, typed roles, stats from siteConfig.stats
+│   │   ├── About.tsx           # Stats from siteConfig.stats, clickable cert links
+│   │   ├── Skills.tsx          # Tech skills + Currently Exploring from siteConfig.currentlyLearning
+│   │   ├── Experience.tsx      # Work history timeline
+│   │   ├── Projects.tsx        # Homepage: first 3 projects. Exports ProjectCard (used by ProjectsFilter)
+│   │   ├── ProjectsFilter.tsx  # Client component: filter bar + animated grid for /projects page
+│   │   ├── BlogList.tsx        # Blog previews on homepage
+│   │   ├── OpenSource.tsx      # OSS packages with metrics + static GitHub stat tiles
+│   │   ├── Testimonials.tsx    # 3 real testimonials carousel + LinkedIn CTA
+│   │   ├── Awards.tsx          # Hardcoded awards (no JSON file — data lives in component)
+│   │   ├── Contact.tsx         # Formspree form + timezone + contact hours
+│   │   └── HireMeModal.tsx     # Modal — Formspree fetch, 24h response badge, success state
+│   └── ui/                     # Reusable primitives
+│       ├── AnimatedSection.tsx # Framer Motion scroll animation wrapper
+│       ├── ThemeProvider.tsx   # next-themes wrapper (must wrap entire app)
+│       ├── ThemeToggle.tsx     # Dark/light mode toggle button
+│       ├── Badge.tsx           # Skill/tag badge
+│       ├── SectionHeading.tsx  # Consistent section title styling
+│       ├── BackButton.tsx      # Navigation back button
+│       └── HireMeButton.tsx    # CTA button that opens HireMeModal
+│
+├── lib/
+│   ├── data.ts                 # All data access functions (reads from public/data/*.json at build time)
+│   └── utils.ts                # cn(), formatDate(), siteConfig (single source of truth)
+│
+├── public/data/                # Source of truth for all dynamic content
+│   ├── blogs.json              # 5 real technical blog posts → app/blogs/[id]
+│   ├── projects.json           # 12 projects → app/projects/[id]
+│   ├── case-studies.json       # 3 real case studies → app/case-studies/[id]
+│   ├── experience.json         # 7 work history entries (incl. current Freelance role)
+│   ├── skills.json             # Technical skills (no icon_class/icon_color — stripped)
+│   ├── achivements.json        # NOTE: intentional typo — do NOT rename
+│   ├── socialLinks.json        # Social media links → Footer + Contact
+│   └── menu.json               # Navigation menu items
+│
+├── public/images/              # Static images
+│   ├── profile.jpg             # ⚠️ MISSING — add headshot here (400×400px min, square)
+│   └── README.md               # Documents profile photo requirements
+│
+├── types/index.ts              # All TypeScript interfaces (single source of truth)
+├── next.config.ts              # Static export config
+├── tailwind.config.ts          # Tailwind setup (darkMode: 'class')
+├── tsconfig.json               # Strict TS, path alias @/* → ./*
+└── package.json                # Scripts and dependencies
+```
+
+---
+
+## siteConfig (lib/utils.ts) — Single Source of Truth
+
+```ts
+export const siteConfig = {
+  name: 'Rashed Zaman',
+  title: 'Rashed Zaman — Tech Lead & Full-Stack Developer | Portfolio',
+  description: '...',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://jmrashed.github.io',
+  email: 'jmrashed@gmail.com',
+  location: 'Dhaka, Bangladesh',
+  timezone: 'UTC+6 — Bangladesh Standard Time',
+  contactHours: '9 AM – 6 PM (Mon–Fri)',
+  availableFrom: 'April 2025',          // shown in Hero availability badge
+  github: 'https://github.com/jmrashed',
+  githubReadme: 'https://github.com/jmrashed/jmrashed',  // profile README repo
+  linkedin: 'https://www.linkedin.com/in/jmrashed/',
+  twitter: '@jmrashed',
+  cvPath: '/RASHED_ZAMAN_CV.pdf',
+  formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '',  // set in .env.local
+
+  // Stats — used in Hero (first 4) and About (all 6). Change here, updates everywhere.
+  stats: [
+    { value: '10+',   label: 'Years Exp.',  labelLong: 'Years Experience',   color: '#818cf8' },
+    { value: '36+',   label: 'Team Size',   labelLong: 'Team Members Led',   color: '#34d399' },
+    { value: '100+',  label: 'Projects',    labelLong: 'Projects Delivered', color: '#c084fc' },
+    { value: '40+',   label: 'Mentored',    labelLong: 'Devs Mentored',      color: '#fbbf24' },
+    { value: '$2M+',  label: 'Budget',      labelLong: 'Budget Managed',     color: '#f472b6' },
+    { value: '500K+', label: 'AI Revenue',  labelLong: 'Revenue via AI',     color: '#67e8f9' },
+  ],
+
+  // Currently learning — shown in Skills section "Currently Exploring" widget
+  currentlyLearning: [
+    { label: 'Rust',             color: '#f97316' },
+    { label: 'LLM Fine-tuning',  color: '#c084fc' },
+    { label: 'Go',               color: '#67e8f9' },
+    { label: 'Kubernetes (CKA)', color: '#60a5fa' },
+    { label: 'WebAssembly',      color: '#34d399' },
+  ],
+};
+```
+
+---
+
+## Data Flow
+
+```
+public/data/*.json
+  → lib/data.ts (readJson<T> via fs.readFileSync at build time)
+  → page.tsx / [id]/page.tsx (server components call getter functions)
+  → Section components (receive typed props)
+  → Static HTML generated at build time (output: 'export')
+```
+
+**Key getter functions in `lib/data.ts`**:
+- `getBlogs()` → `Blog[]`
+- `getBlogById(id: string)` → `Blog | undefined` — id is UUID string
+- `getProjects()` → `Project[]`
+- `getProjectById(id: number)` → `Project | undefined`
+- `getCaseStudies()` → `CaseStudy[]`
+- `getCaseStudyById(id: number)` → `CaseStudy | undefined`
+- `getExperience()` → `Experience[]`
+- `getSkills()` → `SkillsData`
+- `getAchievements()` → `AchievementCategory[]`
+- `getSocialLinks()` → `SocialLink[]`
+
+---
+
+## Static Export Configuration
+
+```ts
+// next.config.ts
+export default {
+  output: 'export',           // Generates static HTML in out/
+  images: { unoptimized: true }, // Required — no Image Optimization API on static hosts
+  trailingSlash: true,        // /blogs/ not /blogs — required for GitHub Pages
+}
+```
+
+**Critical constraints**:
+- Never use `next/image` with optimization. Use plain `<img>` tags.
+- No API routes — they don't work with `output: 'export'`.
+- `app/icon.tsx` and `app/opengraph-image.tsx` must use `export const dynamic = 'force-static'` (NOT `runtime = 'edge'`).
+- `ThemeProvider` must always wrap the app in `layout.tsx`.
+
+---
+
+## Forms — Formspree Integration
+
+Both `Contact.tsx` and `HireMeModal.tsx` submit to Formspree via `fetch()`:
+
+```ts
+const endpoint = siteConfig.formspreeId
+  ? `https://formspree.io/f/${siteConfig.formspreeId}`
+  : `https://formspree.io/f/xpwzgkqb`;  // fallback
+
+await fetch(endpoint, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+  body: JSON.stringify(data),
+});
+```
+
+**Setup**: Sign up at formspree.io → create form → copy ID → add to `.env.local`:
+```
+NEXT_PUBLIC_FORMSPREE_ID=your-form-id
+```
+
+---
+
+## Light / Dark Mode
+
+Uses `next-themes` with `attribute="class"` — toggles `dark` class on `<html>`.
+
+**Pattern**: Always pair light/dark Tailwind classes:
+```tsx
+className="text-gray-900 dark:text-white bg-white dark:bg-gray-900"
+```
+
+**CSS utilities** in `globals.css` use `.dark` selector:
+```css
+body { /* light styles */ }
+.dark body { /* dark styles */ }
+.glass-card { /* light */ }
+.dark .glass-card { /* dark */ }
+```
+
+**Never** use hardcoded `text-white`, `text-gray-400`, `bg-[#080f1e]` without a light-mode counterpart.
+
+---
+
+## Blog Content Rendering
+
+Blog posts use Markdown in the `content` field. The detail page (`app/blogs/[id]/page.tsx`) renders it with `react-markdown`:
+
+```tsx
+import ReactMarkdown from 'react-markdown';
+<ReactMarkdown>{blog.content}</ReactMarkdown>
+```
+
+Styled with Tailwind Typography prose classes (light + dark variants).
+
+---
+
+## Projects Filter
+
+`app/projects/page.tsx` is a server component that fetches data and passes it to `components/sections/ProjectsFilter.tsx` (client component). The filter bar has 7 categories: All, PHP/Laravel, Node.js, AI/ML, E-Commerce, Healthcare, FinTech. Filtering is client-side with `useMemo`.
+
+---
+
+## TypeScript Types (types/index.ts)
+
+All interfaces live in `types/index.ts`. Never define types inline in components.
+
+**Blog** (id is UUID string):
+```ts
+interface Blog {
+  id: string;           // UUID — used as route param in /blogs/[id]
+  title: string;
+  slug: string;         // SEO-friendly (not used for routing)
+  excerpt: string;
+  content: string;      // Markdown content — rendered via react-markdown
+  // ... meta fields, tags, category, status, dates
+}
+```
+
+**CaseStudy** (has optional `duration` and `role` fields added):
+```ts
+interface CaseStudy {
+  id: number;
+  title: string;
+  client: string;
+  industry: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  technologiesUsed: string[];
+  projectId?: number;
+  image?: string;
+  duration?: string;   // e.g. "6 weeks"
+  role?: string;       // e.g. "Tech Lead"
+}
+```
+
+**Skill** (icon_class and icon_color are optional — stripped from JSON):
+```ts
+interface Skill {
+  name: string;
+  icon_class?: string;  // not used — Skills.tsx uses emoji via categoryMeta
+  icon_color?: string;  // not used
+}
+```
+
+---
+
+## Adding New Content
+
+### New Blog Post
+Add to `public/data/blogs.json`. Required fields:
+```json
+{
+  "id": "unique-uuid-v4",
+  "title": "Post Title",
+  "slug": "post-title-kebab-case",
+  "excerpt": "1-2 sentence summary",
+  "content": "# Markdown content\n\nParagraphs here...",
+  "featured_image": "filename.jpg",
+  "meta_title": "SEO title",
+  "meta_description": "SEO description",
+  "meta_keywords": "comma, separated",
+  "tags": ["Tag1"],
+  "category": "Category",
+  "status": "published",
+  "published_at": "2025-01-01T10:00:00Z",
+  "created_at": "2025-01-01T09:00:00Z",
+  "updated_at": "2025-01-01T10:00:00Z"
+}
+```
+Route: `/blogs/{uuid}/`. Content renders as Markdown.
+
+### New Project
+Add to `public/data/projects.json`. The `id` must be a unique integer. The `'Product Name'` key contains a space — preserve exactly.
+
+### New Section on Homepage
+1. Create `components/sections/NewSection.tsx`
+2. Add data getter to `lib/data.ts` if needed
+3. Add type to `types/index.ts` if needed
+4. Import and render in `app/page.tsx`
+5. Wrap content in `<AnimatedSection id="new-section">`
+6. Add to `app/sitemap.ts` if it's a new page
+
+---
+
+## Important Gotchas
+
+- `achivements.json` — intentional typo in filename. Do NOT rename.
+- Blog routing uses `id` (UUID), not `slug`.
+- Project and CaseStudy IDs are numbers; Blog IDs are UUID strings.
+- `public/data/` is the live data source. `assets/data/` is legacy — do not use.
+- `Awards.tsx` has no JSON file — award data is hardcoded in the component.
+- `public/images/profile.jpg` is missing — Hero shows "RZ" initials fallback until added.
+- All `live_demo` fields in `projects.json` are empty strings — no live demos deployed yet.
+- `packages.microsoft.gpg` in repo root is a stray file — should be gitignored.
+
+---
+
+## Scripts
+
+```bash
+npm run dev        # Local dev server at http://localhost:3000
+npm run build      # Builds static site into out/ directory
+npm run deploy     # Runs predeploy (build) then gh-pages -d out
+npm run lint       # ESLint
+npm run format     # Prettier write
+```
+
+**Deploy flow**: `npm run deploy` → triggers `predeploy` (runs `npm run build`) → pushes `out/` to `gh-pages` branch on GitHub.
+
+---
+
+## Validation Before Deploying
+
+```
+✅ npm run build  — no TypeScript or build errors
+✅ Dark mode works — toggle ThemeToggle and verify all sections
+✅ Light mode works — check text contrast, no invisible text
+✅ New JSON entries match the exact schema in types/index.ts
+✅ No API routes added
+✅ No next/image without unoptimized flag
+✅ All imports use @/ alias
+✅ trailingSlash URLs used in any internal links (/blogs/ not /blogs)
+✅ New pages added to app/sitemap.ts
+✅ NEXT_PUBLIC_FORMSPREE_ID set in .env.local and Vercel env vars
+```
+
+---
+
+## Commit Message Convention
+
+```
+feat: add blog post about [topic]
+fix: resolve [issue] in [Component]
+refactor: improve [Component] performance
+style: fix dark mode classes in [Component]
+docs: update claude.md
+chore: update dependencies
+```
