@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, Code, Download, ChevronDown, MapPin, Clock } from 'lucide-react';
+import { Mail, Code, Download, ChevronDown, MapPin, Clock, Sparkles } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
 import HireMeButton from '@/components/ui/HireMeButton';
 
@@ -12,6 +12,7 @@ const roles = [
   'Senior Software Engineer',
   'Engineering Manager',
   'SaaS Architect & Innovator',
+  'AI Enthusiast & Builder',
 ];
 
 const container = {
@@ -168,9 +169,14 @@ export default function Hero() {
                 />
               </div>
               {/* Online indicator */}
+              <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-white dark:border-gray-950 animate-pulse" />
+              {/* AI badge */}
               <span
-                className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-white dark:border-gray-950 animate-pulse"
-              />
+                className="absolute -top-1 -right-1 inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-bold text-white leading-none"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #4f46e5)', boxShadow: '0 0 10px rgba(124,58,237,0.6)' }}
+              >
+                <Sparkles className="w-2 h-2" /> AI
+              </span>
             </div>
           </motion.div>
 
@@ -213,6 +219,7 @@ export default function Hero() {
               { label: '🏢 Hybrid', color: '#60a5fa' },
               { label: '📍 Onsite (Dhaka)', color: '#c084fc' },
               { label: '⚡ Available Now', color: '#f59e0b' },
+              { label: '🤖 AI Passionate', color: '#a78bfa' },
             ].map(({ label, color }) => (
               <span
                 key={label}

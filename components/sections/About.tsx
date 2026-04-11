@@ -58,6 +58,16 @@ export default function About({ achievements }: AboutProps) {
                 </span>
                 , empowering engineers to grow while driving organizational success.
               </p>
+              <p>
+                Deeply passionate about{' '}
+                <span className="text-violet-400 font-medium">
+                  Artificial Intelligence & Machine Learning
+                </span>
+                — actively building AI-powered tools including voice assistants, facial recognition
+                systems, deep learning classifiers, and LLM-based chatbots. Bridging the gap between
+                enterprise engineering and{' '}
+                <span className="text-violet-300 font-medium">applied AI</span>.
+              </p>
             </div>
 
             {/* Stats grid — driven by siteConfig.stats */}
