@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Code, Download, ChevronDown, MapPin, Clock, Sparkles } from 'lucide-react';
@@ -152,11 +153,12 @@ export default function Hero() {
                 className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden ring-2 ring-indigo-500/40 ring-offset-4 ring-offset-transparent"
                 style={{ boxShadow: '0 0 40px rgba(99,102,241,0.25)' }}
               >
-                <img
+                <Image
                   src="/images/profile.jpg"
                   alt="Rashed Zaman — Tech Lead & Full-Stack Developer"
                   width={128}
                   height={128}
+                  priority
                   className="w-full h-full object-cover object-top"
                   onError={e => {
                     const el = e.currentTarget;
