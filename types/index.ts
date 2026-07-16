@@ -101,10 +101,17 @@ export interface LeadershipSkill {
   text_color: string;
 }
 
+export interface Certification {
+  name: string;
+  provider: string;
+  url?: string;
+}
+
 export interface SkillsData {
   technical_skills: SkillCategory[];
   leadership_skills: LeadershipSkill[];
   remote_tools: Skill[];
+  certifications: Certification[];
 }
 
 // Achievement types

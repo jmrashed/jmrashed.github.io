@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, Code, Download, ChevronDown, MapPin, Clock, Sparkles } from 'lucide-react';
+import { Mail, Code, Download, ChevronDown, MapPin, Clock, Sparkles, FileCode } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
 import HireMeButton from '@/components/ui/HireMeButton';
 
@@ -262,6 +262,17 @@ export default function Hero() {
             <Link href={siteConfig.cvPath} target="_blank" download className="btn-outline">
               <Download className="w-4 h-4" />
               Resume
+            </Link>
+          </motion.div>
+
+          {/* Secondary CTA — Markdown CV for recruiters/AI tools */}
+          <motion.div variants={item} className="mt-4 flex justify-center">
+            <Link
+              href="/cv"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors underline-offset-4 hover:underline"
+            >
+              <FileCode className="w-3.5 h-3.5" />
+              See Me in Markdown Format
             </Link>
           </motion.div>
 
