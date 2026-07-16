@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { X, Download, Send, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { X, Download, Send, Clock, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@/lib/utils';
@@ -15,7 +15,7 @@ type FormData = {
 };
 
 export default function HireMeModal() {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'success'>('idle');
 
   const { register, handleSubmit, reset } = useForm<FormData>();
 
@@ -37,24 +37,18 @@ export default function HireMeModal() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onSubmit = async (data: FormData) => {
-    setStatus('loading');
-    try {
-      const endpoint = siteConfig.formspreeId
-        ? `https://formspree.io/f/${siteConfig.formspreeId}`
-        : `https://formspree.io/f/xpwzgkqb`;
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          ...data,
-          _subject: `Hire Request — ${data.availability} — ${data.name}`,
-        }),
-      });
-      setStatus(res.ok ? 'success' : 'error');
-    } catch {
-      setStatus('error');
-    }
+  const onSubmit = (data: FormData) => {
+    const body = `${data.message}\n\n— ${data.name} (${data.email})`;
+    const params = new URLSearchParams({
+      view: 'cm',
+      fs: '1',
+      to: siteConfig.email,
+      su: `Hire Request — ${data.availability} — ${data.name}`,
+      body,
+    });
+    window.open(`https://mail.google.com/mail/?${params.toString()}`, '_blank');
+
+    setStatus('success');
   };
 
   const inputCls =
@@ -111,9 +105,13 @@ export default function HireMeModal() {
                 className="py-10 text-center"
               >
                 <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
-                <p className="text-white font-semibold text-lg mb-1">Message sent!</p>
+                <p className="text-white font-semibold text-lg mb-1">Opened a pre-filled Gmail draft</p>
                 <p className="text-gray-400 text-sm mb-6">
-                  I&apos;ll get back to you within 24 hours.
+                  Not signed into Gmail? Email me directly at{' '}
+                  <a href={`mailto:${siteConfig.email}`} className="underline">
+                    {siteConfig.email}
+                  </a>
+                  .
                 </p>
                 <button onClick={close} className="btn-primary">
                   Close
@@ -174,19 +172,6 @@ export default function HireMeModal() {
                   />
                 </div>
 
-                {status === 'error' && (
-                  <div
-                    className="flex items-center gap-2 text-red-400 text-xs p-3 rounded-xl"
-                    style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}
-                  >
-                    <AlertCircle className="w-4 h-4 shrink-0" />
-                    Something went wrong. Please email me directly at{' '}
-                    <a href={`mailto:${siteConfig.email}`} className="underline">
-                      {siteConfig.email}
-                    </a>
-                  </div>
-                )}
-
                 <div className="flex items-center justify-between gap-3 pt-1">
                   <Link
                     href={siteConfig.cvPath}
@@ -200,16 +185,11 @@ export default function HireMeModal() {
                   <div className="flex gap-2">
                     <button
                       type="submit"
-                      disabled={status === 'loading'}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 disabled:opacity-50"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90"
                       style={{ background: 'linear-gradient(135deg, #10b981, #06b6d4)' }}
                     >
-                      {status === 'loading' ? (
-                        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      ) : (
-                        <Send className="w-4 h-4" />
-                      )}
-                      {status === 'loading' ? 'Sending…' : 'Send Request'}
+                      <Send className="w-4 h-4" />
+                      Send Request
                     </button>
                     <button
                       type="button"

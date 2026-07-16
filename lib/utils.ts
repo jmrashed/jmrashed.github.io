@@ -27,7 +27,6 @@ export const siteConfig = {
   linkedin: 'https://www.linkedin.com/in/jmrashed/',
   twitter: '@jmrashed',
   cvPath: '/rashed-zaman-technical-project-manager-resume.pdf',
-  formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '',
   /** Single source of truth for all stat numbers shown in Hero + About */
   stats: [
     { value: '10+',   label: 'Years Exp.',  labelLong: 'Years Experience',   color: '#818cf8' },
