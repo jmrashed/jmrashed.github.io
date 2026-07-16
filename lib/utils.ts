@@ -28,7 +28,7 @@ export const siteConfig = {
   githubReadme: 'https://github.com/jmrashed/jmrashed',
   linkedin: 'https://www.linkedin.com/in/jmrashed/',
   twitter: '@jmrashed',
-  cvPath: '/RASHED_ZAMAN_CV.pdf',
+  cvPath: '/rashed-zaman-technical-project-manager-resume.pdf',
   calendly: 'https://calendly.com/jmrashed',
   formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '',
   /** Single source of truth for all stat numbers shown in Hero + About */
