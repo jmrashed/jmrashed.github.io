@@ -40,7 +40,7 @@
       "Open Source"
     ],
     "highlights": [
-      { "value": "7,600+", "label": "Package Downloads" },
+      { "value": "13,700+", "label": "Package Downloads" },
       { "value": "1,100+", "label": "Downloads / Month" },
       { "value": "51",     "label": "GitHub Stars" },
       { "value": "23",     "label": "Team Members Led" }
@@ -48,7 +48,7 @@
     "responsibilities": [
       "Led a 23-person cross-functional team (Frontend, Backend, UI/UX, Graphic Design, SQA, DevOps) delivering a SaaS job marketplace platform from scope definition through production launch",
       "Concurrently owned delivery of SocialPro AI, an AI-driven social media management platform integrating the OpenAI API (ChatGPT, DALL·E) and custom NLP",
-      "Open-source package jmrashed/zkteco: 7,600+ total installs, 1,100+ downloads/month, 51 GitHub stars",
+      "Open-source package jmrashed/zkteco: 13,700+ total installs, 1,100+ downloads/month, 51 GitHub stars",
       "Conducted 10+ code audits reducing average bug density by ~30% per engagement",
       "Integrating LLM-based features (OpenAI, LangChain) into client web applications"
     ]

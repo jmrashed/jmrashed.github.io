@@ -14,7 +14,7 @@ const packages = [
     accent: '#818cf8',
     tag: 'PHP',
     metrics: [
-      { icon: Download, label: 'Installs', value: '10K+' },
+      { icon: Download, label: 'Installs', value: '13.7K+' },
       { icon: Star, label: 'Stars', value: '80+' },
       { icon: GitBranch, label: 'Forks', value: '40+' },
     ],
@@ -56,7 +56,7 @@ export default function OpenSource() {
         <SectionHeading
           title="Open Source & Packages"
           badge="OSS"
-          subtitle="Maintainer of PHP/Laravel packages with 17K+ combined installs on Packagist."
+          subtitle="Maintainer of PHP/Laravel packages with 20K+ combined installs on Packagist."
         />
 
         <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.1}>
@@ -154,7 +154,7 @@ export default function OpenSource() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { value: '80+',  label: 'Repositories',    color: '#818cf8' },
-                { value: '17K+', label: 'Package Installs', color: '#34d399' },
+                { value: '20K+', label: 'Package Installs', color: '#34d399' },
                 { value: '130+', label: 'Stars Earned',     color: '#fbbf24' },
                 { value: '60+',  label: 'Forks',            color: '#f472b6' },
               ].map(s => (
