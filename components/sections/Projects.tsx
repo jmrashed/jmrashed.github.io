@@ -40,7 +40,7 @@ function getProofBadge(project: Project): { label: string; href: string; color: 
     return { label: 'Live Demo', href: project.live_demo, color: '#60a5fa', icon: 'production' };
   }
   if (project.company_context) {
-    return { label: 'In Production', href: `/projects/${project.id}`, color: '#f59e0b', icon: 'production' };
+    return { label: 'In Production', href: `/projects/${project.slug}`, color: '#f59e0b', icon: 'production' };
   }
   return null;
 }
@@ -114,7 +114,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="flex gap-2.5 mt-auto">
         <Link
-          href={`/projects/${project.id}`}
+          href={`/projects/${project.slug}`}
           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:gap-2.5 text-white"
           style={{ background: `linear-gradient(135deg, ${accent}, ${accent}99)` }}
         >
@@ -132,7 +132,7 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
         {!project.github && !project.CodeLink && (
           <Link
-            href={`/projects/${project.id}`}
+            href={`/projects/${project.slug}`}
             className="btn-outline !px-4 !py-2 !text-sm !rounded-lg"
           >
             <BookOpen className="w-3.5 h-3.5" /> Case Study

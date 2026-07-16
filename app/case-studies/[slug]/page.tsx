@@ -2,27 +2,27 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
-import { getCaseStudyById, getCaseStudies } from '@/lib/data';
+import { getCaseStudyBySlug, getCaseStudies } from '@/lib/data';
 import Badge from '@/components/ui/Badge';
 
 interface Props {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return getCaseStudies().map(cs => ({ id: String(cs.id) }));
+  return getCaseStudies().map(cs => ({ slug: cs.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
-  const cs = getCaseStudyById(Number(id));
+  const { slug } = await params;
+  const cs = getCaseStudyBySlug(slug);
   if (!cs) return { title: 'Case Study Not Found' };
   return { title: cs.title, description: cs.challenge.slice(0, 160) };
 }
 
 export default async function CaseStudyDetailPage({ params }: Props) {
-  const { id } = await params;
-  const cs = getCaseStudyById(Number(id));
+  const { slug } = await params;
+  const cs = getCaseStudyBySlug(slug);
   if (!cs) notFound();
 
   return (

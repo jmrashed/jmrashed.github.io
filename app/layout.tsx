@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import OpenToWorkBanner from '@/components/ui/OpenToWorkBanner';
+import PageLoader from '@/components/ui/PageLoader';
 import { getSocialLinks } from '@/lib/data';
 import { siteConfig } from '@/lib/utils';
 
@@ -161,6 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
+          <PageLoader />
           <OpenToWorkBanner />
           <Navbar />
           <main>{children}</main>

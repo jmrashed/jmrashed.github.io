@@ -188,6 +188,291 @@
     @apply animate-blink;
   }
 
+  /* ── Blog content (rendered from HTML, classes applied per-tag in blogs.json) ── */
+  .blog-content {
+    @apply text-gray-600 leading-relaxed;
+  }
+  .dark .blog-content {
+    @apply text-gray-300;
+  }
+  .blog-content > :first-child { @apply mt-0; }
+
+  /* Headings */
+  .blog-content .blog-h1,
+  .blog-content .blog-h2,
+  .blog-content .blog-h3,
+  .blog-content .blog-h4 {
+    @apply font-bold text-gray-900 scroll-mt-24;
+  }
+  .dark .blog-content .blog-h1,
+  .dark .blog-content .blog-h2,
+  .dark .blog-content .blog-h3,
+  .dark .blog-content .blog-h4 {
+    @apply text-white;
+  }
+  .blog-content .blog-h1 { @apply text-2xl mt-10 mb-4; }
+  .blog-content .blog-h2 { @apply text-xl mt-8 mb-3; }
+  .blog-content .blog-h3 { @apply text-lg mt-6 mb-2; }
+  .blog-content .blog-h4 { @apply text-base mt-5 mb-2; }
+
+  /* Paragraphs & inline text */
+  .blog-content .blog-p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .blog-content .blog-strong {
+    @apply text-gray-900 font-semibold;
+  }
+  .dark .blog-content .blog-strong {
+    @apply text-white;
+  }
+
+  .blog-content .blog-em {
+    @apply italic;
+  }
+
+  .blog-content .blog-mark {
+    @apply rounded px-1 py-0.5;
+    background: rgba(245, 158, 11, 0.25);
+    color: inherit;
+  }
+  .dark .blog-content .blog-mark {
+    background: rgba(245, 158, 11, 0.35);
+  }
+
+  .blog-content .blog-small {
+    @apply text-xs text-gray-500;
+  }
+  .dark .blog-content .blog-small {
+    @apply text-gray-400;
+  }
+
+  .blog-content .blog-sup,
+  .blog-content .blog-sub {
+    @apply text-xs;
+  }
+  .blog-content .blog-sup { vertical-align: super; }
+  .blog-content .blog-sub { vertical-align: sub; }
+
+  .blog-content .blog-kbd {
+    @apply inline-block px-1.5 py-0.5 rounded text-xs font-mono border;
+    background: rgba(99, 102, 241, 0.06);
+    border-color: rgba(99, 102, 241, 0.25);
+    box-shadow: 0 1px 0 rgba(99, 102, 241, 0.2);
+  }
+  .dark .blog-content .blog-kbd {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .blog-content .blog-samp {
+    @apply text-sm font-mono text-gray-700;
+  }
+  .dark .blog-content .blog-samp {
+    @apply text-gray-300;
+  }
+
+  .blog-content .blog-var {
+    @apply italic font-mono text-indigo-600;
+  }
+  .dark .blog-content .blog-var {
+    @apply text-indigo-300;
+  }
+
+  .blog-content .blog-link {
+    @apply text-indigo-500 no-underline;
+  }
+  .dark .blog-content .blog-link {
+    @apply text-indigo-400;
+  }
+  .blog-content .blog-link:hover {
+    @apply underline;
+  }
+
+  .blog-content .blog-span {
+    @apply inline;
+  }
+
+  /* Code */
+  .blog-content .blog-code-inline {
+    @apply text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  .dark .blog-content .blog-code-inline {
+    @apply text-indigo-300;
+    background: rgba(99, 102, 241, 0.15);
+  }
+
+  .blog-content .blog-pre {
+    @apply bg-gray-900 rounded-xl p-4 overflow-x-auto text-sm mb-4;
+  }
+  .dark .blog-content .blog-pre {
+    background: #0a0f1e;
+  }
+  .blog-content .blog-pre .blog-code-block {
+    @apply bg-transparent text-gray-100 p-0 rounded-none text-sm font-mono;
+  }
+
+  /* Lists */
+  .blog-content .blog-ul,
+  .blog-content .blog-ol {
+    @apply mb-4 pl-6 space-y-1;
+  }
+  .blog-content .blog-ul { @apply list-disc; }
+  .blog-content .blog-ol { @apply list-decimal; }
+  .blog-content .blog-li { @apply leading-relaxed; }
+
+  .blog-content .blog-dl {
+    @apply mb-4;
+  }
+  .blog-content .blog-dt {
+    @apply font-semibold text-gray-900;
+  }
+  .dark .blog-content .blog-dt {
+    @apply text-white;
+  }
+  .blog-content .blog-dd {
+    @apply pl-4 mb-2 text-gray-600;
+  }
+  .dark .blog-content .blog-dd {
+    @apply text-gray-300;
+  }
+
+  /* Blockquote */
+  .blog-content .blog-blockquote {
+    @apply border-l-4 pl-4 italic text-gray-500 my-4;
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+  .dark .blog-content .blog-blockquote {
+    @apply text-gray-400;
+  }
+
+  /* Table */
+  .blog-content .blog-table {
+    @apply w-full text-sm mb-4 border-collapse;
+  }
+  .blog-content .blog-thead {
+    @apply border-b-2;
+    border-color: rgba(99, 102, 241, 0.25);
+  }
+  .blog-content .blog-tr {
+    @apply border-b;
+    border-color: rgba(99, 102, 241, 0.1);
+  }
+  .dark .blog-content .blog-tr {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  .blog-content .blog-th {
+    @apply text-left font-semibold text-gray-900 px-3 py-2;
+  }
+  .dark .blog-content .blog-th {
+    @apply text-white;
+  }
+  .blog-content .blog-td {
+    @apply px-3 py-2 align-top;
+  }
+  .blog-content .blog-tbody { display: table-row-group; }
+
+  /* Figure */
+  .blog-content .blog-figure {
+    @apply my-6;
+  }
+  .blog-content .blog-img {
+    @apply rounded-xl;
+  }
+  .blog-content .blog-figcaption {
+    @apply text-xs text-gray-500 text-center mt-2;
+  }
+  .dark .blog-content .blog-figcaption {
+    @apply text-gray-400;
+  }
+
+  /* Rule */
+  .blog-content .blog-hr {
+    @apply my-8 border-t;
+    border-color: rgba(99, 102, 241, 0.15);
+  }
+  .dark .blog-content .blog-hr {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Details / summary */
+  .blog-content .blog-details {
+    @apply rounded-xl p-4 mb-4 border;
+    background: rgba(99, 102, 241, 0.04);
+    border-color: rgba(99, 102, 241, 0.15);
+  }
+  .dark .blog-content .blog-details {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  .blog-content .blog-summary {
+    @apply font-semibold text-gray-900 cursor-pointer;
+  }
+  .dark .blog-content .blog-summary {
+    @apply text-white;
+  }
+  .blog-content .blog-details[open] .blog-summary {
+    @apply mb-2;
+  }
+
+  /* Layout tags */
+  .blog-content .blog-aside {
+    @apply text-sm rounded-xl p-4 my-4 border;
+    background: rgba(245, 158, 11, 0.06);
+    border-color: rgba(245, 158, 11, 0.2);
+  }
+  .dark .blog-content .blog-aside {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.25);
+  }
+  .blog-content .blog-section {
+    @apply my-6;
+  }
+  .blog-content .blog-article {
+    @apply my-6;
+  }
+
+  /* Callouts */
+  .blog-content .tip,
+  .blog-content .warning,
+  .blog-content .note {
+    @apply rounded-xl p-4 my-4 border text-sm;
+  }
+  .blog-content .tip {
+    background: rgba(16, 185, 129, 0.06);
+    border-color: rgba(16, 185, 129, 0.25);
+  }
+  .dark .blog-content .tip {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  .blog-content .warning {
+    background: rgba(239, 68, 68, 0.06);
+    border-color: rgba(239, 68, 68, 0.25);
+  }
+  .dark .blog-content .warning {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+  .blog-content .note {
+    background: rgba(99, 102, 241, 0.06);
+    border-color: rgba(99, 102, 241, 0.25);
+  }
+  .dark .blog-content .note {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+  }
+  .blog-content .tip strong,
+  .blog-content .warning strong,
+  .blog-content .note strong {
+    @apply block mb-1 text-gray-900;
+  }
+  .dark .blog-content .tip strong,
+  .dark .blog-content .warning strong,
+  .dark .blog-content .note strong {
+    @apply text-white;
+  }
+
   /* ── Noise texture overlay ── */
   .noise::before {
     content: '';

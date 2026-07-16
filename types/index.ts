@@ -1,6 +1,7 @@
 // Project types
 export interface Project {
   id: number;
+  slug: string;
   'Product Name': string;
   Description: string;
   Category: string;
@@ -138,6 +139,7 @@ export interface MenuItem {
 // Case study types
 export interface CaseStudy {
   id: number;
+  slug: string;
   title: string;
   client: string;
   industry: string;
@@ -145,7 +147,7 @@ export interface CaseStudy {
   solution: string;
   results: string[];
   technologiesUsed: string[];
-  projectId?: number;
+  projectSlug: string;
   image?: string;
   duration?: string;
   role?: string;

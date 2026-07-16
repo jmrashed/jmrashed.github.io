@@ -2,20 +2,20 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, GitFork, ExternalLink } from 'lucide-react';
-import { getProjectById, getProjects, getBlogs, getCaseStudies } from '@/lib/data';
+import { getProjectBySlug, getProjects, getBlogs, getCaseStudies } from '@/lib/data';
 import Badge from '@/components/ui/Badge';
 
 interface Props {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return getProjects().map(p => ({ id: String(p.id) }));
+  return getProjects().map(p => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
-  const project = getProjectById(Number(id));
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return { title: 'Project Not Found' };
   return {
     title: project['Product Name'],
@@ -24,15 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProjectDetailPage({ params }: Props) {
-  const { id } = await params;
-  const project = getProjectById(Number(id));
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
 
   const relatedBlogs = getBlogs()
     .filter(b => b.product_id === project.id)
     .slice(0, 3);
   const relatedCaseStudies = getCaseStudies()
-    .filter(cs => cs.projectId === project.id)
+    .filter(cs => cs.projectSlug === project.slug)
     .slice(0, 3);
 
   const infoRows = [
@@ -173,7 +173,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               {relatedBlogs.map(blog => (
                 <Link
                   key={blog.id}
-                  href={`/blogs/${blog.id}`}
+                  href={`/blogs/${blog.slug}`}
                   className="card-glass p-4 hover:border-blue-400/50 transition-all block"
                 >
                   <h4 className="text-blue-300 font-semibold text-sm mb-2 line-clamp-2">
@@ -194,7 +194,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               {relatedCaseStudies.map(cs => (
                 <Link
                   key={cs.id}
-                  href={`/case-studies/${cs.id}`}
+                  href={`/case-studies/${cs.slug}`}
                   className="card-glass p-4 hover:border-blue-400/50 transition-all block"
                 >
                   <h4 className="text-blue-300 font-semibold text-sm mb-2">{cs.title}</h4>

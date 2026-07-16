@@ -19,16 +19,16 @@ export function getProjects(): Project[] {
   return readJson<Project[]>('projects.json');
 }
 
-export function getProjectById(id: number): Project | undefined {
-  return getProjects().find(p => p.id === id);
+export function getProjectBySlug(slug: string): Project | undefined {
+  return getProjects().find(p => p.slug === slug);
 }
 
 export function getBlogs(): Blog[] {
   return readJson<Blog[]>('blogs.json');
 }
 
-export function getBlogById(id: string): Blog | undefined {
-  return getBlogs().find(b => b.id === id);
+export function getBlogBySlug(slug: string): Blog | undefined {
+  return getBlogs().find(b => b.slug === slug);
 }
 
 export function getExperience(): Experience[] {
@@ -51,6 +51,6 @@ export function getCaseStudies(): CaseStudy[] {
   return readJson<CaseStudy[]>('case-studies.json');
 }
 
-export function getCaseStudyById(id: number): CaseStudy | undefined {
-  return getCaseStudies().find(cs => cs.id === id);
+export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
+  return getCaseStudies().find(cs => cs.slug === slug);
 }

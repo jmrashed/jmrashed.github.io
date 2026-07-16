@@ -29,7 +29,7 @@ export default function CaseStudiesPage() {
                 <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 text-2xl">
                   💡
                 </div>
-                <Link href={`/case-studies/${cs.id}`} className="block mb-2">
+                <Link href={`/case-studies/${cs.slug}`} className="block mb-2">
                   <h3 className="text-xl font-bold text-blue-300 hover:underline underline-offset-4 line-clamp-2">
                     {cs.title}
                   </h3>

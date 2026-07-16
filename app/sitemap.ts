@@ -8,21 +8,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
 
   const projects = getProjects().map(p => ({
-    url: `${base}/projects/${p.id}`,
+    url: `${base}/projects/${p.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
   const blogs = getBlogs().map(b => ({
-    url: `${base}/blogs/${b.id}`,
+    url: `${base}/blogs/${b.slug}`,
     lastModified: new Date(b.updated_at),
     changeFrequency: 'weekly' as const,
     priority: 0.6,
   }));
 
   const caseStudies = getCaseStudies().map(cs => ({
-    url: `${base}/case-studies/${cs.id}`,
+    url: `${base}/case-studies/${cs.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.6,

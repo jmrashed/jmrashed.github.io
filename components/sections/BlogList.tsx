@@ -40,7 +40,7 @@ export default function BlogList({ blogs }: { blogs: Blog[] }) {
                   {blog.category}
                 </Badge>
 
-                <Link href={`/blogs/${blog.id}`} className="block mb-3">
+                <Link href={`/blogs/${blog.slug}`} className="block mb-3">
                   <h2 className="text-xl font-bold text-blue-300 group-hover:underline underline-offset-4 line-clamp-2">
                     {blog.title}
                   </h2>
@@ -59,7 +59,7 @@ export default function BlogList({ blogs }: { blogs: Blog[] }) {
                 <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-700/50">
                   <span className="text-xs text-gray-500">{formatDate(blog.published_at)}</span>
                   <Link
-                    href={`/blogs/${blog.id}`}
+                    href={`/blogs/${blog.slug}`}
                     className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
                   >
                     Read More <ArrowRight className="w-4 h-4" />
