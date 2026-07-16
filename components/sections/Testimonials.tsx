@@ -10,10 +10,30 @@ import { siteConfig } from '@/lib/utils';
 const testimonials = [
   {
     quote:
-      "I had the pleasure of working with Md Rasheduzzaman, and I can confidently say he is an exceptional Senior Lead Software Engineer. Rasheduzzaman has strong technical skills and a real talent for solving complex problems quickly. In one project, he led a team to improve our system's speed and reliability, and the results were impressive. Not only is Rasheduzzaman technically skilled, but he is also a fantastic leader. He supports and guides team members, making sure everyone feels involved and valued. His clear communication makes even complex ideas easy to understand for everyone. I highly recommend Md Rasheduzzaman as a skilled, reliable, and inspiring engineer who will make a positive impact on any team.",
-    name: 'Al Amin Rony',
-    role: 'Software Engineer',
+      'I had the pleasure of working with Md. Rasheduzzaman during his time as a Software Engineer in one of my startup BdEducations, and I can confidently recommend him as a dependable and dedicated professional. Rasheduzzaman consistently delivered his work in a timely manner, showing strong discipline and reliability. He is a continuous learner who is always looking to improve his skills and stay updated with new technologies, which reflects positively in the quality of his work.',
+    name: 'A.R. Zerin',
+    role: 'AI/ML & Generative AI Architect',
+    company: 'BdEducations',
+    initials: 'AZ',
+    color: '#f59e0b',
+    linkedin: 'https://www.linkedin.com/in/zerin/',
+  },
+  {
+    quote:
+      'I worked closely with Rashed, and was impressed by his technical expertise and attention to detail. He has solid experience in modern web technologies and follows best practices in coding, security, and performance optimization. He is quick to learn new technologies and adapts well to challenging situations. His ability to debug complex issues and provide efficient solutions makes him a valuable asset to any development team. I would gladly work with him again and strongly recommend him for any software engineering role.',
+    name: 'Masud Uzzaman',
+    role: 'Full-Stack Engineer & Trainer',
     company: 'Colleague',
+    initials: 'MU',
+    color: '#10b981',
+    linkedin: 'https://www.linkedin.com/in/masud-zaman-fullstack-dev/',
+  },
+  {
+    quote:
+      "I had the pleasure of working with Md Rasheduzzaman, and I can confidently say he is an exceptional Senior Lead Software Engineer. Rasheduzzaman has strong technical skills and a real talent for solving complex problems quickly. In one project, he led a team to improve our system's speed and reliability, and the results were impressive. Not only is Rasheduzzaman technically skilled, but he is also a fantastic leader. He supports and guides team members, making sure everyone feels involved and valued. His clear communication makes even complex ideas easy to understand for everyone. I highly recommend Md Rasheduzzaman as a skilled, reliable, and inspiring engineer who will make a positive impact on any team.",
+    name: 'Alamin Rony',
+    role: 'Sr. Software Engineer',
+    company: 'PHP, Laravel, Vue.js, Docker, Kubernetes, AWS',
     initials: 'AR',
     color: '#6366f1',
     linkedin: 'https://www.linkedin.com/in/alamin-rony-125715152/',
@@ -21,8 +41,6 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const t = testimonials[0];
-
   return (
     <section id="testimonials" className="py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,52 +50,58 @@ export default function Testimonials() {
           subtitle="Recommendations from engineers I've worked with directly."
         />
 
-        <AnimatedSection>
-          {/* Real testimonial */}
-          <motion.div
-            className="glass-card rounded-2xl p-8 md:p-10 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Stars */}
-            <div className="flex gap-1 mb-5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-
-            <Quote className="w-7 h-7 mb-4 opacity-20" style={{ color: t.color }} />
-
-            <p className="text-gray-700 dark:text-gray-200 text-base leading-relaxed mb-8">
-              &ldquo;{t.quote}&rdquo;
-            </p>
-
-            <div className="flex items-center justify-between gap-4 flex-wrap">
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm text-white flex-shrink-0"
-                  style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}99)` }}
-                >
-                  {t.initials}
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900 dark:text-white text-sm">{t.name}</div>
-                  <div className="text-gray-500 dark:text-gray-400 text-xs">{t.role} · {t.company}</div>
-                </div>
-              </div>
-
-              <Link
-                href={t.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-500 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+        <div className="space-y-6 mb-6">
+          {testimonials.map((t, i) => (
+            <AnimatedSection key={t.name} delay={i * 0.1}>
+              <motion.div
+                className="glass-card rounded-2xl p-8 md:p-10"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
               >
-                <ExternalLink className="w-3.5 h-3.5" />
-                View on LinkedIn
-              </Link>
-            </div>
-          </motion.div>
+                {/* Stars */}
+                <div className="flex gap-1 mb-5">
+                  {Array.from({ length: 5 }).map((_, si) => (
+                    <Star key={si} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+
+                <Quote className="w-7 h-7 mb-4 opacity-20" style={{ color: t.color }} />
+
+                <p className="text-gray-700 dark:text-gray-200 text-base leading-relaxed mb-8">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+
+                <div className="flex items-center justify-between gap-4 flex-wrap">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm text-white flex-shrink-0"
+                      style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}99)` }}
+                    >
+                      {t.initials}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 dark:text-white text-sm">{t.name}</div>
+                      <div className="text-gray-500 dark:text-gray-400 text-xs">{t.role} · {t.company}</div>
+                    </div>
+                  </div>
+
+                  <Link
+                    href={t.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-500 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    View on LinkedIn
+                  </Link>
+                </div>
+              </motion.div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <AnimatedSection>
 
           {/* CTA to collect more */}
           <motion.div
