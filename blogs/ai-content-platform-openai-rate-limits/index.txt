@@ -1,0 +1,186 @@
+1:"$Sreact.fragment"
+3:I[5765,["619","static/chunks/619-ba102abea3e3d0e4.js","228","static/chunks/228-2b887a5054935d13.js","578","static/chunks/578-4c7d8dd220fad9e0.js","177","static/chunks/app/layout-0e01c8f3956844f3.js"],"ThemeProvider"]
+4:I[2515,["619","static/chunks/619-ba102abea3e3d0e4.js","228","static/chunks/228-2b887a5054935d13.js","578","static/chunks/578-4c7d8dd220fad9e0.js","177","static/chunks/app/layout-0e01c8f3956844f3.js"],"default"]
+5:I[9461,["619","static/chunks/619-ba102abea3e3d0e4.js","228","static/chunks/228-2b887a5054935d13.js","578","static/chunks/578-4c7d8dd220fad9e0.js","177","static/chunks/app/layout-0e01c8f3956844f3.js"],"default"]
+6:I[6193,["619","static/chunks/619-ba102abea3e3d0e4.js","228","static/chunks/228-2b887a5054935d13.js","578","static/chunks/578-4c7d8dd220fad9e0.js","177","static/chunks/app/layout-0e01c8f3956844f3.js"],"default"]
+7:I[9766,[],""]
+8:I[8924,[],""]
+9:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","744","static/chunks/app/blogs/%5Bslug%5D/page-6ad569b0f396cb35.js"],""]
+11:I[7150,[],""]
+:HL["/_next/static/media/3703c28dcda155b1-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/13fa0591553fe0c3.css","style"]
+2:T7e8,{"@context":"https://schema.org","@type":"Person","name":"Rashed Zaman","alternateName":"Md Rasheduzzaman","url":"https://jmrashed.github.io","email":"jmrashed@gmail.com","image":"https://jmrashed.github.io/images/profile.jpg","jobTitle":"Technical Project Manager | Tech Lead & Full-Stack Developer","description":"Rashed Zaman — Technical Project Manager & Tech Lead from Dhaka, Bangladesh. 10+ years leading cross-functional engineering teams and delivering scalable web & mobile solutions using PHP, Node.js, React and cloud platforms.","telephone":"+8801734446514","address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Stamford University Bangladesh","url":"https://www.stamforduniversity.edu.bd"},"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"B.Sc. Computer Science & Engineering","credentialCategory":"degree","recognizedBy":{"@type":"CollegeOrUniversity","name":"Stamford University Bangladesh"}},{"@type":"EducationalOccupationalCredential","name":"Project Management Specialization","credentialCategory":"certificate","recognizedBy":{"@type":"CollegeOrUniversity","name":"Rice University (Coursera)"}}],"knowsAbout":["PHP","Laravel","Node.js","React","Next.js","TypeScript","Python","Docker","AWS","PostgreSQL","MySQL","System Architecture","Team Leadership","SaaS Development","CI/CD","Agile","Scrum","AI/ML Integration"],"sameAs":["https://www.linkedin.com/in/jmrashed/","https://github.com/jmrashed","https://x.com/jmrashed","https://medium.com/@jmrashed","https://leetcode.com/u/jmrashed/","https://www.hackerrank.com/profile/jmrashed","https://packagist.org/packages/jmrashed/zkteco","https://calendly.com/jmrashed"],"worksFor":{"@type":"Organization","name":"PEN Group"},"seeks":{"@type":"JobPosting","title":"Technical Project Manager / Senior Software Engineer / Tech Lead / Engineering Manager","jobLocationType":"TELECOMMUTE","applicantLocationRequirements":{"@type":"Country","name":"Worldwide"}}}0:{"P":null,"b":"TKsj7gxNOguWEq9g-c837","p":"","c":["","blogs","ai-content-platform-openai-rate-limits",""],"i":false,"f":[[["",{"children":["blogs",{"children":[["slug","ai-content-platform-openai-rate-limits","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/13fa0591553fe0c3.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"__variable_f367f3 __variable_13fb82","children":[["$","head",null,{"children":["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}]}],["$","body",null,{"className":"__className_f367f3 antialiased","children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","main",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"min-h-screen flex items-center justify-center pt-16","children":["$","div",null,{"className":"text-center px-4","children":[["$","div",null,{"className":"text-8xl font-bold gradient-text mb-4","children":"404"}],["$","h2",null,{"className":"text-2xl font-bold text-white mb-4","children":"Page Not Found"}],["$","p",null,{"className":"text-gray-400 mb-8 max-w-md mx-auto","children":"The page you're looking for doesn't exist or has been moved."}],["$","div",null,{"className":"flex gap-4 justify-center","children":[["$","$L9",null,{"href":"/","className":"inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:scale-105 transition-all","children":["$La"," Go Home"]}],"$Lb"]}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],"$Lc"]}]}]]}]]}],{"children":["blogs","$Ld",{"children":[["slug","ai-content-platform-openai-rate-limits","d"],"$Le",{"children":["__PAGE__","$Lf",{},null,false]},null,false]},null,false]},null,false],"$L10",false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
+12:I[5477,["619","static/chunks/619-ba102abea3e3d0e4.js","744","static/chunks/app/blogs/%5Bslug%5D/page-6ad569b0f396cb35.js"],"default"]
+13:I[6061,["619","static/chunks/619-ba102abea3e3d0e4.js","345","static/chunks/app/not-found-f13054d634edd652.js"],"default"]
+1d:I[4431,[],"OutletBoundary"]
+1f:I[5278,[],"AsyncMetadataOutlet"]
+21:I[4431,[],"ViewportBoundary"]
+23:I[4431,[],"MetadataBoundary"]
+24:"$Sreact.suspense"
+a:["$","$L12",null,{"ref":"$undefined","iconNode":[["path",{"d":"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8","key":"5wwlr5"}],["path",{"d":"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z","key":"r6nss1"}]],"className":"lucide-house w-4 h-4"}]
+b:["$","$L13",null,{}]
+c:["$","footer",null,{"className":"relative pt-16 pb-8 border-t border-black/[0.06] dark:border-white/[0.06]","children":[["$","div",null,{"className":"absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px","style":{"background":"linear-gradient(90deg, transparent, #6366f1, #f59e0b, transparent)"}}],["$","div",null,{"className":"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8","children":["$","div",null,{"className":"flex flex-col items-center text-center","children":[["$","div",null,{"className":"flex items-center gap-2 mb-4","children":[["$","span",null,{"className":"w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold text-white","style":{"background":"linear-gradient(135deg, #6366f1, #f59e0b)"},"children":"RZ"}],["$","span",null,{"className":"text-xl font-bold gradient-text","children":"Rashed Zaman"}]]}],["$","p",null,{"className":"text-gray-500 dark:text-gray-500 text-sm max-w-md mb-8 leading-relaxed","children":"Tech Lead passionate about creating innovative solutions and leading high-performing teams. Let's build something amazing together."}],["$","div",null,{"className":"flex flex-wrap justify-center gap-6 mb-8","children":[["$","$L9","/#about",{"href":"/#about","className":"text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors","children":"About"}],["$","$L9","/projects",{"href":"/projects","className":"text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors","children":"Projects"}],["$","$L9","/blogs",{"href":"/blogs","className":"text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors","children":"Blogs"}],["$","$L9","/#contact",{"href":"/#contact","className":"text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors","children":"Contact"}]]}],["$","div",null,{"className":"flex flex-wrap justify-center gap-2.5 mb-10","children":[["$","$L9","Behance",{"href":"https://www.behance.net/jmrashed","target":"_blank","rel":"noopener noreferrer","aria-label":"Behance","title":"Showcase of my design and creative projects.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"Be"}],["$","$L9","LinkedIn",{"href":"https://www.linkedin.com/in/jmrashed/","target":"_blank","rel":"noopener noreferrer","aria-label":"LinkedIn","title":"Professional profile and career networking.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"in"}],["$","$L9","X (Twitter)",{"href":"https://x.com/_jmrashed","target":"_blank","rel":"noopener noreferrer","aria-label":"X (Twitter)","title":"Follow me for updates and thoughts.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"X"}],["$","$L9","GitHub",{"href":"https://github.com/jmrashed","target":"_blank","rel":"noopener noreferrer","aria-label":"GitHub","title":"Explore my open-source projects and repositories.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"GH"}],"$L14","$L15","$L16","$L17","$L18","$L19"]}],"$L1a","$L1b"]}]}]]}]
+d:["$","$1","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+e:["$","$1","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+f:["$","$1","c",{"children":["$L1c",null,["$","$L1d",null,{"children":["$L1e",["$","$L1f",null,{"promise":"$@20"}]]}]]}]
+10:["$","$1","h",{"children":[null,[["$","$L21",null,{"children":"$L22"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L23",null,{"children":["$","div",null,{"hidden":true,"children":["$","$24",null,{"fallback":null,"children":"$L25"}]}]}]]}]
+14:["$","$L9","LeetCode",{"href":"https://leetcode.com/u/jmrashed/","target":"_blank","rel":"noopener noreferrer","aria-label":"LeetCode","title":"Problem solving and competitive programming profile.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"LC"}]
+15:["$","$L9","HackerRank",{"href":"https://www.hackerrank.com/profile/jmrashed","target":"_blank","rel":"noopener noreferrer","aria-label":"HackerRank","title":"Practice coding challenges and assessments.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"HR"}]
+16:["$","$L9","Medium",{"href":"https://medium.com/@jmrashed","target":"_blank","rel":"noopener noreferrer","aria-label":"Medium","title":"Articles and insights I write about tech and software.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"M"}]
+17:["$","$L9","Stack Overflow",{"href":"https://stackoverflow.com/users/jmrashed","target":"_blank","rel":"noopener noreferrer","aria-label":"Stack Overflow","title":"My Q&A contributions and coding expertise.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"SO"}]
+18:["$","$L9","CodePen",{"href":"https://codepen.io/jmrashed","target":"_blank","rel":"noopener noreferrer","aria-label":"CodePen","title":"Front-end experiments and snippets.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"CP"}]
+19:["$","$L9","Dribbble",{"href":"https://dribbble.com/jmrashed","target":"_blank","rel":"noopener noreferrer","aria-label":"Dribbble","title":"Creative design shots and UI work.","className":"w-10 h-10 inline-flex items-center justify-center rounded-xl text-xs font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.07] dark:border-white/[0.07]","children":"Dr"}]
+1a:["$","div",null,{"className":"w-full h-px mb-6 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.06] to-transparent"}]
+1b:["$","p",null,{"className":"text-gray-400 dark:text-gray-600 text-xs","children":["© ",2026," Rashed Zaman. All rights reserved. · Built with Next.js & ❤️"]}]
+26:T320d,<p class="blog-p">SocialPro AI generates and schedules social content across multiple platforms using OpenAI's API — ChatGPT for text generation, DALL·E for accompanying images. When people ask about the interesting engineering problem in building it, they usually expect the answer to be about prompt engineering or model selection. It wasn't. The interesting problem was building a reliable platform on top of a third party's rate limits and per-token cost, while running concurrently with a separate 23-person job-marketplace engagement competing for the same engineering attention inside the same company.</p>
+
+<h2 class="blog-h2">The Naive Version Would Have Failed</h2>
+
+<p class="blog-p">A straightforward first implementation — call OpenAI synchronously every time a user requests content generation — works perfectly in a demo. It falls over the very first time a marketing team decides to schedule a week's worth of posts in one sitting, which is exactly the workflow the product exists to support. You either eat a wall of HTTP 429 responses from OpenAI, or you eat a very large bill from firing off redundant generations nobody actually reads.</p>
+
+<p class="blog-p">Both failure modes look the same to a user: the button spins, then errors. Neither failure mode is acceptable in a product whose entire pitch is "schedule a month of content in twenty minutes."</p>
+
+<h2 class="blog-h2">The Fix: Queue, Batch, Throttle</h2>
+
+<p class="blog-p">Every generation request goes into a Redis-backed job queue, consumed by a pool of Node.js workers. This decouples "the user asked for content" from "OpenAI is currently processing that request," which is the single change that made everything else possible.</p>
+
+<h3 class="blog-h3">Token-Bucket Rate Limiting</h3>
+
+<p class="blog-p">The worker pool sits behind a token-bucket rate limiter tuned to OpenAI's actual published limits for our account tier, not a guess. Bursts — a user scheduling fifty posts at once — get smoothed into a steady stream of requests instead of being rejected outright. The user still sees their content appear progressively rather than all at once, but it appears reliably.</p>
+
+<pre class="blog-pre"><code class="blog-code-block">class TokenBucket {
+  constructor(capacity, refillRatePerSecond) {
+    this.capacity = capacity;
+    this.tokens = capacity;
+    this.refillRate = refillRatePerSecond;
+    this.lastRefill = Date.now();
+  }
+
+  tryConsume(cost = 1) {
+    this._refill();
+    if (this.tokens >= cost) {
+      this.tokens -= cost;
+      return true;
+    }
+    return false;
+  }
+
+  _refill() {
+    const now = Date.now();
+    const elapsed = (now - this.lastRefill) / 1000;
+    this.tokens = Math.min(this.capacity, this.tokens + elapsed * this.refillRate);
+    this.lastRefill = now;
+  }
+}
+</code></pre>
+
+<h3 class="blog-h3">Caching Repeated Patterns</h3>
+
+<p class="blog-p">Prompt/response pairs for recurring content patterns — repeated post templates, common image styles a brand reuses week after week — are cached. This cut a meaningful share of redundant OpenAI calls entirely, because a lot of "content generation" in this domain isn't actually novel; it's the same brand voice and visual style applied to a new topic, which means large parts of the prompt structure repeat verbatim across requests.</p>
+
+<blockquote class="blog-blockquote">The cheapest OpenAI call is the one you don't make. Caching wasn't an optimization we added later — it became a first-class part of the generation pipeline once we saw how much repetition existed in real usage patterns.</blockquote>
+
+<h2 class="blog-h2">Catching Bad Output Before It Reaches a Human</h2>
+
+<p class="blog-p">AI-generated content isn't uniformly good, and that's true regardless of how good the underlying model is — some generations are simply weaker than others for reasons that are hard to predict in advance. The naive approach is to let every generation flow through to the scheduling queue and rely on a human reviewer to catch the weak ones before publishing. That works, but it puts a manual bottleneck in front of a product whose value proposition is speed.</p>
+
+<p class="blog-p">Instead, a custom NLP scoring pass evaluates each output — checking for things like generic filler language, tone mismatch against the brand's configured voice, and structural incoherence — and flags weak generations for automatic regeneration before they're ever queued for scheduling. A human still reviews content before it's published, but they're reviewing content that's already cleared a quality bar, not triaging raw model output.</p>
+
+<h3 class="blog-h3">What the Scoring Pass Checks</h3>
+
+<ul class="blog-ul">
+  <li class="blog-li">Similarity to generic, low-specificity phrasing patterns that tend to correlate with weak generations.</li>
+  <li class="blog-li">Tone alignment against the brand voice profile configured for that account.</li>
+  <li class="blog-li">Basic structural coherence — does the post actually have a clear point, or does it wander.</li>
+  <li class="blog-li">Length and formatting fit for the target platform (a post generated for Twitter/X shouldn't need trimming for LinkedIn).</li>
+</ul>
+
+<h2 class="blog-h2">Keeping It Out of the Way of the Other Project</h2>
+
+<p class="blog-p">SocialPro AI is architected as a fully separate service from the job-marketplace codebase it shares a company with. That separation wasn't primarily a technical requirement — the two products don't need to talk to each other at all. It was a resourcing one. Keeping the services decoupled meant the two projects could be staffed, scaled, and shipped independently, without either one's release cadence blocking the other's, and without a shared codebase becoming a source of merge conflicts between two teams with completely different priorities.</p>
+
+<h2 class="blog-h2">Security Considerations</h2>
+
+<p class="blog-p">A few things mattered more than usual for an AI-content product specifically:</p>
+
+<ol class="blog-ol">
+  <li class="blog-li"><strong class="blog-strong">API key isolation.</strong> The OpenAI API key lives only in the worker service, never in any client-reachable code path, and is rotated on a schedule independent of any single incident.</li>
+  <li class="blog-li"><strong class="blog-strong">Output sanitization before storage.</strong> Generated content is sanitized before it's stored or rendered anywhere, since AI output is, from a security standpoint, untrusted input the same way user input would be.</li>
+  <li class="blog-li"><strong class="blog-strong">Per-tenant rate limit isolation.</strong> One customer scheduling an unusually large batch of content should never be able to starve another customer's queue — the token bucket is partitioned per account, not global.</li>
+</ol>
+
+<h2 class="blog-h2">Performance Tips</h2>
+
+<table class="blog-table">
+  <thead class="blog-thead">
+    <tr class="blog-tr">
+      <th class="blog-th">Technique</th>
+      <th class="blog-th">Why it helps</th>
+    </tr>
+  </thead>
+  <tbody class="blog-tbody">
+    <tr class="blog-tr">
+      <td class="blog-td">Queue-based decoupling</td>
+      <td class="blog-td">User-facing requests never block on OpenAI's actual response time</td>
+    </tr>
+    <tr class="blog-tr">
+      <td class="blog-td">Token-bucket throttling</td>
+      <td class="blog-td">Smooths bursts instead of triggering hard rate-limit rejections</td>
+    </tr>
+    <tr class="blog-tr">
+      <td class="blog-td">Prompt/response caching</td>
+      <td class="blog-td">Eliminates redundant calls for recurring content patterns</td>
+    </tr>
+    <tr class="blog-tr">
+      <td class="blog-td">Automatic regeneration on low score</td>
+      <td class="blog-td">Keeps human review focused on genuinely borderline content</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="blog-h2">Common Mistakes</h2>
+
+<ul class="blog-ul">
+  <li class="blog-li">Calling a third-party AI API synchronously in the user request path, then being surprised when the product doesn't scale past demo usage.</li>
+  <li class="blog-li">Assuming your rate limit is your published tier limit under all conditions — real limits can be affected by account history and usage patterns, so build in headroom.</li>
+  <li class="blog-li">Treating AI-generated content as inherently safe to display without sanitization, simply because it came from your own pipeline rather than directly from a user.</li>
+  <li class="blog-li">Skipping automated quality scoring because "a human will catch it," which quietly turns your human reviewers into the actual bottleneck in the product.</li>
+</ul>
+
+<h2 class="blog-h2">Where It Landed</h2>
+
+<p class="blog-p">Since the rate limiter and caching layer shipped, the platform has had zero platform-wide throttling incidents, and cost per generated post dropped meaningfully thanks to cache hits on repeated patterns. Customers get a unified dashboard for multi-platform scheduling and analytics, built without pulling engineering time away from the concurrent marketplace project — which, given the team's size, was the constraint that mattered just as much as any technical one.</p>
+
+<h2 class="blog-h2">FAQ</h2>
+
+<p class="blog-p"><strong class="blog-strong">Q: Why not just request a higher rate limit from OpenAI instead of building throttling logic?</strong><br>
+We did both. A higher limit buys headroom; it doesn't remove the need to handle bursts gracefully, because any fixed limit can still be exceeded by a large enough customer action.</p>
+
+<p class="blog-p"><strong class="blog-strong">Q: How do you avoid caching stale or repetitive-feeling content for a brand that wants variety?</strong><br>
+The cache keys on structural prompt patterns, not literal output — so a cached "template" still generates fresh copy for the actual topic, while skipping redundant calls for the parts of the prompt (brand voice instructions, formatting rules) that are identical across requests.</p>
+
+<h2 class="blog-h2">Handling Partial Failures Gracefully</h2>
+
+<p class="blog-p">Rate limiting and caching solve the throughput and cost problem, but they don't eliminate failure entirely — OpenAI's API still has occasional latency spikes and transient errors unrelated to rate limits, and a production content platform has to treat those as a normal, expected condition rather than an exceptional one.</p>
+
+<p class="blog-p">Every generation job carries a retry policy with exponential backoff, capped at a small number of attempts before the job is marked as failed and surfaced to the user with a clear, specific message rather than a generic error. This distinction matters more than it might seem: a user who schedules fifty posts and sees "3 posts failed to generate, click to retry" can act on that information immediately. A user who sees a vague "something went wrong" for the whole batch has no way to know whether zero posts succeeded or forty-seven did.</p>
+
+<h3 class="blog-h3">What We Learned About Retry Budgets</h3>
+
+<p class="blog-p">Early on, we set retry limits too aggressively, assuming more retries would always improve reliability. In practice, an OpenAI outage that lasts several minutes doesn't get fixed by retrying faster — it just burns through the retry budget for every queued job simultaneously, and then every job fails at roughly the same moment once budgets are exhausted, creating a thundering-herd of user-facing failures right as the underlying issue resolves. We now jitter retry timing per job specifically to avoid this synchronized-failure pattern, so jobs naturally spread their retry attempts across a window rather than all hitting the API again at the exact same instant.</p>
+
+<h2 class="blog-h2">A Note on Cost Attribution</h2>
+
+<p class="blog-p">Because generation is queued and asynchronous, it's tempting to lose track of which customer account is actually driving OpenAI spend. We tag every job with the originating account at enqueue time and roll up token usage per account daily, which turned out to be essential both for internal cost monitoring and, later, for building usage-based pricing tiers into the product — a requirement that came from the business side well after the queueing architecture was already in place, and which the existing per-account tagging made straightforward to support.</p>
+
+<h2 class="blog-h2">Conclusion</h2>
+
+<p class="blog-p">Building on top of someone else's API means their operational limits are effectively your architecture's constraints, whether or not you plan for them upfront. Treating OpenAI's rate limits and cost structure as a first-class design input — not an afterthought to patch in once real usage exposed the gaps — is what let SocialPro AI scale past demo-day usage without becoming an unreliable, expensive product to run.</p>1c:["$","div",null,{"className":"min-h-screen pt-24 pb-20","children":["$","div",null,{"className":"max-w-3xl mx-auto px-4 sm:px-6 lg:px-8","children":[["$","$L9",null,{"href":"/blogs","className":"group inline-flex items-center gap-2 text-indigo-500 hover:text-indigo-400 mb-8 transition-colors text-sm font-medium","children":[["$","$L12",null,{"ref":"$undefined","iconNode":[["path",{"d":"m12 19-7-7 7-7","key":"1l729n"}],["path",{"d":"M19 12H5","key":"x3x0zl"}]],"className":"lucide-arrow-left w-4 h-4 transition-transform group-hover:-translate-x-1"}]," Back to Blog"]}],["$","article",null,{"className":"card-glass overflow-hidden","children":[["$","header",null,{"className":"relative px-6 pt-10 pb-8 sm:px-10 sm:pt-12 sm:pb-10 border-b border-black/[0.06] dark:border-white/[0.06] overflow-hidden","children":[["$","div",null,{"className":"pointer-events-none absolute inset-0 opacity-60 dark:opacity-40","style":{"background":"radial-gradient(ellipse 70% 100% at 20% 0%, rgba(99,102,241,0.14) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 100% 100%, rgba(245,158,11,0.1) 0%, transparent 60%)"}}],["$","div",null,{"className":"relative","children":[["$","span",null,{"className":"px-2.5 py-0.5 rounded-md text-xs font-medium mb-4","style":{"background":"rgba(99,102,241,0.12)","color":"#a5b4fc","border":"1px solid rgba(99,102,241,0.25)"},"children":"AI Engineering"}],["$","h1",null,{"className":"text-3xl md:text-4xl lg:text-[2.75rem] font-bold gradient-text mb-5 leading-tight tracking-tight","children":"Shipping an AI Content Platform on Someone Else's Rate Limits"}],["$","div",null,{"className":"flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400 mb-5","children":[["$","span",null,{"className":"flex items-center gap-1.5","children":[["$","$L12",null,{"ref":"$undefined","iconNode":[["path",{"d":"M8 2v4","key":"1cmpym"}],["path",{"d":"M16 2v4","key":"4m81vk"}],["rect",{"width":"18","height":"18","x":"3","y":"4","rx":"2","key":"1hopcy"}],["path",{"d":"M3 10h18","key":"8toen8"}]],"className":"lucide-calendar w-4 h-4"}],"August 10, 2025"]}],["$","span",null,{"className":"w-1 h-1 rounded-full bg-gray-400/50 dark:bg-gray-600"}],["$","span",null,{"className":"flex items-center gap-1.5","children":[["$","$L12",null,{"ref":"$undefined","iconNode":[["circle",{"cx":"12","cy":"12","r":"10","key":"1mglay"}],["path",{"d":"M12 6v6l4 2","key":"mmk7yg"}]],"className":"lucide-clock w-4 h-4"}],8," min read"]}]]}],["$","div",null,{"className":"flex items-center gap-2 flex-wrap","children":[["$","$L12",null,{"ref":"$undefined","iconNode":[["path",{"d":"M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z","key":"vktsd0"}],["circle",{"cx":"7.5","cy":"7.5","r":".5","fill":"currentColor","key":"kqv944"}]],"className":"lucide-tag w-4 h-4 text-gray-400 dark:text-gray-500"}],[["$","span","AI/ML",{"className":"px-2.5 py-0.5 rounded-md text-xs font-medium","style":{"background":"rgba(52,211,153,0.1)","color":"#6ee7b7","border":"1px solid rgba(52,211,153,0.2)"},"children":"AI/ML"}],["$","span","OpenAI",{"className":"px-2.5 py-0.5 rounded-md text-xs font-medium","style":{"background":"rgba(52,211,153,0.1)","color":"#6ee7b7","border":"1px solid rgba(52,211,153,0.2)"},"children":"OpenAI"}],["$","span","Node.js",{"className":"px-2.5 py-0.5 rounded-md text-xs font-medium","style":{"background":"rgba(52,211,153,0.1)","color":"#6ee7b7","border":"1px solid rgba(52,211,153,0.2)"},"children":"Node.js"}],["$","span","Redis",{"className":"px-2.5 py-0.5 rounded-md text-xs font-medium","style":{"background":"rgba(52,211,153,0.1)","color":"#6ee7b7","border":"1px solid rgba(52,211,153,0.2)"},"children":"Redis"}],["$","span","Architecture",{"className":"px-2.5 py-0.5 rounded-md text-xs font-medium","style":{"background":"rgba(52,211,153,0.1)","color":"#6ee7b7","border":"1px solid rgba(52,211,153,0.2)"},"children":"Architecture"}]]]}]]}]]}],["$","div",null,{"className":"px-6 py-10 sm:px-10","children":["$","div",null,{"className":"blog-content max-w-none","dangerouslySetInnerHTML":{"__html":"$26"}}]}]]}],"$L27","$L28"]}]}]
+27:["$","div",null,{"className":"mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 card-glass px-6 py-5","children":[["$","p",null,{"className":"text-sm text-gray-500 dark:text-gray-400","children":["Found this useful? Explore more articles on"," ",["$","span",null,{"className":"text-gray-900 dark:text-white font-medium","children":"AI Engineering"}],"."]}],["$","$L9",null,{"href":"/blogs","className":"btn-outline text-sm","children":[["$","$L12",null,{"ref":"$undefined","iconNode":"$1c:props:children:props:children:0:props:children:0:props:iconNode","className":"lucide-arrow-left w-4 h-4"}]," All articles"]}]]}]
+28:["$","div",null,{"className":"mt-12","children":[["$","h2",null,{"className":"text-xl font-bold text-gray-900 dark:text-white mb-5","children":["More in ","AI Engineering"]}],["$","div",null,{"className":"grid sm:grid-cols-2 md:grid-cols-3 gap-4","children":[["$","$L9","e5f6a7b8-0005-4e1f-2a3b-4c5d6e7f8g9h",{"href":"/blogs/facial-recognition-attendance-system-hard-parts","className":"card-glass p-5 hover:border-indigo-400/50 transition-all duration-300 block","children":[["$","h3",null,{"className":"font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2","children":"Building a Real-Time Facial Recognition Attendance System: The Hard Parts"}],["$","p",null,{"className":"text-xs text-gray-500 dark:text-gray-400","children":"February 20, 2024"}]]}]]}]]}]
+22:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"#f8faff"}],["$","meta","3",{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#080f1e"}]]
+1e:null
+29:I[622,[],"IconMark"]
+20:{"metadata":[["$","title","0",{"children":"Building an AI Content Platform Within OpenAI's Rate Limits | Rashed Zaman"}],["$","meta","1",{"name":"description","content":"How SocialPro AI handles OpenAI rate limits and cost with a queued, cached, token-bucket-throttled generation pipeline."}],["$","meta","2",{"name":"author","content":"Rashed Zaman"}],["$","meta","3",{"name":"keywords","content":"OpenAI, rate limiting, AI, Node.js, Redis, NLP, content generation"}],["$","meta","4",{"name":"creator","content":"Rashed Zaman"}],["$","meta","5",{"name":"robots","content":"index, follow"}],["$","link","6",{"rel":"canonical","href":"https://jmrashed.github.io/"}],["$","meta","7",{"property":"og:title","content":"Rashed Zaman — Technical Project Manager | Tech Lead & Full-Stack Developer"}],["$","meta","8",{"property":"og:description","content":"Experienced Technical Project Manager and Tech Lead specializing in cross-functional delivery, stakeholder management, scalable web applications, and system architecture."}],["$","meta","9",{"property":"og:url","content":"https://jmrashed.github.io/"}],["$","meta","10",{"property":"og:site_name","content":"Rashed Zaman"}],["$","meta","11",{"property":"og:image:alt","content":"Rashed Zaman — Technical Project Manager | Tech Lead & Full-Stack Developer"}],["$","meta","12",{"property":"og:image:type","content":"image/png"}],["$","meta","13",{"property":"og:image","content":"https://jmrashed.github.io/opengraph-image?7c31beb9ca594cd0"}],["$","meta","14",{"property":"og:image:width","content":"1200"}],["$","meta","15",{"property":"og:image:height","content":"630"}],["$","meta","16",{"property":"og:type","content":"website"}],["$","meta","17",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","18",{"name":"twitter:creator","content":"@jmrashed"}],["$","meta","19",{"name":"twitter:title","content":"Rashed Zaman — Technical Project Manager | Tech Lead & Full-Stack Developer"}],["$","meta","20",{"name":"twitter:description","content":"Experienced Technical Project Manager and Tech Lead specializing in cross-functional delivery, stakeholder management, scalable web applications, and system architecture."}],["$","meta","21",{"name":"twitter:image:alt","content":"Rashed Zaman — Technical Project Manager | Tech Lead & Full-Stack Developer"}],["$","meta","22",{"name":"twitter:image:type","content":"image/png"}],["$","meta","23",{"name":"twitter:image","content":"https://jmrashed.github.io/opengraph-image?7c31beb9ca594cd0"}],["$","meta","24",{"name":"twitter:image:width","content":"1200"}],["$","meta","25",{"name":"twitter:image:height","content":"630"}],["$","link","26",{"rel":"icon","href":"/favicon.ico","sizes":"any"}],["$","link","27",{"rel":"icon","href":"/favicon-16x16.png","sizes":"16x16","type":"image/png"}],["$","link","28",{"rel":"icon","href":"/favicon-32x32.png","sizes":"32x32","type":"image/png"}],["$","link","29",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png","sizes":"180x180","type":"image/png"}],["$","link","30",{"rel":"manifest","href":"/site.webmanifest"}],["$","$L29","31",{}]],"error":null,"digest":"$undefined"}
+25:"$20:metadata"

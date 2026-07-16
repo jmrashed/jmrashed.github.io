@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "slug": "sims-higher-education-system",
     "Product Name": "SIMS & HigherEducationSystem",
     "Description": "Student Information Management System and companion student-facing platform for a UK higher-education client",
     "Category": "SaaS",
@@ -22,6 +23,7 @@
   },
   {
     "id": 2,
+    "slug": "saas-job-marketplace",
     "Product Name": "SaaS Job Marketplace",
     "Description": "Job marketplace platform with AI-powered candidate-job matching and resume tooling",
     "Category": "SaaS",
@@ -43,6 +45,7 @@
   },
   {
     "id": 3,
+    "slug": "socialpro-ai",
     "Product Name": "SocialPro AI",
     "Description": "AI-driven social media management platform for agencies and marketing teams",
     "Category": "AI",
@@ -64,6 +67,7 @@
   },
   {
     "id": 4,
+    "slug": "saas-erp",
     "Product Name": "SAAS ERP",
     "Description": "Business ERP solution for enterprise resource planning — accounting, inventory, and CRM",
     "Category": "Enterprise Software",
@@ -86,6 +90,7 @@
   },
   {
     "id": 5,
+    "slug": "ai-attendance-checker",
     "Product Name": "AI Attendance Checker",
     "Description": "AI-powered attendance and HR platform with facial recognition",
     "Category": "HR Technology",
@@ -107,6 +112,7 @@
   },
   {
     "id": 6,
+    "slug": "bangla-bazar",
     "Product Name": "Bangla Bazar",
     "Description": "Multi-vendor eCommerce marketplace platform",
     "Category": "E-commerce Platform",
@@ -128,6 +134,7 @@
   },
   {
     "id": 7,
+    "slug": "hrm-human-resource-management",
     "Product Name": "HRM — Human Resource Management System",
     "Description": "End-to-end SaaS HR platform — employee records, payroll, leave, attendance, performance reviews, and onboarding",
     "Category": "SaaS",
@@ -145,6 +152,50 @@
     "tech_stack_summary": ["Microservices", "Node.js", "Go", "Python", "Kafka", "Docker", "ELK Stack", "Redis"],
     "impact": "Scalable foundation supporting 1,000+ employees with room for multi-tenancy; directed delivery alongside companion CRM and LMS platforms.",
     "company_context": "Production at Onest Tech · 1,000+ employees",
+    "github": "",
+    "live_demo": ""
+  },
+  {
+    "id": 8,
+    "slug": "newshub",
+    "Product Name": "NewsHub",
+    "Description": "Personalized news platform combining static-first article delivery with a real-time-ranked homepage feed",
+    "Category": "Media",
+    "Industry": "Media / Publishing",
+    "Technology": ["Next.js", "PostgreSQL", "Redis"],
+    "Keywords": ["News", "Personalization", "ISR", "Content Ranking"],
+    "Features": [
+      "Article pages served via Next.js Incremental Static Regeneration",
+      "Redis sorted-set ranking layer for personalized homepage feed",
+      "Background worker computes engagement-based ranking off the request path",
+      "PostgreSQL as the system of record for articles and user engagement signals"
+    ],
+    "role": "Full-Stack Developer & Architect",
+    "tech_stack_summary": ["Next.js", "PostgreSQL", "Redis"],
+    "impact": "Built as a personal reference implementation for combining ISR-cached content with request-time personalization without paying per-request computation cost.",
+    "company_context": "Personal project · Open source",
+    "github": "",
+    "live_demo": ""
+  },
+  {
+    "id": 9,
+    "slug": "lms-learning-management-system",
+    "Product Name": "LMS — Learning Management System",
+    "Description": "Educational platform for course management, enrollment, live classes, and paid premium courses",
+    "Category": "SaaS",
+    "Industry": "Education & Training",
+    "Technology": ["Laravel", "Tailwind CSS", "Stripe", "PayPal", "Live Streaming", "gRPC"],
+    "Keywords": ["LMS", "EdTech", "Live Classes", "Paid Courses"],
+    "Features": [
+      "Course management, enrollment, and auto-graded assessments",
+      "Dual payment providers (Stripe and PayPal) for premium course access",
+      "Live virtual classrooms as an isolated service over gRPC",
+      "Role-based access: Admin, Instructor, Student"
+    ],
+    "role": "Lead Developer",
+    "tech_stack_summary": ["Laravel", "Tailwind CSS", "Stripe", "PayPal", "gRPC"],
+    "impact": "Added paid premium courses and live virtual classrooms without regressions to the existing grading engine, continuing to serve 5,000+ active students with zero major incidents.",
+    "company_context": "Production at Onest Tech · 5,000+ students",
     "github": "",
     "live_demo": ""
   }
