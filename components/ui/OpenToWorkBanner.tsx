@@ -7,6 +7,13 @@ import { siteConfig } from '@/lib/utils';
 
 const STORAGE_KEY = 'otw-banner-dismissed';
 
+// Always shows "2 months from today" so the banner never goes stale
+function getAvailableFromLabel(): string {
+  const d = new Date();
+  d.setMonth(d.getMonth() + 2);
+  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+
 export default function OpenToWorkBanner() {
   const [visible, setVisible] = useState(false);
 
@@ -52,7 +59,7 @@ export default function OpenToWorkBanner() {
 
       <span className="hidden sm:flex items-center gap-1.5 text-white/80">
         <Briefcase className="w-3.5 h-3.5" />
-        Senior Engineer · Tech Lead · Engineering Manager
+        Senior Engineer · Tech Lead · TPM · Engineering Manager
       </span>
 
       <span className="hidden md:block w-px h-4 bg-white/30" />
@@ -64,7 +71,7 @@ export default function OpenToWorkBanner() {
       <span className="hidden lg:block w-px h-4 bg-white/30" />
 
       <span className="hidden lg:flex items-center gap-1 text-white/80">
-        ⚡ Available Now &nbsp;·&nbsp; Notice: Immediate
+        📅 Available: {getAvailableFromLabel()}
       </span>
 
       <Link

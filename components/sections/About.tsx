@@ -41,15 +41,16 @@ export default function About({ achievements }: AboutProps) {
                 teams of engineers to deliver products that accelerate business growth.
               </p>
               <p>
-                Most recently led a{' '}
+                Currently leading a{' '}
                 <span className="text-emerald-400 font-medium">
-                  36-member engineering team at Onest Tech LLC
+                  9-engineer team on a live Higher Education SaaS engagement at PEN Group
                 </span>
-                , blending deep technical expertise in{' '}
+                , after previously leading a 36-member engineering team at Onest Tech LLC and a
+                23-person cross-functional team at SDT LTD, blending deep technical expertise in{' '}
                 <span className="text-indigo-300">
                   PHP, Node.js, React, and Cloud Infrastructure
                 </span>{' '}
-                with strategic leadership. Currently freelancing and open to full-time remote roles.
+                with strategic leadership. Open to new full-time remote opportunities.
               </p>
               <p>
                 Passionate about fostering a culture of{' '}

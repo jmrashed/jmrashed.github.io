@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const dynamic = 'force-static';
-export const alt = 'Rashed Zaman — Tech Lead & Full-Stack Developer';
+export const alt = 'Rashed Zaman — Technical Project Manager | Tech Lead & Full-Stack Developer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -87,7 +87,7 @@ export default function OGImage() {
             fontWeight: '500',
           }}
         >
-          Tech Lead &amp; Full-Stack Developer
+          Technical Project Manager · Tech Lead
         </div>
 
         {/* Tags row */}

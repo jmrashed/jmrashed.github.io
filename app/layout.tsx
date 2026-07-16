@@ -47,8 +47,13 @@ export const metadata: Metadata = {
   },
   keywords: [
     'Rashed Zaman',
+    'technical project manager',
+    'TPM',
+    'project manager',
     'tech lead',
     'full-stack developer',
+    'agile delivery',
+    'stakeholder management',
     'PHP',
     'Node.js',
     'React',
@@ -65,18 +70,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteConfig.url,
-    title: `${siteConfig.name} — Tech Lead & Full-Stack Developer`,
+    title: `${siteConfig.name} — Technical Project Manager | Tech Lead & Full-Stack Developer`,
     description:
-      'Experienced Tech Lead and Full-Stack Developer specializing in scalable web applications, system architecture and team leadership.',
+      'Experienced Technical Project Manager and Tech Lead specializing in cross-functional delivery, stakeholder management, scalable web applications, and system architecture.',
     siteName: siteConfig.name,
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     creator: siteConfig.twitter,
-    title: `${siteConfig.name} — Tech Lead & Full-Stack Developer`,
+    title: `${siteConfig.name} — Technical Project Manager | Tech Lead & Full-Stack Developer`,
     description:
-      'Experienced Tech Lead and Full-Stack Developer specializing in scalable web applications, system architecture and team leadership.',
+      'Experienced Technical Project Manager and Tech Lead specializing in cross-functional delivery, stakeholder management, scalable web applications, and system architecture.',
   },
 };
 
@@ -97,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: siteConfig.url,
               email: siteConfig.email,
               image: `${siteConfig.url}/images/profile.jpg`,
-              jobTitle: 'Tech Lead & Full-Stack Developer',
+              jobTitle: 'Technical Project Manager | Tech Lead & Full-Stack Developer',
               description: siteConfig.description,
               telephone: siteConfig.whatsapp,
               address: {
@@ -142,11 +147,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ],
               worksFor: {
                 '@type': 'Organization',
-                name: 'SDT Ltd',
+                name: 'PEN Group',
               },
               seeks: {
                 '@type': 'JobPosting',
-                title: 'Senior Software Engineer / Tech Lead / Engineering Manager',
+                title: 'Technical Project Manager / Senior Software Engineer / Tech Lead / Engineering Manager',
                 jobLocationType: 'TELECOMMUTE',
                 applicantLocationRequirements: { '@type': 'Country', name: 'Worldwide' },
               },

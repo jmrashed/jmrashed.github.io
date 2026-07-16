@@ -9,6 +9,7 @@ import HireMeButton from '@/components/ui/HireMeButton';
 
 const roles = [
   'Tech Lead & Full-Stack Developer',
+  'Technical Project Manager',
   'Senior Software Engineer',
   'Engineering Manager',
   'SaaS Architect & Innovator',
@@ -121,7 +122,7 @@ export default function Hero() {
               }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Open to Work &mdash; Senior Engineer · Tech Lead · EM
+              Open to Work &mdash; Senior Engineer · Tech Lead · TPM · EM
             </span>
             {/* Location + timezone */}
             <span
@@ -205,7 +206,7 @@ export default function Hero() {
             className="text-lg text-gray-600 dark:text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed"
           >
             Seeking a{' '}
-            <span className="text-gray-900 dark:text-white font-medium">Senior Engineer, Tech Lead, or Engineering Manager</span>{' '}
+            <span className="text-gray-900 dark:text-white font-medium">Senior Engineer, Tech Lead, Technical Project Manager, or Engineering Manager</span>{' '}
             role. <span className="text-gray-900 dark:text-white font-medium">10+ years</span> building scalable products,
             leading teams of{' '}
             <span className="text-gray-900 dark:text-white font-medium">36+ engineers</span>, and shipping
