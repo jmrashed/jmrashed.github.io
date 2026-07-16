@@ -40,8 +40,8 @@ export default async function BlogDetailPage({ params }: Props) {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-32 pb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/blogs"
           className="group inline-flex items-center gap-2 text-indigo-500 hover:text-indigo-400 mb-8 transition-colors text-sm font-medium"

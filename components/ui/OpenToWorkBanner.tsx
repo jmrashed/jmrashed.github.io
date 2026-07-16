@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { X, CalendarDays, Briefcase } from 'lucide-react';
-import { siteConfig } from '@/lib/utils';
+import { googleCalendarInviteUrl } from '@/lib/utils';
 
 const STORAGE_KEY = 'otw-banner-dismissed';
 
@@ -75,7 +75,7 @@ export default function OpenToWorkBanner() {
       </span>
 
       <Link
-        href={siteConfig.calendly}
+        href={googleCalendarInviteUrl()}
         target="_blank"
         rel="noopener noreferrer"
         className="ml-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white text-indigo-700 hover:bg-indigo-50 transition-colors flex-shrink-0"

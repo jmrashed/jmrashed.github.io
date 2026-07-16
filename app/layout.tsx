@@ -105,7 +105,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               image: `${siteConfig.url}/images/profile.jpg`,
               jobTitle: 'Technical Project Manager | Tech Lead & Full-Stack Developer',
               description: siteConfig.description,
-              telephone: siteConfig.whatsapp,
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Dhaka',
@@ -144,7 +143,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 'https://leetcode.com/u/jmrashed/',
                 'https://www.hackerrank.com/profile/jmrashed',
                 'https://packagist.org/packages/jmrashed/zkteco',
-                siteConfig.calendly,
               ],
               worksFor: {
                 '@type': 'Organization',

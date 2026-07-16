@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Send, Mail, MapPin, Clock, MessageCircle, CheckCircle, AlertCircle, CalendarDays, ArrowRight } from 'lucide-react';
+import { Send, Mail, MapPin, Clock, CheckCircle, CalendarDays, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import type { SocialLink } from '@/types';
-import { siteConfig } from '@/lib/utils';
+import { siteConfig, googleCalendarInviteUrl } from '@/lib/utils';
 
 const schema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -42,17 +42,15 @@ const inputCls =
   'w-full px-4 py-3 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08]';
 
 const contactItems = [
-  { icon: Mail,          label: 'Email',     key: 'email',    accent: '#818cf8', external: false },
-  { icon: MessageCircle, label: 'WhatsApp',  key: 'whatsapp', accent: '#25d366', external: true  },
-  { icon: MapPin,        label: 'Location',  key: 'location', accent: '#c084fc', external: false },
-  { icon: Clock,         label: 'Timezone',  key: 'timezone', accent: '#34d399', external: false },
-  { icon: Clock,         label: 'Hours',     key: 'hours',    accent: '#f59e0b', external: false },
+  { icon: Mail,  label: 'Email',     key: 'email',    accent: '#818cf8', external: false },
+  { icon: MapPin, label: 'Location', key: 'location', accent: '#c084fc', external: false },
+  { icon: Clock,  label: 'Timezone', key: 'timezone', accent: '#34d399', external: false },
+  { icon: Clock,  label: 'Hours',    key: 'hours',    accent: '#f59e0b', external: false },
 ] as const;
 
 function getContactValue(key: string): { value: string; href: string | null } {
   switch (key) {
     case 'email':    return { value: siteConfig.email,        href: `mailto:${siteConfig.email}` };
-    case 'whatsapp': return { value: siteConfig.whatsapp,     href: siteConfig.whatsappUrl };
     case 'location': return { value: siteConfig.location,     href: null };
     case 'timezone': return { value: siteConfig.timezone,     href: null };
     case 'hours':    return { value: siteConfig.contactHours, href: null };
@@ -61,7 +59,7 @@ function getContactValue(key: string): { value: string; href: string | null } {
 }
 
 export default function Contact({ socialLinks }: ContactProps) {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'success'>('idle');
 
   const {
     register,
@@ -70,27 +68,20 @@ export default function Contact({ socialLinks }: ContactProps) {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (data: FormData) => {
-    setStatus('loading');
-    try {
-      const endpoint = siteConfig.formspreeId
-        ? `https://formspree.io/f/${siteConfig.formspreeId}`
-        : `https://formspree.io/f/xpwzgkqb`;
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        setStatus('success');
-        reset();
-        setTimeout(() => setStatus('idle'), 5000);
-      } else {
-        setStatus('error');
-      }
-    } catch {
-      setStatus('error');
-    }
+  const onSubmit = (data: FormData) => {
+    const body = `${data.message}\n\n— ${data.name} (${data.email})`;
+    const params = new URLSearchParams({
+      view: 'cm',
+      fs: '1',
+      to: siteConfig.email,
+      su: data.subject,
+      body,
+    });
+    window.open(`https://mail.google.com/mail/?${params.toString()}`, '_blank');
+
+    setStatus('success');
+    reset();
+    setTimeout(() => setStatus('idle'), 5000);
   };
 
   return (
@@ -109,7 +100,7 @@ export default function Contact({ socialLinks }: ContactProps) {
           subtitle="Open to Senior Engineer, Tech Lead & Engineering Manager roles — Remote, Hybrid or Onsite (Dhaka). UTC+6 with strong overlap for UK & US teams."
         />
 
-        {/* Calendly booking banner — primary CTA */}
+        {/* Google Calendar invite banner — primary CTA */}
         <AnimatedSection className="mb-10">
           <div
             className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
@@ -134,12 +125,12 @@ export default function Contact({ socialLinks }: ContactProps) {
                 <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-0.5">Fastest Way to Connect</p>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">Book a 30-min Intro Call</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-                  Pick a slot that works for you — I&apos;m available across UK &amp; US time zones.
+                  Create the event on your own Google Calendar, pick any time that works for you, and it invites me instantly.
                 </p>
               </div>
             </div>
             <Link
-              href={siteConfig.calendly}
+              href={googleCalendarInviteUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white whitespace-nowrap z-10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg flex-shrink-0"
@@ -206,9 +197,9 @@ export default function Contact({ socialLinks }: ContactProps) {
               </div>
 
               <div className="pt-6 border-t border-black/[0.06] dark:border-white/[0.06]">
-                {/* Calendly shortcut inside info card */}
+                {/* Google Calendar invite shortcut inside info card */}
                 <Link
-                  href={siteConfig.calendly}
+                  href={googleCalendarInviteUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 mb-6 p-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 group"
@@ -226,7 +217,7 @@ export default function Contact({ socialLinks }: ContactProps) {
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-gray-500">Prefer a call?</p>
                     <p className="text-sm font-semibold text-indigo-400 group-hover:text-indigo-300 transition-colors">
-                      Book on Calendly
+                      Add to Google Calendar
                     </p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-indigo-500 group-hover:translate-x-1 transition-transform" />
@@ -336,36 +327,18 @@ export default function Contact({ socialLinks }: ContactProps) {
                     }}
                   >
                     <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                    Message sent! I&apos;ll get back to you within 24 hours.
-                  </motion.div>
-                )}
-                {status === 'error' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-red-500 dark:text-red-400 text-sm p-3 rounded-xl"
-                    style={{
-                      background: 'rgba(239,68,68,0.08)',
-                      border: '1px solid rgba(239,68,68,0.2)',
-                    }}
-                  >
-                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                    Something went wrong. Please try again or reach out via WhatsApp.
+                    Opened a new tab with a pre-filled Gmail draft — not signed into Gmail? Email me directly at{' '}
+                    <a href={`mailto:${siteConfig.email}`} className="underline">{siteConfig.email}</a>.
                   </motion.div>
                 )}
 
                 <button
                   type="submit"
-                  disabled={status === 'loading'}
-                  className="w-full btn-primary justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full btn-primary justify-center"
                   style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)' }}
                 >
-                  {status === 'loading' ? (
-                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  ) : (
-                    <Send className="w-4 h-4" />
-                  )}
-                  {status === 'loading' ? 'Sending...' : 'Send Message'}
+                  <Send className="w-4 h-4" />
+                  Send Message
                 </button>
               </form>
             </div>

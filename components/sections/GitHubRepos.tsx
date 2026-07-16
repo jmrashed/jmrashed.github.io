@@ -1,24 +1,23 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { Star, GitFork, Eye, Clock, ExternalLink, GitBranch, Sparkles, Zap } from 'lucide-react';
+import { useState, useMemo, useEffect } from 'react';
+import {
+  Star, GitFork, Eye, Clock, ExternalLink, GitBranch, Sparkles, Zap,
+  RefreshCw, WifiOff, LayoutGrid, Bot, Code2,
+} from 'lucide-react';
+import type { IconType } from 'react-icons';
+import {
+  SiPhp, SiJavascript, SiTypescript, SiPython, SiGo, SiCplusplus, SiC,
+  SiHtml5, SiCss, SiGnubash, SiLaravel, SiRust, SiRuby, SiKotlin, SiSwift,
+  SiDart, SiVuedotjs, SiDocker,
+} from 'react-icons/si';
 import { motion } from 'framer-motion';
 import type { Repo } from '@/lib/repos';
 
 export type { Repo };
 
-// Relevant to last 2-3 jobs: Tech Lead & PM at Onest Tech, PM at Spondon IT
-const JOB_STACK_FILTERS = [
-  { label: 'All', value: 'All' },
-  { label: '🤖 AI', value: 'AI' },
-  { label: 'PHP', value: 'PHP' },
-  { label: 'JavaScript', value: 'JavaScript' },
-  { label: 'TypeScript', value: 'TypeScript' },
-  { label: 'Python', value: 'Python' },
-  { label: 'Shell', value: 'Shell' },
-  { label: 'HTML', value: 'HTML' },
-  { label: 'CSS', value: 'CSS' },
-];
+const GITHUB_USERNAME = 'jmrashed';
+const REPOS_ENDPOINT = `https://api.github.com/users/${GITHUB_USERNAME}/repos?type=owner&sort=pushed&direction=desc&per_page=50`;
 
 // Repos to highlight as featured
 const HIGHLIGHTED = new Set([
@@ -63,6 +62,28 @@ const LANG_COLORS: Record<string, string> = {
   Dart: 'bg-sky-500',
 };
 
+// Real brand SVG logos per language, for the stack filter bar
+const LANG_ICONS: Record<string, IconType> = {
+  PHP: SiPhp,
+  JavaScript: SiJavascript,
+  TypeScript: SiTypescript,
+  Python: SiPython,
+  Go: SiGo,
+  'C++': SiCplusplus,
+  C: SiC,
+  HTML: SiHtml5,
+  CSS: SiCss,
+  Shell: SiGnubash,
+  Blade: SiLaravel,
+  Rust: SiRust,
+  Ruby: SiRuby,
+  Kotlin: SiKotlin,
+  Swift: SiSwift,
+  Dart: SiDart,
+  Vue: SiVuedotjs,
+  Dockerfile: SiDocker,
+};
+
 function timeAgo(dateStr: string) {
   const days = Math.floor((Date.now() - new Date(dateStr).getTime()) / 86400000);
   if (days === 0) return 'today';
@@ -80,8 +101,85 @@ const filterCls = (active: boolean, isAI?: boolean) =>
       : 'bg-indigo-600 text-white'
     : 'bg-black/[0.05] dark:bg-white/[0.07] text-gray-600 dark:text-gray-300 hover:bg-black/[0.1] dark:hover:bg-white/[0.12]';
 
-export default function GitHubRepos({ repos }: { repos: Repo[] }) {
+type SortKey = 'updated' | 'stars' | 'forks';
+
+const SORT_OPTIONS: { label: string; value: SortKey; icon: typeof Clock }[] = [
+  { label: 'Last updated', value: 'updated', icon: Clock },
+  { label: 'Stars', value: 'stars', icon: Star },
+  { label: 'Forks', value: 'forks', icon: GitFork },
+];
+
+export default function GitHubRepos({ repos: fallbackRepos }: { repos: Repo[] }) {
   const [selected, setSelected] = useState('All');
+  const [sortBy, setSortBy] = useState<SortKey>('updated');
+  const [repos, setRepos] = useState<Repo[]>(fallbackRepos);
+  const [status, setStatus] = useState<'loading' | 'live' | 'stale'>('loading');
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadLiveRepos() {
+      try {
+        const res = await fetch(REPOS_ENDPOINT, {
+          headers: { Accept: 'application/vnd.github+json' },
+        });
+        if (!res.ok) throw new Error(`GitHub API responded ${res.status}`);
+        const data = (await res.json()) as Repo[];
+        if (cancelled || !Array.isArray(data)) return;
+
+        const live: Repo[] = data
+          .sort((a, b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime())
+          .slice(0, 50)
+          .map(r => ({
+            id: r.id,
+            name: r.name,
+            description: r.description,
+            html_url: r.html_url,
+            homepage: r.homepage,
+            language: r.language,
+            stargazers_count: r.stargazers_count,
+            forks_count: r.forks_count,
+            watchers_count: r.watchers_count,
+            topics: r.topics ?? [],
+            pushed_at: r.pushed_at,
+            fork: r.fork,
+            archived: r.archived,
+          }));
+
+        setRepos(live);
+        setStatus('live');
+      } catch {
+        if (!cancelled) setStatus('stale');
+      }
+    }
+
+    loadLiveRepos();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Stack filters derived from the languages actually present in the
+  // fetched repos, ordered by how often each language appears.
+  const stackFilters = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const repo of repos) {
+      if (repo.language) counts.set(repo.language, (counts.get(repo.language) ?? 0) + 1);
+    }
+    const languages = [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([language]) => ({
+        label: language,
+        value: language,
+        icon: LANG_ICONS[language] ?? Code2,
+      }));
+
+    return [
+      { label: 'All', value: 'All', icon: LayoutGrid },
+      { label: 'AI', value: 'AI', icon: Bot },
+      ...languages,
+    ];
+  }, [repos]);
 
   const filtered = useMemo(() => {
     if (selected === 'All') return repos;
@@ -89,12 +187,15 @@ export default function GitHubRepos({ repos }: { repos: Repo[] }) {
     return repos.filter(r => r.language === selected);
   }, [repos, selected]);
 
-  // Highlighted repos float to top when visible
+  // Sorted by last modified / stars / forks; featured repos keep their
+  // badge/styling but are not reordered.
   const sorted = useMemo(() => {
-    const highlighted = filtered.filter(r => HIGHLIGHTED.has(r.name));
-    const rest = filtered.filter(r => !HIGHLIGHTED.has(r.name));
-    return [...highlighted, ...rest];
-  }, [filtered]);
+    const arr = [...filtered];
+    if (sortBy === 'stars') arr.sort((a, b) => b.stargazers_count - a.stargazers_count);
+    else if (sortBy === 'forks') arr.sort((a, b) => b.forks_count - a.forks_count);
+    else arr.sort((a, b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime());
+    return arr;
+  }, [filtered, sortBy]);
 
   return (
     <>
@@ -102,13 +203,28 @@ export default function GitHubRepos({ repos }: { repos: Repo[] }) {
         <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mr-1">
           Stack
         </span>
-        {JOB_STACK_FILTERS.map(({ label, value }) => (
+        {stackFilters.map(({ label, value, icon: Icon }) => (
           <button
             key={value}
             onClick={() => setSelected(value)}
-            className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${filterCls(selected === value, value === 'AI')}`}
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium transition-all ${filterCls(selected === value, value === 'AI')}`}
           >
-            {label}
+            <Icon className="w-3.5 h-3.5" /> {label}
+          </button>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-2 items-center mb-6">
+        <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mr-1">
+          Sort
+        </span>
+        {SORT_OPTIONS.map(({ label, value, icon: Icon }) => (
+          <button
+            key={value}
+            onClick={() => setSortBy(value)}
+            className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${filterCls(sortBy === value)}`}
+          >
+            <Icon className="w-3 h-3" /> {label}
           </button>
         ))}
       </div>
@@ -121,6 +237,21 @@ export default function GitHubRepos({ repos }: { repos: Repo[] }) {
         {selected === 'AI' && (
           <span className="ml-2 inline-flex items-center gap-1 text-violet-500 font-medium">
             <Sparkles className="w-3 h-3" /> AI & Machine Learning
+          </span>
+        )}
+        {status === 'loading' && (
+          <span className="ml-2 inline-flex items-center gap-1 text-gray-400">
+            <RefreshCw className="w-3 h-3 animate-spin" /> refreshing from GitHub…
+          </span>
+        )}
+        {status === 'live' && (
+          <span className="ml-2 inline-flex items-center gap-1 text-green-500 font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> live from GitHub API
+          </span>
+        )}
+        {status === 'stale' && (
+          <span className="ml-2 inline-flex items-center gap-1 text-amber-500">
+            <WifiOff className="w-3 h-3" /> showing cached data (GitHub API unavailable)
           </span>
         )}
       </p>
