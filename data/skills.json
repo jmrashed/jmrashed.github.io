@@ -79,12 +79,14 @@
     { "name": "CI/CD Pipelines" }
   ],
   "leadership_skills": [
-    { "name": "Team Leadership",    "background_gradient": "from-blue-600/20 to-purple-600/20",   "border_color": "border-blue-500/30",   "text_color": "text-blue-300" },
-    { "name": "Project Management", "background_gradient": "from-green-600/20 to-blue-600/20",   "border_color": "border-green-500/30",  "text_color": "text-green-300" },
-    { "name": "Agile/Scrum",        "background_gradient": "from-purple-600/20 to-pink-600/20",  "border_color": "border-purple-500/30", "text_color": "text-purple-300" },
-    { "name": "Mentoring",          "background_gradient": "from-yellow-600/20 to-orange-600/20","border_color": "border-yellow-500/30", "text_color": "text-yellow-300" },
-    { "name": "Strategic Planning", "background_gradient": "from-red-600/20 to-pink-600/20",     "border_color": "border-red-500/30",    "text_color": "text-red-300" },
-    { "name": "System Architecture","background_gradient": "from-indigo-600/20 to-purple-600/20","border_color": "border-indigo-500/30", "text_color": "text-indigo-300" }
+    { "name": "Team Leadership",       "background_gradient": "from-blue-600/20 to-purple-600/20",   "border_color": "border-blue-500/30",   "text_color": "text-blue-300" },
+    { "name": "Project Management",    "background_gradient": "from-green-600/20 to-blue-600/20",   "border_color": "border-green-500/30",  "text_color": "text-green-300" },
+    { "name": "Stakeholder Management","background_gradient": "from-cyan-600/20 to-blue-600/20",    "border_color": "border-cyan-500/30",   "text_color": "text-cyan-300" },
+    { "name": "Risk & RAID Management","background_gradient": "from-orange-600/20 to-red-600/20",   "border_color": "border-orange-500/30", "text_color": "text-orange-300" },
+    { "name": "Agile/Scrum",           "background_gradient": "from-purple-600/20 to-pink-600/20",  "border_color": "border-purple-500/30", "text_color": "text-purple-300" },
+    { "name": "Mentoring",             "background_gradient": "from-yellow-600/20 to-orange-600/20","border_color": "border-yellow-500/30", "text_color": "text-yellow-300" },
+    { "name": "Strategic Planning",    "background_gradient": "from-red-600/20 to-pink-600/20",     "border_color": "border-red-500/30",    "text_color": "text-red-300" },
+    { "name": "System Architecture",   "background_gradient": "from-indigo-600/20 to-purple-600/20","border_color": "border-indigo-500/30", "text_color": "text-indigo-300" }
   ],
   "certifications": [
     {
@@ -101,6 +103,11 @@
       "name": "Web Development Specialization",
       "provider": "University of Michigan",
       "url": "https://www.coursera.org/specializations/web-design"
+    },
+    {
+      "name": "Building Database Applications in PHP",
+      "provider": "University of Michigan",
+      "url": "https://www.coursera.org/learn/php-mysql-database-applications"
     }
   ]
 }
