@@ -10,6 +10,17 @@ import { siteConfig } from '@/lib/utils';
 const testimonials = [
   {
     quote:
+      'I had the pleasure of working together at SPONDON IT and can confidently recommend him. He is a skilled software engineer with strong technical expertise, excellent leadership and effective project management abilities. He consistently delivered high-quality solutions, collaborated well with the team, and took ownership of every project. His professionalism, reliability, and commitment to excellence make him a valuable asset to any organization. I highly recommend him and wish him continued success in his career.',
+    name: 'Md. Nazmul Islam',
+    role: 'Tech Lead · Java & Go, DevOps & SRE',
+    company: 'Adventure Dhaka Ltd.',
+    initials: 'NI',
+    color: '#ec4899',
+    // Profile URL not provided, so link to the recommendations page where this one is published.
+    linkedin: 'https://www.linkedin.com/in/jmrashed/details/recommendations/',
+  },
+  {
+    quote:
       'I had the pleasure of working with Md. Rasheduzzaman during his time as a Software Engineer in one of my startup BdEducations, and I can confidently recommend him as a dependable and dedicated professional. Rasheduzzaman consistently delivered his work in a timely manner, showing strong discipline and reliability. He is a continuous learner who is always looking to improve his skills and stay updated with new technologies, which reflects positively in the quality of his work.',
     name: 'A.R. Zerin',
     role: 'AI/ML & Generative AI Architect',
