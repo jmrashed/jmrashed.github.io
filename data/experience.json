@@ -1,32 +1,9 @@
 [
   {
-    "role": "Technical Project Lead",
-    "company": "PEN Group",
-    "location": "London, UK (Remote)",
-    "duration": "November 2025 - Present",
-    "stack": [
-      "PHP", "JavaScript", "HTML", "CSS", "Bootstrap", "Node.js", "React"
-    ],
-    "skills": [
-      "Technical Project Management",
-      "Stakeholder Management",
-      "Team Leadership",
-      "Risk Management",
-      "GDPR Compliance",
-      "Agile Delivery"
-    ],
-    "responsibilities": [
-      "Lead end-to-end project delivery for a 9-engineer team — spanning Backend, Frontend, SQA, and IT Support — on a live Higher Education SaaS engagement",
-      "Own SIMS (Student Information Management System) and a companion student-facing platform, ensuring GDPR-compliant handling of student data",
-      "Facilitate status meetings, stakeholder updates, and risk reviews, keeping engineering, IT, and client teams aligned on scope and deadlines",
-      "Serve as primary point of contact for the UK-based client, managing stakeholder communication and expectations with minimal supervision"
-    ]
-  },
-  {
     "role": "Tech Lead & Software Architect",
     "company": "SDT Ltd",
-    "location": "Dhaka, Bangladesh (Remote)",
-    "duration": "March 2025 - October 2025",
+    "location": "Dhaka, Bangladesh (Hybrid)",
+    "duration": "April 2025 - Present",
     "stack": [
       "PHP", "Laravel", "Node.js", "React", "Next.js",
       "Python", "Docker", "AWS", "CI/CD", "PostgreSQL"
@@ -42,22 +19,22 @@
     "highlights": [
       { "value": "13,700+", "label": "Package Downloads" },
       { "value": "1,100+", "label": "Downloads / Month" },
-      { "value": "51",     "label": "GitHub Stars" },
+      { "value": "69",     "label": "GitHub Stars" },
       { "value": "23",     "label": "Team Members Led" }
     ],
     "responsibilities": [
       "Led a 23-person cross-functional team (Frontend, Backend, UI/UX, Graphic Design, SQA, DevOps) delivering a SaaS job marketplace platform from scope definition through production launch",
       "Concurrently owned delivery of SocialPro AI, an AI-driven social media management platform integrating the OpenAI API (ChatGPT, DALL·E) and custom NLP",
-      "Open-source package jmrashed/zkteco: 13,700+ total installs, 1,100+ downloads/month, 51 GitHub stars",
+      "Open-source package jmrashed/zkteco: 13,700+ total installs, 1,100+ downloads/month, 69 GitHub stars",
       "Conducted 10+ code audits reducing average bug density by ~30% per engagement",
       "Integrating LLM-based features (OpenAI, LangChain) into client web applications"
     ]
   },
   {
-    "role": "Tech Lead Officer",
+    "role": "Technical Lead",
     "company": "Onest Tech LLC",
     "location": "Dhaka, Bangladesh",
-    "duration": "September 2022 - February 2025",
+    "duration": "September 2022 - March 2025",
     "stack": [
       "PHP", "Node.js", "Python", "JavaScript",
       "jQuery", "React", "MySQL", "NoSQL", "Docker", "CI/CD", "AWS"
@@ -80,10 +57,10 @@
     ]
   },
   {
-    "role": "Project Manager",
+    "role": "Technical Project Manager",
     "company": "Onest Tech LLC",
     "location": "Dhaka, Bangladesh",
-    "duration": "February 2021 - August 2022",
+    "duration": "February 2021 - August 2021",
     "stack": ["Agile", "Scrum", "Kanban", "Jira", "Trello", "Microsoft Project"],
     "skills": [
       "Project Delivery",
