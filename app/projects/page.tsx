@@ -5,7 +5,7 @@ import ProjectsClient from '@/components/sections/ProjectsFilter';
 export const metadata: Metadata = {
   title: 'Projects',
   description:
-    'Showcase of innovative solutions and complex systems architected and delivered by Rashed Zaman.',
+    'Showcase of innovative solutions and complex systems architected and delivered by Md Rasheduzzaman.',
 };
 
 export default function ProjectsPage() {

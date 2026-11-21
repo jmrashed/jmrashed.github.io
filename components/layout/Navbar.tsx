@@ -63,7 +63,7 @@ export default function Navbar() {
             >
               RZ
             </span>
-            <span className="text-lg font-bold gradient-text hidden sm:block">Rashed Zaman</span>
+            <span className="text-lg font-bold gradient-text hidden sm:block">Md Rasheduzzaman</span>
           </Link>
 
           {/* Desktop nav */}

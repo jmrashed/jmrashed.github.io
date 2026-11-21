@@ -11,17 +11,17 @@ export function formatDate(dateString: string): string {
 }
 
 export const siteConfig = {
-  name: 'Rashed Zaman',
-  title: 'Rashed Zaman — Technical Project Manager | Tech Lead | Full-Stack Developer',
+  name: 'Md Rasheduzzaman',
+  title: 'Md Rasheduzzaman — Tech Lead | SaaS & AI Products | Full-Stack Engineer',
   description:
-    'Rashed Zaman — Technical Project Manager & Tech Lead from Dhaka, Bangladesh. 10+ years leading cross-functional engineering teams and delivering scalable web & mobile solutions using PHP, Node.js, React and cloud platforms.',
+    'Md Rasheduzzaman — Tech Lead from Dhaka, Bangladesh. 10+ years building SaaS and AI products and leading engineering teams of up to 36 engineers, using Node.js, React, Laravel, PHP and cloud platforms.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://jmrashed.github.io',
   email: 'jmrashed@gmail.com',
   location: 'Dhaka, Bangladesh (UTC+6)',
   timezone: 'UTC+6 — Overlaps UK (BST −5h) & US EST (−11h)',
   contactHours: '9 AM – 6 PM BST / 4 AM – 1 PM EST',
   workModes: 'Remote · Hybrid · Onsite (Dhaka)',
-  targetRoles: 'Senior Engineer · Tech Lead · Technical Project Manager · Engineering Manager',
+  targetRoles: 'Senior Engineer · Tech Lead · Engineering Manager',
   github: 'https://github.com/jmrashed',
   githubReadme: 'https://github.com/jmrashed/jmrashed',
   linkedin: 'https://www.linkedin.com/in/jmrashed/',

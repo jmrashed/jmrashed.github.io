@@ -41,12 +41,12 @@ export default function About({ achievements }: AboutProps) {
                 teams of engineers to deliver products that accelerate business growth.
               </p>
               <p>
-                Currently leading a{' '}
+                Currently{' '}
                 <span className="text-emerald-400 font-medium">
-                  9-engineer team on a live Higher Education SaaS engagement at PEN Group
+                  Tech Lead and Software Architect at SDT LTD
                 </span>
-                , after previously leading a 36-member engineering team at Onest Tech LLC and a
-                23-person cross-functional team at SDT LTD, blending deep technical expertise in{' '}
+                , where I led a 23-person cross-functional team to launch a SaaS job marketplace.
+                Before that I led a 36-member engineering team at Onest Tech LLC, blending deep technical expertise in{' '}
                 <span className="text-indigo-300">
                   PHP, Node.js, React, and Cloud Infrastructure
                 </span>{' '}
@@ -217,7 +217,7 @@ export default function About({ achievements }: AboutProps) {
                     {[
                       {
                         icon: GraduationCap,
-                        text: 'B.Sc. in CSE — Stamford University Bangladesh (2015) · CGPA 3.73',
+                        text: 'B.Sc. in CSE — Stamford University Bangladesh (2016) · CGPA 3.73',
                         color: 'text-indigo-400',
                         href: 'https://www.stamforduniversity.edu.bd',
                       },

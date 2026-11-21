@@ -8,7 +8,7 @@ import Badge from '@/components/ui/Badge';
 export const metadata: Metadata = {
   title: 'Case Studies',
   description:
-    'In-depth case studies showcasing real-world solutions and measurable impact delivered by Rashed Zaman.',
+    'In-depth case studies showcasing real-world solutions and measurable impact delivered by Md Rasheduzzaman.',
 };
 
 export default function CaseStudiesPage() {

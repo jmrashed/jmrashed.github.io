@@ -59,7 +59,7 @@ export default function OpenToWorkBanner() {
 
       <span className="hidden sm:flex items-center gap-1.5 text-white/80">
         <Briefcase className="w-3.5 h-3.5" />
-        Senior Engineer · Tech Lead · TPM · Engineering Manager
+        Senior Engineer · Tech Lead · Engineering Manager
       </span>
 
       <span className="hidden md:block w-px h-4 bg-white/30" />

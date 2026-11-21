@@ -9,8 +9,8 @@ import { siteConfig } from '@/lib/utils';
 import HireMeButton from '@/components/ui/HireMeButton';
 
 const roles = [
-  'Tech Lead & Full-Stack Developer',
-  'Technical Project Manager',
+  'Tech Lead · SaaS & AI Products',
+  'Full-Stack Developer',
   'Senior Software Engineer',
   'Engineering Manager',
   'SaaS Architect & Innovator',
@@ -123,7 +123,7 @@ export default function Hero() {
               }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Open to Work &mdash; Senior Engineer · Tech Lead · TPM · EM
+              Open to Work &mdash; Senior Engineer · Tech Lead · EM
             </span>
             {/* Location + timezone */}
             <span
@@ -155,7 +155,7 @@ export default function Hero() {
               >
                 <Image
                   src="/images/profile.jpg"
-                  alt="Rashed Zaman — Tech Lead & Full-Stack Developer"
+                  alt="Md Rasheduzzaman — Tech Lead & Full-Stack Developer"
                   width={128}
                   height={128}
                   priority
@@ -166,7 +166,7 @@ export default function Hero() {
                     const parent = el.parentElement;
                     if (parent) {
                       parent.innerHTML =
-                        '<div class="w-full h-full flex items-center justify-center text-3xl font-bold text-indigo-300" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(245,158,11,0.1))">RZ</div>';
+                        '<div class="w-full h-full flex items-center justify-center text-3xl font-bold text-indigo-300" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(245,158,11,0.1))">MR</div>';
                     }
                   }}
                 />
@@ -186,9 +186,9 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             variants={item}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[1.05] tracking-tight"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[1.05] tracking-tight"
           >
-            Hi, I&apos;m <span className="gradient-text">Rashed Zaman</span>
+            Hi, I&apos;m <span className="gradient-text">Md Rasheduzzaman</span>
           </motion.h1>
 
           {/* Typed role */}
@@ -208,7 +208,7 @@ export default function Hero() {
             className="text-lg text-gray-600 dark:text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed"
           >
             Seeking a{' '}
-            <span className="text-gray-900 dark:text-white font-medium">Senior Engineer, Tech Lead, Technical Project Manager, or Engineering Manager</span>{' '}
+            <span className="text-gray-900 dark:text-white font-medium">Senior Engineer, Tech Lead, or Engineering Manager</span>{' '}
             role. <span className="text-gray-900 dark:text-white font-medium">10+ years</span> building scalable products,
             leading teams of{' '}
             <span className="text-gray-900 dark:text-white font-medium">36+ engineers</span>, and shipping

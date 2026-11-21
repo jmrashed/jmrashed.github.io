@@ -1,26 +1,5 @@
 [
   {
-    "id": 1,
-    "slug": "sims-parallel-workstreams-gdpr",
-    "projectSlug": "sims-higher-education-system",
-    "title": "Coordinating Two Parallel SaaS Platforms for a UK University Under GDPR Constraints",
-    "client": "UK Higher Education Client — PEN Group",
-    "industry": "Higher Education / EdTech",
-    "challenge": "Two workstreams — the legacy PHP student-records system (SIMS) and a new companion React/Node student portal — had to ship on independent but interlocking timelines for the same institution, coordinated across a 9-person team split across Backend, Frontend, SQA, and IT Support, under strict GDPR data-residency and retention rules for UK student records. Status reporting had been ad hoc and the two workstreams had drifted out of sync, risking a missed enrollment-cycle deadline.",
-    "solution": "Introduced a shared fortnightly milestone board visible to both workstreams and the client, with cross-workstream dependencies explicitly flagged (e.g. a SIMS API contract change blocking the student portal's account-linking feature). Ran a GDPR data-mapping exercise with IT to classify every student data field by retention period and access tier, then implemented field-level access control and audit logging in SIMS before the portal's account-linking feature shipped. Replaced three ad hoc update channels with a single weekly client stakeholder call and a one-page RAG status summary.",
-    "results": [
-      "Realigned both workstreams to a shared institutional go-live date after initial drift",
-      "Passed the client's internal data-protection review on GDPR data handling with zero findings",
-      "Reduced status-update overhead by consolidating three channels into one weekly RAG report",
-      "Zero missed enrollment-cycle deadlines since realignment",
-      "Established a dependency-tracking process now reused across both workstreams"
-    ],
-    "technologiesUsed": ["PHP", "MySQL", "PostgreSQL", "React", "Node.js", "Express"],
-    "image": "case-study-sims-gdpr.jpg",
-    "duration": "Ongoing (9 months to date)",
-    "role": "Technical Project Lead"
-  },
-  {
     "id": 2,
     "slug": "multi-tenant-saas-b2b-marketplace",
     "projectSlug": "saas-job-marketplace",

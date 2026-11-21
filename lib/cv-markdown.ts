@@ -1,7 +1,7 @@
 import { getExperience, getSkills, getAchievements } from '@/lib/data';
 import { siteConfig } from '@/lib/utils';
 
-const EDUCATION = 'B.Sc. in Computer Science & Engineering — Stamford University Bangladesh (2015) · CGPA 3.73/4.0';
+const EDUCATION = 'B.Sc. in Computer Science & Engineering — Stamford University Bangladesh (2016) · CGPA 3.73/4.0';
 
 /**
  * Builds a full, ATS-friendly Markdown version of the CV from the same

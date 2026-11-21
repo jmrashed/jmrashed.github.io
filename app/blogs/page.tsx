@@ -6,7 +6,7 @@ import BlogList from '@/components/sections/BlogList';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'Articles and insights on technology, software development, and engineering leadership by Rashed Zaman.',
+    'Articles and insights on technology, software development, and engineering leadership by Md Rasheduzzaman.',
 };
 
 export default function BlogsPage() {

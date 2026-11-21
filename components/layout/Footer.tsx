@@ -46,7 +46,7 @@ export default function Footer({ socialLinks }: FooterProps) {
             >
               RZ
             </span>
-            <span className="text-xl font-bold gradient-text">Rashed Zaman</span>
+            <span className="text-xl font-bold gradient-text">Md Rasheduzzaman</span>
           </div>
 
           <p className="text-gray-500 dark:text-gray-500 text-sm max-w-md mb-8 leading-relaxed">
@@ -87,7 +87,7 @@ export default function Footer({ socialLinks }: FooterProps) {
           <div className="w-full h-px mb-6 bg-gradient-to-r from-transparent via-black/[0.06] dark:via-white/[0.06] to-transparent" />
 
           <p className="text-gray-400 dark:text-gray-600 text-xs">
-            © {new Date().getFullYear()} Rashed Zaman. All rights reserved. · Built with Next.js &
+            © {new Date().getFullYear()} Md Rasheduzzaman. All rights reserved. · Built with Next.js &
             ❤️
           </p>
         </div>

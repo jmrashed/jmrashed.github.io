@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const dynamic = 'force-static';
-export const alt = 'Rashed Zaman — Technical Project Manager | Tech Lead & Full-Stack Developer';
+export const alt = 'Md Rasheduzzaman — Tech Lead | SaaS & AI Products';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -62,7 +62,7 @@ export default function OGImage() {
             marginBottom: '28px',
           }}
         >
-          RZ
+          MR
         </div>
 
         {/* Name */}
@@ -75,7 +75,7 @@ export default function OGImage() {
             letterSpacing: '-1px',
           }}
         >
-          Rashed Zaman
+          Md Rasheduzzaman
         </div>
 
         {/* Title */}
@@ -87,12 +87,12 @@ export default function OGImage() {
             fontWeight: '500',
           }}
         >
-          Technical Project Manager · Tech Lead
+          Tech Lead · SaaS &amp; AI Products
         </div>
 
         {/* Tags row */}
         <div style={{ display: 'flex', gap: '12px' }}>
-          {['PHP', 'Node.js', 'React', 'AWS', '10+ Years'].map(tag => (
+          {['Node.js', 'React', 'Laravel', 'System Design', '10+ Years'].map(tag => (
             <div
               key={tag}
               style={{

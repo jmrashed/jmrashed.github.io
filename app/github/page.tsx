@@ -5,7 +5,7 @@ import { getRepos } from '@/lib/repos';
 
 export const metadata: Metadata = {
   title: 'GitHub',
-  description: 'Public GitHub repositories by Rashed Zaman — filtered by language and topic.',
+  description: 'Public GitHub repositories by Md Rasheduzzaman — filtered by language and topic.',
 };
 
 export default function GitHubPage() {

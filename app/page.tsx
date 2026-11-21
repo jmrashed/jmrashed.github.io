@@ -17,8 +17,8 @@ export default function HomePage() {
   const allProjects = getProjects();
   const socialLinks = getSocialLinks();
 
-  // Show only first 3 projects on homepage
-  const featuredProjects = allProjects.slice(0, 3);
+  // Top 5 projects on homepage (projects.json is already ordered by value)
+  const featuredProjects = allProjects.slice(0, 5);
 
   return (
     <>
