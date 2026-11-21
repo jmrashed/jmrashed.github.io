@@ -26,7 +26,7 @@ export const siteConfig = {
   githubReadme: 'https://github.com/jmrashed/jmrashed',
   linkedin: 'https://www.linkedin.com/in/jmrashed/',
   twitter: '@jmrashed',
-  cvPath: '/rashed-zaman-technical-project-manager-resume.pdf',
+  cvPath: '/Rashed_Zaman_CV_Senior_Backend_Engineer.pdf',
   /** Single source of truth for all stat numbers shown in Hero + About */
   stats: [
     { value: '10+',   label: 'Years Exp.',  labelLong: 'Years Experience',   color: '#818cf8' },

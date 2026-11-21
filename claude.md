@@ -123,7 +123,7 @@ export const siteConfig = {
   githubReadme: 'https://github.com/jmrashed/jmrashed',  // profile README repo
   linkedin: 'https://www.linkedin.com/in/jmrashed/',
   twitter: '@jmrashed',
-  cvPath: '/RASHED_ZAMAN_CV.pdf',
+  cvPath: '/Rashed_Zaman_CV_Senior_Backend_Engineer.pdf',
   formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '',  // set in .env.local
 
   // Stats — used in Hero (first 4) and About (all 6). Change here, updates everywhere.
